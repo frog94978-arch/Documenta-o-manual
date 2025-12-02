@@ -1,0 +1,24 @@
+{
+  "name": "documentacao-manual",
+  "version": "1.0.0",
+  "description": "Um site de documentação/manual/wiki.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "documentação",
+    "manual",
+    "wiki",
+    "vitepress"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.4.27"
+  }
+}
