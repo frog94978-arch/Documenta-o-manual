@@ -18,6 +18,7 @@ export const categories: DocCategory[] = [
   { id: "guia-inicio", title: "Guia de Início", icon: "BookOpen", order: 2 },
   { id: "modulos", title: "Módulos", icon: "Layers", order: 3 },
   { id: "tutoriais", title: "Tutoriais", icon: "GraduationCap", order: 4 },
+  { id: "pncp", title: "PNCP", icon: "AlignJustify", order: 5 },
 ];
 
 export const pages: DocPage[] = [
