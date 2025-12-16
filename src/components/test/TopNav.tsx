@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import * as Icons from "lucide-react";
 import { categories, getPagesByCategory } from "@/data/documentation";
 import { cn } from "@/lib/utils";
+import PncpNav from "./PncpNav"; // Import PncpNav
 
 const TopNav = () => {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation(); // Initialize useLocation
 
   const renderIcon = (iconName: string) => {
     const IconComponent = Icons[iconName as keyof typeof Icons] as React.ElementType;
@@ -114,8 +116,12 @@ const TopNav = () => {
           </div>
         )}
       </nav>
+
+      {/* Conditional rendering of PncpNav */}
+      {location.pathname.startsWith("/pncp") && <PncpNav />}
     </>
   );
 };
 
 export default TopNav;
+

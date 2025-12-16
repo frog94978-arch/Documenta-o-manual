@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/test/ui/tabs";
 import { getSubmoduleById } from "@/data/submodules";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/test/ui/select";
 
 const PatrimonialTabs = () => {
   const submodules = ["compras", "licitacoes", "contratos", "material", "patrimonio", "protocolo", "veiculos"];

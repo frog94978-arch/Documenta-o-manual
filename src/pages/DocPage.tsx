@@ -1,8 +1,8 @@
 import { useParams, Navigate } from "react-router-dom";
 import { getPageById } from "@/data/documentation";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import MarkdownContent from "@/components/MarkdownContent";
-import PatrimonialTabs from "@/components/PatrimonialTabs";
+import Breadcrumbs from "@/components/test/Breadcrumbs";
+import MarkdownContent from "@/components/test/MarkdownContent";
+import PatrimonialTabs from "@/components/test/PatrimonialTabs";
 
 const DocPage = () => {
   const { category, page } = useParams<{ category: string; page: string }>();

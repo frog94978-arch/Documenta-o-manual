@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    --primary: 210 15% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 210 15% 35%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 0 0% 30%;
+    --sidebar-primary: 210 15% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 93%;
+    --sidebar-accent-foreground: 0 0% 20%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 210 15% 35%;
+
+    --doc-code-bg: 0 0% 96%;
+    --doc-link: 210 80% 45%;
+    --doc-link-hover: 210 80% 35%;
+    --doc-heading: 0 0% 20%;
+    --doc-note-bg: 210 40% 95%;
+    --doc-note-border: 210 40% 80%;
+    --doc-warning-bg: 45 100% 95%;
+    --doc-warning-border: 45 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 210 15% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 90%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 210 15% 65%;
+
+    --sidebar-background: 0 0% 12%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 210 15% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 210 15% 65%;
+
+    --doc-code-bg: 0 0% 15%;
+    --doc-link: 210 80% 70%;
+    --doc-link-hover: 210 80% 85%;
+    --doc-heading: 0 0% 95%;
+    --doc-note-bg: 210 40% 15%;
+    --doc-note-border: 210 40% 30%;
+    --doc-warning-bg: 45 100% 15%;
+    --doc-warning-border: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Markdown Documentation Styles */
+  .markdown-content {
+    @apply text-foreground leading-relaxed;
+  }
+
+  .markdown-content h1 {
+    @apply text-3xl font-bold mb-4 mt-8 text-[hsl(var(--doc-heading))] border-b border-border pb-2;
+  }
+
+  .markdown-content h2 {
+    @apply text-2xl font-semibold mb-3 mt-6 text-[hsl(var(--doc-heading))];
+  }
+
+  .markdown-content h3 {
+    @apply text-xl font-semibold mb-2 mt-4 text-[hsl(var(--doc-heading))];
+  }
+
+  .markdown-content h4 {
+    @apply text-lg font-semibold mb-2 mt-3 text-[hsl(var(--doc-heading))];
+  }
+
+  .markdown-content p {
+    @apply mb-4 text-foreground;
+  }
+
+  .markdown-content a {
+    @apply text-[hsl(var(--doc-link))] hover:text-[hsl(var(--doc-link-hover))] underline transition-colors;
+  }
+
+  .markdown-content ul,
+  .markdown-content ol {
+    @apply mb-4 ml-6 space-y-2;
+  }
+
+  .markdown-content ul {
+    @apply list-disc;
+  }
+
+  .markdown-content ol {
+    @apply list-decimal;
+  }
+
+  .markdown-content li {
+    @apply text-foreground;
+  }
+
+  .markdown-content code {
+    @apply bg-[hsl(var(--doc-code-bg))] px-1.5 py-0.5 rounded text-sm font-mono border border-border;
+  }
+
+  .markdown-content pre {
+    @apply bg-[hsl(var(--doc-code-bg))] p-4 rounded-lg overflow-x-auto mb-4 border border-border;
+  }
+
+  .markdown-content pre code {
+    @apply bg-transparent p-0 border-0;
+  }
+
+  .markdown-content blockquote {
+    @apply border-l-4 border-primary pl-4 py-2 mb-4 italic text-muted-foreground;
+  }
+
+  .markdown-content table {
+    @apply w-full border-collapse mb-4;
+  }
+
+  .markdown-content th,
+  .markdown-content td {
+    @apply border border-border px-4 py-2 text-left;
+  }
+
+  .markdown-content th {
+    @apply bg-muted font-semibold;
+  }
+
+  .markdown-content img {
+    @apply max-w-full h-auto rounded-lg my-4;
+  }
+
+  .markdown-content hr {
+    @apply my-8 border-border;
+  }
+
+  /* Alert boxes */
+  .markdown-content .alert-note {
+    @apply bg-[hsl(var(--doc-note-bg))] border-l-4 border-[hsl(var(--doc-note-border))] p-4 mb-4 rounded;
+  }
+
+  .markdown-content .alert-warning {
+    @apply bg-[hsl(var(--doc-warning-bg))] border-l-4 border-[hsl(var(--doc-warning-border))] p-4 mb-4 rounded;
+  }
+}

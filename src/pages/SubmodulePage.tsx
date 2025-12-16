@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { getSubmoduleById } from "@/data/submodules";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/test/ui/button";
 
 const SubmodulePage = () => {
   const { submodule } = useParams();

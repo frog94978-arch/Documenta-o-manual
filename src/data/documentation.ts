@@ -16,9 +16,10 @@ export interface DocCategory {
 export const categories: DocCategory[] = [
   { id: "introducao", title: "Introdução", icon: "Home", order: 1 },
   { id: "guia-inicio", title: "Guia de Início", icon: "BookOpen", order: 2 },
-  { id: "modulos", title: "Módulos", icon: "Layers", order: 3 },
+  { id: "modulos", title: "Áreas", icon: "Layers", order: 3 },
+
   { id: "tutoriais", title: "Tutoriais", icon: "GraduationCap", order: 4 },
-  { id: "pncp", title: "PNCP", icon: "AlignJustify", order: 5 },
+
 ];
 
 export const pages: DocPage[] = [
@@ -407,12 +408,12 @@ Ferramentas de fiscalização:
 
 ### Guia de IPTU
 
-\`\`\`
+` + "```" + `
 1. Acesse Tributário > IPTU > Emissão
 2. Informe o exercício
 3. Selecione os imóveis
 4. Gere as guias
-\`\`\`
+` + "```" + `
 
 ## Consultas Disponíveis
 
@@ -641,13 +642,13 @@ Relatórios para fiscalização:
 
 ## Como Emitir NFS-e
 
-\`\`\`
+` + "```" + `
 1. Acesse Nota Fiscal > Emissão
 2. Preencha os dados do tomador
 3. Adicione os serviços prestados
 4. Confira os valores e impostos
 5. Emita a nota
-\`\`\`
+` + "```" + `
 
 ## Integração
 
@@ -755,13 +756,13 @@ Canal de comunicação:
 
 ### Primeiro Acesso
 
-\`\`\`
+` + "```" + `
 1. Acesse o portal de serviços
 2. Clique em "Cadastrar"
 3. Preencha seus dados
 4. Confirme o e-mail
 5. Acesse com CPF e senha
-\`\`\`
+` + "```" + `
 
 ### Solicitação de Serviço
 
@@ -890,13 +891,13 @@ Fluxos automatizados:
 
 ### Como Tramitar
 
-\`\`\`
+` + "```" + `
 1. Abra o processo
 2. Clique em "Tramitar"
 3. Selecione o destino
 4. Adicione despacho (opcional)
 5. Confirme o envio
-\`\`\`
+` + "```" + `
 
 ### Acompanhamento
 
@@ -983,13 +984,13 @@ Integrado com:
 
 ### Upload de Arquivos
 
-\`\`\`
+` + "```" + `
 1. Acesse e-Storage
 2. Selecione a pasta
 3. Clique em "Upload"
 4. Selecione os arquivos
 5. Aguarde o processamento
-\`\`\`
+` + "```" + `
 
 ### Busca de Documentos
 
@@ -998,6 +999,8 @@ Integrado com:
 - Filtros avançados
 - Busca por data`
   },
+
+
   {
     id: "criar-cadastro",
     title: "Como Criar um Cadastro",
@@ -1054,11 +1057,11 @@ Se necessário, anexe documentos:
 
 Para cadastros de usuários:
 
-\`\`\`
+` + "```" + `
 Perfil: [Selecione o perfil]
 Módulos: [Marque os módulos permitidos]
 Nível de Acesso: [Escolha o nível]
-\`\`\`
+` + "```" + `
 
 ## Passo 5: Revisar e Salvar
 

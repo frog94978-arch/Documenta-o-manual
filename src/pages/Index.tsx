@@ -34,7 +34,7 @@ const Index = () => {
                 
                 <ul className="space-y-2 pl-8">
                   {pages.map(page => <li key={page.id}>
-                      <Link to={`/docs/${category.id}/${page.id}`} className="text-base text-foreground hover:text-primary hover:underline transition-colors">Como Criar um Cadastro{page.title}
+                      <Link to={`/docs/${category.id}/${page.id}`} className="text-base text-foreground hover:text-primary hover:underline transition-colors">{page.title}
                       </Link>
                     </li>)}
                 </ul>
