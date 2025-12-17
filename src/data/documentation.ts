@@ -298,7 +298,7 @@ Gestão de compromissos:
     title: "Patrimonial",
     category: "modulos",
     order: 3,
-    content: `# Módulo Patrimonial
+    content: `# Área Patrimonial
 
 Gestão completa do patrimônio público, compras e almoxarifado.
 

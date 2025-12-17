@@ -5,9 +5,11 @@ import { getCategoryById } from "@/data/documentation";
 interface BreadcrumbsProps {
   categoryId: string;
   pageTitle: string;
+  submoduleTitle?: string;
+  categoryTitle?: string;
 }
 
-const Breadcrumbs = ({ categoryId, pageTitle }: BreadcrumbsProps) => {
+const Breadcrumbs = ({ categoryId, pageTitle, submoduleTitle, categoryTitle }: BreadcrumbsProps) => {
   const category = getCategoryById(categoryId);
 
   return (
@@ -24,6 +26,18 @@ const Breadcrumbs = ({ categoryId, pageTitle }: BreadcrumbsProps) => {
       </span>
       <ChevronRight className="h-4 w-4" />
       <span className="text-foreground">{pageTitle}</span>
+      {submoduleTitle && (
+        <>
+          <ChevronRight className="h-4 w-4" />
+          <span className="text-foreground">{submoduleTitle.charAt(0).toUpperCase() + submoduleTitle.slice(1)}</span>
+        </>
+      )}
+      {categoryTitle && (
+        <>
+          <ChevronRight className="h-4 w-4" />
+          <span className="text-foreground">{categoryTitle.charAt(0).toUpperCase() + categoryTitle.slice(1)}</span>
+        </>
+      )}
     </nav>
   );
 };

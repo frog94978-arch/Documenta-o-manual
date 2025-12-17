@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/test/ui/tabs";
 import { getSubmoduleById } from "@/data/submodules";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/test/ui/select";
 
-const PatrimonialTabs = () => {
+interface PatrimonialTabsProps {
+  selectedSubmodule: string | null;
+  setSelectedSubmodule: (submodule: string | null) => void;
+  selectedCategory: string | null;
+  setSelectedCategory: (category: string | null) => void;
+}
+
+const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCategory, setSelectedCategory }: PatrimonialTabsProps) => {
   const submodules = ["compras", "licitacoes", "contratos", "material", "patrimonio", "protocolo", "veiculos"];
-  const [activeTab, setActiveTab] = useState("compras");
-  const [selectedCategory, setSelectedCategory] = useState<Record<string, string>>({});
-  const [selectedOption, setSelectedOption] = useState<Record<string, string>>({});
 
   const categories = [
     { value: "cadastro", label: "Cadastro" },
@@ -16,123 +18,86 @@ const PatrimonialTabs = () => {
     { value: "procedimentos", label: "Procedimentos" }
   ];
 
-  const handleCategoryChange = (submodule: string, value: string) => {
-    setSelectedCategory({ ...selectedCategory, [submodule]: value });
-    setSelectedOption({ ...selectedOption, [submodule]: "" });
+  const handleSubmoduleClick = (submodule: string) => {
+    setSelectedSubmodule(submodule);
+    setSelectedCategory(null); // Reset category when changing submodule
   };
 
-  const renderSubmoduleContent = (submoduleId: string) => {
-    const submoduleData = getSubmoduleById(submoduleId);
-    if (!submoduleData) return null;
+  const handleBackClick = () => {
+    if (selectedCategory) {
+      setSelectedCategory(null);
+    } else {
+      setSelectedSubmodule(null);
+    }
+  };
 
-    const currentCategory = selectedCategory[submoduleId] || "";
-    const currentOptions = currentCategory 
-      ? submoduleData.options[currentCategory as keyof typeof submoduleData.options] 
-      : [];
+  const renderFinalContent = (submoduleId: string, categoryId: string) => {
+    const submoduleData = getSubmoduleById(submoduleId);
+    if (!submoduleData) return <p>Submódulo não encontrado.</p>;
+    
+    const categoryOptions = submoduleData.options[categoryId as keyof typeof submoduleData.options];
+    if (!categoryOptions || categoryOptions.length === 0) return <p>Nenhum item encontrado para esta categoria.</p>;
 
     return (
-      <div className="space-y-6">
-        <div className="border-b border-border bg-muted/30 rounded-lg p-6">
-          <div className="flex items-center gap-4 flex-wrap">
-            <span className="text-sm font-medium text-foreground">
-              {submoduleData.title}
-            </span>
-            
-            <Select 
-              value={currentCategory} 
-              onValueChange={(value) => handleCategoryChange(submoduleId, value)}
-            >
-              <SelectTrigger className="w-[180px] bg-background">
-                <SelectValue placeholder="Selecione uma opção" />
-              </SelectTrigger>
-              <SelectContent className="bg-background z-50">
-                {categories.map((cat) => (
-                  <SelectItem key={cat.value} value={cat.value}>
-                    {cat.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            {currentCategory && currentOptions.length > 0 && (
-              <Select 
-                value={selectedOption[submoduleId] || ""} 
-                onValueChange={(value) => setSelectedOption({ ...selectedOption, [submoduleId]: value })}
-              >
-                <SelectTrigger className="w-[200px] bg-background">
-                  <SelectValue placeholder="Selecione" />
-                </SelectTrigger>
-                <SelectContent className="bg-background z-50">
-                  {currentOptions.map((option) => (
-                    <SelectItem key={option} value={option}>
-                      {option}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            )}
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="border border-border rounded-lg p-6">
-            <h3 className="text-xl font-semibold mb-4">Cadastro</h3>
-            <ul className="space-y-2">
-              {submoduleData.options.cadastro.map((item) => (
-                <li key={item} className="text-sm text-muted-foreground">• {item}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="border border-border rounded-lg p-6">
-            <h3 className="text-xl font-semibold mb-4">Consulta</h3>
-            <ul className="space-y-2">
-              {submoduleData.options.consulta.map((item) => (
-                <li key={item} className="text-sm text-muted-foreground">• {item}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="border border-border rounded-lg p-6">
-            <h3 className="text-xl font-semibold mb-4">Relatório</h3>
-            <ul className="space-y-2">
-              {submoduleData.options.relatorio.map((item) => (
-                <li key={item} className="text-sm text-muted-foreground">• {item}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="border border-border rounded-lg p-6">
-            <h3 className="text-xl font-semibold mb-4">Procedimentos</h3>
-            <ul className="space-y-2">
-              {submoduleData.options.procedimentos.map((item) => (
-                <li key={item} className="text-sm text-muted-foreground">• {item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div className="border border-border rounded-lg p-6">
+        <h3 className="text-xl font-semibold mb-4">{categoryId.charAt(0).toUpperCase() + categoryId.slice(1)}</h3>
+        <ul className="space-y-2">
+          {categoryOptions.map((item) => (
+            <li key={item} className="text-sm text-muted-foreground">• {item}</li>
+          ))}
+        </ul>
       </div>
     );
   };
+  
+  if (selectedSubmodule) {
+    if (selectedCategory) {
+      // Final content view
+      return (
+        <div>
+          <button onClick={handleBackClick} className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground">
+            &larr; Voltar para {selectedSubmodule.charAt(0).toUpperCase() + selectedSubmodule.slice(1)}
+          </button>
+          {renderFinalContent(selectedSubmodule, selectedCategory)}
+        </div>
+      );
+    }
+    
+    // Category selection view
+    return (
+      <div>
+        <button onClick={handleBackClick} className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground">
+          &larr; Voltar para Módulos
+        </button>
+        <h2 className="text-2xl font-bold mb-6">{selectedSubmodule.charAt(0).toUpperCase() + selectedSubmodule.slice(1)}</h2>
+        <div className="grid grid-cols-2 gap-4">
+          {categories.map((category) => (
+            <button
+              key={category.value}
+              className="h-32 rounded-lg p-4 flex flex-col justify-center items-center bg-muted hover:bg-muted-foreground/10 transition-colors"
+              onClick={() => setSelectedCategory(category.value)}
+            >
+              <div className="text-lg font-bold">{category.label}</div>
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
+  // Initial submodule selection view
   return (
-    <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-      <TabsList className="w-full justify-start flex-wrap h-auto gap-2 bg-muted/50 p-2">
-        <TabsTrigger value="compras">Compras</TabsTrigger>
-        <TabsTrigger value="licitacoes">Licitações</TabsTrigger>
-        <TabsTrigger value="contratos">Contratos</TabsTrigger>
-        <TabsTrigger value="material">Material</TabsTrigger>
-        <TabsTrigger value="patrimonio">Patrimônio</TabsTrigger>
-        <TabsTrigger value="protocolo">Protocolo</TabsTrigger>
-        <TabsTrigger value="veiculos">Veículos</TabsTrigger>
-      </TabsList>
-
+    <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
       {submodules.map((submodule) => (
-        <TabsContent key={submodule} value={submodule} className="mt-6">
-          {renderSubmoduleContent(submodule)}
-        </TabsContent>
+        <button
+          key={submodule}
+          className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+          onClick={() => handleSubmoduleClick(submodule)}
+        >
+          {submodule.charAt(0).toUpperCase() + submodule.slice(1)}
+        </button>
       ))}
-    </Tabs>
+    </nav>
   );
 };
 
