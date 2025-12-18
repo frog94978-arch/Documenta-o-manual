@@ -159,6 +159,92 @@ export const submodules: Submodule[] = [
       relatorio: [],
       procedimentos: []
     }
+  },
+  {
+    id: "compras",
+    title: "Compras",
+    module: "patrimonial",
+    options: {
+      cadastro: [
+        "Grupos de Material/Serviço",
+        "Subgrupos de Materiais/Serviços",
+        "Materiais/Serviços",
+        "Cadastro de Unidades",
+        "Cadastro de Tipos de Certificados",
+        "Cadastro de Documentos",
+        "Documentos por Tipo de Certificado",
+        "Fornecedores"
+      ],
+      consulta: [],
+      relatorio: [],
+      procedimentos: []
+    }
+  },
+  {
+    id: "licitacoes",
+    title: "Licitações",
+    module: "patrimonial",
+    options: {
+      cadastro: [],
+      consulta: [],
+      relatorio: [],
+      procedimentos: []
+    }
+  },
+  {
+    id: "contratos",
+    title: "Contratos",
+    module: "patrimonial",
+    options: {
+      cadastro: [],
+      consulta: [],
+      relatorio: [],
+      procedimentos: []
+    }
+  },
+  {
+    id: "material",
+    title: "Material",
+    module: "patrimonial",
+    options: {
+      cadastro: [],
+      consulta: [],
+      relatorio: [],
+      procedimentos: []
+    }
+  },
+  {
+    id: "patrimonio",
+    title: "Patrimônio",
+    module: "patrimonial",
+    options: {
+      cadastro: [],
+      consulta: [],
+      relatorio: [],
+      procedimentos: []
+    }
+  },
+  {
+    id: "protocolo",
+    title: "Protocolo",
+    module: "patrimonial",
+    options: {
+      cadastro: [],
+      consulta: [],
+      relatorio: [],
+      procedimentos: []
+    }
+  },
+  {
+    id: "veiculos",
+    title: "Veículos",
+    module: "patrimonial",
+    options: {
+      cadastro: [],
+      consulta: [],
+      relatorio: [],
+      procedimentos: []
+    }
   }
 ];
 
