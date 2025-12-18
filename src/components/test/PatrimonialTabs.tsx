@@ -41,11 +41,16 @@ const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCate
     return (
       <div className="border border-border rounded-lg p-6">
         <h3 className="text-xl font-semibold mb-4">{categoryId.charAt(0).toUpperCase() + categoryId.slice(1)}</h3>
-        <ul className="space-y-2">
+        <div className="grid grid-cols-2 gap-4">
           {categoryOptions.map((item) => (
-            <li key={item} className="text-sm text-muted-foreground">• {item}</li>
+            <button
+              key={item}
+              className="h-32 rounded-lg p-4 flex flex-col justify-center items-center bg-muted hover:bg-muted-foreground/10 transition-colors"
+            >
+              <div className="text-lg font-bold">{item}</div>
+            </button>
           ))}
-        </ul>
+        </div>
       </div>
     );
   };
