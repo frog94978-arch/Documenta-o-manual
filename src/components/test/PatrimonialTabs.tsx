@@ -6,10 +6,11 @@ interface PatrimonialTabsProps {
   setSelectedSubmodule: (submodule: string | null) => void;
   selectedCategory: string | null;
   setSelectedCategory: (category: string | null) => void;
+  selectedFinalSection: string | null; // NEW PROP
+  setSelectedFinalSection: (section: string | null) => void; // NEW PROP
 }
 
-const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCategory, setSelectedCategory }: PatrimonialTabsProps) => {
-  const [selectedFinalSection, setSelectedFinalSection] = useState<string | null>(null); // NEW STATE
+const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCategory, setSelectedCategory, selectedFinalSection, setSelectedFinalSection }: PatrimonialTabsProps) => { // ADDED new props
 
   const submodules = ["compras", "licitacoes", "contratos", "material", "patrimonio", "protocolo", "veiculos"];
 

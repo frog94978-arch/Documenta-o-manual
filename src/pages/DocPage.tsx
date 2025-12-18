@@ -8,6 +8,7 @@ import PatrimonialTabs from "@/components/test/PatrimonialTabs";
 const DocPage = () => {
   const [selectedSubmodule, setSelectedSubmodule] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedFinalSection, setSelectedFinalSection] = useState<string | null>(null); // NEW STATE
   const { category, page } = useParams<{ category: string; page: string }>();
 
   if (!page || !category) {
@@ -31,7 +32,7 @@ const DocPage = () => {
   if (page === "patrimonial") {
     return (
       <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <Breadcrumbs categoryId={category} pageTitle={docPage.title} submoduleTitle={selectedSubmodule} categoryTitle={selectedCategory} />
+        <Breadcrumbs categoryId={category} pageTitle={docPage.title} submoduleTitle={selectedSubmodule} categoryTitle={selectedCategory} selectedFinalSectionTitle={selectedFinalSection} /> {/* ADDED selectedFinalSectionTitle */}
         <div className="mt-8">
           <h1 className="text-3xl font-bold mb-6 text-foreground">Área Patrimonial</h1>
           <p className="text-muted-foreground text-lg mb-8">
@@ -40,7 +41,14 @@ const DocPage = () => {
           <p className="text-muted-foreground text-lg">
             Utilize a navegação abaixo para acessar rapidamente o módulo.
           </p>
-          <PatrimonialTabs selectedSubmodule={selectedSubmodule} setSelectedSubmodule={setSelectedSubmodule} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+          <PatrimonialTabs
+            selectedSubmodule={selectedSubmodule}
+            setSelectedSubmodule={setSelectedSubmodule}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            selectedFinalSection={selectedFinalSection} // NEW PROP
+            setSelectedFinalSection={setSelectedFinalSection} // NEW PROP
+          />
         </div>
       </div>
     );

@@ -7,9 +7,10 @@ interface BreadcrumbsProps {
   pageTitle: string;
   submoduleTitle?: string;
   categoryTitle?: string;
+  selectedFinalSectionTitle?: string; // NEW PROP
 }
 
-const Breadcrumbs = ({ categoryId, pageTitle, submoduleTitle, categoryTitle }: BreadcrumbsProps) => {
+const Breadcrumbs = ({ categoryId, pageTitle, submoduleTitle, categoryTitle, selectedFinalSectionTitle }: BreadcrumbsProps) => { // ADDED new prop
   const category = getCategoryById(categoryId);
 
   return (
@@ -36,6 +37,12 @@ const Breadcrumbs = ({ categoryId, pageTitle, submoduleTitle, categoryTitle }: B
         <>
           <ChevronRight className="h-4 w-4" />
           <span className="text-foreground">{categoryTitle.charAt(0).toUpperCase() + categoryTitle.slice(1)}</span>
+        </>
+      )}
+      {selectedFinalSectionTitle && ( // NEW CONDITIONAL RENDERING
+        <>
+          <ChevronRight className="h-4 w-4" />
+          <span className="text-foreground">{selectedFinalSectionTitle}</span>
         </>
       )}
     </nav>
