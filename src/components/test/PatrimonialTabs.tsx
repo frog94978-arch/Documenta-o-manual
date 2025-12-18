@@ -9,6 +9,8 @@ interface PatrimonialTabsProps {
 }
 
 const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCategory, setSelectedCategory }: PatrimonialTabsProps) => {
+  const [selectedFinalSection, setSelectedFinalSection] = useState<string | null>(null); // NEW STATE
+
   const submodules = ["compras", "licitacoes", "contratos", "material", "patrimonio", "protocolo", "veiculos"];
 
   const categories = [
@@ -21,17 +23,20 @@ const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCate
   const handleSubmoduleClick = (submodule: string) => {
     setSelectedSubmodule(submodule);
     setSelectedCategory(null); // Reset category when changing submodule
+    setSelectedFinalSection(null); // NEW: Reset final section
   };
 
   const handleBackClick = () => {
-    if (selectedCategory) {
+    if (selectedFinalSection) { // NEW: If a final section is selected, go back to category options
+      setSelectedFinalSection(null);
+    } else if (selectedCategory) {
       setSelectedCategory(null);
     } else {
       setSelectedSubmodule(null);
     }
   };
 
-  const renderFinalContent = (submoduleId: string, categoryId: string) => {
+  const renderFinalContent = (submoduleId: string, categoryId: string, onSelectFinalSection: (section: string) => void) => { // ADDED onSelectFinalSection
     const submoduleData = getSubmoduleById(submoduleId);
     if (!submoduleData) return <p>Submódulo não encontrado.</p>;
     
@@ -46,6 +51,7 @@ const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCate
             <button
               key={item}
               className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+              onClick={() => onSelectFinalSection(item)} // ADD onClick handler
             >
               {item}
             </button>
@@ -57,13 +63,26 @@ const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCate
   
   if (selectedSubmodule) {
     if (selectedCategory) {
-      // Final content view
+      if (selectedFinalSection) { // NEW: If a final section is selected
+        return (
+          <div>
+            <button onClick={handleBackClick} className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground">
+              &larr; Voltar para {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}
+            </button>
+            <h2 className="text-2xl font-bold mb-6">{selectedFinalSection}</h2>
+            {/* Placeholder for content of the selected final section */}
+            <p>Conteúdo detalhado para: {selectedFinalSection}</p>
+          </div>
+        );
+      }
+      // If a category is selected, but no final section, display the options for final sections
       return (
         <div>
           <button onClick={handleBackClick} className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground">
             &larr; Voltar para {selectedSubmodule.charAt(0).toUpperCase() + selectedSubmodule.slice(1)}
           </button>
-          {renderFinalContent(selectedSubmodule, selectedCategory)}
+          <h2 className="text-2xl font-bold mb-6">{selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}</h2>
+          {renderFinalContent(selectedSubmodule, selectedCategory, setSelectedFinalSection)} {/* Pass setter */}
         </div>
       );
     }
