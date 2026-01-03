@@ -112,16 +112,16 @@ Implementação de medidas robustas de segurança:
 
 Após entender a visão geral, recomendamos:
 
-1. Ler o [Guia de Início Rápido](/docs/guia-inicio/primeiros-passos)
+1. Ler o [Guia de Início Rápido](/docs/guia-inicio/tomticket)
 2. Configurar sua conta
 3. Explorar os módulos disponíveis`
   },
   {
-    id: "primeiros-passos",
-    title: "Primeiros Passos",
+    id: "tomticket",
+    title: "TomTicket",
     category: "guia-inicio",
     order: 1,
-    content: `# Primeiros Passos
+    content: `# TomTicket
 
 Este guia irá orientá-lo através do processo inicial de configuração e uso do sistema.
 
