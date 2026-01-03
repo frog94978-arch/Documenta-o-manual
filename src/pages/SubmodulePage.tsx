@@ -45,12 +45,7 @@ const SubmodulePage = () => {
               <h3 className="text-xl font-semibold mb-4">Cadastro</h3>
               <ul className="space-y-2">
                 {submoduleData.options.cadastro.map((item) => (
-                  <li key={item.label} className="text-sm text-muted-foreground">
-                    • {item.label}
-                    {item.description && (
-                      <p className="ml-4 text-xs text-gray-500">{item.description}</p>
-                    )}
-                  </li>
+                  <li key={item} className="text-sm text-muted-foreground">• {item}</li>
                 ))}
               </ul>
             </div>
@@ -59,12 +54,7 @@ const SubmodulePage = () => {
               <h3 className="text-xl font-semibold mb-4">Consulta</h3>
               <ul className="space-y-2">
                 {submoduleData.options.consulta.map((item) => (
-                  <li key={item.label} className="text-sm text-muted-foreground">
-                    • {item.label}
-                    {item.description && (
-                      <p className="ml-4 text-xs text-gray-500">{item.description}</p>
-                    )}
-                  </li>
+                  <li key={item} className="text-sm text-muted-foreground">• {item}</li>
                 ))}
               </ul>
             </div>
@@ -73,12 +63,7 @@ const SubmodulePage = () => {
               <h3 className="text-xl font-semibold mb-4">Relatório</h3>
               <ul className="space-y-2">
                 {submoduleData.options.relatorio.map((item) => (
-                  <li key={item.label} className="text-sm text-muted-foreground">
-                    • {item.label}
-                    {item.description && (
-                      <p className="ml-4 text-xs text-gray-500">{item.description}</p>
-                    )}
-                  </li>
+                  <li key={item} className="text-sm text-muted-foreground">• {item}</li>
                 ))}
               </ul>
             </div>
@@ -87,12 +72,7 @@ const SubmodulePage = () => {
               <h3 className="text-xl font-semibold mb-4">Procedimentos</h3>
               <ul className="space-y-2">
                 {submoduleData.options.procedimentos.map((item) => (
-                  <li key={item.label} className="text-sm text-muted-foreground">
-                    • {item.label}
-                    {item.description && (
-                      <p className="ml-4 text-xs text-gray-500">{item.description}</p>
-                    )}
-                  </li>
+                  <li key={item} className="text-sm text-muted-foreground">• {item}</li>
                 ))}
               </ul>
             </div>
