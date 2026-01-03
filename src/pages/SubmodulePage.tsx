@@ -43,38 +43,62 @@ const SubmodulePage = () => {
           <div className="grid md:grid-cols-2 gap-6 mt-8">
             <div className="border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Cadastro</h3>
-              <ul className="space-y-2">
+              <div className="flex flex-col items-center gap-2">
                 {submoduleData.options.cadastro.map((item) => (
-                  <li key={item} className="text-sm text-muted-foreground">• {item}</li>
+                  <Link
+                    key={item.label}
+                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.label.toLowerCase().replace(/[\s/]/g, '-')}`}
+                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
 
             <div className="border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Consulta</h3>
-              <ul className="space-y-2">
+              <div className="flex flex-col items-center gap-2">
                 {submoduleData.options.consulta.map((item) => (
-                  <li key={item} className="text-sm text-muted-foreground">• {item}</li>
+                  <Link
+                    key={item.label}
+                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.label.toLowerCase().replace(/[\s/]/g, '-')}`}
+                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
 
             <div className="border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Relatório</h3>
-              <ul className="space-y-2">
+              <div className="flex flex-col items-center gap-2">
                 {submoduleData.options.relatorio.map((item) => (
-                  <li key={item} className="text-sm text-muted-foreground">• {item}</li>
+                  <Link
+                    key={item.label}
+                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.label.toLowerCase().replace(/[\s/]/g, '-')}`}
+                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
 
             <div className="border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Procedimentos</h3>
-              <ul className="space-y-2">
+              <div className="flex flex-col items-center gap-2">
                 {submoduleData.options.procedimentos.map((item) => (
-                  <li key={item} className="text-sm text-muted-foreground">• {item}</li>
+                  <Link
+                    key={item.label}
+                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.label.toLowerCase().replace(/[\s/]/g, '-')}`}
+                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>
