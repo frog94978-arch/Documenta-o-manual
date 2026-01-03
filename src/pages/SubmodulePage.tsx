@@ -41,20 +41,7 @@ const SubmodulePage = () => {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mt-8">
-            <div className="border border-border rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4">Cadastro</h3>
-              <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
-                {submoduleData.options.cadastro.map((item) => (
-                  <Link
-                    key={item.label}
-                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.label.toLowerCase().replace(/[\s/]/g, '-')}`}
-                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
+
 
             <div className="border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Consulta</h3>
