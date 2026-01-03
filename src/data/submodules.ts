@@ -1,7 +1,7 @@
 export interface SubmoduleOption {
   id: string;
   label: string;
-  items?: { label: string; description?: string }[];
+  items?: string[];
 }
 
 export interface Submodule {
@@ -9,10 +9,10 @@ export interface Submodule {
   title: string;
   module: string;
   options: {
-    cadastro: { label: string; description?: string }[];
-    consulta: { label: string; description?: string }[];
-    relatorio: { label: string; description?: string }[];
-    procedimentos: { label: string; description?: string }[];
+    cadastro: string[];
+    consulta: string[];
+    relatorio: string[];
+    procedimentos: string[];
   };
 }
 
@@ -166,17 +166,14 @@ export const submodules: Submodule[] = [
     module: "patrimonial",
     options: {
       cadastro: [
-        {
-          label: "Grupos de Material/Serviço",
-          description: "Os grupos compreendem a agregação de elementos de despesa que apresentam as mesmas características quanto ao objeto de gasto. Assim, formados os grupos, a cada um deles teremos ligados um ou mais elementos de despesas, que servem para identificar os objetos de gasto, tais como vencimentos e vantagens fixas, juros, diárias, material de consumo, serviços de terceiros, obras e instalações, etc. Como exemplo, pode-se citar um grupo chamado Gêneros Alimentícios que estará ligado aos elementos de despesa material de consumo e material de distribuição gratuita."
-        },
-        { label: "Subgrupos de Materiais/Serviços" },
-        { label: "Materiais/Serviços" },
-        { label: "Cadastro de Unidades" },
-        { label: "Cadastro de Tipos de Certificados" },
-        { label: "Cadastro de Documentos" },
-        { label: "Documentos por Tipo de Certificado" },
-        { label: "Fornecedores" }
+        "Grupos de Material/Serviço",
+        "Subgrupos de Materiais/Serviços",
+        "Materiais/Serviços",
+        "Cadastro de Unidades",
+        "Cadastro de Tipos de Certificados",
+        "Cadastro de Documentos",
+        "Documentos por Tipo de Certificado",
+        "Fornecedores"
       ],
       consulta: [],
       relatorio: [],
