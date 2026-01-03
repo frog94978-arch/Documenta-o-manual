@@ -35,9 +35,7 @@ const DocPage = () => {
         <Breadcrumbs categoryId={category} pageTitle={docPage.title} submoduleTitle={selectedSubmodule} categoryTitle={selectedCategory} selectedFinalSectionTitle={selectedFinalSection} /> {/* ADDED selectedFinalSectionTitle */}
         <div className="mt-8">
           <h1 className="text-3xl font-bold mb-6 text-foreground">Área Patrimonial</h1>
-          <p className="text-muted-foreground text-lg mb-8">
-            Esta área é responsável pela gestão de processos administrativos e patrimoniais do sistema.
-          </p>
+                    <p className="text-muted-foreground text-lg mb-8">Com o modulo Patrimonial é possível o controle e gerenciamento dos processos de compras da instituição. Auxilia no cadastramento e controle de bens e da frota de veículos. Possibilita o gerenciamento e controle dos contratos e convênios. Também dispomos de diversos relatórios e consultas, a fim de garantir o gerenciamento patrimonial da instituição.</p>
           <p className="text-muted-foreground text-lg">
             Utilize a navegação abaixo para acessar rapidamente o módulo.
           </p>
