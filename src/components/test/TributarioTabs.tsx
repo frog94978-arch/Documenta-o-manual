@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getSubmoduleById } from "@/data/submodules";
 
-interface PatrimonialTabsProps {
+interface TributarioTabsProps {
   selectedSubmodule: string | null;
   setSelectedSubmodule: (submodule: string | null) => void;
   selectedCategory: string | null;
@@ -10,9 +10,9 @@ interface PatrimonialTabsProps {
   setSelectedFinalSection: (section: string | null) => void; // NEW PROP
 }
 
-const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCategory, setSelectedCategory, selectedFinalSection, setSelectedFinalSection }: PatrimonialTabsProps) => { // ADDED new props
+const TributarioTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCategory, setSelectedCategory, selectedFinalSection, setSelectedFinalSection }: TributarioTabsProps) => { // ADDED new props
 
-  const submodules = ["Compras", "Contratos", "Licitações", "Material", "Ouvidoria", "Patrimônio", "PNCP", "Protocolo", "Veículos"];
+  const submodules = ["agua", "arrecadacao", "cadastro", "cemiterio", "contribuicao", "diversos", "divida ativa", "fiscal", "inflatores", "issqn", "itbi", "juridico", "marcas", "meio ambiente", "notificacoes", "projetos"];
 
   const categories = [
     { value: "cadastro", label: "Cadastro" },
@@ -119,11 +119,11 @@ const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCate
           className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
           onClick={() => handleSubmoduleClick(submodule)}
         >
-          {submodule}
+          {submodule.charAt(0).toUpperCase() + submodule.slice(1)}
         </button>
       ))}
     </nav>
   );
 };
 
-export default PatrimonialTabs;
+export default TributarioTabs;

@@ -43,7 +43,6 @@ const SubmodulePage = () => {
           <div className="grid md:grid-cols-2 gap-6 mt-8">
 
 
-            <div className="border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Consulta</h3>
               <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
                 {submoduleData.options.consulta.map((item) => (
@@ -56,9 +55,7 @@ const SubmodulePage = () => {
                   </Link>
                 ))}
               </nav>
-            </div>
 
-            <div className="border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Relatório</h3>
               <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
                 {submoduleData.options.relatorio.map((item) => (
@@ -71,9 +68,7 @@ const SubmodulePage = () => {
                   </Link>
                 ))}
               </nav>
-            </div>
 
-            <div className="border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Procedimentos</h3>
               <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
                 {submoduleData.options.procedimentos.map((item) => (
@@ -86,7 +81,6 @@ const SubmodulePage = () => {
                   </Link>
                 ))}
               </nav>
-            </div>
           </div>
         </div>
       </div>

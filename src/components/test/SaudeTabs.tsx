@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getSubmoduleById } from "@/data/submodules";
 
-interface PatrimonialTabsProps {
+interface SaudeTabsProps {
   selectedSubmodule: string | null;
   setSelectedSubmodule: (submodule: string | null) => void;
   selectedCategory: string | null;
@@ -10,9 +10,9 @@ interface PatrimonialTabsProps {
   setSelectedFinalSection: (section: string | null) => void; // NEW PROP
 }
 
-const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCategory, setSelectedCategory, selectedFinalSection, setSelectedFinalSection }: PatrimonialTabsProps) => { // ADDED new props
+const SaudeTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCategory, setSelectedCategory, selectedFinalSection, setSelectedFinalSection }: SaudeTabsProps) => { // ADDED new props
 
-  const submodules = ["Compras", "Contratos", "Licitações", "Material", "Ouvidoria", "Patrimônio", "PNCP", "Protocolo", "Veículos"];
+  const submodules = ["Agendamento", "Ambulatorial", "Farmácia", "Fundo Assistência Médica", "Hiperdia", "Laboratório", "TFD", "Vacinas"];
 
   const categories = [
     { value: "cadastro", label: "Cadastro" },
@@ -126,4 +126,4 @@ const PatrimonialTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCate
   );
 };
 
-export default PatrimonialTabs;
+export default SaudeTabs;
