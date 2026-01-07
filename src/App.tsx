@@ -8,6 +8,7 @@ import DocPage from "./pages/DocPage";
 import SubmodulePage from "./pages/SubmodulePage";
 import PncpPage from "./pages/PncpPage"; // Import PncpPage
 import DocLayout from "@/components/test/DocLayout";
+import AreasPage from "./pages/AreasPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,10 +22,14 @@ const App = () => (
         <Routes>
           <Route element={<DocLayout />}>
             <Route path="/" element={<Index />} />
+            <Route path="/areas" element={<AreasPage />} />
             <Route path="/docs/:category/:page" element={<DocPage />} />
-            <Route path="/modulos/:module/:submodule" element={<SubmodulePage />} />
-            <Route path="/pncp/:category" element={<PncpPage />} /> 
-            <Route path="/pncp/:category/:option" element={<PncpPage />} /> 
+            <Route
+              path="/modulos/:module/:submodule"
+              element={<SubmodulePage />}
+            />
+            <Route path="/pncp/:category" element={<PncpPage />} />
+            <Route path="/pncp/:category/:option" element={<PncpPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -32,5 +37,6 @@ const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
+
 
 export default App;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getSubmoduleById } from "@/data/submodules";
+import { FileText, Hourglass, Users, Briefcase } from "lucide-react";
 
 interface RecursosHumanosTabsProps {
   selectedSubmodule: string | null;
@@ -10,15 +11,28 @@ interface RecursosHumanosTabsProps {
   setSelectedFinalSection: (section: string | null) => void; // NEW PROP
 }
 
-const RecursosHumanosTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCategory, setSelectedCategory, selectedFinalSection, setSelectedFinalSection }: RecursosHumanosTabsProps) => { // ADDED new props
+const RecursosHumanosTabs = ({
+  selectedSubmodule,
+  setSelectedSubmodule,
+  selectedCategory,
+  setSelectedCategory,
+  selectedFinalSection,
+  setSelectedFinalSection,
+}: RecursosHumanosTabsProps) => {
+  // ADDED new props
 
-  const submodules = ["eSocial", "Est Probatorio", "Pessoal", "RH"];
+  const submodules = [
+    { name: "eSocial", icon: <FileText size={20} /> },
+    { name: "Est Probatorio", icon: <Hourglass size={20} /> },
+    { name: "Pessoal", icon: <Users size={20} /> },
+    { name: "RH", icon: <Briefcase size={20} /> },
+  ];
 
   const categories = [
     { value: "cadastro", label: "Cadastro" },
     { value: "consulta", label: "Consulta" },
     { value: "relatorio", label: "Relatório" },
-    { value: "procedimentos", label: "Procedimentos" }
+    { value: "procedimentos", label: "Procedimentos" },
   ];
 
   const handleSubmoduleClick = (submodule: string) => {
@@ -28,7 +42,8 @@ const RecursosHumanosTabs = ({ selectedSubmodule, setSelectedSubmodule, selected
   };
 
   const handleBackClick = () => {
-    if (selectedFinalSection) { // NEW: If a final section is selected, go back to category options
+    if (selectedFinalSection) {
+      // NEW: If a final section is selected, go back to category options
       setSelectedFinalSection(null);
     } else if (selectedCategory) {
       setSelectedCategory(null);
@@ -37,16 +52,25 @@ const RecursosHumanosTabs = ({ selectedSubmodule, setSelectedSubmodule, selected
     }
   };
 
-  const renderFinalContent = (submoduleId: string, categoryId: string, onSelectFinalSection: (section: string) => void) => { // ADDED onSelectFinalSection
+  const renderFinalContent = (
+    submoduleId: string,
+    categoryId: string,
+    onSelectFinalSection: (section: string) => void
+  ) => {
+    // ADDED onSelectFinalSection
     const submoduleData = getSubmoduleById(submoduleId);
     if (!submoduleData) return <p>Submódulo não encontrado.</p>;
-    
-    const categoryOptions = submoduleData.options[categoryId as keyof typeof submoduleData.options];
-    if (!categoryOptions || categoryOptions.length === 0) return <p>Nenhum item encontrado para esta categoria.</p>;
+
+    const categoryOptions =
+      submoduleData.options[categoryId as keyof typeof submoduleData.options];
+    if (!categoryOptions || categoryOptions.length === 0)
+      return <p>Nenhum item encontrado para esta categoria.</p>;
 
     return (
       <div className="border border-border rounded-lg p-6">
-        <h3 className="text-xl font-semibold mb-4">{categoryId.charAt(0).toUpperCase() + categoryId.slice(1)}</h3>
+        <h3 className="text-xl font-semibold mb-4">
+          {categoryId.charAt(0).toUpperCase() + categoryId.slice(1)}
+        </h3>
         <div className="flex flex-col items-center gap-2">
           {categoryOptions.map((item) => (
             <button
@@ -61,14 +85,20 @@ const RecursosHumanosTabs = ({ selectedSubmodule, setSelectedSubmodule, selected
       </div>
     );
   };
-  
+
   if (selectedSubmodule) {
     if (selectedCategory) {
-      if (selectedFinalSection) { // NEW: If a final section is selected
+      if (selectedFinalSection) {
+        // NEW: If a final section is selected
         return (
           <div>
-            <button onClick={handleBackClick} className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground">
-              &larr; Voltar para {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}
+            <button
+              onClick={handleBackClick}
+              className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground"
+            >
+              &larr; Voltar para{" "}
+              {selectedCategory.charAt(0).toUpperCase() +
+                selectedCategory.slice(1)}
             </button>
             <h2 className="text-2xl font-bold mb-6">{selectedFinalSection}</h2>
             {/* Placeholder for content of the selected final section */}
@@ -79,22 +109,41 @@ const RecursosHumanosTabs = ({ selectedSubmodule, setSelectedSubmodule, selected
       // If a category is selected, but no final section, display the options for final sections
       return (
         <div>
-          <button onClick={handleBackClick} className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground">
-            &larr; Voltar para {selectedSubmodule.charAt(0).toUpperCase() + selectedSubmodule.slice(1)}
+          <button
+            onClick={handleBackClick}
+            className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground"
+          >
+            &larr; Voltar para{" "}
+            {selectedSubmodule.charAt(0).toUpperCase() +
+              selectedSubmodule.slice(1)}
           </button>
-          <h2 className="text-2xl font-bold mb-6">{selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}</h2>
-          {renderFinalContent(selectedSubmodule, selectedCategory, setSelectedFinalSection)} {/* Pass setter */}
+          <h2 className="text-2xl font-bold mb-6">
+            {selectedCategory.charAt(0).toUpperCase() +
+              selectedCategory.slice(1)}
+          </h2>
+          {renderFinalContent(
+            selectedSubmodule,
+            selectedCategory,
+            setSelectedFinalSection
+          )}{" "}
+          {/* Pass setter */}
         </div>
       );
     }
-    
+
     // Category selection view
     return (
       <div>
-        <button onClick={handleBackClick} className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground">
+        <button
+          onClick={handleBackClick}
+          className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground"
+        >
           &larr; Voltar para Módulos
         </button>
-        <h2 className="text-2xl font-bold mb-6">{selectedSubmodule.charAt(0).toUpperCase() + selectedSubmodule.slice(1)}</h2>
+        <h2 className="text-2xl font-bold mb-6">
+          {selectedSubmodule.charAt(0).toUpperCase() +
+            selectedSubmodule.slice(1)}
+        </h2>
         <div className="grid grid-cols-2 gap-4">
           {categories.map((category) => (
             <button
@@ -115,11 +164,12 @@ const RecursosHumanosTabs = ({ selectedSubmodule, setSelectedSubmodule, selected
     <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
       {submodules.map((submodule) => (
         <button
-          key={submodule}
-          className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
-          onClick={() => handleSubmoduleClick(submodule)}
+          key={submodule.name}
+          className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2"
+          onClick={() => handleSubmoduleClick(submodule.name)}
         >
-          {submodule}
+          {submodule.icon}
+          {submodule.name}
         </button>
       ))}
     </nav>
