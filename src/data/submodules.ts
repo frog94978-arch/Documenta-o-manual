@@ -165,17 +165,20 @@ export const submodules: Submodule[] = [
     title: "Compras",
     module: "patrimonial",
     options: {
-      cadastro: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificados",
-        "Cadastro de Documentos",
-        "Documentos por Tipo de Certificado",
-        "Fornecedores"
+      cadastro: [],
+      consulta: [
+        "Solicitações",
+        "Ordens de Compra",
+        "Consulta Fornecedor",
+        "Consulta Item",
+        "Saldo da Despesa",
+        "Consulta Empenho",
+        "CGM",
+        "Cotações de Preços",
+        "Abertura Registro de Preço",
+        "Consulta Processo de Compras",
+        "CGM (novo)"
       ],
-      consulta: [],
       relatorio: [],
       procedimentos: []
     }

@@ -20,6 +20,7 @@ export const categories: DocCategory[] = [
 
   { id: "tutoriais", title: "Tutoriais", icon: "GraduationCap", order: 4 },
 
+
 ];
 
 export const pages: DocPage[] = [
@@ -300,17 +301,12 @@ Gestão de compromissos:
     order: 3,
     content: `# Área Patrimonial
 
-Gestão completa do patrimônio público, compras e almoxarifado.
+Gestão completa do patrimônio público e almoxarifado.
 
 ## Áreas do Módulo
 
-### [Compras](/modulos/patrimonial/compras)
-Gestão de processos de aquisição:
-
-- Solicitação de compras
-- Cotação de preços
-- Ordem de compra
-- Acompanhamento de pedidos
+### [Compras](/docs/compras/compras)
+Gestão de processos de aquisição.
 
 ### [Licitações](/modulos/patrimonial/licitacoes)
 Processos licitatórios:
@@ -1111,6 +1107,15 @@ Depois de salvar:
 💡 **Salve rascunhos**: Use "Salvar como Rascunho" se precisar pausar o cadastro.
 
 💡 **Copie cadastros**: Use "Duplicar" para criar cadastros similares rapidamente.`
+  },
+  {
+    id: "solicitacoes",
+    title: "Solicitações",
+    category: "compras",
+    order: 1,
+    content: `# Submódulo Solicitações
+
+Esta rotina possibilita a consulta e acompanhamento das principais fases do processo de aquisição de materiais/serviços realizados pela administração pública.`
   },
 ];
 

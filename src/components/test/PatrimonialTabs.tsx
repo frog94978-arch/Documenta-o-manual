@@ -33,7 +33,6 @@ const PatrimonialTabs = ({
   setSelectedFinalSection,
 }: PatrimonialTabsProps) => {
   const submodules = [
-    { id: "compras", name: "Compras", icon: <ShoppingCart size={20} /> },
     { id: "contratos", name: "Contratos", icon: <FileText size={20} /> },
     { id: "licitacoes", name: "Licitações", icon: <Gavel size={20} /> },
     { id: "material", name: "Material", icon: <Box size={20} /> },
@@ -108,6 +107,7 @@ const PatrimonialTabs = ({
             selectedFinalSection as keyof typeof comprasCadastroContent
           ];
         return (
+        <div className="max-w-none">
           <div>
             <button
               onClick={handleBackClick}
@@ -122,10 +122,29 @@ const PatrimonialTabs = ({
               <article className="prose prose-slate prose-lg max-w-none">
                 <MarkdownContent content={content} />
               </article>
+            ) : selectedFinalSection === "Solicitações" ? (
+              <article className="prose prose-slate prose-lg max-w-none">
+                # Submódulo Solicitações
+Esta rotina possibilita a consulta e acompanhamento das principais fases do processo de aquisição de materiais/serviços realizados pela administração pública.
+
+A tela de consulta de solicitações oferece uma visão detalhada e centralizada de todas as requisições de compra. Nela, é possível verificar o andamento de cada solicitação, desde sua criação até a efetiva entrega do material ou serviço.
+
+## Funcionalidades Principais
+
+- **Consulta Abrangente**: Visualize todas as solicitações de compra, com filtros por número, data, departamento solicitante, e status.
+- **Rastreamento de Status**: Acompanhe o status atual de cada solicitação (ex: pendente, em cotação, autorizada, empenhada, entregue).
+- **Detalhamento do Item**: Acesse informações detalhadas sobre os itens solicitados, incluindo especificações, quantidades e valores estimados.
+- **Histórico Completo**: Consulte todo o histórico de um processo de compra, desde a solicitação inicial até a ordem de compra e o recebimento.
+- **Transparência**: Facilita o acesso à informação, permitindo que os departamentos acompanhem suas solicitações de forma autônoma.
+
+Esta funcionalidade é essencial para a gestão eficiente do setor de compras, garantindo controle, transparência e agilidade nos processos de aquisição.
+
+              </article>
             ) : (
               <p>Conteúdo não encontrado.</p>
             )}
           </div>
+        </div>
         );
       }
       // If a category is selected, but no final section, display the options for final sections
