@@ -222,4 +222,24 @@ Para excluir um fornecedor:
 2.  Clique em "Excluir".
 3.  Confirme a exclusão.
 `,
+  "Solicitações": `
+<!--
+Elaborado por Júnior Silva <junior@dbseller.com.br>
+Técnico em Implantação Área Patrimonial
+-->
+
+# Solicitações
+
+Esta rotina possibilita a consulta e acompanhamento das principais fases do processo de aquisição de materiais/serviços realizados pela administração pública. A tela de consulta de solicitações oferece uma visão detalhada e centralizada de todas as requisições de compra. Nela, é possível verificar o andamento de cada solicitação, desde sua criação até a efetiva entrega do material ou serviço.
+
+## Funcionalidades Principais
+
+- **Consulta Abrangente**: Visualize todas as solicitações de compra, com filtros por número, data, departamento solicitante, e status.
+- **Rastreamento de Status**: Acompanhe o status atual de cada solicitação (ex: pendente, em cotação, autorizada, empenhada, entregue).
+- **Detalhamento do Item**: Acesse informações detalhadas sobre os itens solicitados, incluindo especificações, quantidades e valores estimados.
+- **Histórico Completo**: Consulte todo o histórico de um processo de compra, desde a solicitação inicial até a ordem de compra e o recebimento.
+- **Transparência**: Facilita o acesso à informação, permitindo que os departamentos acompanhem suas solicitações de forma autônoma.
+
+Esta funcionalidade é essencial para a gestão eficiente do setor de compras, garantindo controle, transparência e agilidade nos processos de aquisição.
+`,
 };
