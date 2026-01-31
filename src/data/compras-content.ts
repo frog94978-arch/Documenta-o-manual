@@ -223,23 +223,76 @@ Para excluir um fornecedor:
 3.  Confirme a exclusão.
 `,
   "Solicitações": `
-<!--
-Elaborado por Júnior Silva <junior@dbseller.com.br>
-Técnico em Implantação Área Patrimonial
--->
-
 # Solicitações
 
-Esta rotina possibilita a consulta e acompanhamento das principais fases do processo de aquisição de materiais/serviços realizados pela administração pública. A tela de consulta de solicitações oferece uma visão detalhada e centralizada de todas as requisições de compra. Nela, é possível verificar o andamento de cada solicitação, desde sua criação até a efetiva entrega do material ou serviço.
+Esta rotina possibilita a consulta e acompanhamento das principais fases do processo de aquisição de materiais/serviços realizados pela administração pública.
 
-## Funcionalidades Principais
+**DB:PATRIMONIAL > Compras > Consultas > Solicitações**
 
-- **Consulta Abrangente**: Visualize todas as solicitações de compra, com filtros por número, data, departamento solicitante, e status.
-- **Rastreamento de Status**: Acompanhe o status atual de cada solicitação (ex: pendente, em cotação, autorizada, empenhada, entregue).
-- **Detalhamento do Item**: Acesse informações detalhadas sobre os itens solicitados, incluindo especificações, quantidades e valores estimados.
-- **Histórico Completo**: Consulte todo o histórico de um processo de compra, desde a solicitação inicial até a ordem de compra e o recebimento.
-- **Transparência**: Facilita o acesso à informação, permitindo que os departamentos acompanhem suas solicitações de forma autônoma.
+![Tela de Consulta Solicitação](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image137.png)
 
-Esta funcionalidade é essencial para a gestão eficiente do setor de compras, garantindo controle, transparência e agilidade nos processos de aquisição.
+Conforme a imagem acima o usuário poderá digitar o número da solicitação de compras no campo indicado, ou caso não saiba, poderá clicar sobre "Número da solicitação" e aplicar filtros adicionais como intervalo de data de solicitação.
+
+Filtros complementar pode ser utilizado, inserindo conteúdo entre o caracter % para busca que contenha determinada expressão ou informação exata no campo "Indique o Conteúdo", logo após clicando sobre o link de alguma das colunas disponivel, exemplo: resumo, departamento, nome do usuário entre outras colunas.
+
+![Filtros Complementares](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image138.png)
+
+Junto com essa forma de filtro, ainda é possível alterar a quantidade padrão de listagem (15) bem como mostrar resultados diferentes que retorna registros únicos entre a coluna selecionada.
+
+Após a seleção da Solicitação de Compras e o usuário clicar em "Enviar" ou "Pesquisar" caso tenha acessado o link, será listado a seguinte tela:
+
+![Consulta Solicitação - Dados](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image139.png)
+
+## Dados da Solicitação:
+
+- **Solicitação de Compras**: N° sequencial gerado automaticamente pelo sistema e atribuído a solicitação de compras no momento da inclusão.
+
+- **Processo Administrativo (P.A)**: Processo administrativo informado no momento da inclusão da solicitação de compras.
+
+- **Departamento**: departamento utilizado durante a inclusão de solicitação de compras.
+
+- **Usuário Solicitante**: Usuário que realizou a inclusão de Solicitação de Compras, este é determinado no canto superior direito da tela do e-cidade.
+
+- **Data da Solicitação**: data de inclusão da solicitação de compras, esta informação fica na parte inferior direita da tela no momento da inclusão.
+
+- **Instituição**: instituição que o usuário estava no momento da inclusão da solicitação de compras.
+
+- **Tipo Solicitação**: esta informação é definida logo na primeira tela da inclusão da Solicitação de Compras, podendo escolher entre: Normal, Pacto ou Registro de Preço.
+
+- **Resumo**: resumo definido no momento da inclusão da solicitação de compras.
+
+- **Situação**: se a solicitação de compras está "Liberado" ou "Não Liberado".
+
+- **Anulada**: se a solicitação de compras está anulada SIM ou NÃO.
+
+- **Fornecedor Sugerido**: se aplicável será exibido o "Fornecedor Sugerido" informado na última aba durante a inclusão da Solicitação de Compras.
+
+## Itens/Dotações:
+
+Retorna os dados dos materiais/serviços que estão sendo requisitados, bem como a dotação a ser utilizada para esta aquisição.
+
+## Orçamento de Solicitações:
+
+Se existente retorna os dados relativos aos orçamentos de solicitações de compras.
+
+## Processo de Compras:
+
+Se existente retorna os dados relativos ao processo de compras.
+
+## Orçamento de Processo de Compras:
+
+Se existente retorna os dados relativos ao orçamento do processo de compras.
+
+## Licitação:
+
+Caso esta solicitação de compras esteja vinculada em uma licitação, esta será listada através desse botão.
+
+## Autorização de Empenho:
+
+Se houver, retorna o código de autorização e empenho gerados pelo módulo Compras. O usuário poderá obter informações relativas sobre a autorização de empenho e empenho, clicando nos links destes códigos.
+
+## Pendências:
+
+Caso tenha sido lançada alguma pendência durante o trâmite da solicitação de compras, será listada através desse botão.
 `,
 };

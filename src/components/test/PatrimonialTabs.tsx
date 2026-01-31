@@ -81,22 +81,17 @@ const PatrimonialTabs = ({
       return <p>Nenhum item encontrado para esta categoria.</p>;
 
     return (
-      <div className="border border-border rounded-lg p-6">
-        <h3 className="text-xl font-semibold mb-4">
-          {categoryId.charAt(0).toUpperCase() + categoryId.slice(1)}
-        </h3>
-        <div className="flex flex-col items-center gap-2">
-          {categoryOptions.map((item) => (
-            <button
-              key={item}
-              className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
-              onClick={() => onSelectFinalSection(item)}
-            >
-              {item}
-            </button>
-          ))}
-        </div>
-      </div>
+      <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
+        {categoryOptions.map((item) => (
+          <button
+            key={item}
+            className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2"
+            onClick={() => onSelectFinalSection(item)}
+          >
+            {item}
+          </button>
+        ))}
+      </nav>
     );
   };
 
