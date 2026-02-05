@@ -75,8 +75,11 @@ const PatrimonialTabs = ({
     const submoduleData = getSubmoduleById(submoduleId.toLowerCase());
     if (!submoduleData) return <p>Submódulo não encontrado.</p>;
 
-    const categoryOptions =
+    let categoryOptions =
       submoduleData.options[categoryId as keyof typeof submoduleData.options];
+
+    // Use the options defined in submodule data (allows different labels per category)
+
     if (!categoryOptions || categoryOptions.length === 0)
       return <p>Nenhum item encontrado para esta categoria.</p>;
 

@@ -295,4 +295,115 @@ Se houver, retorna o código de autorização e empenho gerados pelo módulo Com
 
 Caso tenha sido lançada alguma pendência durante o trâmite da solicitação de compras, será listada através desse botão.
 `,
+  "Ordens de Compra": `
+# Ordens de Compra
+
+Rotina de consulta que permite verificar as ordens de compras geradas no e-cidade e seus respectivos dados.
+
+**DB:PATRIMONIAL > Compras > Consultas > Ordens de Compra**
+
+## Filtros de Consulta
+
+Para realizar esta consulta devemos informar o código de algum dos 4 filtros abaixo:
+
+![Filtros de Ordens de Compra](../../assets/images/Ordemdecompra1.jpg.png)
+
+- **Código**: Número da ordem de compra que se deseja consultar.
+
+- **Numcgm**: Número do CGM do fornecedor para o qual a ordem de compra foi gerada.
+
+- **Empenho**: Número do empenho do exercício.
+
+- **Número**: Número sequencial do empenho utilizado para inclusão da ordem de compra.
+
+## Dados da Ordem de Compra
+
+Retorna informações como:
+
+- **Fornecedor**: Identificação do fornecedor para o qual a ordem de compra foi gerada.
+
+- **Data de Emissão**: Data em que a ordem de compra foi emitida.
+
+- **Departamento**: Departamento destinado à entrada da ordem de compra.
+
+- **Data de Anulação**: Data em que a ordem de compra foi anulada (se houver).
+
+- **Tipo de Compra**: Classificação do tipo de compra realizada.
+
+- **Total da Ordem**: Valor total da ordem de compra.
+
+- **Valor Lançado**: Valor já lançado/recebido.
+
+- **A Lançar**: Valor que ainda precisa ser lançado/recebido.
+
+- **Valor Anulado**: Valor da ordem que foi anulado.
+
+- **Observações**: Anotações adicionais relacionadas à ordem de compra.
+
+## Itens
+
+Retorna informações como:
+
+- **Número do Empenho**: Identificação do empenho associado ao item.
+
+- **Código do Empenho**: Código do empenho do exercício.
+
+- **Código do Material**: Identificação do material ou serviço.
+
+- **Descrição do Material**: Descrição completa do material ou serviço.
+
+- **Valor Unitário**: Valor por unidade do material ou serviço.
+
+- **Total**: Valor total do item.
+
+## Movimentações no Estoque
+
+Retorna registros pertinentes à movimentação dos itens da ordem de compra, bem como sua movimentação de entrada e outros tipos de movimentações como anulação.
+`,
+  "Consulta Fornecedor": `
+# Consulta Fornecedor
+
+Esta rotina exibe dados do fornecedor cadastrado previamente no cadastro de fornecedores do módulo compras.
+
+**DB:PATRIMONIAL > Compras > Consultas > Consulta Fornecedor**
+
+## Filtro de Pesquisa
+
+**Fornecedor**: O usuário deverá informar o código do fornecedor. Caso desconheça o código poderá optar pela pesquisa, clicando no link "Fornecedor". O e-cidade abrirá uma listagem de pesquisa com campos adicionais como:
+
+- **Fornecedor**: Código do fornecedor
+- **Nome/Razão Social**: Nome ou razão social do fornecedor
+- **CNPJ/CPF**: Documento do fornecedor
+- **Data Lançamento**: Data de cadastro do fornecedor
+
+Estes campos podem ser utilizados como filtros a fim de refinar a busca e consequentemente o resultado.
+
+## Dados Fornecedor
+
+Na parte superior da tela o sistema irá exibir informações como:
+
+- **Nome/Razão Social**: Nome ou razão social do fornecedor
+- **CNPJ/CPF**: Número do CNPJ ou CPF do fornecedor
+- **Data Lançamento**: Data em que o fornecedor foi cadastrado
+- **Bloqueado**: Indicativo se o fornecedor está bloqueado ou não
+- **Objeto Social**: Descrição do objeto social do fornecedor
+
+## Detalhamento
+
+### Consulta Contas
+
+Retorna informações referente aos dados bancários do fornecedor.
+
+### Consulta Movimentos
+
+Lista de movimentos lançados na aba Movimento no cadastro de fornecedor.
+
+### Grupo de Fornecimento
+
+Retorna os grupos de fornecimento vinculado no momento do cadastro do fornecedor (aba Subgrupo).
+
+### Certificados
+
+Lista de certificados já emitidos para o fornecedor.
+`,
 };
