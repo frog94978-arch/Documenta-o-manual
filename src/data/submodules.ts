@@ -210,8 +210,33 @@ export const submodules: Submodule[] = [
         "Consulta Processo de Compras",
         "CGM (novo)"
       ],
-      relatorio: [],
-      procedimentos: []
+      relatorio: [
+        "Registro de preço",
+        "Documentos",
+        "Gerenciais",
+        "Conferência",
+        "Cadastrais",
+        "Gera Lista de Itens em TXT"
+      ],
+      procedimentos: [
+        "Libera Fornecedor",
+        "Solicitação de Compras",
+        "Orçamento de solicitação",
+        "Liberar solicitação",
+        "Processo de compras",
+        "Orçamento de processo de compras",
+        "Autorização de Empenho",
+        "Parâmetros",
+        "Ordem de Compra",
+        "Andamento Inicial",
+        "Andamento da solicitação",
+        "Gera Certificado",
+        "Acessa Itens",
+        "Configurações do texto da ordem de compra",
+        "Registro de Preço",
+        "Manutenção de reserva de saldo",
+        "Manutenção Solicitação de compras Registro de Preço"
+      ]
     }
   },
   {
@@ -220,36 +245,59 @@ export const submodules: Submodule[] = [
     module: "patrimonial",
     options: {
       cadastro: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Modalidades",
+        "Cadastro de Locais",
+        "Cadastro de Comissão",
+        "Cadastro",
+        "Tipo de Empresas",
+        "Movimentação de Registro de Preços"
       ],
       consulta: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Licitação",
+        "Edital(Download)",
+        "CGM"
       ],
       relatorio: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Licitação",
+        "Relatório Resumido da Licitação",
+        "Mapa das Propostas",
+        "Gera Lista de Itens em TXT",
+        "Homologação de Processo",
+        "Adjudicação de Processo",
+        "Licitações Liberadas na Web",
+        "Edital (Download)",
+        "Emite Autorização de empenho",
+        "Situações da Licitação",
+        "Fornecedores Empatados e Cotações ME/EPP",
+        "Historico do Julgamento da Licitação Itens Bloqueados",
+        "SICOM - Edital e Licitação"
       ],
       procedimentos: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Configuração dos Editais",
+        "Edital Web",
+        "Inclusão Proposta Fornecedor",
+        "Licitação",
+        "Fornecedores da Licitação",
+        "Credenciamento de Fornecedores da Licitação",
+        "Reserva de Cotas",
+        "Lançar Propostas",
+        "Habilitação de Fornecedores",
+        "Eventos",
+        "Trocar Fornecedor",
+        "Cancelamento de Julgamento",
+        "Gerar Autorização",
+        "Anula Autorização",
+        "Manutenção de Licitação",
+        "Andamento da Solicitação",
+        "Acessa Itens",
+        "Parâmetros",
+        "Registro de Preço",
+        "Edital",
+        "Ata",
+        "Minuta",
+        "Exportação de Dados",
+        "Portal Compras Publicas",
+        "Integração Licitar Digital"
       ]
     }
   },
@@ -268,24 +316,29 @@ export const submodules: Submodule[] = [
         "Penalidades"
       ],
       consulta: [
-        "Acordos",
+        "Acordo",
         "Consulta Empenho"
       ],
       relatorio: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Movimentações",
+        "Conferências",
+        "Reimpressão Acordo",
+        "Extrato de Contrato",
+        "Contratos sem Programação de Competência"
       ],
       procedimentos: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Acordo",
+        "Anulação do Contrato",
+        "Assinatura do Contrato",
+        "Homologação",
+        "Recisão do Contrato",
+        "Aditamentos",
+        "Regime de Competência",
+        "Paralisação",
+        "Reativação",
+        "Parâmetros",
+        "Excluir Aditamento",
+        "Acertar Valores Item Acordo Dotação"
       ]
     }
   },
@@ -295,36 +348,47 @@ export const submodules: Submodule[] = [
     module: "patrimonial",
     options: {
       cadastro: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
         "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Cadastro de Material",
+        "Cadastro de Fabricantes",
+        "Depósitos",
+        "Grupo/Subgrupo",
+        "Veiculos Tipo/Grupo/Subgrupo"
       ],
       consulta: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Material",
+        "Ordens de Compra",
+        "Consulta Empenho",
+        "Arquivos Pit",
+        "Controle de Validade"
       ],
       relatorio: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Movimentação",
+        "Conferência",
+        "Cadastrais",
+        "Documentos",
+        "Legais"
       ],
       procedimentos: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Implantação de estoque",
+        "Manutenção de Parâmetros",
+        "Entrada de Ordem de Compra",
+        "Requisição de Saída de Materiais",
+        "Atendimento de Requisição",
+        "Entrada manual",
+        "Saída manual",
+        "Transferência entre depósitos",
+        "Devolução de Materiais",
+        "Zera Estoque por Departamento",
+        "Zera Estoque por Item",
+        "Configuração de texto da ordem de compra",
+        "Centro de Custos",
+        "PIT",
+        "Ajuste de Preço Médio",
+        "Implantação Tipo Grupo",
+        "Manutenção de Estoque",
+        "Fechamento do Estoque",
+        "Planilha de Distribuição"
       ]
     }
   },
@@ -334,36 +398,68 @@ export const submodules: Submodule[] = [
     module: "patrimonial",
     options: {
       cadastro: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Tipos de baixa",
+        "Tipo de Aquisição",
+        "Tipo de Depreciação",
+        "Modelo",
+        "Marca",
+        "Medidas",
+        "Convênios",
+        "Comissões",
+        "Lançamento de Correção",
+        "Seguradoras",
+        "Apólices",
+        "Situação dos Bens",
+        "Classificação dos Bens",
+        "Bens",
+        "Tipo de configuração da placa",
+        "Tipo de Guarda",
+        "Cadastro de Divisões"
       ],
       consulta: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Bens",
+        "Historico dos Bens",
+        "Consulta Empenho"
       ],
       relatorio: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Remite ficha de transferência",
+        "Baixa de bens",
+        "Apólices",
+        "Termo de responsabilidade",
+        "Emissão Termo de Guarda",
+        "Bens por Classificação",
+        "Geral de bens",
+        "Financeiro Patrimonial",
+        "Cadastrais",
+        "Ficha de bens",
+        "Etiquetas emitidas",
+        "Cadastro de Retenções",
+        "Conferência",
+        "Legais",
+        "Inventário",
+        "Reimpressão do Termo de Guarda",
+        "Reimpressão da Devolução Termo de Guarda",
+        "Relatório Lotes",
+        "Relatório Imóveis",
+        "Bens (Último Ano)",
+        "Transferência de bens em aberto"
       ],
       procedimentos: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Transferência de bens",
+        "Termo de Guarda",
+        "Devolução do Termo de Guarda",
+        "Confirmação de Transferência",
+        "Alterar Placa",
+        "Alterar Situação",
+        "Configuração de Etiquetas",
+        "Emite etiquetas",
+        "Implantação Depreciação",
+        "Processamento da Depreciação",
+        "Parâmetros",
+        "Baixa de Bens",
+        "Inventário",
+        "Levantamento Patrimonial",
+        "Exclusão do Histórico de Placa"
       ]
     }
   },
@@ -373,36 +469,75 @@ export const submodules: Submodule[] = [
     module: "patrimonial",
     options: {
       cadastro: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Cadastro de Estados",
+        "Geral do Município - CGM",
+        "Cadastro de Municípios",
+        "Logradouro",
+        "Localidade",
+        "Estados",
+        "CEP",
+        "Tipo de Processo",
+        "Tipo de Processo / Receita",
+        "Documento",
+        "Documento / Tipo de Processo",
+        "Variável",
+        "Geral do Município - CGM (novo)",
+        "Tipo de Documento"
       ],
       consulta: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Geral Financeira",
+        "Processo",
+        "CGM",
+        "CGM Duplo Processado"
       ],
       relatorio: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviço",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Relatório de Andamento Padrão",
+        "Relatório Processos/Departamentos",
+        "CGMs corretos",
+        "Relatório de Processos/CGM",
+        "Variáveis",
+        "Documentos",
+        "Tipos de Processo",
+        "Documentos / Tipo de Processo",
+        "Duplos no CGM",
+        "Reimpressão da Capa do Processo",
+        "Reimpressão do Termo de Transferência",
+        "Processos",
+        "Consistência de CPF/CNPJ",
+        "Etiquetas",
+        "Processos por departamento",
+        "CGMs Incluídos/Alterados",
+        "Tipo dos Processo com Receitas",
+        "Processos em Transferência",
+        "Enquete E-Cidade online",
+        "Enquete E-Cidade online csv",
+        "Movimentação Protocolo por Usuário",
+        "Monitoramento dos Processos"
       ],
       procedimentos: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "CGM Duplos",
+        "Processos",
+        "Volumes",
+        "Trâmite Inicial",
+        "Despachos",
+        "Transferências",
+        "Recebimento",
+        "Arquivamento",
+        "Desarquivamento",
+        "Andamento Padrão",
+        "Recibo de Receita",
+        "Cancela Recibo",
+        "Trâmite Interno",
+        "Libera CNPJ zerado",
+        "Libera CPF zerado",
+        "Autoriza Atualização de CGM",
+        "Parâmetros",
+        "Apensar Processo",
+        "Andamento do processo",
+        "Insere QR - PDF",
+        "Atualiza PDF - QR",
+        "Manutenção Sócios Fora Município",
+        "Andamento de Documentos"
       ]
     }
   },
@@ -412,36 +547,39 @@ export const submodules: Submodule[] = [
     module: "patrimonial",
     options: {
       cadastro: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Cadastro de Tabela ANP",
+        "Dados dos Veiculos",
+        "Veiculos",
+        "Dados dos motoristas",
+        "Motoristas",
+        "Oficinas",
+        "Tipo de Serviço",
+        "Postos",
+        "Tipo de baixa veiculo",
+        "Itens obrigatorios",
+        "Tipo de baixa de itens",
+        "Convênios de uso veicular",
+        "Centrais de Veículos"
       ],
       consulta: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Veículos"
       ],
       relatorio: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Movimentações",
+        "Cadastrais",
+        "Documentos"
       ],
       procedimentos: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Manutenção de Medidas",
+        "Manutenção de Parâmetros",
+        "Baixa de Veículos",
+        "Manutenção de Veículos",
+        "Retirada de Veículos",
+        "Devolução de Veículos",
+        "Abastecimento",
+        "Baixa de itens obrigatórios",
+        "Processar Tabela ANP",
+        "Autorização de Circulação"
       ]
     }
   },
@@ -451,36 +589,35 @@ export const submodules: Submodule[] = [
     module: "patrimonial",
     options: {
       cadastro: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Ouvidor",
+        "Cidadão",
+        "Tipo de Processo",
+        "Documento / Tipo de Processo",
+        "Local",
+        "Categoria de Tipo de Processo",
+        "Forma Reclamação"
       ],
       consulta: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Ouvidoria",
+        "Atendimento"
       ],
       relatorio: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Atendimentos",
+        "Processos Tipo / Departamento",
+        "Documentos"
       ],
       procedimentos: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Atendimento",
+        "Vincular Atendimento a Processo",
+        "Trâmite inicial",
+        "Transferência",
+        "Controle de Atendimento",
+        "Retorno ao Cidadão",
+        "Prorrogação de Prazo",
+        "Arquivamento",
+        "Desarquivamento",
+        "Andamento padrão",
+        "Manutenção de Parâmetros"
       ]
     }
   },
@@ -490,36 +627,21 @@ export const submodules: Submodule[] = [
     module: "patrimonial",
     options: {
       cadastro: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Unidade Compradora",
+        "Orgão"
       ],
       consulta: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Unidade Compradora",
+        "Contratos de Contratação"
       ],
-      relatorio: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
-      ],
+      relatorio: [],
       procedimentos: [
-        "Grupos de Material/Serviço",
-        "Subgrupos de Materiais/Serviços",
-        "Materiais/Serviços",
-        "Cadastro de Unidades",
-        "Cadastro de Tipos de Certificado",
-        "Fornecedores"
+        "Parâmetros",
+        "Contratação/Edital/Aviso",
+        "Contrato",
+        "Ata de Registro de Preço",
+        "Termo de Contrato",
+        "Plano de Contratações"
       ]
     }
   }

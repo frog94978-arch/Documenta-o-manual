@@ -101,35 +101,76 @@ const PatrimonialTabs = ({
   if (selectedSubmodule) {
     if (selectedCategory) {
       if (selectedFinalSection) {
+        const currentSubmoduleId =
+          submodules.find((s) => s.name === selectedSubmodule)?.id ||
+          selectedSubmodule.toLowerCase();
+
+        const submoduleData = getSubmoduleById(currentSubmoduleId);
+
+        const isSpecialRoot =
+          (selectedCategory === "relatorio" || selectedCategory === "procedimentos") &&
+          submoduleData &&
+          submoduleData.options[
+            selectedCategory as keyof typeof submoduleData.options
+          ].includes(selectedFinalSection);
+
+        if (isSpecialRoot && submoduleData) {
+          return (
+            <div className="max-w-none">
+              <div>
+                <button
+                  onClick={handleBackClick}
+                  className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground"
+                >
+                  &larr; Voltar para {selectedSubmodule}
+                </button>
+                <h2 className="text-2xl font-bold mb-6">{selectedFinalSection}</h2>
+                <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
+                  {submoduleData.options.cadastro.map((item) => (
+                    <button
+                      key={item}
+                      className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2"
+                      onClick={() => setSelectedFinalSection(item)}
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          );
+        }
+
         const content =
           comprasCadastroContent[
             selectedFinalSection as keyof typeof comprasCadastroContent
           ];
+
         return (
-        <div className="max-w-none">
-          <div>
-            <button
-              onClick={handleBackClick}
-              className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground"
-            >
-              &larr; Voltar para{" "}
-              {selectedCategory.charAt(0).toUpperCase() +
-                selectedCategory.slice(1)}
-            </button>
-            <h2 className="text-2xl font-bold mb-6">{selectedFinalSection}</h2>
-            {content ? (
-              <article className="prose prose-slate prose-lg max-w-none">
-                <MarkdownContent content={content} />
-              </article>
-            ) : selectedFinalSection === "Solicitações" ? (
-              <article className="prose prose-slate prose-lg max-w-none">
-                <MarkdownContent content={comprasCadastroContent["Solicitações"]} />
-              </article>
-            ) : (
-              <p>Conteúdo não encontrado.</p>
-            )}
+          <div className="max-w-none">
+            <div>
+              <button
+                onClick={handleBackClick}
+                className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground"
+              >
+                &larr; Voltar para{" "}
+                {selectedCategory.charAt(0).toUpperCase() +
+                  selectedCategory.slice(1)}
+              </button>
+              <h2 className="text-2xl font-bold mb-6">{selectedFinalSection}</h2>
+              {content ? (
+                <article className="prose prose-slate prose-lg max-w-none">
+                  <MarkdownContent content={content} />
+                </article>
+              ) : selectedFinalSection === "Solicitações" ? (
+                <article className="prose prose-slate prose-lg max-w-none">
+                  <MarkdownContent content={comprasCadastroContent["Solicitações"]} />
+                </article>
+              ) : (
+                <p>Conteúdo não encontrado.</p>
+              )}
+            </div>
           </div>
-        </div>
         );
       }
       // If a category is selected, but no final section, display the options for final sections

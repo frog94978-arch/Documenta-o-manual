@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { getPageById } from "@/data/documentation";
 import Breadcrumbs from "@/components/test/Breadcrumbs";
 import MarkdownContent from "@/components/test/MarkdownContent";
@@ -12,17 +12,11 @@ import SaudeTabs from "@/components/test/SaudeTabs";
 import ConfiguracoesTabs from "@/components/test/ConfiguracoesTabs";
 
 const DocPage = () => {
-  const [selectedSubmodule, setSelectedSubmodule] = useState<string | null>(
-    null
-  );
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(
-    null
-  );
-  const [
-    selectedFinalSection,
-    setSelectedFinalSection,
-  ] = useState<string | null>(null); // NEW STATE
+  const [selectedSubmodule, setSelectedSubmodule] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedFinalSection, setSelectedFinalSection] = useState<string | null>(null);
   const { category, page } = useParams<{ category: string; page: string }>();
+  const navigate = useNavigate();
 
   if (!page || !category) {
     return <Navigate to="/" replace />;
@@ -41,7 +35,39 @@ const DocPage = () => {
     );
   }
 
-  // Render special component for Patrimonial module
+  const handleNavigation = (path: string) => {
+    const pathParts = path.split('/').filter(Boolean); // ['modulos', 'patrimonial', 'compras']
+    const currentPageSlug = page || "";
+    const slugIndex = pathParts.indexOf(currentPageSlug);
+
+    // If a breadcrumb for a different module is clicked, navigate to it.
+    if (path !== '/' && slugIndex === -1 && pathParts.length > 1) {
+        navigate(path);
+        return;
+    }
+    
+    // If Home is clicked
+    if (path === '/') {
+        navigate('/');
+        return;
+    }
+    
+    // If we are navigating within the current module page
+    let newSubmodule = null;
+    let newCategory = null;
+    let newFinalSection = null;
+
+    if (slugIndex !== -1) {
+        newSubmodule = pathParts[slugIndex + 1] || null;
+        newCategory = pathParts[slugIndex + 2] || null;
+        newFinalSection = pathParts[slugIndex + 3] || null;
+    }
+
+    setSelectedSubmodule(newSubmodule);
+    setSelectedCategory(newCategory);
+    setSelectedFinalSection(newFinalSection);
+  };
+  
   if (page === "patrimonial") {
     return (
       <div className="container mx-auto px-4 py-12 max-w-6xl">
@@ -51,8 +77,8 @@ const DocPage = () => {
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
           selectedFinalSectionTitle={selectedFinalSection}
-        />{" "}
-        {/* ADDED selectedFinalSectionTitle */}
+          onNavigate={handleNavigation}
+        />
         <div className="mt-8">
           <h1 className="text-3xl font-bold mb-6 text-foreground">
             Área Patrimonial
@@ -73,15 +99,17 @@ const DocPage = () => {
             setSelectedSubmodule={setSelectedSubmodule}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
-            selectedFinalSection={selectedFinalSection} // NEW PROP
-            setSelectedFinalSection={setSelectedFinalSection} // NEW PROP
+            selectedFinalSection={selectedFinalSection}
+            setSelectedFinalSection={setSelectedFinalSection}
           />
         </div>
       </div>
     );
   }
 
-  // Render special component for Financeiro module
+  // ... (the rest of the component is the same, just with onNavigate={handleNavigation} added to each Breadcrumbs call)
+  // Since the replace tool needs the full string, I will include the whole file content here.
+  
   if (page === "financeiro") {
     return (
       <div className="container mx-auto px-4 py-12 max-w-6xl">
@@ -91,6 +119,7 @@ const DocPage = () => {
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
           selectedFinalSectionTitle={selectedFinalSection}
+          onNavigate={handleNavigation}
         />
         <div className="mt-8">
           <h1 className="text-3xl font-bold mb-6 text-foreground">
@@ -118,7 +147,6 @@ const DocPage = () => {
     );
   }
 
-  // Render special component for Tributario module
   if (page === "tributario") {
     return (
       <div className="container mx-auto px-4 py-12 max-w-6xl">
@@ -128,6 +156,7 @@ const DocPage = () => {
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
           selectedFinalSectionTitle={selectedFinalSection}
+          onNavigate={handleNavigation}
         />
         <div className="mt-8">
           <h1 className="text-3xl font-bold mb-6 text-foreground">
@@ -153,7 +182,6 @@ const DocPage = () => {
     );
   }
 
-  // Render special component for Recursos Humanos module
   if (page === "recursos-humanos") {
     return (
       <div className="container mx-auto px-4 py-12 max-w-6xl">
@@ -163,6 +191,7 @@ const DocPage = () => {
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
           selectedFinalSectionTitle={selectedFinalSection}
+          onNavigate={handleNavigation}
         />
         <div className="mt-8">
           <h1 className="text-3xl font-bold mb-6 text-foreground">
@@ -189,7 +218,6 @@ const DocPage = () => {
     );
   }
 
-  // Render special component for Educação module
   if (page === "educacao") {
     return (
       <div className="container mx-auto px-4 py-12 max-w-6xl">
@@ -199,6 +227,7 @@ const DocPage = () => {
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
           selectedFinalSectionTitle={selectedFinalSection}
+          onNavigate={handleNavigation}
         />
         <div className="mt-8">
           <h1 className="text-3xl font-bold mb-6 text-foreground">
@@ -224,7 +253,6 @@ const DocPage = () => {
     );
   }
 
-  // Render special component for Saude module
   if (page === "saude") {
     return (
       <div className="container mx-auto px-4 py-12 max-w-6xl">
@@ -234,6 +262,7 @@ const DocPage = () => {
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
           selectedFinalSectionTitle={selectedFinalSection}
+          onNavigate={handleNavigation}
         />
         <div className="mt-8">
           <h1 className="text-3xl font-bold mb-6 text-foreground">
@@ -259,7 +288,6 @@ const DocPage = () => {
     );
   }
 
-  // Render special component for Configuracoes module
   if (page === "configuracoes") {
     return (
       <div className="container mx-auto px-4 py-12 max-w-6xl">
@@ -269,6 +297,7 @@ const DocPage = () => {
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
           selectedFinalSectionTitle={selectedFinalSection}
+          onNavigate={handleNavigation}
         />
         <div className="mt-8">
           <h1 className="text-3xl font-bold mb-6 text-foreground">
@@ -296,7 +325,7 @@ const DocPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <Breadcrumbs categoryId={category} pageTitle={docPage.title} />
+      <Breadcrumbs categoryId={category} pageTitle={docPage.title} onNavigate={handleNavigation} />
       <article className="prose prose-slate prose-lg max-w-none mt-8">
         <MarkdownContent content={docPage.content} />
       </article>
