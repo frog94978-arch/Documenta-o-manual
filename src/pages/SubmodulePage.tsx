@@ -47,11 +47,11 @@ const SubmodulePage = () => {
               <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
                 {submoduleData.options.consulta.map((item) => (
                   <Link
-                    key={item.label}
-                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.label.toLowerCase().replace(/[\s/]/g, '-')}`}
+                    key={item}
+                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.toLowerCase().replace(/[\s/]/g, '-')}`}
                     className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
                   >
-                    {item.label}
+                    {item}
                   </Link>
                 ))}
               </nav>
@@ -60,11 +60,11 @@ const SubmodulePage = () => {
               <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
                 {submoduleData.options.relatorio.map((item) => (
                   <Link
-                    key={item.label}
-                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.label.toLowerCase().replace(/[\s/]/g, '-')}`}
+                    key={item}
+                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.toLowerCase().replace(/[\s/]/g, '-')}`}
                     className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
                   >
-                    {item.label}
+                    {item}
                   </Link>
                 ))}
               </nav>
@@ -73,11 +73,11 @@ const SubmodulePage = () => {
               <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
                 {submoduleData.options.procedimentos.map((item) => (
                   <Link
-                    key={item.label}
-                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.label.toLowerCase().replace(/[\s/]/g, '-')}`}
+                    key={item}
+                    to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.toLowerCase().replace(/[\s/]/g, '-')}`}
                     className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
                   >
-                    {item.label}
+                    {item}
                   </Link>
                 ))}
               </nav>

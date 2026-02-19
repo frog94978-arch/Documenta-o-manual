@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { getPageById } from "@/data/documentation";
 import Breadcrumbs from "@/components/test/Breadcrumbs";
@@ -17,6 +17,12 @@ const DocPage = () => {
   const [selectedFinalSection, setSelectedFinalSection] = useState<string | null>(null);
   const { category, page } = useParams<{ category: string; page: string }>();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setSelectedSubmodule(null);
+    setSelectedCategory(null);
+    setSelectedFinalSection(null);
+  }, [category, page]);
 
   if (!page || !category) {
     return <Navigate to="/" replace />;
@@ -46,9 +52,9 @@ const DocPage = () => {
         return;
     }
     
-    // If Home is clicked
-    if (path === '/') {
-        navigate('/');
+    // If Home or Areas is clicked
+    if (path === '/' || path === '/areas') {
+        navigate(path);
         return;
     }
     

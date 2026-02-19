@@ -20,22 +20,22 @@ const Breadcrumbs = ({ categoryId, pageTitle, submoduleTitle, categoryTitle, sel
   // 2. "Áreas"
   const areasCategory = getCategoryById("modulos");
   if (areasCategory) {
+    breadcrumbSegments.push({ label: areasCategory.title, path: "/areas" });
     currentPathParts.push("modulos");
-    breadcrumbSegments.push({ label: areasCategory.title, path: `/${currentPathParts.join('/')}` });
   }
 
   // 3. Main Module
   const mainModule = getCategoryById(categoryId);
   if (mainModule && mainModule.id !== "modulos") {
     currentPathParts.push(mainModule.id);
-    breadcrumbSegments.push({ label: mainModule.title, path: `/${currentPathParts.join('/')}` });
+    breadcrumbSegments.push({ label: mainModule.title, path: `/docs/${currentPathParts.join('/')}` });
   }
 
   // 4. Page/Submodule
   if (pageTitle && mainModule?.title.toLowerCase() !== pageTitle.toLowerCase()) {
     const pageSlug = pageTitle.toLowerCase().replace(/\s/g, "-");
     currentPathParts.push(pageSlug);
-    breadcrumbSegments.push({ label: pageTitle, path: `/${currentPathParts.join('/')}` });
+    breadcrumbSegments.push({ label: pageTitle, path: `/docs/${currentPathParts.join('/')}` });
   }
 
   // 5. Deeper Submodule/Category

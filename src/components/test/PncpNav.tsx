@@ -46,7 +46,7 @@ const PncpNav = () => {
 
   return (
     <div className="border-b border-border bg-muted/30">
-      <div className="container mx-auto px-4">
+      <div className="px-4 sm:px-6">
         <div className="flex items-center gap-4 h-14">
           <span className="text-sm font-medium text-foreground">
             {pncpData.title}
