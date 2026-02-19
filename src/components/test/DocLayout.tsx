@@ -19,7 +19,7 @@ const DocLayout = () => {
   const searchResults = searchQuery.trim() ? combinedSearch(searchQuery) : [];
 
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={false}>
       <div className="flex min-h-screen w-full bg-background">
         <AppSidebar />
         <SidebarInset>

@@ -64,7 +64,10 @@ export function AppSidebar() {
               {categories.map((category) => {
                 const pages = getPagesByCategory(category.id)
                 const Icon = iconMap[category.icon] || Layers
-                const isActive = location.pathname.includes(`/docs/${category.id}`) || (category.id === 'modulos' && location.pathname === '/areas')
+                const isActive = location.pathname.includes(`/docs/${category.id}`) || 
+                                (category.id === 'modulos' && location.pathname === '/areas') ||
+                                (category.id === 'tutoriais' && location.pathname === '/tutoriais') ||
+                                (category.id === 'guia-inicio' && location.pathname === '/guia-inicio')
 
                 return (
                   <Collapsible
@@ -76,7 +79,15 @@ export function AppSidebar() {
                     <SidebarMenuItem>
                       <div className="flex items-center w-full">
                         <SidebarMenuButton asChild tooltip={category.title} isActive={isActive}>
-                          <Link to={category.id === 'modulos' ? '/areas' : '#'} className="flex-1">
+                          <Link to={
+                            category.id === 'modulos' 
+                              ? '/areas' 
+                              : category.id === 'tutoriais' 
+                                ? '/tutoriais' 
+                                : category.id === 'guia-inicio'
+                                  ? '/guia-inicio'
+                                  : '#'
+                          } className="flex-1">
                             <Icon />
                             <span>{category.title}</span>
                           </Link>

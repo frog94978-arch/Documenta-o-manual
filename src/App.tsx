@@ -9,6 +9,8 @@ import SubmodulePage from "./pages/SubmodulePage";
 import PncpPage from "./pages/PncpPage"; // Import PncpPage
 import DocLayout from "@/components/test/DocLayout";
 import AreasPage from "./pages/AreasPage";
+import TutoriaisPage from "./pages/TutoriaisPage";
+import GuiaInicioPage from "./pages/GuiaInicioPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +25,8 @@ const App = () => (
           <Route element={<DocLayout />}>
             <Route path="/" element={<Index />} />
             <Route path="/areas" element={<AreasPage />} />
+            <Route path="/tutoriais" element={<TutoriaisPage />} />
+            <Route path="/guia-inicio" element={<GuiaInicioPage />} />
             <Route path="/docs/:category/:page" element={<DocPage />} />
             <Route
               path="/modulos/:module/:submodule"

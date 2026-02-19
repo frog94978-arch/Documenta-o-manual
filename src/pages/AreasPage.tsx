@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Icons from "lucide-react";
+import Breadcrumbs from "@/components/test/Breadcrumbs";
 
 const areas = [
   { id: "configuracoes", title: "Configuração", icon: "Settings" },
@@ -18,6 +19,7 @@ const areas = [
 ];
 
 const AreasPage = () => {
+  const navigate = useNavigate();
   const renderIcon = (iconName: string) => {
     const IconComponent = Icons[iconName as keyof typeof Icons] as React.ElementType;
     return IconComponent ? <IconComponent className="h-8 w-8" /> : null;
@@ -25,7 +27,12 @@ const AreasPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-12">
+        <Breadcrumbs 
+          categoryId="modulos" 
+          pageTitle="Áreas" 
+          onNavigate={(path) => navigate(path)} 
+        />
         <h1 className="text-4xl font-bold text-center mb-12 text-foreground">
           Áreas do Sistema
         </h1>

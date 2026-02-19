@@ -119,86 +119,57 @@ Após entender a visão geral, recomendamos:
   },
   {
     id: "tomticket",
-    title: "TomTicket",
+    title: "Tomticket",
     category: "guia-inicio",
     order: 1,
-    content: `# TomTicket
+    content: `# Tomticket
 
-Este guia irá orientá-lo através do processo inicial de configuração e uso do sistema.
+O Tomticket é a nossa plataforma de suporte e abertura de chamados. Utilize-o para relatar problemas técnicos, solicitar melhorias ou tirar dúvidas diretamente com nossa equipe de suporte especializado.`
+  },
+  {
+    id: "gitlab",
+    title: "Git Lab",
+    category: "guia-inicio",
+    order: 2,
+    content: `# Git Lab
 
-## 1. Acesso ao Sistema
+O GitLab é utilizado para o controle de versão e gerenciamento do ciclo de vida do desenvolvimento de software. Aqui centralizamos nosso código-fonte, acompanhamos o progresso de tarefas e garantimos a integridade do sistema.`
+  },
+  {
+    id: "padrao-emails",
+    title: "Padrão de e-mails",
+    category: "guia-inicio",
+    order: 3,
+    content: `# Padrão de e-mails
 
-### Login
-Para acessar o sistema pela primeira vez:
+Diretrizes e modelos para padronização de e-mails corporativos enviados pelo sistema, incluindo assinaturas e estrutura de texto.`
+  },
+  {
+    id: "ponto-funcao",
+    title: "Ponto de Função",
+    category: "guia-inicio",
+    order: 4,
+    content: `# Ponto de Função
 
-1. Acesse a URL fornecida pela sua organização
-2. Insira seu usuário e senha
-3. Complete a autenticação de dois fatores (se habilitada)
+Documentação sobre a metodologia de métrica para software através da contagem de pontos de função (FPA).`
+  },
+  {
+    id: "fluxo-sistema",
+    title: "Fluxo do Sistema",
+    category: "tutoriais",
+    order: 1,
+    content: `# Fluxo do Sistema
 
-> **Nota**: Seu usuário e senha inicial são fornecidos pelo administrador do sistema.
+Aqui você encontra a documentação sobre o fluxo completo do sistema, desde a entrada de dados até o processamento final.`
+  },
+  {
+    id: "erros-frequentes",
+    title: "Erros Frequentes",
+    category: "tutoriais",
+    order: 2,
+    content: `# Erros Frequentes
 
-## 2. Primeiro Acesso
-
-Na primeira vez que você acessa o sistema, será solicitado:
-
-- Alterar sua senha padrão
-- Configurar questões de segurança
-- Definir preferências iniciais
-
-## 3. Navegação Básica
-
-### Menu Principal
-O menu principal está localizado na lateral esquerda e contém:
-
-- Dashboard
-- Módulos disponíveis
-- Configurações
-- Ajuda
-
-### Barra Superior
-A barra superior oferece acesso rápido a:
-
-- Notificações
-- Perfil do usuário
-- Busca global
-- Alternar tema
-
-## 4. Configurações Iniciais
-
-### Perfil do Usuário
-Acesse **Configurações > Perfil** para:
-
-- Atualizar suas informações pessoais
-- Adicionar foto de perfil
-- Configurar notificações
-- Definir idioma preferencial
-
-### Preferências do Sistema
-Em **Configurações > Preferências**, você pode:
-
-- Escolher o tema (claro/escuro)
-- Configurar atalhos de teclado
-- Definir página inicial
-- Ajustar formato de data e hora
-
-## 5. Explorando Módulos
-
-Cada módulo possui sua própria documentação detalhada. Recomendamos começar pelos módulos:
-
-1. [Módulo de Dashboard](/docs/modulos/dashboard) - Visão geral de dados
-2. [Módulo de Relatórios](/docs/modulos/relatorios) - Geração de relatórios
-
-## Dicas Importantes
-
-⚠️ **Atenção**: Sempre faça logout ao sair do sistema, especialmente em computadores compartilhados.
-
-💡 **Dica**: Use os atalhos de teclado para navegar mais rapidamente pelo sistema.
-
-## Precisa de Ajuda?
-
-Se encontrar dificuldades:
-- Entre em contato com o suporte técnico
-- Assista aos vídeos tutoriais disponíveis`
+Guia com os erros mais comuns encontrados pelos usuários e como resolvê-los rapidamente.`
   },
   {
     id: "configuracoes",
@@ -997,117 +968,6 @@ Integrado com:
   },
 
 
-  {
-    id: "criar-cadastro",
-    title: "Como Criar um Cadastro",
-    category: "tutoriais",
-    order: 1,
-    content: `# Como Criar um Cadastro
-
-Tutorial passo a passo para criar cadastros no sistema.
-
-## Pré-requisitos
-
-Antes de começar, certifique-se de que você tem:
-
-- ✅ Permissão de cadastro no módulo desejado
-- ✅ Informações necessárias em mãos
-- ✅ Documentos de apoio (se aplicável)
-
-## Passo 1: Acessar o Módulo
-
-1. No menu lateral, clique em **Cadastros**
-2. Selecione o tipo de cadastro desejado
-3. Clique no botão **Novo Cadastro** (ícone +)
-
-## Passo 2: Preencher Dados Básicos
-
-### Informações Obrigatórias
-
-Os campos marcados com asterisco (*) são obrigatórios:
-
-- Nome/Razão Social *
-- Tipo de Pessoa (Física/Jurídica) *
-- CPF/CNPJ *
-- E-mail de contato *
-
-### Informações Complementares
-
-Preencha também:
-- Telefones de contato
-- Endereço completo
-- Observações relevantes
-
-## Passo 3: Adicionar Documentos
-
-Se necessário, anexe documentos:
-
-1. Clique em **Adicionar Documento**
-2. Selecione o arquivo (máx. 5MB)
-3. Escolha o tipo de documento
-4. Adicione uma descrição (opcional)
-
-> **Formatos aceitos**: PDF, DOC, DOCX, JPG, PNG
-
-## Passo 4: Configurar Permissões
-
-Para cadastros de usuários:
-
-` + "```" + `
-Perfil: [Selecione o perfil]
-Módulos: [Marque os módulos permitidos]
-Nível de Acesso: [Escolha o nível]
-` + "```" + `
-
-## Passo 5: Revisar e Salvar
-
-Antes de salvar:
-
-1. ✓ Revise todos os campos preenchidos
-2. ✓ Confirme documentos anexados
-3. ✓ Verifique permissões configuradas
-
-Clique em **Salvar** para concluir.
-
-## Validações Automáticas
-
-O sistema realiza validações:
-
-| Campo | Validação |
-|-------|-----------|
-| CPF/CNPJ | Formato e dígitos verificadores |
-| E-mail | Formato válido e unicidade |
-| CEP | Formato e existência |
-| Telefone | Formato válido |
-
-## Mensagens de Erro Comuns
-
-### "CPF já cadastrado"
-**Solução**: Verifique se a pessoa já está cadastrada no sistema. Use a busca para localizar.
-
-### "Campos obrigatórios não preenchidos"
-**Solução**: Todos os campos com asterisco (*) devem ser preenchidos.
-
-### "Documento inválido"
-**Solução**: Verifique o formato e tamanho do arquivo. Converta se necessário.
-
-## Após o Cadastro
-
-Depois de salvar:
-
-- O cadastro receberá um código único
-- Notificações serão enviadas (se configurado)
-- O registro aparecerá na lista de cadastros
-- Você pode editar ou inativar a qualquer momento
-
-## Dicas Importantes
-
-💡 **Use o auto-completar**: Ao digitar o CEP, o endereço é preenchido automaticamente.
-
-💡 **Salve rascunhos**: Use "Salvar como Rascunho" se precisar pausar o cadastro.
-
-💡 **Copie cadastros**: Use "Duplicar" para criar cadastros similares rapidamente.`
-  },
   {
     id: "solicitacoes",
     title: "Solicitações",

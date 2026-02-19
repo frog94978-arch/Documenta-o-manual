@@ -36,7 +36,15 @@ const Index = () => {
           {categories.map((category) => (
             <Link
               key={category.id}
-              to={category.id === 'modulos' ? '/areas' : getFirstPageLink(category.id)}
+              to={
+                category.id === 'modulos' 
+                  ? '/areas' 
+                  : category.id === 'tutoriais' 
+                    ? '/tutoriais' 
+                    : category.id === 'guia-inicio'
+                      ? '/guia-inicio'
+                      : getFirstPageLink(category.id)
+              }
               className="flex flex-col items-center justify-center p-4 border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-200 bg-card text-card-foreground hover:bg-muted w-36 h-36 sm:w-40 sm:h-40 text-center"
             >
               <div className="text-primary mb-2">{renderIcon(category.icon)}</div>
