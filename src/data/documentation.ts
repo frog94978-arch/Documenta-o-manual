@@ -133,7 +133,168 @@ O Tomticket é a nossa plataforma de suporte e abertura de chamados. Utilize-o p
     order: 2,
     content: `# Git Lab
 
-O GitLab é utilizado para o controle de versão e gerenciamento do ciclo de vida do desenvolvimento de software. Aqui centralizamos nosso código-fonte, acompanhamos o progresso de tarefas e garantimos a integridade do sistema.`
+## Introdução
+
+O presente documento tem como objetivo padronizar o uso do GitLab pela equipe, servindo como guia de consulta rápida sempre que surgirem dúvidas quanto aos procedimentos e boas práticas adotadas na ferramenta.
+
+Neste manual, estão descritas as rotinas operacionais, responsabilidades de cada perfil envolvido, orientações sobre movimentação de cards, abertura de OS, uso de boards, nivelamento de demandas, entre outros pontos essenciais para garantir a organização, rastreabilidade e eficiência no uso da plataforma.
+
+A leitura e consulta frequente deste material é fundamental para manter a equipe alinhada e o fluxo de trabalho fluindo de forma coesa.
+
+## Acesso ao Git Libre
+
+1. Acesse o link: https://gitlab.libresolucoes.com.br/
+2. Digite seu login e senha.
+
+Após o login, será exibida a tela inicial.
+
+![Tela Inicial Gitlab](../../assets/images/Tela%201%20Gitlab.jpg)
+
+## Tela Inicial
+
+Na tela inicial, é possível:
+
+- Visualizar os projetos disponíveis para seu perfil.
+- Acessar os grupos aos quais você tem permissão.
+- Consultar os projetos que foram favoritados através do menu Starred.
+
+![Menu Starred e Projetos](../../assets/images/Tela2Gitlab.jpg)
+
+## Acessando Grupos
+
+1. No menu lateral, selecione Groups.
+2. Todos os grupos disponíveis serão listados.
+3. Selecione o grupo Libre para visualizar todos os projetos que pertencem a este grupo.
+
+![Grupos Libre](../../assets/images/Tela3Gitlab.jpg)
+![Projetos do Grupo](../../assets/images/Tela4Gitlab.jpg)
+
+## Acessando um Projeto
+
+Você pode visualizar os projetos disponíveis diretamente na página inicial ou utilizar a barra de pesquisa para localizar o projeto desejado.
+
+1. Utilize a barra de pesquisa no topo da página para digitar o nome do projeto ou parte dele.
+2. Clique sobre o projeto para acessá-lo.
+3. Na página inicial do projeto, você verá a opção de favoritar o projeto (ícone de estrela). Isso facilita o acesso futuro, permitindo que ele apareça diretamente na tela inicial, sem necessidade de navegar pelos grupos.
+
+![Favoritar Projeto](../../assets/images/Tela5Gitlab.jpg)
+
+## Visualizando Boards
+
+1. No menu lateral do projeto, clique em Issue Boards.
+2. Selecione o board desejado.
+3. As colunas do board e suas respectivas issues serão exibidas.
+4. Para ocultar o menu lateral, clique no botão de setas no canto da tela.
+
+![Ocultar Menu Lateral](../../assets/images/Tela6Gitlab.jpg)
+
+Altere a opção para On. Isso permitirá que os detalhes da issue sejam exibidos diretamente na mesma página do Issue Board, facilitando a visualização e o acompanhamento.
+
+![Habilitar Painel Lateral](../../assets/images/Tela7Gitlab.jpg)
+![Detalhes da Issue no Board](../../assets/images/Tela8Gitlab.jpg)
+
+## Pesquisa no Board
+
+Utilize a barra de pesquisa no topo do board para localizar cards (issues) específicos dentro do board.
+
+![Pesquisa no Board](../../assets/images/Tela9Gitlab.jpg)
+
+## Abertura das Issues
+
+As solicitações de abertura de OS continuam seguindo o procedimento já adotado anteriormente.
+
+Todas as solicitações devem ser encaminhadas à equipe de Projetos, que é a responsável por criar as issues nos projetos e boards adequados.
+
+Para criar a issue, basta clicar no ícone de + na coluna respectiva na qual deseja criar a issue.
+
+![Botão para Criar Issue](../../assets/images/Tela10Gitlab.jpg)
+
+**Importante:** Apenas a equipe de Projetos está autorizada a criar as issues nos projetos.
+
+## Visualizando uma Issue
+
+Ao clicar em um card, as informações da issue serão exibidas na lateral da tela. Para abrir a issue completa e permitir edição, clique no título da issue seja no card ou nessa aba lateral.
+
+![Visualizando Issue](../../assets/images/Tela11Gitlab.jpg)
+
+## Editando uma Issue
+
+Dentro da issue, clique no botão Editar.
+
+![Botão Editar Issue](../../assets/images/Tela12Gitlab.jpg)
+
+Será possível:
+
+- Alterar o título.
+- Selecionar um template para padronizar a descrição.
+- Preencher ou editar o conteúdo da descrição.
+
+![Editando Descrição da Issue](../../assets/images/Tela13Gitlab.jpg)
+![Template de Descrição](../../assets/images/Tela14Gitlab.jpg)
+![Editor de Descrição](../../assets/images/Tela15Gitlab.jpg)
+
+## Assinando uma Issue
+
+A issue permite apenas um Assignee (responsável).
+O programador responsável pela demanda deve ingressar como assignee.
+Para indicar o responsável do suporte, inclua a menção na descrição utilizando @nomedosuporte.
+
+![Assinando Issue](../../assets/images/Tela16Gitlab.jpg)
+
+## Campo de Instalação
+
+A responsabilidade de preencher o campo de instalação é exclusivamente do programador responsável pela demanda.
+
+![Campo de Instalação](../../assets/images/Tela17Gitlab.jpg)
+
+## Histórico da Issue
+
+Todo o histórico de ações realizadas na issue fica disponível e pode ser consultado a qualquer momento.
+
+![Histórico da Issue](../../assets/images/Tela18Gitlab.jpg)
+
+## Adicionando Comentários
+
+Para adicionar um comentário:
+
+1. Acesse a issue.
+2. Vá até a seção de comentários.
+3. Escreva o comentário e clique em Comentar.
+
+![Adicionando Comentários](../../assets/images/Tela19Gitlab.jpg)
+
+## Vinculação de Issues entre Projetos (Linked Items)
+
+Sempre que uma issue tiver relação de dependência com outra, é necessário utilizar a funcionalidade Linked Items (Itens vinculados) do GitLab para registrar essa ligação. Isso vale tanto para issues em projetos diferentes quanto para issues no mesmo projeto, desde que haja interdependência entre elas.
+
+Situações em que a vinculação deve ser feita:
+
+- Demandas com o mesmo número de chamado em projetos diferentes. Exemplo: um chamado do eSocial que envolva alterações na API e no e-Cidade.
+- Demandas com números de chamados distintos, mas que dependem entre si. Exemplo: uma solicitação que exige ajustes tanto no Nota Fiscal Eletrônica quanto no e-Cidade.
+- Demandas divididas em várias partes, mesmo dentro do mesmo projeto, que dependem entre si para entrega completa. Exemplo: funcionalidades fracionadas em etapas ou entregas intermediárias, mas que estão diretamente relacionadas.
+
+Como vincular:
+
+1. Acesse la issue principal.
+2. Vá até a seção Linked Items (ou "Itens vinculados").
+3. Clique em "Add" ou "Adicionar".
+4. Selecione o tipo de vínculo "relates to".
+5. Informe a URL ou ID da issue relacionada (mesmo que esteja em outro projeto).
+
+![Vinculando Issues](../../assets/images/Tela20Gitlab.jpg)
+
+## Finalização das Issues
+
+1. Após o aceite da demanda pelo suporte, o card correspondente deve ser movido para a coluna "Aguardando Nivelamento" pelo suporte responsável no board.
+2. Os líderes técnicos são responsáveis por realizar o nivelamento das demandas presentes nessa coluna, devendo:
+3. Verificar a coluna "Aguardando Nivelamento" ao final de cada dia útil;
+4. Realizar o nivelamento de todas as demandas que estiverem nessa etapa;
+5. Movimentar o card para a coluna "Nivelado" assim que o nivelamento for concluído.
+6. Caso seja um acerto em base a equipe de infra deve seguir o mesmo procedimento informado no item 5.
+
+**Importante:** Apenas a equipe de Projetos está autorizada a fechar as issues e mover o card para a coluna "Closed".
+
+![Finalização de Issues](../../assets/images/Tela21Gitlab.jpg)`
   },
   {
     id: "padrao-emails",
@@ -142,7 +303,104 @@ O GitLab é utilizado para o controle de versão e gerenciamento do ciclo de vid
     order: 3,
     content: `# Padrão de e-mails
 
-Diretrizes e modelos para padronização de e-mails corporativos enviados pelo sistema, incluindo assinaturas e estrutura de texto.`
+Este guia contém os modelos oficiais de comunicação via e-mail para garantir a padronização e o profissionalismo nas interações com os clientes e entre as equipes.
+
+## E-mail de Aprovação de UC
+
+**Assunto:** Aprovação do Documento de UC - #[número da demanda - Título]
+
+**Corpo do e-mail:**
+
+Prezados,
+
+Encaminho, em anexo, o Documento de Caso de Uso (UC) referente à regra e ao protótipo do desenvolvimento a ser realizado no sistema, com o objetivo de atender melhorias no módulo [módulo]. O documento descreve as alterações necessárias para [descreva o motivo da melhoria]. Para darmos andamento ao desenvolvimento, solicito a leitura e aprovação do Documento de UC.
+
+Reforço que somente após a aprovação será possível dar continuidade ao desenvolvimento.
+
+**Observação:** Mudanças de escopo após a aprovação da UC serão tratadas como novas melhorias e passarão por nova pactuação alterando o prazo de entrega.
+
+Fico no aguardo da validação e qualquer dúvida estou à disposição.
+
+Atenciosamente,
+
+---
+
+## E-mail de Aceite de Demanda
+
+**Assunto:** Aceite de demanda #[número da demanda - Título]
+
+**Corpo do e-mail:**
+
+Olá, [bom dia/boa tarde/boa noite]!
+
+Após a homologação realizada no ambiente de testes, solicito a confirmação do aceite da demanda #[número da demanda].
+
+Por favor, confirme se os ajustes atendem às expectativas para que possamos dar andamento com a demanda para liberação em produção.
+
+**Obs:** Mudanças de escopo serão tratadas como novas melhorias e deverão ser formalizadas por meio da abertura de um novo chamado para a pactuação e início do desenvolvimento.
+
+Fico no aguardo da validação e qualquer dúvida estou à disposição.
+
+Atenciosamente,
+
+---
+
+## E-mail de Aceite de Demanda com link do ambiente de homologação
+
+**Assunto:** Aceite de demanda #[número da demanda - Título]
+
+**Corpo do e-mail:**
+
+Olá, [bom dia/boa tarde/boa noite]!
+
+Após a homologação realizada no ambiente de testes, solicito a confirmação do aceite da demanda #[número da demanda].
+
+Por favor, confirme se os ajustes atendem às expectativas no link a seguir para que possamos dar andamento com a demanda para liberação em produção.
+
+[Link do ambiente de homologação]
+
+**Obs:** Mudanças de escopo serão tratadas como novas melhorias e deverão ser formalizadas por meio da abertura de um novo chamado para a pactuação e início do desenvolvimento.
+
+Fico no aguardo da validação e qualquer dúvida estou à disposição.
+
+Atenciosamente,
+
+---
+
+## E-mail de Agendamento de Demanda
+
+**Assunto:** Agendamento de demanda [número da demanda - Título]
+
+**Corpo do e-mail:**
+
+[Bom dia / Boa tarde / Boa noite],
+
+Em atendimento à solicitação da CGTI, informo que todas as demandas devem ser acompanhadas pelos colaboradores da Libre quando forem disponibilizadas em produção. Dessa forma, gostaria de agendar o acompanhamento da demanda #[nº ticket - titulo da demanda] para [dia da semana], dia [data], a partir das [horário].
+
+Caso este e-mail não seja respondido antes das 16h, o agendamento não poderá ocorrer no dia seguinte. Ficando remarcado para o dia útil subsequente à este.
+
+Agradeço pela colaboração e fico à disposição para qualquer dúvida.
+
+Atenciosamente,
+
+---
+
+## E-mail de Autorização para acerto em Base
+
+**Assunto:** Acerto em base - [número do chamado - Título]
+
+**Corpo do e-mail:**
+
+[Bom Dia/Boa tarde/Boa noite],
+
+Solicito autorização para o acerto em base do(s) chamado(s): [número do chamado - Título]
+
+**Justificativa da Necessidade:** descreva o motivo pelo qual precisa do acerto em base
+**Número do Chamado que Resolve a Causa Raiz do Problema:** [número do chamado - Título]
+
+Aguardo sua aprovação,
+
+Atenciosamente.`
   },
   {
     id: "ponto-funcao",
@@ -152,6 +410,23 @@ Diretrizes e modelos para padronização de e-mails corporativos enviados pelo s
     content: `# Ponto de Função
 
 Documentação sobre a metodologia de métrica para software através da contagem de pontos de função (FPA).`
+  },
+  {
+    id: "termos-tecnicos",
+    title: "Termos Técnicos",
+    category: "guia-inicio",
+    order: 5,
+    content: `# Termos Técnicos
+
+Este glossário reúne os principais termos técnicos e siglas utilizados no sistema, servindo como uma referência rápida para facilitar o entendimento das funcionalidades e a comunicação entre as equipes.
+
+## Principais Termos
+
+- **API (Application Programming Interface)**: Conjunto de definições e protocolos usado no desenvolvimento e na integração de software de aplicações.
+- **CGM (Cadastro Geral do Município)**: Registro centralizado de pessoas físicas e jurídicas que possuem relação com o município.
+- **FPA (Function Point Analysis)**: Metodologia para medir o tamanho funcional de um software.
+- **Workflow**: Fluxo de trabalho que define a sequência de tarefas e processos dentro do sistema.
+`
   },
   {
     id: "fluxo-sistema",

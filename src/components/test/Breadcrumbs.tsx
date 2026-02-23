@@ -3,6 +3,7 @@ import { getCategoryById } from "@/data/documentation";
 
 interface BreadcrumbsProps {
   categoryId: string;
+  pageId?: string;
   pageTitle: string;
   submoduleTitle?: string;
   categoryTitle?: string;
@@ -10,9 +11,8 @@ interface BreadcrumbsProps {
   onNavigate: (path: string) => void; // New prop for handling navigation
 }
 
-const Breadcrumbs = ({ categoryId, pageTitle, submoduleTitle, categoryTitle, selectedFinalSectionTitle, onNavigate }: BreadcrumbsProps) => {
+const Breadcrumbs = ({ categoryId, pageId, pageTitle, submoduleTitle, categoryTitle, selectedFinalSectionTitle, onNavigate }: BreadcrumbsProps) => {
   const breadcrumbSegments: { label: string; path: string }[] = [];
-  let currentPathParts: string[] = [];
 
   // 1. Home
   breadcrumbSegments.push({ label: "Início", path: "/" });
@@ -21,44 +21,51 @@ const Breadcrumbs = ({ categoryId, pageTitle, submoduleTitle, categoryTitle, sel
   const areasCategory = getCategoryById("modulos");
   if (areasCategory) {
     breadcrumbSegments.push({ label: areasCategory.title, path: "/areas" });
-    currentPathParts.push("modulos");
   }
 
-  // 3. Main Module
+  // 3. Main Module / Category
   const mainModule = getCategoryById(categoryId);
   if (mainModule && mainModule.id !== "modulos") {
-    currentPathParts.push(mainModule.id);
-    breadcrumbSegments.push({ label: mainModule.title, path: `/docs/${currentPathParts.join('/')}` });
+    let path = `/docs/${mainModule.id}`;
+    if (mainModule.id === "guia-inicio") {
+        path = "/guia-inicio";
+    } else if (mainModule.id === "tutoriais") {
+        path = "/tutoriais";
+    }
+    breadcrumbSegments.push({ label: mainModule.title, path: path });
   }
 
   // 4. Page/Submodule
   if (pageTitle && mainModule?.title.toLowerCase() !== pageTitle.toLowerCase()) {
-    const pageSlug = pageTitle.toLowerCase().replace(/\s/g, "-");
-    currentPathParts.push(pageSlug);
-    breadcrumbSegments.push({ label: pageTitle, path: `/docs/${currentPathParts.join('/')}` });
+    const finalPageId = pageId || pageTitle.toLowerCase().replace(/\s/g, "-");
+    breadcrumbSegments.push({ label: pageTitle, path: `/docs/${categoryId}/${finalPageId}` });
   }
 
   // 5. Deeper Submodule/Category
   if (submoduleTitle) {
-    const submoduleSlug = submoduleTitle.toLowerCase().replace(/\s/g, "-");
-    currentPathParts.push(submoduleSlug);
-    breadcrumbSegments.push({ label: submoduleTitle.charAt(0).toUpperCase() + submoduleTitle.slice(1), path: `/${currentPathParts.join('/')}` });
+    const finalPageId = pageId || pageTitle.toLowerCase().replace(/\s/g, "-");
+    breadcrumbSegments.push({ 
+        label: submoduleTitle.charAt(0).toUpperCase() + submoduleTitle.slice(1), 
+        path: `/docs/${categoryId}/${finalPageId}/${submoduleTitle.toLowerCase()}` 
+    });
   }
 
   // 6. Even Deeper Category
   if (categoryTitle && categoryTitle.toLowerCase() !== submoduleTitle?.toLowerCase()) {
-    const categorySlug = categoryTitle.toLowerCase().replace(/\s/g, "-");
-    currentPathParts.push(categorySlug);
-    breadcrumbSegments.push({ label: categoryTitle.charAt(0).toUpperCase() + categoryTitle.slice(1), path: `/${currentPathParts.join('/')}` });
+    breadcrumbSegments.push({ 
+        label: categoryTitle.charAt(0).toUpperCase() + categoryTitle.slice(1), 
+        path: `/docs/${categoryId}/${pageTitle.toLowerCase().replace(/\s/g, "-")}/${submoduleTitle?.toLowerCase()}/${categoryTitle.toLowerCase()}` 
+    });
   }
 
   // 7. Final Section
   if (selectedFinalSectionTitle &&
       selectedFinalSectionTitle.toLowerCase() !== categoryTitle?.toLowerCase() &&
       selectedFinalSectionTitle.toLowerCase() !== submoduleTitle?.toLowerCase()) {
-    const finalSlug = selectedFinalSectionTitle.toLowerCase().replace(/\s/g, "-");
-    currentPathParts.push(finalSlug);
-    breadcrumbSegments.push({ label: selectedFinalSectionTitle, path: `/${currentPathParts.join('/')}` });
+    breadcrumbSegments.push({ 
+        label: selectedFinalSectionTitle, 
+        path: `/docs/${categoryId}/${pageTitle.toLowerCase().replace(/\s/g, "-")}/${submoduleTitle?.toLowerCase()}/${categoryTitle?.toLowerCase()}/${selectedFinalSectionTitle.toLowerCase()}` 
+    });
   }
 
   return (

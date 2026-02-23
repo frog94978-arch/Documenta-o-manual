@@ -195,7 +195,7 @@ All colors MUST be HSL.
   }
 
   .markdown-content hr {
-    @apply my-8 border-border;
+    @apply my-8 border-t-2 border-foreground/30;
   }
 
   /* Alert boxes */

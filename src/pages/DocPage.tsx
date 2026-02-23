@@ -42,32 +42,26 @@ const DocPage = () => {
   }
 
   const handleNavigation = (path: string) => {
-    const pathParts = path.split('/').filter(Boolean); // ['modulos', 'patrimonial', 'compras']
-    const currentPageSlug = page || "";
-    const slugIndex = pathParts.indexOf(currentPageSlug);
+    // Top level routes
+    if (path === '/' || path === '/areas' || path === '/guia-inicio' || path === '/tutoriais') {
+        navigate(path);
+        return;
+    }
 
-    // If a breadcrumb for a different module is clicked, navigate to it.
-    if (path !== '/' && slugIndex === -1 && pathParts.length > 1) {
+    const pathParts = path.split('/').filter(Boolean);
+    const categoryPart = pathParts[1]; // 'guia-inicio', 'modulos', etc.
+    const pagePart = pathParts[2]; // 'gitlab', 'patrimonial', etc.
+
+    // If we are navigating to a different page or category
+    if (categoryPart !== category || pagePart !== page) {
         navigate(path);
         return;
     }
     
-    // If Home or Areas is clicked
-    if (path === '/' || path === '/areas') {
-        navigate(path);
-        return;
-    }
-    
-    // If we are navigating within the current module page
-    let newSubmodule = null;
-    let newCategory = null;
-    let newFinalSection = null;
-
-    if (slugIndex !== -1) {
-        newSubmodule = pathParts[slugIndex + 1] || null;
-        newCategory = pathParts[slugIndex + 2] || null;
-        newFinalSection = pathParts[slugIndex + 3] || null;
-    }
+    // If we are navigating within the current page (e.g., changing tabs/submodules)
+    const newSubmodule = pathParts[3] || null;
+    const newCategory = pathParts[4] || null;
+    const newFinalSection = pathParts[5] || null;
 
     setSelectedSubmodule(newSubmodule);
     setSelectedCategory(newCategory);
@@ -79,6 +73,7 @@ const DocPage = () => {
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <Breadcrumbs
           categoryId={category}
+          pageId={docPage.id}
           pageTitle={docPage.title}
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
@@ -121,6 +116,7 @@ const DocPage = () => {
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <Breadcrumbs
           categoryId={category}
+          pageId={docPage.id}
           pageTitle={docPage.title}
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
@@ -158,6 +154,7 @@ const DocPage = () => {
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <Breadcrumbs
           categoryId={category}
+          pageId={docPage.id}
           pageTitle={docPage.title}
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
@@ -193,6 +190,7 @@ const DocPage = () => {
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <Breadcrumbs
           categoryId={category}
+          pageId={docPage.id}
           pageTitle={docPage.title}
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
@@ -229,6 +227,7 @@ const DocPage = () => {
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <Breadcrumbs
           categoryId={category}
+          pageId={docPage.id}
           pageTitle={docPage.title}
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
@@ -264,6 +263,7 @@ const DocPage = () => {
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <Breadcrumbs
           categoryId={category}
+          pageId={docPage.id}
           pageTitle={docPage.title}
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
@@ -299,6 +299,7 @@ const DocPage = () => {
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <Breadcrumbs
           categoryId={category}
+          pageId={docPage.id}
           pageTitle={docPage.title}
           submoduleTitle={selectedSubmodule}
           categoryTitle={selectedCategory}
@@ -331,7 +332,7 @@ const DocPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <Breadcrumbs categoryId={category} pageTitle={docPage.title} onNavigate={handleNavigation} />
+      <Breadcrumbs categoryId={category} pageId={docPage.id} pageTitle={docPage.title} onNavigate={handleNavigation} />
       <article className="prose prose-slate prose-lg max-w-none mt-8">
         <MarkdownContent content={docPage.content} />
       </article>
