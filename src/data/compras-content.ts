@@ -406,4 +406,100 @@ Retorna os grupos de fornecimento vinculado no momento do cadastro do fornecedor
 
 Lista de certificados já emitidos para o fornecedor.
 `,
+  "Consulta Item": `
+# Consulta Item
+
+Esta rotina exibe dados do fornecedor cadastrado previamente no cadastro de fornecedores do módulo compras.
+
+**DB:PATRIMONIAL > Compras > Consultas > Consulta Fornecedor**
+
+## Filtro de Pesquisa
+
+**Fornecedor**: O usuário deverá informar o código do fornecedor. Caso desconheça o código poderá optar pela pesquisa, clicando no link "Fornecedor", o e-cidade abrirá uma listagem de pesquisa com campos adicionais como Fornecedor, Nome/Razão Social, CNPJ/CPF e Data Lançamento que poderão ser utilizados como filtros a fim de refinar a busca o e consequentemente o resultado.
+
+## Dados Fornecedor
+
+Na parte superior da tela o sistema irá exibir informações como Nome/Razão Social, CNPJ/CPF, Data Lançamento, Bloqueado, Objeto Social conforme a imagem abaixo:
+
+## Detalhamento
+
+### Consulta Contas
+Retorna informações referente aos dados bancários do fornecedor.
+
+### Consulta Movimentos
+Lista de movimentos lançados na aba Movimento no cadastro de fornecedor.
+
+### Grupo de Fornecimento
+Retorna os grupos de fornecimento vinculado no momento do cadastro do fornecedor (aba Subgrupo).
+
+### Certificados
+Lista de certificados já emitidos para o fornecedor.
+`,
+  "Saldo da Despesa": `
+# Saldo da Despesa
+
+Para consultar o saldo de uma Despesa no orçamento, acesse the menu:
+
+**Patrimonial > Compras > Consultas > Saldo da Despesa**
+
+Ao acessar o menu é possível consultar a despesa de duas formas:
+
+1. Pode-se colocar diretamente o reduzido da dotação;
+2. Caso não tenha esse dado, é possível clicar nos combobox e buscar os dados cadastrados no módulo orçamento:
+
+- **Código Órgão**: Buscar na lista os órgãos cadastrados no orçamento e selecionar;
+- **Código Unidade**: Buscar na lista as Unidades cadastradas no orçamento e selecionar;
+- **Código da Função**: Buscar na lista as Funções cadastradas no orçamento e selecionar;
+- **Sub Função**: Buscar na lista as Subfunções cadastradas no orçamento e selecionar;
+- **Programas Orçamento**: Buscar na lista os Programas cadastrados no orçamento e selecionar;
+- **Projetos / Atividades**: Buscar na lista os projetos/atividades cadastrados no orçamento e selecionar;
+- **Elemento**: Buscar na lista os elementos cadastrados no orçamento e selecionar;
+- **Fonte de Recursos**: Buscar na lista as Fontes de Recusrso cadastradas no orçamento e selecionar;
+
+Após pesquisar, o sistema demonstra os dados da dotação escolhida para visualização:
+
+Apresentação dos dados da dotação, saldos e também a lista detalhada de reservas vinculadas a ela, caso tenha.
+`,
+  "Consulta Empenho": `
+# Consulta Empenho
+
+**Patrimonial > Compras > Consulta > Consulta Empenho**
+
+Na consulta de empenho é possível verificar toda a sua movimentação, como por exemplo os itens, a ordem de compra, pagamento, lançamentos contábeis, notas, etc. Através dos botões de consulta do quadro “Detalhamento”.
+`,
+  "CGM": `
+# CGM
+
+**Patrimonial > Compras > Consulta > CGM**
+
+Nesta rotina é possível realizar a consulta por informações de um determinado CGM (Cadastro Geral Municipal).
+
+Na tela de pesquisa será solicitado o número do CGM, caso o usuário desconheça, poderá clicar no link "Numcgm" e pesquisar por filtros adicionais.
+
+## Dados Cadastrais
+Retorna informações gerais como nome/razão social, CPF, Data de Nascimento, Nome Pai, Nome Mãe, entre outras.
+
+## Detalhamento do Cadastro
+
+### Endereço Principal
+Consta informações a respeito do endereço cadastrado como principal.
+
+### Endereço Secundário
+Consta informações a respeito do endereço cadastrado como secundário.
+
+### Documentos
+Constam os documentos vinculados ao cadastro do CGM na aba "Documentos" na inclusão de CGM. Estes documentos adicionais são tratados em forma de texto, portanto para visualizar o usuário terá que clicar em "Ver".
+
+### Emprego
+Informações como Profissão, CBO, PIS/PASEP/CI, Renda e Local de Trabalho.
+
+### Outras Informações
+Informações como o login do usuário que incluiu o CGM, a data da última alteração e data do cadastro do CGM.
+
+### Alterações
+Existindo uma ou mais alterações, o usuário poderá clicar em "Alterações" para visualizar outras existentes. Ao clicar sobre a linha, o e-cidade irá exibir a posição e os respectivos dados referente a posição. Para visualizar o CGM na posição original atual, basta clicar no botão "Original".
+
+### Usuário do processo eletrônico
+Exibirá informações referente as credenciais do eauth. Portanto caso o CGM possua um usuário no processo eletrônico este será exibido nesta opção.
+`,
 };

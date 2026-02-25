@@ -409,7 +409,37 @@ Atenciosamente.`
     order: 4,
     content: `# Ponto de Função
 
-Documentação sobre a metodologia de métrica para software através da contagem de pontos de função (FPA).`
+## Saldo – PF Libre Maricá
+Referente ao contrato vinculado ao site:
+[https://libresolucoes.com.br/](https://libresolucoes.com.br/)
+
+## Sprint – A Faturar
+Demandas finalizadas dentro da Sprint atual e que já estão aptas para faturamento.
+
+**Quantidade de Pontos de Função: 2**
+
+## Sprint – Programando
+Demandas em desenvolvimento dentro da Sprint atual.
+
+**Quantidade de Pontos de Função: 3**
+
+## Retaguarda – A Faturar
+Demandas de retaguarda já concluídas e aptas para faturamento.
+
+**Quantidade de Pontos de Função: 4**
+
+## Retaguarda – A Programar
+Demandas de retaguarda que ainda estão em desenvolvimento.
+
+**Quantidade de Pontos de Função: 5**
+
+## Demandas com Impedimento
+Demandas que possuem bloqueios técnicos, funcionais ou administrativos que impedem o avanço do desenvolvimento.
+
+**Quantidade de Pontos de Função: 6**
+
+## Pontos de Função – Geral
+Consolidado geral dos Pontos de Função, considerando todas as categorias descritas acima, permitindo uma visão macro do saldo contratado, em execução e a faturar.`
   },
   {
     id: "termos-tecnicos",
