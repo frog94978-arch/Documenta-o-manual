@@ -25,7 +25,7 @@ const SubmodulePage = () => {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <Link to="/docs/modulos/patrimonial" className="inline-block mb-6">
-          <Button variant="ghost" size="sm">
+          <Button variant="outline" size="sm" className="bg-card">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Voltar para Patrimonial
           </Button>

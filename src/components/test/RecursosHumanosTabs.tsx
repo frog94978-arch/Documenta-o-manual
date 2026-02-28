@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getSubmoduleById } from "@/data/submodules";
-import { FileText, Hourglass, Users, Briefcase } from "lucide-react";
+import { FileText, Hourglass, Users, Briefcase, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/test/ui/button";
 
 interface RecursosHumanosTabsProps {
   selectedSubmodule: string | null;
@@ -67,22 +68,17 @@ const RecursosHumanosTabs = ({
       return <p>Nenhum item encontrado para esta categoria.</p>;
 
     return (
-      <div className="border border-border rounded-lg p-6">
-        <h3 className="text-xl font-semibold mb-4">
-          {categoryId.charAt(0).toUpperCase() + categoryId.slice(1)}
-        </h3>
-        <div className="flex flex-col items-center gap-2">
-          {categoryOptions.map((item) => (
-            <button
-              key={item}
-              className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
-              onClick={() => onSelectFinalSection(item)} // ADD onClick handler
-            >
-              {item}
-            </button>
-          ))}
-        </div>
-      </div>
+      <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
+        {categoryOptions.map((item) => (
+          <button
+            key={item}
+            className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+            onClick={() => onSelectFinalSection(item)} // ADD onClick handler
+          >
+            {item}
+          </button>
+        ))}
+      </nav>
     );
   };
 
@@ -92,15 +88,19 @@ const RecursosHumanosTabs = ({
         // NEW: If a final section is selected
         return (
           <div>
-            <button
+            <Button
               onClick={handleBackClick}
-              className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground"
+              variant="outline"
+              size="sm"
+              className="mb-4 bg-card"
             >
-              &larr; Voltar para{" "}
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Voltar para{" "}
               {selectedCategory.charAt(0).toUpperCase() +
                 selectedCategory.slice(1)}
-            </button>
+            </Button>
             <h2 className="text-2xl font-bold mb-6">{selectedFinalSection}</h2>
+            <hr className="mb-8 border-t border-border" />
             {/* Placeholder for content of the selected final section */}
             <p>Conteúdo detalhado para: {selectedFinalSection}</p>
           </div>
@@ -109,18 +109,22 @@ const RecursosHumanosTabs = ({
       // If a category is selected, but no final section, display the options for final sections
       return (
         <div>
-          <button
+          <Button
             onClick={handleBackClick}
-            className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground"
+            variant="outline"
+            size="sm"
+            className="mb-4"
           >
-            &larr; Voltar para{" "}
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Voltar para{" "}
             {selectedSubmodule.charAt(0).toUpperCase() +
               selectedSubmodule.slice(1)}
-          </button>
+          </Button>
           <h2 className="text-2xl font-bold mb-6">
             {selectedCategory.charAt(0).toUpperCase() +
               selectedCategory.slice(1)}
           </h2>
+          <hr className="mb-8 border-t border-border" />
           {renderFinalContent(
             selectedSubmodule,
             selectedCategory,
@@ -134,24 +138,34 @@ const RecursosHumanosTabs = ({
     // Category selection view
     return (
       <div>
-        <button
+        <Button
           onClick={handleBackClick}
-          className="mb-4 text-sm font-bold text-muted-foreground hover:text-foreground"
+          variant="outline"
+          size="sm"
+          className="mb-4 bg-card"
         >
-          &larr; Voltar para Módulos
-        </button>
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Voltar para Módulos
+        </Button>
         <h2 className="text-2xl font-bold mb-6">
           {selectedSubmodule.charAt(0).toUpperCase() +
             selectedSubmodule.slice(1)}
         </h2>
-        <div className="grid grid-cols-2 gap-4">
+        <hr className="mb-8 border-t border-border" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           {categories.map((category) => (
             <button
               key={category.value}
-              className="h-32 rounded-lg p-4 flex flex-col justify-center items-center bg-muted hover:bg-muted-foreground/10 transition-colors"
+              className="text-left transition-all hover:scale-[1.02] focus:outline-none"
               onClick={() => setSelectedCategory(category.value)}
             >
-              <div className="text-lg font-bold">{category.label}</div>
+              <div className="rounded-lg text-card-foreground h-full border border-border transition-all duration-300 cursor-pointer bg-card hover:bg-muted shadow-sm hover:shadow-lg">
+                <div className="p-6 flex items-center justify-center min-h-[100px]">
+                  <h3 className="text-lg font-bold text-center">
+                    {category.label}
+                  </h3>
+                </div>
+              </div>
             </button>
           ))}
         </div>
@@ -161,18 +175,22 @@ const RecursosHumanosTabs = ({
 
   // Initial submodule selection view
   return (
-    <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {submodules.map((submodule) => (
         <button
           key={submodule.name}
-          className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2"
+          className="text-left transition-all hover:scale-[1.02] focus:outline-none"
           onClick={() => handleSubmoduleClick(submodule.name)}
         >
-          {submodule.icon}
-          {submodule.name}
+          <div className="rounded-lg text-card-foreground h-full border border-border transition-all duration-300 cursor-pointer bg-card hover:bg-muted shadow-sm hover:shadow-lg">
+            <div className="p-6 flex flex-col items-center justify-center min-h-[120px] gap-3">
+              <div className="text-primary">{submodule.icon}</div>
+              <h3 className="text-lg font-bold text-center">{submodule.name}</h3>
+            </div>
+          </div>
         </button>
       ))}
-    </nav>
+    </div>
   );
 };
 

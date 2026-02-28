@@ -32,7 +32,7 @@ const Index = () => {
         </div>
 
         {/* Horizontal Category Navigation */}
-        <nav className="flex justify-center flex-wrap gap-4 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8 sm:mb-12">
           {categories.map((category) => (
             <Link
               key={category.id}
@@ -45,13 +45,17 @@ const Index = () => {
                       ? '/guia-inicio'
                       : getFirstPageLink(category.id)
               }
-              className="flex flex-col items-center justify-center p-4 border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-200 bg-card text-card-foreground hover:bg-muted w-36 h-36 sm:w-40 sm:h-40 text-center"
+              className="text-left transition-all hover:scale-[1.02] focus:outline-none"
             >
-              <div className="text-primary mb-2">{renderIcon(category.icon)}</div>
-              <h3 className="text-base sm:text-lg font-semibold">{category.title}</h3>
+              <div className="rounded-lg text-card-foreground h-full border border-border transition-all duration-300 cursor-pointer bg-card hover:bg-muted shadow-sm hover:shadow-lg">
+                <div className="p-6 flex flex-col items-center justify-center min-h-[140px] gap-3">
+                  <div className="text-primary">{renderIcon(category.icon)}</div>
+                  <h3 className="text-lg font-bold text-center">{category.title}</h3>
+                </div>
+              </div>
             </Link>
           ))}
-        </nav>
+        </div>
 
         {/* Footer Note */}
         <div className="pt-8 border-t border-border text-center">

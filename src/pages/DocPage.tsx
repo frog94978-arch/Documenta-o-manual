@@ -10,6 +10,7 @@ import RecursosHumanosTabs from "@/components/test/RecursosHumanosTabs";
 import EducacaoTabs from "@/components/test/EducacaoTabs";
 import SaudeTabs from "@/components/test/SaudeTabs";
 import ConfiguracoesTabs from "@/components/test/ConfiguracoesTabs";
+import GlossaryCards from "@/components/test/GlossaryCards";
 
 const DocPage = () => {
   const [selectedSubmodule, setSelectedSubmodule] = useState<string | null>(null);
@@ -92,7 +93,7 @@ const DocPage = () => {
             relatórios e consultas, a fim de garantir o gerenciamento
             patrimonial da instituição.
           </p>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg mb-8">
             Utilize a navegação abaixo para acessar rapidamente o módulo.
           </p>
           <PatrimonialTabs
@@ -108,9 +109,6 @@ const DocPage = () => {
     );
   }
 
-  // ... (the rest of the component is the same, just with onNavigate={handleNavigation} added to each Breadcrumbs call)
-  // Since the replace tool needs the full string, I will include the whole file content here.
-  
   if (page === "financeiro") {
     return (
       <div className="container mx-auto px-4 py-12 max-w-6xl">
@@ -133,7 +131,7 @@ const DocPage = () => {
             despesas, receitas e a geração de relatórios detalhados para
             análise e tomada de decisão.
           </p>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg mb-8">
             Utilize a navegação abaixo para acessar rapidamente o módulo.
           </p>
           <FinanceiroTabs
@@ -169,7 +167,7 @@ const DocPage = () => {
             A área Tributária gerencia as obrigações fiscais e tributárias da
             instituição.
           </p>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg mb-8">
             Utilize a navegação abaixo para acessar rapidamente o módulo.
           </p>
           <TributarioTabs
@@ -206,7 +204,7 @@ const DocPage = () => {
             aos colaboradores da instituição, desde a admissão até a folha de
             pagamento e desenvolvimento profissional.
           </p>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg mb-8">
             Utilize a navegação abaixo para acessar rapidamente o módulo.
           </p>
           <RecursosHumanosTabs
@@ -242,7 +240,7 @@ const DocPage = () => {
             A área de Educação oferece recursos e informações para a gestão
             educacional.
           </p>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg mb-8">
             Utilize a navegação abaixo para acessar rapidamente o módulo.
           </p>
           <EducacaoTabs
@@ -278,7 +276,7 @@ const DocPage = () => {
             A área de Saúde gerencia as informações e processos relacionados
             aos serviços de saúde.
           </p>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg mb-8">
             Utilize a navegação abaixo para acessar rapidamente o módulo.
           </p>
           <SaudeTabs
@@ -314,7 +312,7 @@ const DocPage = () => {
             A área de Configurações permite gerenciar as configurações gerais
             do sistema.
           </p>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg mb-8">
             Utilize a navegação abaixo para acessar rapidamente o módulo.
           </p>
           <ConfiguracoesTabs
@@ -335,6 +333,7 @@ const DocPage = () => {
       <Breadcrumbs categoryId={category} pageId={docPage.id} pageTitle={docPage.title} onNavigate={handleNavigation} />
       <article className="prose prose-slate prose-lg max-w-none mt-8">
         <MarkdownContent content={docPage.content} />
+        {docPage.id === "termos-tecnicos" && <GlossaryCards />}
       </article>
     </div>
   );

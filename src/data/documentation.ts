@@ -29,9 +29,7 @@ export const pages: DocPage[] = [
     title: "Bem-vindo",
     category: "introducao",
     order: 1,
-    content: `# Bem-vindo à Documentação
-
-Bem-vindo ao nosso sistema de documentação completo. Esta wiki foi criada para ajudá-lo a entender e utilizar todas as funcionalidades do sistema de forma eficiente.
+    content: `Bem-vindo ao nosso sistema de documentação completo. Esta wiki foi criada para ajudá-lo a entender e utilizar todas as funcionalidades do sistema de forma eficiente.
 
 ## O que você encontrará aqui
 
@@ -122,18 +120,14 @@ Após entender a visão geral, recomendamos:
     title: "Tomticket",
     category: "guia-inicio",
     order: 1,
-    content: `# Tomticket
-
-O Tomticket é a nossa plataforma de suporte e abertura de chamados. Utilize-o para relatar problemas técnicos, solicitar melhorias ou tirar dúvidas diretamente com nossa equipe de suporte especializado.`
+    content: `O Tomticket é a nossa plataforma de suporte e abertura de chamados. Utilize-o para relatar problemas técnicos, solicitar melhorias ou tirar dúvidas diretamente com nossa equipe de suporte especializado.`
   },
   {
     id: "gitlab",
     title: "Git Lab",
     category: "guia-inicio",
     order: 2,
-    content: `# Git Lab
-
-## Introdução
+    content: `## Introdução
 
 O presente documento tem como objetivo padronizar o uso do GitLab pela equipe, servindo como guia de consulta rápida sempre que surgirem dúvidas quanto aos procedimentos e boas práticas adotadas na ferramenta.
 
@@ -301,9 +295,7 @@ Como vincular:
     title: "Padrão de e-mails",
     category: "guia-inicio",
     order: 3,
-    content: `# Padrão de e-mails
-
-Este guia contém os modelos oficiais de comunicação via e-mail para garantir a padronização e o profissionalismo nas interações com os clientes e entre as equipes.
+    content: `Este guia contém os modelos oficiais de comunicação via e-mail para garantir a padronização e o profissionalismo nas interações com os clientes e entre as equipes.
 
 ## E-mail de Aprovação de UC
 
@@ -407,9 +399,7 @@ Atenciosamente.`
     title: "Ponto de Função",
     category: "guia-inicio",
     order: 4,
-    content: `# Ponto de Função
-
-## Saldo – PF Libre Maricá
+    content: `## Saldo – PF Libre Maricá
 Referente ao contrato vinculado ao site:
 [https://libresolucoes.com.br/](https://libresolucoes.com.br/)
 
@@ -446,44 +436,30 @@ Consolidado geral dos Pontos de Função, considerando todas as categorias descr
     title: "Termos Técnicos",
     category: "guia-inicio",
     order: 5,
-    content: `# Termos Técnicos
+    content: `Este glossário reúne os principais termos técnicos e siglas utilizados no sistema, servindo como uma referência rápida para facilitar o entendimento das funcionalidades e a comunicação entre as equipes.
 
-Este glossário reúne os principais termos técnicos e siglas utilizados no sistema, servindo como uma referência rápida para facilitar o entendimento das funcionalidades e a comunicação entre as equipes.
-
-## Principais Termos
-
-- **API (Application Programming Interface)**: Conjunto de definições e protocolos usado no desenvolvimento e na integração de software de aplicações.
-- **CGM (Cadastro Geral do Município)**: Registro centralizado de pessoas físicas e jurídicas que possuem relação com o município.
-- **FPA (Function Point Analysis)**: Metodologia para medir o tamanho funcional de um software.
-- **Workflow**: Fluxo de trabalho que define a sequência de tarefas e processos dentro do sistema.
-`
+## Principais Termos`
   },
   {
     id: "fluxo-sistema",
     title: "Fluxo do Sistema",
     category: "tutoriais",
     order: 1,
-    content: `# Fluxo do Sistema
-
-Aqui você encontra a documentação sobre o fluxo completo do sistema, desde a entrada de dados até o processamento final.`
+    content: `Aqui você encontra a documentação sobre o fluxo completo do sistema, desde a entrada de dados até o processamento final.`
   },
   {
     id: "erros-frequentes",
     title: "Erros Frequentes",
     category: "tutoriais",
     order: 2,
-    content: `# Erros Frequentes
-
-Guia com os erros mais comuns encontrados pelos usuários e como resolvê-los rapidamente.`
+    content: `Guia com os erros mais comuns encontrados pelos usuários e como resolvê-los rapidamente.`
   },
   {
     id: "configuracoes",
     title: "Configurações",
     category: "modulos",
     order: 1,
-    content: `# Configurações
-
-O módulo de Configurações permite personalizar e gerenciar os parâmetros gerais do sistema.
+    content: `O módulo de Configurações permite personalizar e gerenciar os parâmetros gerais do sistema.
 
 ## Funcionalidades Principais
 
@@ -525,9 +501,7 @@ Configure regras específicas:
     title: "Financeiro",
     category: "modulos",
     order: 2,
-    content: `# Módulo Financeiro
-
-Sistema completo para gestão financeira e contábil da instituição.
+    content: `Sistema completo para gestão financeira e contábil da instituição.
 
 ## Principais Funcionalidades
 
@@ -575,9 +549,7 @@ Gestão de compromissos:
     title: "Patrimonial",
     category: "modulos",
     order: 3,
-    content: `# Área Patrimonial
-
-Gestão completa do patrimônio público e almoxarifado.
+    content: `Gestão completa do patrimônio público e almoxarifado.
 
 ## Áreas do Módulo
 
@@ -638,9 +610,7 @@ Gestão de frota:
     title: "Tributário",
     category: "modulos",
     order: 4,
-    content: `# Módulo Tributário
-
-Sistema de gestão e arrecadação de tributos municipais.
+    content: `Sistema de gestão e arrecadação de tributos municipais.
 
 ## Funcionalidades
 
@@ -699,9 +669,7 @@ Ferramentas de fiscalização:
     title: "Recursos Humanos",
     category: "modulos",
     order: 5,
-    content: `# Módulo Recursos Humanos
-
-Gestão completa de pessoal e folha de pagamento.
+    content: `Gestão completa de pessoal e folha de pagamento.
 
 ## Principais Áreas
 
@@ -757,9 +725,7 @@ Gestão de benefícios:
     title: "Educação",
     category: "modulos",
     order: 6,
-    content: `# Módulo Educação
-
-Sistema de gestão escolar completo.
+    content: `Sistema de gestão escolar completo.
 
 ## Funcionalidades Principais
 
@@ -816,9 +782,7 @@ Acesso online para:
     title: "Saúde",
     category: "modulos",
     order: 7,
-    content: `# Módulo Saúde
-
-Sistema de gestão em saúde pública.
+    content: `Sistema de gestão em saúde pública.
 
 ## Áreas do Módulo
 
@@ -874,9 +838,7 @@ Controle sanitário:
     title: "Nota Fiscal",
     category: "modulos",
     order: 8,
-    content: `# Módulo Nota Fiscal
-
-Sistema de emissão e gestão de notas fiscais eletrônicas.
+    content: `Sistema de gestão e emissão de notas fiscais eletrônicas.
 
 ## Funcionalidades
 
@@ -934,9 +896,7 @@ O módulo integra automaticamente com:
     title: "Transparência",
     category: "modulos",
     order: 9,
-    content: `# Módulo Transparência
-
-Portal de transparência para atendimento à Lei de Acesso à Informação.
+    content: `Portal de transparência para atendimento à Lei de Acesso à Informação.
 
 ## Funcionalidades
 
@@ -986,9 +946,7 @@ O portal é acessível em:
     title: "Serviços On-Line",
     category: "modulos",
     order: 10,
-    content: `# Módulo Serviços On-Line
-
-Portal de serviços digitais para o cidadão.
+    content: `Portal de serviços digitais para o cidadão.
 
 ## Serviços Disponíveis
 
@@ -1056,9 +1014,7 @@ Canal de comunicação:
     title: "BI - Elastic",
     category: "modulos",
     order: 11,
-    content: `# Módulo BI - Elastic
-
-Business Intelligence com tecnologia Elasticsearch para análise avançada de dados.
+    content: `Business Intelligence com tecnologia Elasticsearch para análise avançada de dados.
 
 ## Características
 
@@ -1121,9 +1077,7 @@ Disponível em:
     title: "Protocolo Eletrônico",
     category: "modulos",
     order: 12,
-    content: `# Módulo Protocolo Eletrônico
-
-Sistema de gestão documental e processos eletrônicos.
+    content: `Sistema de gestão documental e processos eletrônicos.
 
 ## Funcionalidades
 
@@ -1191,9 +1145,7 @@ Fluxos automatizados:
     title: "e-Storage",
     category: "modulos",
     order: 13,
-    content: `# Módulo e-Storage
-
-Sistema de armazenamento e gestão de documentos digitais.
+    content: `Sistema de armazenamento e gestão de documentos digitais.
 
 ## Funcionalidades
 
@@ -1278,9 +1230,7 @@ Integrado com:
     title: "Solicitações",
     category: "compras",
     order: 1,
-    content: `# Submódulo Solicitações
-
-Esta rotina possibilita a consulta e acompanhamento das principais fases do processo de aquisição de materiais/serviços realizados pela administração pública.`
+    content: `Esta rotina possibilita a consulta e acompanhamento das principais fases do processo de aquisição de materiais/serviços realizados pela administração pública.`
   },
 ];
 
