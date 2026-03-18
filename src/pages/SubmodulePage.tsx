@@ -49,7 +49,7 @@ const SubmodulePage = () => {
                   <Link
                     key={item}
                     to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.toLowerCase().replace(/[\s/]/g, '-')}`}
-                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors"
                   >
                     {item}
                   </Link>
@@ -62,7 +62,7 @@ const SubmodulePage = () => {
                   <Link
                     key={item}
                     to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.toLowerCase().replace(/[\s/]/g, '-')}`}
-                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors"
                   >
                     {item}
                   </Link>
@@ -75,7 +75,7 @@ const SubmodulePage = () => {
                   <Link
                     key={item}
                     to={`/docs/modulos/${submoduleData.module}/${submoduleData.id}/${item.toLowerCase().replace(/[\s/]/g, '-')}`}
-                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors"
                   >
                     {item}
                   </Link>

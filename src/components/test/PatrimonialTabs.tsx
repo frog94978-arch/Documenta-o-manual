@@ -90,7 +90,7 @@ const PatrimonialTabs = ({
         {categoryOptions.map((item) => (
           <button
             key={item}
-            className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2"
+            className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2"
             onClick={() => onSelectFinalSection(item)}
           >
             {item}
@@ -115,7 +115,8 @@ const PatrimonialTabs = ({
             submoduleData &&
             submoduleData.options[
               selectedCategory as keyof typeof submoduleData.options
-            ].includes(selectedFinalSection));
+            ].includes(selectedFinalSection) &&
+            !(currentSubmoduleId === "contratos" && selectedFinalSection === "Acordo" && selectedCategory === "procedimentos"));
 
         if (isSpecialRoot && submoduleData) {
           return (
@@ -136,7 +137,7 @@ const PatrimonialTabs = ({
                   {submoduleData.options.cadastro.map((item) => (
                     <button
                       key={item}
-                      className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2"
+                      className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2"
                       onClick={() => setSelectedFinalSection(item)}
                     >
                       {item}
@@ -149,9 +150,10 @@ const PatrimonialTabs = ({
         }
 
         const content =
+          (selectedCategory === "cadastro" || selectedCategory === "consulta") ?
           comprasCadastroContent[
             selectedFinalSection as keyof typeof comprasCadastroContent
-          ];
+          ] : undefined;
 
         return (
           <div className="max-w-none">
@@ -173,7 +175,7 @@ const PatrimonialTabs = ({
                 <article className="prose prose-slate prose-lg max-w-none">
                   <MarkdownContent content={content} />
                 </article>
-              ) : selectedFinalSection === "Solicitações" ? (
+              ) : (selectedCategory === "cadastro" || selectedCategory === "consulta") && selectedFinalSection === "Solicitações" ? (
                 <article className="prose prose-slate prose-lg max-w-none">
                   <MarkdownContent content={comprasCadastroContent["Solicitações"]} />
                 </article>

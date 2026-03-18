@@ -38,7 +38,7 @@ const DocLayout = () => {
                   <Input
                     type="search"
                     placeholder="Buscar na documentação..."
-                    className="pl-10 w-full"
+                    className="pl-10 w-full bg-card"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => setShowSearchResults(true)}

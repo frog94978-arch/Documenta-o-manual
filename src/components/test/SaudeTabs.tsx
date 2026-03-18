@@ -86,7 +86,7 @@ const SaudeTabs = ({
         {categoryOptions.map((item) => (
           <button
             key={item}
-            className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-background hover:bg-muted-foreground/10 transition-colors"
+            className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors"
             onClick={() => onSelectFinalSection(item)} // ADD onClick handler
           >
             {item}

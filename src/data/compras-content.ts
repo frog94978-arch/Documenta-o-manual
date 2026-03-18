@@ -533,9 +533,20 @@ Após pesquisar, o sistema demonstra os dados da dotação escolhida para visual
 Apresentação dos dados da dotação, saldos e também a lista detalhada de reservas vinculadas a ela, caso tenha.
 `,
   "Consulta Empenho": `
-**Patrimonial > Compras > Consulta > Consulta Empenho**
+**PATRIMONIAL > Contratos > Consultas > Consulta Empenho**
 
-Na consulta de empenho é possível verificar toda a sua movimentação, como por exemplo os itens, a ordem de compra, pagamento, lançamentos contábeis, notas, etc. Através dos botões de consulta do quadro “Detalhamento”.
+Permite a consulta de empenhos da instituição. Exibe os filtros com ícones:
+
+- **Número do empenho**: Permite buscar por número do empenho, sequencial do empenho, nome/razão social e cnpj/cpf;
+- **Sequencial do empenho**: Permite buscar por número do empenho, sequencial do empenho, nome/razão social e cnpj/cpf;
+- **Reduzido**: Permite buscar pelo reduzido ou pelo estrutural da despesa;
+- **Código do material**: Permite buscar por código do material, descrição do material e se ativo/inativo;
+- **Numcgm**: Permite buscar pelo número do cgm do contratado, nome/razão social e cnpj/cpf;
+- **Data de emissão**: Permite preencher período;
+- **Ordem**: Permite buscar pelo número da ordem de compra, código do elemento e valor da ordem;
+- **Processo administrativo**: Permite preencher o campo com número do processo.
+
+Após selecionar o empenho, terá informações de resumo da movimentação, itens do empenho, lançamentos contábeis, notas de liquidação, pagamento, ordens de compra, solicitações de compra, processo de compras, agenda de pagamentos, contratos e imprimir a consulta. Também traz as informações cadastradas na emissão do empenho:
 `,
   "CGM": `
 **Patrimonial > Compras > Consulta > CGM**
@@ -632,6 +643,18 @@ Caso o processo de compras tenha originado um contrato conforme está origem, o 
 
 ## Registro de Preço
 Caso o processo de compras tenha sido gerado a partir de um processamento de compilação de registro de preço, o mesmo será exibido aqui.
+`,
+  "Acordo": `
+**PATRIMONIAL > Contratos > Consultas > Acordos**
+
+Permite buscar pelo número do acordo, origem, contratado e departamento os acordos cadastrados. Cada ícone desses, permite um maior filtro de buscas assim que selecionado:
+
+- **Acordo**: permite a busca pelo acordo (número de acordo gerado pelo sistema), o número do acordo(numeração indicada pelo cliente no cadastro) e pelo grupo de acordo;
+- **Origem**: permite selecionar na relação já disponibilizada;
+- **Contratado**: permite buscar pelo número do cgm, cpf, cnpj e nome/razão social;
+- **Departamento**: permite buscar por órgão, unidade, departamento e descrição do departamento.
+
+A consulta traz informações de itens do acordo, empenhamentos, posições do acordo, rescisões, paralisações, anulações, documentos cadastrados e comissões. Além das informações iniciais cadastradas na inclusão, conforme tela abaixo:
 `,
   "Libera Fornecedor": `
 Esta rotina é possível efetivar a liberação do fornecedor com débito, a mesma é separada em 3 abas, sendo elas:
