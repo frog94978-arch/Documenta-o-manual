@@ -18,6 +18,80 @@ export interface Submodule {
 
 export const submodules: Submodule[] = [
   {
+    id: "contabilidade",
+    title: "Contabilidade",
+    module: "patrimonial",
+    options: {
+      cadastro: [
+        "Históricos de Lançamentos",
+        "Plano de Contas",
+        "Contas do Exercício",
+        "Tipos de Compras",
+        "Plano de Contas (PCASP)",
+        "Plano de Contas Orçamentário",
+        "Rotinas administrativas",
+        "Plano de Contas"
+      ],
+      consulta: [
+        "Lançamentos Contábeis (novo)",
+        "Lançamentos",
+        "Receitas",
+        "Contas",
+        "Consulta Empenho",
+        "Consistência Contábil",
+        "Conta Corrente",
+        "Saldos das Contas de Disponibilidade de Recursos",
+        "Conferência por Recurso DDR",
+        "Auditoria",
+        "EMPENHOS PELA CONTA DO PASSIVO",
+        "Consistência de Lançamentos de Sup. de Fundos",
+        "Liquidações com ISF iguais no 1º lançamento",
+        "Liquidações e pagamentos com inconsistência no atributo ISF"
+      ],
+      relatorio: [
+        "Balanço Geral",
+        "Cadastrais",
+        "Balancetes",
+        "Gerenciais",
+        "Razão",
+        "Relatórios da LRF (anteriores a 2010)",
+        "Relatórios de Conferência",
+        "Extratos",
+        "Renúncia de Receita",
+        "Balanços para os RPPS",
+        "Demonstrativos Fiscais(LRF)",
+        "Incorporação Tributária",
+        "Demonstrações contábeis do DCASP",
+        "SICONFI",
+        "Atualização do Plano de Contas",
+        "Regime de competência",
+        "Validação Plano de Contas MSC",
+        "Nota de Lançamento",
+        "Notificação de Recebimento de Recursos Federais",
+        "Demonstrativo da Evolução da Receita",
+        "Demonstrativo da Evolução da Despesa",
+        "Índices Constitucionais e de Gestão Fiscal",
+        "Licitações Não SRP com SC tipo Compilação"
+      ],
+      procedimentos: [
+        "Parâmetros",
+        "Parâmetros Lançamento Despesa",
+        "Arrecadação de Receita",
+        "Escriturar Reavaliação",
+        "Utilitários da Contabilidade",
+        "Permite alterar parâmetro de relatório",
+        "Exercício Contábil",
+        "Exportação de Dados para TCE",
+        "Tabelas Nacionais",
+        "Escrituração Contábil",
+        "Retorna Data Sistema",
+        "Matriz de Saldos Contábeis",
+        "Conta Corrente",
+        "Recria Conplanoexesaldo / Disp Financ"
+      ]
+    }
+  },
+  {
     id: "configuracoes",
     title: "Configurações",
     module: "patrimonial",
@@ -57,10 +131,55 @@ export const submodules: Submodule[] = [
     title: "Financeiro",
     module: "patrimonial",
     options: {
-      cadastro: [],
-      consulta: [],
-      relatorio: [],
-      procedimentos: []
+      cadastro: [
+        "Grupos de Material/Serviço",
+        "Subgrupos de Materiais/Serviços",
+        "Materiais/Serviços",
+        "Cadastro de Unidades",
+        "Cadastro de Tipos de Certificado",
+        "Fornecedores"
+      ],
+      consulta: [
+        "Grupos de Material/Serviço",
+        "Subgrupos de Materiais/Serviços",
+        "Materiais/Serviços",
+        "Cadastro de Unidades",
+        "Cadastro de Tipos de Certificado",
+        "Fornecedores"
+      ],
+      relatorio: [
+        "Balanço Geral",
+        "Cadastrais",
+        "Balancetes",
+        "Gerenciais",
+        "Razão",
+        "Relatórios da LRF (anteriores a 2010)",
+        "Relatórios de Conferência",
+        "Extratos",
+        "Renúncia de Receita",
+        "Balanços para os RPPS",
+        "Demonstrativos Fiscais(LRF)",
+        "Incorporação Tributária",
+        "Demonstrações contábeis do DCASP",
+        "SICONFI",
+        "Atualização do Plano de Contas",
+        "Regime de competência",
+        "Validação Plano de Contas MSC",
+        "Nota de Lançamento",
+        "Notificação de Recebimento de Recursos Federais",
+        "Demonstrativo da Evolução da Receita",
+        "Demonstrativo da Evolução da Despesa",
+        "Índices Constitucionais e de Gestão Fiscal",
+        "Licitações Não SRP com SC tipo Compilação"
+      ],
+      procedimentos: [
+        "Grupos de Material/Serviço",
+        "Subgrupos de Materiais/Serviços",
+        "Materiais/Serviços",
+        "Cadastro de Unidades",
+        "Cadastro de Tipos de Certificado",
+        "Fornecedores"
+      ]
     }
   },
   {

@@ -66,7 +66,24 @@ const FinanceiroTabs = ({
     onSelectFinalSection: (section: string) => void
   ) => {
     const submoduleData = getSubmoduleById(submoduleId.toLowerCase());
-    if (!submoduleData) return <p>Submódulo não encontrado.</p>;
+    if (!submoduleData) return (
+        <nav class="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Lançamentos Contábeis (novo)")}>Lançamentos Contábeis (novo)</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Lançamentos")}>Lançamentos</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Receitas")}>Receitas</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Contas")}>Contas</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Consulta Empenho")}>Consulta Empenho</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Consistência Contábil")}>Consistência Contábil</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Conta Corrente")}>Conta Corrente</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Saldos das Contas de Disponibilidade de Recursos")}>Saldos das Contas de Disponibilidade de Recursos</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Conferência por Recurso DDR")}>Conferência por Recurso DDR</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Auditoria")}>Auditoria</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("EMPENHOS PELA CONTA DO PASSIVO")}>EMPENHOS PELA CONTA DO PASSIVO</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Consistência de Lançamentos de Sup. de Fundos")}>Consistência de Lançamentos de Sup. de Fundos</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Liquidações com ISF iguais no 1º lançamento")}>Liquidações com ISF iguais no 1º lançamento</button>
+            <button class="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors flex items-center justify-center gap-2" onClick={() => onSelectFinalSection("Liquidações e pagamentos com inconsistência no atributo ISF")}>Liquidações e pagamentos com inconsistência no atributo ISF</button>
+        </nav>
+    );
 
     const categoryOptions =
       submoduleData.options[categoryId as keyof typeof submoduleData.options];
