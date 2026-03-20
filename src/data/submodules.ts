@@ -92,6 +92,282 @@ export const submodules: Submodule[] = [
     }
   },
   {
+    id: "custos",
+    title: "Custos",
+    module: "patrimonial",
+    options: {
+      cadastro: [
+        "Ident. da Conta",
+        "Cadastro de Criterios de Rateio",
+        "Plano de Custo"
+      ],
+      consulta: [],
+      relatorio: [
+        "Plano de Custo",
+        "Mapa de Custos"
+      ],
+      procedimentos: [
+        "Manutenção de Parâmetros",
+        "Processamento dos Custos",
+        "Encerramento dos Custos"
+      ]
+    }
+  },
+  {
+    id: "empenho",
+    title: "Empenho",
+    module: "patrimonial",
+    options: {
+      cadastro: [
+        "Histórico do Empenho",
+        "Tipo de Empenho",
+        "Cadastro de tipo de restos a pagar",
+        "Cadastro de restos a pagar",
+        "Tipos de Eventos",
+        "Retenções",
+        "Lista de Classificação de Credores"
+      ],
+      consulta: [
+        "Consulta Empenho",
+        "Autorização de Empenho",
+        "Agendas",
+        "Ordens de Compra",
+        "Consulta de Notas Fiscais"
+      ],
+      relatorio: [
+        "Documentos",
+        "Relatorios Cadastrais",
+        "Relatórios de Movimentação",
+        "Relatório de Conferência",
+        "Delib. 200/96 - TCE RJ"
+      ],
+      procedimentos: [
+        "Manutenção de Parâmetros",
+        "Empenho por Instituição",
+        "Autorização de Empenho",
+        "Manutenção de Empenho",
+        "Ordem de Pagamento",
+        "Manutenção de Agenda",
+        "Processa Agenda Layout",
+        "Prestação de contas",
+        "Confere Prestação de conta",
+        "Configuração do texto da ordem de compra",
+        "Usuário ter acesso geral aos empenhos",
+        "Manutenção de Permissões da Despesa",
+        "Códigos de Arrecadação das Retenções",
+        "Libera empenhos para ordem de compra",
+        "Ordem Auxiliar Por Credor",
+        "Prestação de Contas",
+        "Manutenção da Lista de Classificação de Credores",
+        "Suspensão da Classificação de Credores",
+        "Rotinas administrativas",
+        "Manutenção das Retenções"
+      ]
+    }
+  },
+  {
+    id: "planejamento",
+    title: "Planejamento",
+    module: "patrimonial",
+    options: {
+      cadastro: [
+        "PPA",
+        "LDO",
+        "LOA",
+        "PIB",
+        "Receita Corrente Líquida",
+        "Manutenção de ODS"
+      ],
+      consulta: [],
+      relatorio: [
+        "Demonstrativos",
+        "Anexo de Metas e Riscos Fiscais",
+        "Cronograma de Desembolso",
+        "Ações e Metas",
+        "Programas e Indicadores"
+      ],
+      procedimentos: [
+        "Cálculo das Projeções",
+        "Manutenção",
+        "Integração Orçamento",
+        "Cronograma de Desembolso",
+        "Lançar Resultados Ações e Metas",
+        "Lançar Resultados Programas e Indicadores",
+        "Reprocessar estimativa da Receita"
+      ]
+    }
+  },
+  {
+    id: "orcamento",
+    title: "Orçamento",
+    module: "patrimonial",
+    options: {
+      cadastro: [
+        "Parâmetros Macroeconômicos",
+        "Cenário Macroeconômico",
+        "Tipos de Recursos",
+        "Orgãos",
+        "Unidades",
+        "Função",
+        "Subfunção",
+        "Programas",
+        "Eixos PPA",
+        "Atividades/Projetos",
+        "Leis para Suplementação",
+        "Tipos de Suplementação",
+        "Desdobramento da Receita",
+        "Cadastro de Indicadores PPA",
+        "Cadastro de Produtos PPA",
+        "PPA/LDO",
+        "Período de Indicadores",
+        "Cadastro de Unidades Responsáveis",
+        "Subtítulo/Localizador de Gasto",
+        "Pactos",
+        "Manutenção de Pactos",
+        "Cadastro de C. Peculiar / C. Aplicação",
+        "Manutenção de Diretrizes PPA"
+      ],
+      consulta: [
+        "Saldo da Despesa",
+        "Saldo da Receita",
+        "Plano Orçamentário"
+      ],
+      relatorio: [
+        "Anexos",
+        "Cadastrais",
+        "Demonstrativos do Orçamento",
+        "Suplementações",
+        "Relatórios do PPA",
+        "Reserva de Saldo",
+        "Metas de Receita/Despesa",
+        "Pactos",
+        "Anexo de Metas e Riscos Fiscais",
+        "Prog. Financeira e Cronog. de Desembolso",
+        "Documentos",
+        "Acompanhamento do Cronograma"
+      ],
+      procedimentos: [
+        "Parâmetros",
+        "Metas da Despesa",
+        "Previsão da Receita",
+        "Reserva de Saldo",
+        "Suplementações/Reduções",
+        "Manutenção da Receita",
+        "Liberar solicitação",
+        "Associação dos Parâmetros Macroeconômico",
+        "PPA",
+        "Pactos",
+        "Prog . Financeira e Cronog de Desembolso",
+        "Utilitários do Orçamento",
+        "Avaliação de Metas"
+      ]
+    }
+  },
+  {
+    id: "tesouraria",
+    title: "Tesouraria",
+    module: "patrimonial",
+    options: {
+      cadastro: [
+        "Cadastro de conta pagadora",
+        "Cadastro",
+        "Cadastro de Tipo de conciliação",
+        "Cadastro de Categoria de mov. bancário",
+        "Cadastro de Movimento Bancário",
+        "Manutenção de Receitas",
+        "Autenticadoras",
+        "Contas",
+        "Manutenção de Bancos",
+        "Juros e Multas",
+        "Cadastro de Agências",
+        "GRM",
+        "Cadastro de Infrações de Trânsito"
+      ],
+      consulta: [
+        "Geral Financeira",
+        "Saldo da Tesouraria",
+        "Extrato de Tesouraria",
+        "Consulta Movimentações",
+        "Consulta Empenho",
+        "Arquivos",
+        "Agendas",
+        "Consulta de Slips",
+        "Cheque",
+        "GRM"
+      ],
+      relatorio: [
+        "Relatórios de Cadastro",
+        "Relatórios de Conferências",
+        "Relatório de Taxas Por Período",
+        "Relatório de Recibos Avulsos",
+        "Reemite Recibo Avulso",
+        "Conferência dos Valores Pagos Por Banco",
+        "Receitas Por Período - Tesouraria",
+        "Receitas Por Período(pela data da baixa)",
+        "Relatório das Movimentações",
+        "Emissão de Boletim",
+        "Agenda",
+        "Arquivos Agenda",
+        "Slip",
+        "Processos do empenho",
+        "Receitas por Contribuinte",
+        "Relatório de Repasses",
+        "Razão",
+        "Fornecedores com Conta",
+        "Relatório de Planilha",
+        "Reemissão de Planilha",
+        "Estorno de pagamento",
+        "Gastos por desdobramento",
+        "Receitas sem Ligação Orçamento/Plano",
+        "Receitas Pagas por Período",
+        "Relatórios de receitas por baixa banco",
+        "Demonstrativo de Pagamento a Fornecedor",
+        "Arrecadações por Taxa",
+        "Reemissão de Ordem de Pagamento Auxiliar",
+        "Conciliação Bancária",
+        "Arquivo Retorno Processado",
+        "Comparativo valores Pagos/Classificados",
+        "Folha de Pagamento",
+        "Lista de Classificação de Credores",
+        "Detalhamento da Baixa Bancaria CSV",
+        "Notas de Liquidação Suspensas",
+        "GRM",
+        "Infração de Trânsito",
+        "Relatório DJO 190",
+        "Operações TEF",
+        "Receitas por Período e Histórico"
+      ],
+      procedimentos: [
+        "Arrecadação de Receita",
+        "Conciliação Bancária com carga de extrato",
+        "Conciliação Bancária sem carga de extrato",
+        "Planilha de Lançamento",
+        "Aplicações Bancárias",
+        "Acerto de Autenticação",
+        "Recibo de Receita",
+        "Reemissão da Bobina",
+        "Processar Arquivos Retorno Banco",
+        "Movimentações Internas",
+        "Inclusão de Parcelamentos",
+        "Agenda",
+        "Conta Padrão para Autenticadora",
+        "Altera Conta Fornecedor",
+        "Processamento Arquivo Simples(Eventos)",
+        "Débito em Conta",
+        "Pagamento de empenho",
+        "Operação Financeira Extra Orçamentária",
+        "Ordem Bancária",
+        "Devolução de Adiantamento",
+        "Retorna Data Sistema",
+        "Importa arquivo DJO",
+        "GRM",
+        "Cadastro de Órgão Público",
+        "Infrações de Trânsito",
+        "Arquivo Tef"
+      ]
+    }
+  },
+  {
     id: "configuracoes",
     title: "Configurações",
     module: "patrimonial",
@@ -767,7 +1043,12 @@ export const submodules: Submodule[] = [
 ];
 
 export function getSubmoduleById(id: string): Submodule | undefined {
-  return submodules.find(sub => sub.id === id);
+  // Normalizar para remover acentos
+  const normalizeId = (str: string) => 
+    str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  
+  const normalizedSearchId = normalizeId(id);
+  return submodules.find(sub => normalizeId(sub.id) === normalizedSearchId);
 }
 
 export function getSubmodulesByModule(module: string): Submodule[] {
