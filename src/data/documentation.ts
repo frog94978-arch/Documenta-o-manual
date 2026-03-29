@@ -120,7 +120,51 @@ Após entender a visão geral, recomendamos:
     title: "Tomticket",
     category: "guia-inicio",
     order: 1,
-    content: `O Tomticket é a nossa plataforma de suporte e abertura de chamados. Utilize-o para relatar problemas técnicos, solicitar melhorias ou tirar dúvidas diretamente com nossa equipe de suporte especializado.`
+    content: `O Tomticket é a nossa plataforma de suporte e abertura de chamados. Utilize-o para relatar problemas técnicos, solicitar melhorias ou tirar dúvidas diretamente com nossa equipe de suporte especializado.
+
+## Primeiros Passos: Acesso ao Sistema
+Antes de começar, certifique-se de que você possui as credenciais fornecidas pelo seu administrador.
+
+1. Acesse a URL do painel da sua empresa (ex: suaempresa.tomticket.com).
+2. Insira seu E-mail e Senha.
+3. Clique em **Acessar**.
+
+## 📩 Como Abrir um Chamado (Ticket)
+Abrir um chamado corretamente garante que o suporte entenda sua necessidade rapidamente.
+
+### Passo a Passo:
+1. **Localize o Botão:** No menu lateral ou no dashboard principal, clique em "Abrir Chamado" ou no ícone de "+".
+2. **Selecione o Departamento:** Escolha a área responsável (ex: TI, Financeiro, Manutenção).
+3. **Defina o Assunto:** Seja direto. Em vez de "Erro", use "Erro ao acessar o sistema de folha de pagamento".
+4. **Descreva o Problema:**
+   - O que aconteceu?
+   - Quando começou?
+   - Quais passos você já tentou?
+5. **Anexos:** Se houver um erro na tela, tire um print e anexe ao chamado.
+6. **Prioridade:** Se disponível, selecione a urgência (Baixa, Média ou Alta).
+7. **Finalizar:** Clique em "**Enviar Chamado**". Você receberá um número de protocolo por e-mail.
+
+## 💬 Interagindo em um Chamado Aberto
+Se o atendente responder ou se você tiver novas informações:
+
+1. Vá em "**Meus Chamados**".
+2. Clique no chamado desejado.
+3. Escreva sua mensagem no campo de texto e clique em "**Responder**".
+
+**Nota:** Evite abrir novos chamados para o mesmo assunto; use sempre a réplica no chamado existente.
+
+## ✅ Como Finalizar um Chamado
+Um chamado deve ser finalizado quando o problema foi resolvido ou a dúvida sanada.
+
+### Opção A: O Atendente Finaliza
+Normalmente, o técnico resolve o problema e altera o status para "**Finalizado**" ou "**Resolvido**". Você receberá uma notificação para validar a solução.
+
+### Opção B: Você Finaliza (Encerramento pelo Cliente)
+Se você resolveu o problema sozinho ou não precisa mais de ajuda:
+
+1. Acesse o chamado em questão.
+2. Procure pelo botão "**Finalizar Chamado**" ou "**Marcar como Resolvido**" (geralmente no topo ou rodapé da conversa).
+3. **Avaliação:** O TomTicket costuma solicitar uma nota para o atendimento. Deixe seu feedback, ele é fundamental para a melhoria do serviço.`
   },
   {
     id: "gitlab",

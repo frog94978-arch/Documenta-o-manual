@@ -23,10 +23,10 @@ const RecursosHumanosTabs = ({
   // ADDED new props
 
   const submodules = [
-    { name: "eSocial", icon: <FileText size={20} /> },
-    { name: "Est Probatorio", icon: <Hourglass size={20} /> },
-    { name: "Pessoal", icon: <Users size={20} /> },
-    { name: "RH", icon: <Briefcase size={20} /> },
+    { id: "esocial", name: "eSocial", icon: <FileText size={20} /> },
+    { id: "est-probatorio", name: "Est Probatorio", icon: <Hourglass size={20} /> },
+    { id: "pessoal", name: "Pessoal", icon: <Users size={20} /> },
+    { id: "rh", name: "RH", icon: <Briefcase size={20} /> },
   ];
 
   const categories = [
@@ -36,10 +36,15 @@ const RecursosHumanosTabs = ({
     { value: "procedimentos", label: "Procedimentos" },
   ];
 
-  const handleSubmoduleClick = (submodule: string) => {
-    setSelectedSubmodule(submodule);
+  const handleSubmoduleClick = (submoduleId: string) => {
+    setSelectedSubmodule(submoduleId);
     setSelectedCategory(null); // Reset category when changing submodule
     setSelectedFinalSection(null); // NEW: Reset final section
+  };
+
+  const getSubmoduleName = (submoduleId: string) => {
+    const submodule = submodules.find(sub => sub.id === submoduleId);
+    return submodule ? submodule.name : submoduleId;
   };
 
   const handleBackClick = () => {
@@ -116,9 +121,7 @@ const RecursosHumanosTabs = ({
             className="mb-4"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar para{" "}
-            {selectedSubmodule.charAt(0).toUpperCase() +
-              selectedSubmodule.slice(1)}
+            Voltar para {getSubmoduleName(selectedSubmodule)}
           </Button>
           <h2 className="text-2xl font-bold mb-6">
             {selectedCategory.charAt(0).toUpperCase() +
@@ -147,10 +150,7 @@ const RecursosHumanosTabs = ({
           <ArrowLeft className="mr-2 h-4 w-4" />
           Voltar para Módulos
         </Button>
-        <h2 className="text-2xl font-bold mb-6">
-          {selectedSubmodule.charAt(0).toUpperCase() +
-            selectedSubmodule.slice(1)}
-        </h2>
+        <h2 className="text-2xl font-bold mb-6">{getSubmoduleName(selectedSubmodule)}</h2>
         <hr className="mb-8 border-t border-border" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
           {categories.map((category) => (
@@ -178,9 +178,9 @@ const RecursosHumanosTabs = ({
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {submodules.map((submodule) => (
         <button
-          key={submodule.name}
+          key={submodule.id}
           className="text-left transition-all hover:scale-[1.02] focus:outline-none"
-          onClick={() => handleSubmoduleClick(submodule.name)}
+          onClick={() => handleSubmoduleClick(submodule.id)}
         >
           <div className="rounded-lg text-card-foreground h-full border border-border transition-all duration-300 cursor-pointer bg-card hover:bg-muted shadow-sm hover:shadow-lg">
             <div className="p-6 flex flex-col items-center justify-center min-h-[120px] gap-3">

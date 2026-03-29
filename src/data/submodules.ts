@@ -492,6 +492,238 @@ export const submodules: Submodule[] = [
     }
   },
   {
+    id: "esocial",
+    title: "eSocial",
+    module: "recursos-humanos",
+    options: {
+      cadastro: [
+        "Cadastro de formulários"
+      ],
+      consulta: [
+        "Situação de Eventos"
+      ],
+      relatorio: [
+        "Conferência",
+        "Qualificação Cadastral",
+        "Eventos de Retorno",
+        "Relatório Comparativo de Configuração de Rubricas"
+      ],
+      procedimentos: [
+        "Carga de Dados",
+        "Preenchimento",
+        "Configuração",
+        "Envio de eventos para o eSocial",
+        "Qualificação Cadastral",
+        "Re-enviar Eventos para o eSocial"
+      ]
+    }
+  },
+  {
+    id: "est-probatorio",
+    title: "Est Probatorio",
+    module: "recursos-humanos",
+    options: {
+      cadastro: [
+        "Cadastro de Estágio",
+        "Questões do Estágio",
+        "Períodos do Estágio",
+        "Quesitos do Estágio",
+        "Comissão De Estágio",
+        "Carga de Dados",
+        "Preenchimento",
+        "Configuração",
+        "Envio de eventos para o eSocial",
+        "Qualificação Cadastral",
+        "Re-enviar Eventos para o eSocial"
+      ],
+      consulta: [
+        "Avaliações",
+        "Carga de Dados",
+        "Preenchimento",
+        "Configuração",
+        "Envio de eventos para o eSocial",
+        "Qualificação Cadastral",
+        "Re-enviar Eventos para o eSocial"
+      ],
+      relatorio: [
+        "Boletim de Estágio",
+        "Estagios",
+        "Avaliação Prévia de Estágio",
+        "Rescisão estágio",
+        "Contrato Estágio",
+        "Carga de Dados",
+        "Preenchimento",
+        "Configuração",
+        "Envio de eventos para o eSocial",
+        "Qualificação Cadastral",
+        "Re-enviar Eventos para o eSocial"
+      ],
+      procedimentos: [
+        "Agendar Estágio",
+        "Avaliação",
+        "Resultado Final",
+        "Carga de Dados",
+        "Preenchimento",
+        "Configuração",
+        "Envio de eventos para o eSocial",
+        "Qualificação Cadastral",
+        "Re-enviar Eventos para o eSocial"
+      ]
+    }
+  },
+  {
+    id: "pessoal",
+    title: "Pessoal",
+    module: "recursos-humanos",
+    options: {
+      cadastro: [
+        "Servidores",
+        "Tabelas",
+        "Pensões Alimentícias",
+        "Sindicatos",
+        "Configuração das Rubricas do Ponto",
+        "Calendários",
+        "Contas por Recurso",
+        "Seleções",
+        "Desdobramentos para Empenho",
+        "Arquivos Bancários",
+        "Tipo de Agrupamento de Rubricas"
+      ],
+      consulta: [
+        "Cadastro de Servidores",
+        "Consulta Financeira",
+        "Ficha Financeira por Código",
+        "Ponto por Código",
+        "Cargos",
+        "Lotação",
+        "Pontos por Registro"
+      ],
+      relatorio: [
+        "Relatórios Cadastrais",
+        "Relatórios Financeiros",
+        "Gerador de Relatórios",
+        "Salários Atrasados",
+        "Rotinas Especiais 1",
+        "Rotinas Especiais 2",
+        "Rotinas Especiais 4",
+        "Rotinas Especiais 5",
+        "Rotinas Especiais 6",
+        "Cálculos de aposentadoria",
+        "Rotinas Especiais 7",
+        "Rotinas Especiais 8",
+        "Autônomos",
+        "Geração",
+        "Contratos Emergenciais",
+        "Enquadramento",
+        "Desconto Externo de Previdência (INSS)",
+        "Relatório FUNDEB",
+        "Atualização Cadastro e-cidadeOnline",
+        "Contracheques Liberados",
+        "Contagem Tempo - Externo",
+        "Log de Alteração do Ponto"
+      ],
+      procedimentos: [
+        "Manutenção de Afastamentos",
+        "Manutenção de Regras de Ponto",
+        "Manutenção de Rescisão",
+        "Manutenção de Férias",
+        "Manutenção de Vales Transporte",
+        "Manutenção do Ponto",
+        "Manutenção de Empréstimos Consignados",
+        "Manutenção e-Cidade Online",
+        "Cálculo Financeiro",
+        "Geração em Disco",
+        "Convênio / Efetividade",
+        "Geração de Arquivos",
+        "Rotinas Mensais",
+        "Implantação",
+        "Manutenção do 13º",
+        "Fechamento da Complementar",
+        "Manutenção de Salários Atrasados",
+        "Reajuste de Salários",
+        "Manutenção de Parâmetros",
+        "Geração de Empenhos",
+        "Vale Transporte Integrado",
+        "Procedência",
+        "Provisão",
+        "Emissão de Cheques",
+        "Geração de Empenhos (Novo)",
+        "Autônomos",
+        "Diferenças",
+        "Manutenção de Grupo de Rubricas",
+        "Liberação contracheque Ecidade Online",
+        "Processamento de Dados do Ponto",
+        "Lançamento de Assentamentos no Ponto",
+        "Manutenção de Contratos Emergenciais",
+        "Pagamento de Rescisões",
+        "Controle de Rubricas",
+        "Jetons",
+        "Importa Local Ponto"
+      ]
+    }
+  },
+  {
+    id: "rh",
+    title: "RH",
+    module: "recursos-humanos",
+    options: {
+      cadastro: [
+        "Tipos de Assentamento",
+        "Tipos de Perda",
+        "Grupos de Avaliações",
+        "Tipo de Avaliação",
+        "Assinaturas Portaria",
+        "Tabela de Cursos/Eventos",
+        "Tipos de Curso",
+        "Cadastro de Envolvimentos",
+        "Cadastro de Tipos de Ato",
+        "Cadastro de Procedimento de Resolução",
+        "Atos de admissão",
+        "Cadastro de Leis",
+        "Cadastro de Vínculos",
+        "Protelacões",
+        "Efetividade"
+      ],
+      consulta: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      relatorio: [
+        "Grade de Efetividade",
+        "Certidão de Tempo de Serviço",
+        "Assentamentos Abertos",
+        "Vantagens por Servidor",
+        "Portaria Por Período/Tipo",
+        "Reemissão de Portarias",
+        "Extrato da Previdência",
+        "Assentamentos Por Período",
+        "Servidores por Tipos de Curso",
+        "Previsão de Direitos",
+        "Ponto Eletrônico",
+        "Efetividade",
+        "Portaria 154",
+        "Recadastramento",
+        "Documentos SMS",
+        "Estágio"
+      ],
+      procedimentos: [
+        "Manutenção de Assentamentos",
+        "Currículos",
+        "Parâmetros RH",
+        "Cadastro do Interstício de Avaliação",
+        "Fechamento de Interstício",
+        "Banco de Horas",
+        "Concessão de Direitos",
+        "Efetividade",
+        "Ponto Eletrônico",
+        "Assinatura Digital de Portaria",
+        "Processamento Recadastramento"
+      ]
+    }
+  },
+  {
     id: "educacao",
     title: "Educação",
     module: "patrimonial",

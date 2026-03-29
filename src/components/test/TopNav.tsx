@@ -19,7 +19,7 @@ const TopNav = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex border-b border-nav-border bg-nav">
+      <nav className="hidden md:flex border-b border-primary bg-primary">
         <div className="container mx-auto px-4">
           <div className="flex items-center h-12">
             {categories.map((category) => {
@@ -35,8 +35,8 @@ const TopNav = () => {
                 >
                   <button
                     className={cn(
-                      "flex items-center gap-2 px-4 h-12 text-sm text-nav-foreground hover:bg-nav-hover transition-colors",
-                      isExpanded && "bg-nav-hover"
+                      "flex items-center gap-2 px-4 h-12 text-primary-foreground hover:bg-primary/90 transition-colors",
+                      isExpanded && "bg-primary/90"
                     )}
                   >
                     {category.title}
@@ -44,17 +44,17 @@ const TopNav = () => {
                   </button>
 
                   {isExpanded && pages.length > 0 && (
-                    <div className="absolute left-0 top-full bg-background border border-border shadow-lg min-w-[200px] z-50">
+                    <div className="absolute left-0 top-full bg-card border border-primary shadow-lg min-w-[200px] z-50">
                       {pages.map((page) => (
                         <NavLink
                           key={page.id}
                           to={`/docs/${category.id}/${page.id}`}
                           className={({ isActive }) =>
                             cn(
-                              "block px-4 py-2 text-sm hover:bg-muted transition-colors",
+                              "block px-4 py-2 text-primary-foreground/90 hover:bg-primary/10 transition-colors",
                               isActive
-                                ? "bg-muted font-medium text-foreground"
-                                : "text-muted-foreground"
+                                ? "bg-primary/20 font-medium text-primary-foreground"
+                                : "text-primary-foreground/80"
                             )
                           }
                         >
@@ -71,19 +71,19 @@ const TopNav = () => {
       </nav>
 
       {/* Mobile Navigation */}
-      <nav className="md:hidden border-b border-nav-border bg-nav">
+      <nav className="md:hidden border-b border-primary bg-primary">
         <div className="flex items-center justify-between px-4 h-12">
-          <span className="text-sm font-medium text-nav-foreground">Menu</span>
+          <span className="text-sm font-medium text-primary-foreground">Menu</span>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-nav-foreground"
+            className="p-2 text-primary-foreground"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
         {mobileMenuOpen && (
-          <div className="border-t border-nav-border bg-background">
+          <div className="border-t border-primary bg-card">
             {categories.map((category) => {
               const pages = getPagesByCategory(category.id);
 

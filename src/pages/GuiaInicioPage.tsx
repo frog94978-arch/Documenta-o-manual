@@ -45,7 +45,7 @@ const GuiaInicioPage = () => {
 
   const renderIcon = (iconName: string) => {
     const IconComponent = Icons[iconName as keyof typeof Icons] as React.ElementType;
-    return IconComponent ? <IconComponent className="h-8 w-8" /> : null;
+    return IconComponent ? <IconComponent className="h-5 w-5" /> : null;
   };
 
   const handleNavigation = (path: string) => {
@@ -76,12 +76,14 @@ const GuiaInicioPage = () => {
             <Link
               key={item.id}
               to={item.link}
-              className="flex flex-col items-center justify-center p-6 border border-border rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-card text-card-foreground hover:bg-muted w-48 h-48 text-center"
+              className="border border-border rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-card text-card-foreground hover:bg-muted w-40 h-40"
             >
-              <div className="text-primary mb-4">{renderIcon(item.icon)}</div>
-              <h3 className="text-lg font-semibold whitespace-pre-line">
-                {item.id === "padrao-emails" ? "Padrão\nde e-mails" : item.title}
-              </h3>
+              <div className="p-6 flex flex-col items-center justify-center min-h-[160px] gap-3">
+                <div className="text-primary">{renderIcon(item.icon)}</div>
+                <h3 className="text-sm font-bold text-center">
+                  {item.id === "padrao-emails" ? "Padrão\nde e-mails" : item.title}
+                </h3>
+              </div>
             </Link>
           ))}
         </div>
