@@ -86,7 +86,7 @@ const SaudeTabs = ({
         {categoryOptions.map((item) => (
           <button
             key={item}
-            className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors"
+            className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-white hover:bg-muted-foreground/10 transition-colors"
             onClick={() => onSelectFinalSection(item)} // ADD onClick handler
           >
             {item}
@@ -173,7 +173,7 @@ const SaudeTabs = ({
               className="text-left transition-all hover:scale-[1.02] focus:outline-none"
               onClick={() => setSelectedCategory(category.value)}
             >
-              <div className="rounded-lg text-card-foreground h-full border border-border transition-all duration-300 cursor-pointer bg-card hover:bg-muted shadow-sm hover:shadow-lg">
+              <div className="rounded-lg text-card-foreground h-full border border-border transition-all duration-300 cursor-pointer bg-white hover:bg-muted shadow-sm hover:shadow-lg">
                 <div className="p-6 flex items-center justify-center min-h-[100px]">
                   <h3 className="text-lg font-bold text-center">
                     {category.label}
@@ -196,7 +196,7 @@ const SaudeTabs = ({
           className="text-left transition-all hover:scale-[1.02] focus:outline-none"
           onClick={() => handleSubmoduleClick(submodule.name)}
         >
-          <div className="rounded-lg text-card-foreground h-full border border-border transition-all duration-300 cursor-pointer bg-card hover:bg-muted shadow-sm hover:shadow-lg">
+          <div className="rounded-lg text-card-foreground h-full border border-border transition-all duration-300 cursor-pointer bg-white hover:bg-muted shadow-sm hover:shadow-lg">
             <div className="p-6 flex flex-col items-center justify-center min-h-[120px] gap-3">
               <div className="text-primary">{submodule.icon}</div>
               <h3 className="text-lg font-bold text-center">{submodule.name}</h3>

@@ -724,6 +724,304 @@ export const submodules: Submodule[] = [
     }
   },
   {
+    id: "agendamento",
+    title: "Agendamento",
+    module: "saude",
+    options: {
+      cadastro: [
+        "Tipo de Ficha",
+        "Prestadores",
+        "Geral do Município - CGM (novo)",
+        "Manutenção do CGS"
+      ],
+      consulta: [
+        "Consulta Geral da Saúde",
+        "Agenda"
+      ],
+      relatorio: [
+        "Agendamento",
+        "Agendamento por Período",
+        "Agendamentos Anulados",
+        "Controle de Cotas",
+        "Agenda Médica"
+      ],
+      procedimentos: [
+        "Agendamento de Consultas",
+        "Agendamento de Exames",
+        "Transferência",
+        "Gerar FAs",
+        "Agendamento de Consulta Simplificado",
+        "Anular Agendamentos",
+        "Agendamento Unificado",
+        "Parâmetros",
+        "Controle de Cotas",
+        "Cota de Exames Municipais"
+      ]
+    }
+  },
+  {
+    id: "ambulatorial",
+    title: "Ambulatorial",
+    module: "saude",
+    options: {
+      cadastro: [
+        "Setor Ambulatorial",
+        "Motivo de ausência",
+        "Motivo Atendimento",
+        "Tipo Atendimento",
+        "Procedimento não Faturaveis",
+        "Cartão SUS",
+        "Fator de Risco",
+        "Profissional de Saúde",
+        "Profissionais Fora da Rede",
+        "Distritos Sanitários",
+        "UPS",
+        "Família",
+        "Micro Área",
+        "Família / Micro Área",
+        "Tabelas Nacionais",
+        "Ações Programaticas",
+        "Geral do Município - CGM (novo)",
+        "Conteúdo de Medicamento",
+        "Manutenção do CGS"
+      ],
+      consulta: [
+        "Consulta Geral da Saúde",
+        "Prontuarios da Familia",
+        "CIDs",
+        "Ficha de Atendimento Ambulatorial",
+        "Cadastro Geral da Saúde"
+      ],
+      relatorio: [
+        "BPA - Boletim de Produção Ambulatorial",
+        "Atendimentos",
+        "Ficha de Atendimento FAA",
+        "Especiais Saúde",
+        "Cadastrais - Saúde",
+        "Consistênciar Lotes",
+        "Cartão SUS",
+        "CGS Duplos",
+        "CGS Corretos",
+        "Geral CGS",
+        "CBO",
+        "Profissionais da Saúde",
+        "Produção Ambulatorial",
+        "Agravo",
+        "Requisição de Exame",
+        "Conferência de Administração de Medicamentos"
+      ],
+      procedimentos: [
+        "Ficha de Atendimento",
+        "Recepção",
+        "Triagem",
+        "Atendimento",
+        "Triagem Avulsa",
+        "Prontuário Eletrônico",
+        "Encaminhamentos",
+        "Digitação FAA",
+        "BPA Magnético",
+        "Atualização de Tabelas",
+        "Importação Cartão SUS",
+        "CGS Duplos",
+        "Parâmetros",
+        "Importação SCNES",
+        "Requisição de Saída de Materiais",
+        "Descarte de Medicamentos",
+        "Permitir alterar CGS",
+        "Acompanhamento ACS"
+      ]
+    }
+  },
+  {
+    id: "farmacia",
+    title: "Farmácia",
+    module: "saude",
+    options: {
+      cadastro: [
+        "Anvisa",
+        "Medicamentos",
+        "Classificação",
+        "Tipo Receita",
+        "Ações Programaticas",
+        "Farmacêutico",
+        "Farmácia",
+        "CGS - Cadastro Geral da Saúde",
+        "Geral do Município - CGM (novo)",
+        "Manutenção do CGS",
+        "Demanda Reprimida"
+      ],
+      consulta: [
+        "Consulta Geral da Saúde",
+        "Paciente"
+      ],
+      relatorio: [
+        "Medicamentos",
+        "Relatórios Legais",
+        "Histórico",
+        "Lista Pacientes por Ações Programáticas",
+        "Administração de Medicamentos (AME)",
+        "Reemissão do Comprovante"
+      ],
+      procedimentos: [
+        "Entrega de Medicamento",
+        "Devolução de Medicamentos",
+        "Medicamento Continuado",
+        "Geração Livro dos Controlados",
+        "Parâmetros",
+        "Fator de Risco Farmácia",
+        "Exportar CGS para Hiperdia",
+        "Hórus"
+      ]
+    }
+  },
+  {
+    id: "fundoassistenciamedica",
+    title: "Fundo Assistência Médica",
+    module: "saude",
+    options: {
+      cadastro: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      consulta: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      relatorio: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      procedimentos: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ]
+    }
+  },
+  {
+    id: "hiperdia",
+    title: "Hiperdia",
+    module: "saude",
+    options: {
+      cadastro: [
+        "CGS - Cadastro Geral da Saúde",
+        "Geral do Município - CGM (novo)",
+        "Manutenção do CGS"
+      ],
+      consulta: [
+        "Consulta Geral da Saúde"
+      ],
+      relatorio: [
+        "Critica Dados Para Exportação"
+      ],
+      procedimentos: [
+        "Fatores de Risco",
+        "Hipertensos e Diabeticos",
+        "Exportar CGS Para Hiperdia"
+      ]
+    }
+  },
+  {
+    id: "laboratorio",
+    title: "Laboratório",
+    module: "saude",
+    options: {
+      cadastro: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      consulta: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      relatorio: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      procedimentos: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ]
+    }
+  },
+  {
+    id: "tfd",
+    title: "TFD",
+    module: "saude",
+    options: {
+      cadastro: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      consulta: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      relatorio: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      procedimentos: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ]
+    }
+  },
+  {
+    id: "vacinas",
+    title: "Vacinas",
+    module: "saude",
+    options: {
+      cadastro: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      consulta: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      relatorio: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ],
+      procedimentos: [
+        "Cadastro de Servidores",
+        "Assentamentos / Afastamentos",
+        "Assentamentos do Servidor",
+        "Conferência Recadastramento"
+      ]
+    }
+  },
+  {
     id: "educacao",
     title: "Educação",
     module: "patrimonial",
