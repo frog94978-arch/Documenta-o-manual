@@ -934,28 +934,44 @@ export const submodules: Submodule[] = [
     module: "saude",
     options: {
       cadastro: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Tipo de documento",
+        "Recipiente",
+        "Material coleta",
+        "Setor",
+        "Unidade de medida",
+        "Metodologia",
+        "Metodo",
+        "Requisito",
+        "Sinonimia",
+        "Exame",
+        "Grupos de Exames",
+        "Laboratorio",
+        "Atributos",
+        "Geral do Município - CGM (novo)",
+        "Medicamentos",
+        "Manutenção do CGS"
       ],
       consulta: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Consulta Geral da Saúde",
+        "Entrega de Exame"
       ],
       relatorio: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Exames Requisitados",
+        "Reemissão da Requisição de Exames",
+        "Produtividade",
+        "Exames",
+        "Laboratório / Exames",
+        "Controle Físico Financeiro",
+        "Mapa de Coleta"
       ],
       procedimentos: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Recepção",
+        "Resultado",
+        "Triagem",
+        "Retificar Resultado",
+        "Parâmetros",
+        "BPA Magnético",
+        "Controle de Cotas"
       ]
     }
   },
@@ -965,28 +981,40 @@ export const submodules: Submodule[] = [
     module: "saude",
     options: {
       cadastro: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Documento",
+        "Ajuda de Custo",
+        "Tipos de Tratamento",
+        "Motivos de Acompanhamento",
+        "Destino",
+        "Prestadora",
+        "Centrais de Agendamento",
+        "Grade de Horários de Saída",
+        "Geral do Município - CGM (novo)",
+        "Passagens",
+        "Manutenção do CGS"
       ],
       consulta: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Consulta Geral da Saúde",
+        "Pedido TFD",
+        "Veículos TFD"
       ],
       relatorio: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Lista Passageiros DAER",
+        "Consultas/Exames Solicitados",
+        "Saída de Veículo",
+        "Saídas",
+        "Pedidos Encerrados",
+        "Relatório de Viagens",
+        "Viagens por Motorista"
       ],
       procedimentos: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Pedido de TFD",
+        "Indique Prestadora",
+        "Informe a Saída",
+        "Desistência",
+        "Regulador",
+        "BPA Magnético",
+        "Parâmetros"
       ]
     }
   },
@@ -996,28 +1024,267 @@ export const submodules: Submodule[] = [
     module: "saude",
     options: {
       cadastro: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Salas de Vacinações",
+        "Geral do Município - CGM (novo)",
+        "Manutenção do CGS"
       ],
       consulta: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Consulta Geral da Saúde"
+      ],
+      relatorio: [],
+      procedimentos: []
+    }
+  },
+  {
+    id: "alimentacao-escolar",
+    title: "Alimentação Escolar",
+    module: "educacao",
+    options: {
+      cadastro: [
+        "Nutricionista",
+        "Grupo de alimentos",
+        "Intolerância Alimentar",
+        "Nutriente",
+        "Informação Nutricional",
+        "Cardápio",
+        "Tipo Refeição",
+        "Refeição",
+        "Restrição"
+      ],
+      consulta: [
+        "Histórico de Refeições",
+        "Informações Nutricionais por Item",
+        "Informações Nutricionais por Refeição",
+        "Material",
+        "Restrição Alimentar",
+        "Quadro de Desenvolvimento"
       ],
       relatorio: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Histórico de Refeições",
+        "Desperdício",
+        "Cardápio Semanal",
+        "Consumo de Refeição",
+        "Restrição Alimentar",
+        "Quadro de Desenvolvimento"
       ],
       procedimentos: [
-        "Cadastro de Servidores",
-        "Assentamentos / Afastamentos",
-        "Assentamentos do Servidor",
-        "Conferência Recadastramento"
+        "Cardápio Semanal",
+        "Consumo de Refeição",
+        "Substituição de Alimentos",
+        "Desperdício",
+        "Baixa do Estoque",
+        "Informações do Aluno",
+        "Transferência entre depósitos",
+        "Requisição de Saída de Materiais",
+        "Atendimento de Requisição",
+        "Devolução de Materiais",
+        "Entrada manual",
+        "Saída manual"
+      ]
+    }
+  },
+  {
+    id: "biblioteca",
+    title: "Biblioteca",
+    module: "educacao",
+    options: {
+      cadastro: [
+        "Biblioteca",
+        "Tipos de Assunto",
+        "Autor",
+        "Aquisição",
+        "Categoria do Leitor",
+        "Classificação Literária",
+        "Editora",
+        "Localização do Acervo",
+        "Tipo de Ítens",
+        "Acervo",
+        "Leitores",
+        "Coleção"
+      ],
+      consulta: [
+        "Acervos",
+        "Acervos por Autor",
+        "Assunto do Acervo",
+        "Empréstimos por Leitor",
+        "Empréstimos em Aberto",
+        "Empréstimos em Atraso",
+        "Leitor"
+      ],
+      relatorio: [
+        "Leitores",
+        "Autores",
+        "Editoras",
+        "Classificação Literária",
+        "Acervos",
+        "Baixa de Acervo",
+        "Ítens Emprestados",
+        "Itens mais Emprestados",
+        "Etiquetas",
+        "Emissão de Carteira"
+      ],
+      procedimentos: [
+        "Empréstimo",
+        "Devolução",
+        "Reservas",
+        "Baixa de Acervo",
+        "Cancelar Impressão de Etiquetas",
+        "Parâmetros"
+      ]
+    }
+  },
+  {
+    id: "escola",
+    title: "Escola",
+    module: "educacao",
+    options: {
+      cadastro: [
+        "Tabelas",
+        "Dados da Escola",
+        "Dependências da Escola",
+        "Atos / Justificativas",
+        "Cursos na Escola",
+        "Calendários",
+        "Bases Curriculares",
+        "Procedimentos de Avaliação",
+        "Recursos Humanos",
+        "Turmas",
+        "Turmas (Atividade Complementar AEE)",
+        "Remanejar Cadastro Turmas",
+        "Alunos",
+        "Confirmação de Rematrícula"
+      ],
+      consulta: [
+        "Alunos",
+        "Professores",
+        "Recursos Humanos",
+        "Diário de Classe",
+        "Trocas de Turmas",
+        "Matrículas Pendentes",
+        "Alunos Matriculados",
+        "Calendário",
+        "Horário das Turmas",
+        "Progressão de Alunos",
+        "Turmas Encerradas",
+        "Lista de Candidatos",
+        "Legislação",
+        "Acesso Aluno",
+        "Progressão Parcial"
+      ],
+      relatorio: [
+        "Alunos",
+        "Turmas",
+        "Matrículas",
+        "Recursos Humanos",
+        "Transferências",
+        "Pareceres",
+        "Calendário",
+        "Censo Escolar",
+        "Gráficos",
+        "Confirmação de Rematrícula",
+        "Progressão Parcial"
+      ],
+      procedimentos: [
+        "Diário de Classe",
+        "Matrículas",
+        "Progressão de Aluno",
+        "Atestado de Vaga",
+        "Transferências",
+        "Manutenção do Histórico Escolar",
+        "Aprovação Automática",
+        "Conclusão de Curso",
+        "Efetividade",
+        "Parâmetros",
+        "Censo Escolar",
+        "Cartão de Identificação do Aluno",
+        "Controle de ausências e substituições"
+      ]
+    }
+  },
+  {
+    id: "secretaria",
+    title: "Secretaria",
+    module: "educacao",
+    options: {
+      cadastro: [
+        "Termo Resultado Final",
+        "Tabelas",
+        "Tipo Ausência",
+        "Escolas",
+        "Modalidades de Ensino",
+        "Níveis de Ensinos",
+        "Etapas",
+        "Cursos",
+        "Modelos de Relatórios",
+        "Componentes Curriculares",
+        "Cadastro de Regras de Arredondamento",
+        "Calendário Base",
+        "Tipo de Hora de Trabalho",
+        "Rotinas de Implantação",
+        "Procedimentos de Avaliação",
+        "BNCC",
+        "Tipos de Base"
+      ],
+      consulta: [
+        "Alunos",
+        "Professores",
+        "Recursos Humanos",
+        "Diário de Classe",
+        "Trocas de Turmas",
+        "Matrículas Pendentes",
+        "Alunos Matriculados",
+        "Calendário",
+        "Horário das Turmas",
+        "Progressão de Alunos",
+        "Turmas Encerradas",
+        "Lista de Cnadidatos",
+        "Logs",
+        "Progressão Parcial",
+        "Lotação de Servidores",
+        "Quadro Geral de Horários"
+      ],
+      relatorio: [
+        "Alunos",
+        "Turmas",
+        "Matrículas",
+        "Recursos Humanos",
+        "Transferências",
+        "Pareceres",
+        "Calendário",
+        "Censo Escolar",
+        "Gráficos",
+        "Confirmação de Rematrícula",
+        "Cadastrais",
+        "Registro de Aula",
+        "Progressão Parcial",
+        "Relatório de Infraestrutura da Escola"
+      ],
+      procedimentos: [
+        "Exclusão Geral de Registros",
+        "Censo Escolar",
+        "Parâmetros",
+        "Cartão de Identificação do Aluno",
+        "Tira Alunos Duplos do Sistema"
+      ]
+    }
+  },
+  {
+    id: "transporte-escolar",
+    title: "Transporte Escolar",
+    module: "educacao",
+    options: {
+      cadastro: [
+        "Veículos",
+        "Pontos de Parada",
+        "Linhas"
+      ],
+      consulta: [],
+      relatorio: [
+        "Alunos por linha",
+        "Linha"
+      ],
+      procedimentos: [
+        "Itinerários"
       ]
     }
   },

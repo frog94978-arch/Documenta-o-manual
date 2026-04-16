@@ -8,8 +8,8 @@ interface EducacaoTabsProps {
   setSelectedSubmodule: (submodule: string | null) => void;
   selectedCategory: string | null;
   setSelectedCategory: (category: string | null) => void;
-  selectedFinalSection: string | null; // NEW PROP
-  setSelectedFinalSection: (section: string | null) => void; // NEW PROP
+  selectedFinalSection: string | null;
+  setSelectedFinalSection: (section: string | null) => void;
 }
 
 const EducacaoTabs = ({
@@ -20,14 +20,12 @@ const EducacaoTabs = ({
   selectedFinalSection,
   setSelectedFinalSection,
 }: EducacaoTabsProps) => {
-  // ADDED new props
-
   const submodules = [
-    { name: "Alimentação Escolar", icon: <Utensils size={20} /> },
-    { name: "Biblioteca", icon: <Library size={20} /> },
-    { name: "Escola", icon: <School size={20} /> },
-    { name: "Secretaria", icon: <Clipboard size={20} /> },
-    { name: "Transporte Escolar", icon: <Bus size={20} /> },
+    { id: "alimentacao-escolar", name: "Alimentação Escolar", icon: <Utensils size={20} /> },
+    { id: "biblioteca", name: "Biblioteca", icon: <Library size={20} /> },
+    { id: "escola", name: "Escola", icon: <School size={20} /> },
+    { id: "secretaria", name: "Secretaria", icon: <Clipboard size={20} /> },
+    { id: "transporte-escolar", name: "Transporte Escolar", icon: <Bus size={20} /> },
   ];
 
   const categories = [
@@ -37,10 +35,14 @@ const EducacaoTabs = ({
     { value: "procedimentos", label: "Procedimentos" },
   ];
 
-  const handleSubmoduleClick = (submodule: string) => {
-    setSelectedSubmodule(submodule);
-    setSelectedCategory(null); // Reset category when changing submodule
-    setSelectedFinalSection(null); // NEW: Reset final section
+  const getSubmoduleNameById = (id: string) => {
+    return submodules.find(s => s.id === id)?.name || id;
+  };
+
+  const handleSubmoduleClick = (id: string) => {
+    setSelectedSubmodule(id);
+    setSelectedCategory(null);
+    setSelectedFinalSection(null);
   };
 
   const handleBackClick = () => {
@@ -118,8 +120,7 @@ const EducacaoTabs = ({
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Voltar para{" "}
-            {selectedSubmodule.charAt(0).toUpperCase() +
-              selectedSubmodule.slice(1)}
+            {getSubmoduleNameById(selectedSubmodule)}
           </Button>
           <h2 className="text-2xl font-bold mb-6">
             {selectedCategory.charAt(0).toUpperCase() +
@@ -149,8 +150,7 @@ const EducacaoTabs = ({
           Voltar para Módulos
         </Button>
         <h2 className="text-2xl font-bold mb-6">
-          {selectedSubmodule.charAt(0).toUpperCase() +
-            selectedSubmodule.slice(1)}
+          {getSubmoduleNameById(selectedSubmodule)}
         </h2>
         <hr className="mb-8 border-t border-border" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -179,9 +179,9 @@ const EducacaoTabs = ({
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {submodules.map((submodule) => (
         <button
-          key={submodule.name}
+          key={submodule.id}
           className="text-left transition-all hover:scale-[1.02] focus:outline-none"
-          onClick={() => handleSubmoduleClick(submodule.name)}
+          onClick={() => handleSubmoduleClick(submodule.id)}
         >
           <div className="rounded-lg text-card-foreground h-full border border-border transition-all duration-300 cursor-pointer bg-card hover:bg-muted shadow-sm hover:shadow-lg">
             <div className="p-6 flex flex-col items-center justify-center min-h-[120px] gap-3">

@@ -145,7 +145,7 @@ const RecursosHumanosTabs = ({
           onClick={handleBackClick}
           variant="outline"
           size="sm"
-          className="mb-4 bg-card"
+          className="mb-4"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Voltar para Módulos
