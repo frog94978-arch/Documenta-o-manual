@@ -19,7 +19,7 @@ const TopNav = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex border-b border-primary bg-primary">
+      <nav className="hidden md:flex border-b border-primary bg-primary dark:bg-card">
         <div className="container mx-auto px-4">
           <div className="flex items-center h-12">
             {categories.map((category) => {
@@ -35,8 +35,8 @@ const TopNav = () => {
                 >
                   <button
                     className={cn(
-                      "flex items-center gap-2 px-4 h-12 text-primary-foreground hover:bg-primary/90 transition-colors",
-                      isExpanded && "bg-primary/90"
+                      "flex items-center gap-2 px-4 h-12 text-primary-foreground hover:bg-primary-foreground/10 transition-colors",
+                      isExpanded && "bg-primary-foreground/10"
                     )}
                   >
                     {category.title}
@@ -51,9 +51,9 @@ const TopNav = () => {
                           to={`/docs/${category.id}/${page.id}`}
                           className={({ isActive }) =>
                             cn(
-                              "block px-4 py-2 text-primary-foreground/90 hover:bg-primary/10 transition-colors",
+                              "block px-4 py-2 text-primary-foreground/90 hover:bg-primary-foreground/10 transition-colors",
                               isActive
-                                ? "bg-primary/20 font-medium text-primary-foreground"
+                                ? "bg-primary-foreground/20 font-medium text-primary-foreground"
                                 : "text-primary-foreground/80"
                             )
                           }
@@ -71,7 +71,7 @@ const TopNav = () => {
       </nav>
 
       {/* Mobile Navigation */}
-      <nav className="md:hidden border-b border-primary bg-primary">
+      <nav className="md:hidden border-b border-primary bg-primary dark:bg-card">
         <div className="flex items-center justify-between px-4 h-12">
           <span className="text-sm font-medium text-primary-foreground">Menu</span>
           <button

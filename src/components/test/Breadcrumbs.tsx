@@ -12,15 +12,15 @@ interface BreadcrumbsProps {
 }
 
 const Breadcrumbs = ({ categoryId, pageId, pageTitle, submoduleTitle, categoryTitle, selectedFinalSectionTitle, onNavigate }: BreadcrumbsProps) => {
-  const breadcrumbSegments: { label: string; path: string }[] = [];
+  const breadcrumbSegments: { label: string; path: string; isClickable: boolean }[] = [];
 
   // 1. Home
-  breadcrumbSegments.push({ label: "Início", path: "/" });
+  breadcrumbSegments.push({ label: "Início", path: "/", isClickable: true });
 
   // 2. "Áreas"
   const areasCategory = getCategoryById("modulos");
   if (areasCategory) {
-    breadcrumbSegments.push({ label: areasCategory.title, path: "/areas" });
+    breadcrumbSegments.push({ label: areasCategory.title, path: "/areas", isClickable: true });
   }
 
   // 3. Main Module / Category
@@ -32,39 +32,44 @@ const Breadcrumbs = ({ categoryId, pageId, pageTitle, submoduleTitle, categoryTi
     } else if (mainModule.id === "tutoriais") {
         path = "/tutoriais";
     }
-    breadcrumbSegments.push({ label: mainModule.title, path: path });
+    breadcrumbSegments.push({ label: mainModule.title, path: path, isClickable: true });
   }
 
   // 4. Page/Submodule
   if (pageTitle && mainModule?.title.toLowerCase() !== pageTitle.toLowerCase()) {
     const finalPageId = pageId || pageTitle.toLowerCase().replace(/\s/g, "-");
-    breadcrumbSegments.push({ label: pageTitle, path: `/docs/${categoryId}/${finalPageId}` });
+    breadcrumbSegments.push({ label: pageTitle, path: `/docs/${categoryId}/${finalPageId}`, isClickable: true });
   }
 
-  // 5. Deeper Submodule/Category
+  // 5. Deeper Submodule/Category - NOW clickable
   if (submoduleTitle) {
     const finalPageId = pageId || pageTitle.toLowerCase().replace(/\s/g, "-");
     breadcrumbSegments.push({ 
         label: submoduleTitle.charAt(0).toUpperCase() + submoduleTitle.slice(1), 
-        path: `/docs/${categoryId}/${finalPageId}/${submoduleTitle.toLowerCase()}` 
+        path: `/docs/${categoryId}/${finalPageId}/${submoduleTitle.toLowerCase()}`,
+        isClickable: true 
     });
   }
 
-  // 6. Even Deeper Category
+  // 6. Even Deeper Category - NOW clickable
   if (categoryTitle && categoryTitle.toLowerCase() !== submoduleTitle?.toLowerCase()) {
+    const finalPageId = pageId || pageTitle.toLowerCase().replace(/\s/g, "-");
     breadcrumbSegments.push({ 
         label: categoryTitle.charAt(0).toUpperCase() + categoryTitle.slice(1), 
-        path: `/docs/${categoryId}/${pageTitle.toLowerCase().replace(/\s/g, "-")}/${submoduleTitle?.toLowerCase()}/${categoryTitle.toLowerCase()}` 
+        path: `/docs/${categoryId}/${finalPageId}/${submoduleTitle?.toLowerCase()}/${categoryTitle.toLowerCase()}`,
+        isClickable: true 
     });
   }
 
-  // 7. Final Section
+  // 7. Final Section - NOW clickable
   if (selectedFinalSectionTitle &&
       selectedFinalSectionTitle.toLowerCase() !== categoryTitle?.toLowerCase() &&
       selectedFinalSectionTitle.toLowerCase() !== submoduleTitle?.toLowerCase()) {
+    const finalPageId = pageId || pageTitle.toLowerCase().replace(/\s/g, "-");
     breadcrumbSegments.push({ 
         label: selectedFinalSectionTitle, 
-        path: `/docs/${categoryId}/${pageTitle.toLowerCase().replace(/\s/g, "-")}/${submoduleTitle?.toLowerCase()}/${categoryTitle?.toLowerCase()}/${selectedFinalSectionTitle.toLowerCase()}` 
+        path: `/docs/${categoryId}/${finalPageId}/${submoduleTitle?.toLowerCase()}/${categoryTitle?.toLowerCase()}/${selectedFinalSectionTitle.toLowerCase()}`,
+        isClickable: true 
     });
   }
 
@@ -72,12 +77,18 @@ const Breadcrumbs = ({ categoryId, pageId, pageTitle, submoduleTitle, categoryTi
     <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
       {breadcrumbSegments.map((segment, index) => (
         <span key={index} className="flex items-center">
-          <button
-            onClick={() => onNavigate(segment.path)}
-            className="flex items-center hover:text-foreground transition-colors"
-          >
-            {index === 0 ? <Home className="h-4 w-4" /> : segment.label}
-          </button>
+          {segment.isClickable ? (
+            <button
+              onClick={() => onNavigate(segment.path)}
+              className="flex items-center hover:text-foreground transition-colors cursor-pointer"
+            >
+              {index === 0 ? <Home className="h-4 w-4" /> : segment.label}
+            </button>
+          ) : (
+            <span className="flex items-center text-muted-foreground">
+              {segment.label}
+            </span>
+          )}
           {index < breadcrumbSegments.length - 1 && (
             <ChevronRight className="h-4 w-4 mx-1" />
           )}

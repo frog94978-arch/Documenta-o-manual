@@ -25,13 +25,17 @@ const AreasPage = () => {
     return IconComponent ? <IconComponent className="h-8 w-8" /> : null;
   };
 
+  const handleNavigation = (path: string) => {
+    navigate(path, { replace: true });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-12">
         <Breadcrumbs 
           categoryId="modulos" 
           pageTitle="Áreas" 
-          onNavigate={(path) => navigate(path)} 
+          onNavigate={handleNavigation} 
         />
         <h1 className="text-4xl font-bold text-center mb-12 text-foreground">
           Áreas do Sistema

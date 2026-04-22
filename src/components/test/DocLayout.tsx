@@ -24,7 +24,7 @@ const DocLayout = () => {
         <AppSidebar />
         <SidebarInset>
           {/* Header */}
-          <header className="sticky top-0 z-40 w-full border-b bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/90">
+          <header className="sticky top-0 z-40 w-full border-b bg-primary dark:bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-primary/90 dark:supports-[backdrop-filter]:bg-background/90">
             <div className="flex h-14 items-center gap-4 px-4 sm:px-6">
               <SidebarTrigger className="text-primary-foreground" />
               
@@ -38,7 +38,7 @@ const DocLayout = () => {
                   <Input
                     type="search"
                     placeholder="Buscar na documentação..."
-                    className="pl-10 w-full bg-white text-foreground placeholder:text-muted-foreground border-input"
+                    className="pl-10 w-full bg-white dark:bg-muted text-foreground placeholder:text-muted-foreground border-input"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => setShowSearchResults(true)}

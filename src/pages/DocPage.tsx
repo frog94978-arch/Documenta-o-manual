@@ -45,28 +45,45 @@ const DocPage = () => {
   const handleNavigation = (path: string) => {
     // Top level routes
     if (path === '/' || path === '/areas' || path === '/guia-inicio' || path === '/tutoriais') {
-        navigate(path);
+        navigate(path, { replace: true });
         return;
     }
 
     const pathParts = path.split('/').filter(Boolean);
-    const categoryPart = pathParts[1]; // 'guia-inicio', 'modulos', etc.
-    const pagePart = pathParts[2]; // 'gitlab', 'patrimonial', etc.
-
-    // If we are navigating to a different page or category
-    if (categoryPart !== category || pagePart !== page) {
+    
+    // Handle /docs/:category/:page navigation
+    if (pathParts[0] === 'docs') {
+      const categoryPart = pathParts[1];
+      const pagePart = pathParts[2];
+      
+      // If we are navigating to a different page or category (but same or different category)
+      if (categoryPart !== category || pagePart !== page) {
+        // For pages like saude and educacao within modulos, check if navigating to just the page
+        if (categoryPart === category && pathParts.length === 3) {
+          // Navigating to the same page but resetting tabs - just reset state
+          setSelectedSubmodule(null);
+          setSelectedCategory(null);
+          setSelectedFinalSection(null);
+          return;
+        }
         navigate(path);
         return;
-    }
-    
-    // If we are navigating within the current page (e.g., changing tabs/submodules)
-    const newSubmodule = pathParts[3] || null;
-    const newCategory = pathParts[4] || null;
-    const newFinalSection = pathParts[5] || null;
+      }
+      
+      // If we are navigating within the current page (e.g., changing tabs/submodules)
+      const newSubmodule = pathParts[3] || null;
+      const newCategory = pathParts[4] || null;
+      const newFinalSection = pathParts[5] || null;
 
-    setSelectedSubmodule(newSubmodule);
-    setSelectedCategory(newCategory);
-    setSelectedFinalSection(newFinalSection);
+      // Update state to reflect the new breadcrumb level
+      setSelectedSubmodule(newSubmodule);
+      setSelectedCategory(newCategory);
+      setSelectedFinalSection(newFinalSection);
+      return;
+    }
+
+    // Default navigation for other paths
+    navigate(path);
   };
   
   if (page === "patrimonial") {

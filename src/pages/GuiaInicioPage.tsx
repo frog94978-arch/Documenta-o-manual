@@ -49,14 +49,13 @@ const GuiaInicioPage = () => {
   };
 
   const handleNavigation = (path: string) => {
-    if (path === '/') {
-      navigate('/');
+    // Always use navigate for top-level pages
+    if (path === '/' || path === '/areas' || path === '/tutoriais') {
+      navigate(path, { replace: true });
       return;
     }
-    if (path === '/areas') {
-      navigate('/areas');
-      return;
-    }
+    
+    // Default navigation
     navigate(path);
   };
 
