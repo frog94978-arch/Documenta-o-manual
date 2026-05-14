@@ -56,12 +56,18 @@ const TributarioTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCateg
     }
   };
 
+  const navigationButtons = [
+    "Salas de Vacinações",
+    "Geral do Município - CGM (novo)",
+    "Manutenção do CGS"
+  ];
+
   const renderFinalContent = (submoduleId: string, categoryId: string, onSelectFinalSection: (section: string) => void) => { // ADDED onSelectFinalSection
     const submoduleData = getSubmoduleById(submoduleId);
-    if (!submoduleData) return <p>Submódulo não encontrado.</p>;
+    if (!submoduleData) return null;
     
     const categoryOptions = submoduleData.options[categoryId as keyof typeof submoduleData.options];
-    if (!categoryOptions || categoryOptions.length === 0) return <p>Nenhum item encontrado para esta categoria.</p>;
+    if (!categoryOptions || categoryOptions.length === 0) return null;
 
     return (
       <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">

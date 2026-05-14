@@ -481,6 +481,757 @@ export const submodules: Submodule[] = [
     }
   },
   {
+    id: "agua",
+    title: "Água",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Cadastro de Endereço de Entrega",
+        "Cadastro de Diâmetro de Hidrômetros",
+        "Cadastro de Marca de Hidrômetros",
+        "Cadastro de Leituristas",
+        "Cadastro de Condomínios",
+        "Cadastro de Imóveis/Terrenos",
+        "Cadastro de Hidrômetros",
+        "Cadastro de Situações de Leitura",
+        "Cadastro de Tipos de Isenções",
+        "Cadastro de Baixas de Imóveis",
+        "Cadastro de Situação de Corte",
+        "Cadastro de Coletores",
+        "Cadastro de Contratos",
+        "Cadastro de Tipos de Contrato"
+      ],
+      consulta: [
+        "Consulta de imoveis/Terrenos",
+        "Geral Financeira"
+      ],
+      relatorio: [
+        "Relatório Instalação de Hidrômetros",
+        "Relatório de Consumo/Excesso",
+        "Relatório de Hidrômetros",
+        "Relatório de Situação de Hidrômetros",
+        "Posição da água calculada e arrecadada",
+        "Bairros por Características",
+        "Imóveis por Característica de Construção",
+        "Matriculas Baixadas",
+        "Imóveis/Hidrômetros por Logradouro",
+        "Relatório de Consumo",
+        "Relatório de Imobiliárias",
+        "Aviso de Corte - Valor Dívida",
+        "Leitura/Corte relação Leitura/Leiturista",
+        "Relatório de receitas por bairro"
+      ],
+      procedimentos: [
+        "Rotas",
+        "Planilha de Leituras",
+        "Hidrômetros",
+        "Cálculo das Taxas",
+        "Leitura de Hidrômetros",
+        "Isenções",
+        "Parâmetros",
+        "Cortes/Religações",
+        "Emissão de Carnês",
+        "Coletores",
+        "Desconto",
+        "Isenções por CGM",
+        "Cálculo de Tarifas",
+        "Emissão de Carnês de Tarifa",
+        "Configuração da Emissão de Débitos"
+      ]
+    }
+  },
+  {
+    id: "arrecadacao",
+    title: "Arrecadação",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Regras de Compensação de Crédito",
+        "Regras p/ o Parcelamento",
+        "Configuração de receitas p/ parcelamento",
+        "Favorecido",
+        "Taxas / Custas",
+        "Cadastro de Ocorrências",
+        "Modelo de Carnê",
+        "Histórico Manual de Arrecadação",
+        "Grupo de Taxa",
+        "Taxas Específicas",
+        "Grupo de Débito",
+        "Tipos de Débitos",
+        "Históricos",
+        "Vencimentos",
+        "Manutenção de Receitas",
+        "Juros e Multas",
+        "Convênios",
+        "Autenticadoras",
+        "Manutenção de Calendário",
+        "Lançamento de Taxas",
+        "Transação Tributária"
+      ],
+      consulta: [
+        "Geral Financeira",
+        "Numpre/Numbanco",
+        "Declaração de Quitação Anual",
+        "Consulta Parcelamentos",
+        "Consulta Recibo"
+      ],
+      relatorio: [
+        "Débitos Por Contribuinte",
+        "Relatório de Débitos",
+        "Taxas",
+        "Reemite Recibo Avulso",
+        "Parcelamento com entrada em aberto",
+        "Débitos Cancelados",
+        "Relatórios de Cadastro",
+        "Pagamentos",
+        "Declaração de Quitação Cancelada",
+        "Relatório de Ocorrências",
+        "Declaração de Quitação de Débitos",
+        "Lançamentos Tributários",
+        "Relatório Consolidado de Movimentações",
+        "Matriculas por logradouro (csv)",
+        "Descontos Concedidos por Regras",
+        "Origem Numpre NFSe",
+        "Relatório de Créditos",
+        "Relatório de Compensações",
+        "Relatório de Devoluções",
+        "Baixas Parciais CSV",
+        "Retorno Cobrança Registrada",
+        "Demonstrativos de Anulação",
+        "Cancelamentos Por Período",
+        "Suspensões Por Período",
+        "Tarifas de Arrecadação",
+        "Débitos - IPTU e TCRS",
+        "Baixas Parciais - PG Em Dia",
+        "Baixas Parciais - PG Vencido",
+        "Suspensões com CDA anulada",
+        "Detalhamento Suspensão",
+        "Débitos Suspensos",
+        "Lançamento de Taxas",
+        "Débito em Conta",
+        "Relatório Exercício x Procedência - Cobrança Administrativa",
+        "Extrato do Contribuinte",
+        "Valores Atualizados de Suspensões",
+        "Débitos em Aberto por CGM e Imóvel (CSV)",
+        "Tributos",
+        "Recibos por Protocolo Externo"
+      ],
+      procedimentos: [
+        "Arrecadação de Receita",
+        "Excessões de Agrupamento de Débitos",
+        "Configuração de Regras de Emissão",
+        "Prorroga Vencimento",
+        "Cancelamento de Débitos",
+        "Acerto Desconto Juro/Multa Parcelamento",
+        "Débito em Conta",
+        "Desconto",
+        "Recibo de Receita",
+        "Manutenção de Suspensões",
+        "Processar Arquivos Retorno Banco",
+        "Manutenção de Numpres Bloqueados",
+        "Declaração Quitação",
+        "Acerto Parcelamento Serviço Social",
+        "Gerar arquivo de remessa de registro",
+        "Parâmetros",
+        "Parcela Única",
+        "Reativa Parcelamento",
+        "Créditos",
+        "Desconto manual (novo)",
+        "Manutenção de Abatimentos",
+        "Manutenção de Vinculos de Numpre",
+        "Alteração de Vencimentos para os débitos",
+        "Prorroga vencimento MEI",
+        "Cobrança Registrada",
+        "Vincular taxas / custas ao parcelamento",
+        "Alteração de Parcelamento",
+        "Lançamento de Taxas",
+        "Controle de parcelamentos vencidos"
+      ]
+    }
+  },
+  {
+    id: "cadastro",
+    title: "Cadastro",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Cadastro de Localidades Rurais",
+        "Cadastro de Prédios",
+        "Cadastro de Condomínios",
+        "Setor",
+        "Zona Fiscal",
+        "Bairro",
+        "Loteamento",
+        "Registro de Imóveis",
+        "Tipo de Testada Interna",
+        "Orientação",
+        "Tipo de Isenção",
+        "Imobiliária",
+        "Grupo de Características",
+        "Característica",
+        "Histórico de Cálculo do IPTU",
+        "Configuração de Histórico de Cálculo",
+        "Cadastro de Taxas",
+        "Logradouro",
+        "Faces de Quadra",
+        "Massa Falida",
+        "Diversos IPTU",
+        "Tipo de Averbação",
+        "Zona de Entrega",
+        "Tipos de Posse",
+        "Liberação CND com Débitos",
+        "Tipos de Sujeito Passivo"
+      ],
+      consulta: [
+        "Geral Financeira",
+        "Cadastro Técnico Municipal (Novo)",
+        "Cadastro Técnico Municipal",
+        "ITBI",
+        "Consulta situação da importação do recadastramento",
+        "Consulta por Endereço"
+      ],
+      relatorio: [
+        "Cadastrais",
+        "Cálculo",
+        "Financeiros",
+        "Isenções",
+        "Emite BIC",
+        "Massa Falida",
+        "Endereço de Entrega",
+        "Comparativo entre face e lote",
+        "Taxas / Zona Fiscal",
+        "Averbações",
+        "Matriculas por logradouro (csv)",
+        "Matriculas por Lote",
+        "Logradouros do Município (CSV)",
+        "Débitos por Petição Inicial",
+        "Matriculas por Face de Quadra"
+      ],
+      procedimentos: [
+        "Manutenção de Imóveis",
+        "Cálculo IPTU",
+        "Digitação para o calculo",
+        "Averbação",
+        "Isenção",
+        "Cartão Numérico",
+        "Levantamento Cadastral",
+        "Imobiliária / Matricula",
+        "Setor Fiscal / Face de Quadra",
+        "Logradouro / Características",
+        "Gerar TXTs Multi Finalitário",
+        "Excessões na geração dos carnes",
+        "Endereço de Entrega",
+        "Parcela Única",
+        "Configuração IPTU",
+        "Parâmetros",
+        "Certidão de Existência de Prédio",
+        "Endereço de entrega (Novo)",
+        "Geração de Arquivos",
+        "Cálculo TCRS",
+        "Emissão Geral de TCRS",
+        "Emissão Geral de IPTU/TCRS",
+        "Emissão Geral de TCRS/Isento",
+        "Observação Matricula",
+        "Emissão Geral de IPTU Cobrança",
+        "Civitas",
+        "Emissão Geral de Certidão de Isenção",
+        "Configuração Número Cadastral"
+      ]
+    }
+  },
+  {
+    id: "cemiterio",
+    title: "Cemitério",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Tipos de Isenção",
+        "Legista",
+        "Cemitério",
+        "Funerárias",
+        "Hospitais",
+        "Quadras/Lote",
+        "Campas",
+        "Sepulturas",
+        "Ossário/jazigo",
+        "Taxa de Serviço",
+        "Causas Mortis",
+        "Geral do Município - CGM"
+      ],
+      consulta: [
+        "Geral Financeira",
+        "Sepultamentos",
+        "Ossários / Jazigos"
+      ],
+      relatorio: [
+        "Gera Edital",
+        "Certificado de Isenção"
+      ],
+      procedimentos: [
+        "Isenção",
+        "Proprietário de Ossário",
+        "Sepultamentos",
+        "Itens de Serviço",
+        "Transações / Retiradas",
+        "Renovações de Sepulturas"
+      ]
+    }
+  },
+  {
+    id: "contribuicao",
+    title: "Contribuição",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Lista",
+        "Manutenção de Edital",
+        "Tipos de serviços",
+        "Contribuição de Melhoria"
+      ],
+      consulta: [
+        "Geral Financeira",
+        "Consulta de Contribuição"
+      ],
+      relatorio: [
+        "Lista de Projetos",
+        "Lotes por Contribuição",
+        "Contribuições do Edital",
+        "Emite Notificações",
+        "Relatório de Listas",
+        "Notificação Previa"
+      ],
+      procedimentos: [
+        "Cancela Seleção de Lotes",
+        "Seleciona Matrículas",
+        "Autoriza Cobrança",
+        "Cálculo Geral",
+        "Cálculo Parcial",
+        "Exclusão de Cálculo Geral",
+        "Exclusão de Cálculo Parcial",
+        "Gera Notificação de Contribuição",
+        "Parâmetros"
+      ]
+    }
+  },
+  {
+    id: "diversos",
+    title: "Diversos",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Procedência"
+      ],
+      consulta: [
+        "Diversos",
+        "Geral Financeira"
+      ],
+      relatorio: [
+        "Diversos",
+        "Pagamento Loteamento",
+        "Capa dos Parc. dos Loteamentos",
+        "Débitos importados"
+      ],
+      procedimentos: [
+        "Diversos",
+        "Receitas de Diversos",
+        "Importação de débitos para diversos"
+      ]
+    }
+  },
+  {
+    id: "divida-ativa",
+    title: "Dívida Ativa",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Dívida Ativa",
+        "Config. Tipo de Débito",
+        "Procedências",
+        "Tipo de Procedência",
+        "Documento / Procedência - CDA",
+        "Cadastro de Cartórios",
+        "Parâmetros CRA"
+      ],
+      consulta: [
+        "Geral Financeira",
+        "Dívida Ativa",
+        "Consulta Parcelamentos",
+        "Certidão",
+        "Movimentação Extrajudicial"
+      ],
+      relatorio: [
+        "Termo de Parcelamento",
+        "Emissão de CDA - Parcelamento",
+        "Emissão de CDA",
+        "Dívida Ativa",
+        "Dívida por Exercício",
+        "Posição dos Parcelamentos",
+        "Posição da Dívida Parcial",
+        "Certidão",
+        "Dívida por contribuinte",
+        "Parcelamentos",
+        "Posição de Dívida Exercício/Procedência",
+        "Inscrição em Dívida",
+        "CDAs Anuladas",
+        "Prescrição de Dívida",
+        "Reemissão do Livro",
+        "Resumo Geral da Dívida",
+        "Consulta CDA por Matrícula",
+        "Detalhamento do Parcelamento",
+        "Divida por Exercicio CSV",
+        "D.A. Posição Débitos Executados",
+        "D.A. Posição Débitos Não Executados",
+        "Parcelamentos por Usuário Logado",
+        "Inscrições em Dívida por Período",
+        "Cancelamentos de Importação de Dívida",
+        "Vínculos Numpres - IPTU",
+        "Parcelamentos +60 dias em atraso",
+        "Acordos Anulados - csv",
+        "Parcelamentos pagos por período - csv",
+        "Atas - Conciliação",
+        "Parcelamentos Emissão Bloqueada",
+        "Histórico de Vínculos de CDA",
+        "Parcelamentos por Inicial",
+        "Sitação do Débito por Inicial",
+        "Emissão Termo Dívida",
+        "Protestos por Lista",
+        "Relatório de Débitos CSV com Máscara de CPF"
+      ],
+      procedimentos: [
+        "Recibo de Receita",
+        "Prescrição de Dívida",
+        "Cancela CDA",
+        "Gera CDA a partir da lista",
+        "Inscrição em Dívida",
+        "Cancelamento de Importação de Dívida",
+        "Textos das Certidões",
+        "Textos do Termo de Parcelamento",
+        "Textos da Petição Inicial",
+        "Assinaturas",
+        "Manutenção de CDA",
+        "Processamento do Livro",
+        "Anulação de Prescrição de Dívida",
+        "Parâmetros",
+        "Manutenção de Parâmetros",
+        "Liberar CDA para Protesto",
+        "Cancela Liberação CDA para Protesto",
+        "Download CDAS - Administrador",
+        "Cobrança Extrajudicial",
+        "Movimentação Extrajudicial",
+        "Receita"
+      ]
+    }
+  },
+  {
+    id: "fiscal",
+    title: "Fiscal",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Fiscais",
+        "Tipo de Processo Fiscal",
+        "Gráficas",
+        "Procedências",
+        "Tipo de Andamento",
+        "Tipo de Fiscalização",
+        "Tipo de Vistoria",
+        "Taxas",
+        "Parâmetros Obras"
+      ],
+      consulta: [
+        "Alvará Sanitário",
+        "Cadastro Municipal",
+        "Geral Financeira",
+        "CGM",
+        "Vistorias",
+        "Auto de Infração",
+        "Notificação",
+        "Consulta Processo Fiscal"
+      ],
+      relatorio: [
+        "Fiscais",
+        "Gráficas",
+        "Tipo de Andamento",
+        "Alvará Sanitário",
+        "Vistorias",
+        "Termo de Vistoria",
+        "Auto de Infração",
+        "Auto de Infração (Prazo)",
+        "Notificação",
+        "Notificação (Período)",
+        "Atividades Baixadas",
+        "Levantamento",
+        "Geral de Levantamento",
+        "AIDOF",
+        "Inscrição por Logradouros",
+        "Notas Fiscais",
+        "Notas Fiscais por periodo (NFSE)",
+        "Taxas"
+      ],
+      procedimentos: [
+        "Alvará Sanitário",
+        "Libera AIDOF",
+        "Andamentos",
+        "Levantamento",
+        "Notificações",
+        "Auto de Infração",
+        "Auto de Lançamento",
+        "Vistorias",
+        "Vistoria (Geral)",
+        "ISSQN Variavel",
+        "Parâmetros",
+        "Processo Fiscal",
+        "TIAF",
+        "Emissão Geral TFS",
+        "Emissão Geral TFF",
+        "Importação AINF - SN",
+        "Taxas",
+        "Taxa Proporcional"
+      ]
+    }
+  },
+  {
+    id: "inflatores",
+    title: "Inflatores",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Inflatores"
+      ],
+      consulta: [
+        "Inflatores"
+      ],
+      relatorio: [
+        "Inflatores"
+      ],
+      procedimentos: [
+        "Atualização de Valores",
+        "Cria Inflator para Exercício",
+        "Manutenção de Valores"
+      ]
+    }
+  },
+  {
+    id: "issqn",
+    title: "ISSQN",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Tipos de Alvará",
+        "Eventos",
+        "Manutenção de Grupos de Serviço",
+        "Motivos de Paralisação",
+        "Alvará",
+        "Configuração de Cálculo ISSQN",
+        "Configuração da Planilha",
+        "Porte",
+        "Classe",
+        "Atividade",
+        "Vencimentos",
+        "Cálculo",
+        "Tipo de Cálculo",
+        "Forma de Cálculo",
+        "Atividade / Tipo de Cálculo",
+        "Tipo de Cálculo / Atividade",
+        "Escritórios Contábeis",
+        "Tipo de Nota",
+        "Tipo de Geração",
+        "Manutenção de Pontuação",
+        "Forma de Localização Alvará",
+        "Fator de Cálculo por Área",
+        "Tipos de Sujeito Passivo"
+      ],
+      consulta: [
+        "Geral Financeira",
+        "Cadastro Municipal",
+        "Financeira ISSQN",
+        "DAI",
+        "Notas Avulsas"
+      ],
+      relatorio: [
+        "Cadastrais",
+        "Atividade",
+        "ISSQN Calculado e Pago (Exercício)",
+        "ISSQN Pago",
+        "ISSQN Variável",
+        "DAI(s) (Não Enviadas)",
+        "Inscrição",
+        "Inscrição Web",
+        "Inscrição (Atividades)",
+        "Lançamentos DBPREF/DBPortal",
+        "Emissão Geral de ISSQN",
+        "Planilha de Retenção",
+        "Log (Cálculo ISSQN)",
+        "MEI",
+        "Simples",
+        "Integração Externa",
+        "Paralisação de Empresa",
+        "Por Regimes do Simples - CSV",
+        "REDESIM"
+      ],
+      procedimentos: [
+        "Paralisação de Inscrição",
+        "Cálculo Individual ISSQN",
+        "Controle de Alteração Cadastral",
+        "Cálculo Geral ISSQN",
+        "Configuração do Cálculo",
+        "ISSQN Estimado / Fixado",
+        "ISSQN Complementar",
+        "Cancela ISSQN Variável",
+        "Baixa Inscrição de Alvará",
+        "Excluir Baixa Inscrição de Alvará",
+        "Atualiza Classe / Atividade",
+        "Libera DAI",
+        "Processamento Lista DBPref",
+        "Empresas Optantes do Simples",
+        "Processamento Arquivo Simples(DAF607)",
+        "Processamento Arquivo Simples(Eventos)",
+        "Notas Avulsas",
+        "Movimentação de Alvará",
+        "MEI",
+        "Parâmetros",
+        "Simples Nacional",
+        "Processamento Arquivo Retenção",
+        "Emissão Geral ISSQN_SC",
+        "Emissão Geral ISSQN_A",
+        "Arquivos Dívida - Simples Nacional"
+      ]
+    }
+  },
+  {
+    id: "itbi",
+    title: "ITBI",
+    module: "tributario",
+    options: {
+      cadastro: [],
+      consulta: [],
+      relatorio: [],
+      procedimentos: []
+    }
+  },
+  {
+    id: "juridico",
+    title: "Jurídico",
+    module: "tributario",
+    options: {
+      cadastro: [],
+      consulta: [],
+      relatorio: [],
+      procedimentos: []
+    }
+  },
+  {
+    id: "marcas",
+    title: "Marcas",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Localidades"
+      ],
+      consulta: [
+        "Consulta Marcas",
+        "Marcas Canceladas",
+        "Transferências",
+        "Cancelamentos"
+      ],
+      relatorio: [
+        "Marcas por Proprietário",
+        "Marcas Canceladas",
+        "Histórico de Cancelamentos",
+        "Histórico de Tranferências"
+      ],
+      procedimentos: [
+        "Cadastro de Marcas",
+        "Transferência de Marca",
+        "Cancelamento de Marcas"
+      ]
+    }
+  },
+  {
+    id: "meio-ambiente",
+    title: "Meio Ambiente",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Empreendimentos",
+        "Condicionantes"
+      ],
+      consulta: [
+        "Processo"
+      ],
+      relatorio: [
+        "Emissão de Licença",
+        "Vencimento de Licenças"
+      ],
+      procedimentos: [
+        "Emissão de Parecer Técnico"
+      ]
+    }
+  },
+  {
+    id: "notificacoes",
+    title: "Notificações",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Tipo de Notificação",
+        "Situação da Notificação"
+      ],
+      consulta: [
+        "Geral Financeira"
+      ],
+      relatorio: [
+        "Listas",
+        "Posição das Notificações",
+        "Situação Notificação",
+        "Emissão de Notificações"
+      ],
+      procedimentos: [
+        "Listas",
+        "Notificações",
+        "Documento da Lista",
+        "Notificações por Edital",
+        "Configuração de Documento por Tipo",
+        "Parâmetros"
+      ]
+    }
+  },
+  {
+    id: "projetos",
+    title: "Projetos",
+    module: "tributario",
+    options: {
+      cadastro: [
+        "Obras",
+        "Situação do Projeto",
+        "Técnicos"
+      ],
+      consulta: [
+        "Obras",
+        "Documento Sisobra"
+      ],
+      relatorio: [
+        "Carta de Alvará",
+        "Carta de Habite-se",
+        "Obras com Alvará",
+        "Obras",
+        "Obras e Construções",
+        "Construções e Habite-se",
+        "Situação do Projeto",
+        "Alvarás Vencidos"
+      ],
+      procedimentos: [
+        "Situação do Projeto",
+        "Liberação de Habite-se",
+        "Parâmetros",
+        "Texto",
+        "Arquivo do INSS",
+        "Texto dos alvarás",
+        "Alvará de Obras"
+      ]
+    }
+  },
+  {
     id: "recursos-humanos",
     title: "Recursos Humanos",
     module: "patrimonial",
