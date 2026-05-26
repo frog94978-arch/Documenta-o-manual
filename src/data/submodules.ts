@@ -1103,10 +1103,32 @@ export const submodules: Submodule[] = [
     title: "ITBI",
     module: "tributario",
     options: {
-      cadastro: [],
-      consulta: [],
-      relatorio: [],
-      procedimentos: []
+      cadastro: [
+        "Tipo de Transação",
+        "Tipo de Situação",
+        "Forma de Pagamento",
+        "Taxas do ITBI"
+      ],
+      consulta: [
+        "ITBI",
+        "Geral Financeira"
+      ],
+      relatorio: [
+        "Emite Guia",
+        "Resumo de ITBI",
+        "Tipo de Transações",
+        "Tipo de Situação",
+        "ITBI Setor / Quadra / Lote",
+        "Certidão de ITBI",
+        "Itbi Urbano - Endereços"
+      ],
+      procedimentos: [
+        "Manutenção de ITBI",
+        "Liberação de ITBI",
+        "Guia Retificativa",
+        "Parâmetros",
+        "Cálculo ITBI"
+      ]
     }
   },
   {
@@ -1114,10 +1136,65 @@ export const submodules: Submodule[] = [
     title: "Jurídico",
     module: "tributario",
     options: {
-      cadastro: [],
-      consulta: [],
-      relatorio: [],
-      procedimentos: []
+      cadastro: [
+        "Cadastro de Cartório",
+        "Advogados",
+        "Vara",
+        "Localização",
+        "Tipo de Petições",
+        "Situação da Inicial",
+        "Situação Processo do Foro",
+        "Processos",
+        "Tipo Processo",
+        "Cartório Extrajudicial",
+        "Motivo de Anulação Inicial"
+      ],
+      consulta: [
+        "Geral Financeira",
+        "Certidão",
+        "Inicial",
+        "Processo do Foro"
+      ],
+      relatorio: [
+        "Reemissão de Inicial",
+        "Iniciais",
+        "Reemite Petição",
+        "Lista de Inicial",
+        "Emissão de Inicial com CDA",
+        "Emitir Petição Agrupada",
+        "Relatório de Petições Agrupadas",
+        "Relatório de Petições Agrupadas txt",
+        "Qtde Iniciais por peticao agrupada",
+        "Receitas por acordo",
+        "Honorários não contabilizados",
+        "Processos e Iniciais por Acordo",
+        "Download Petições - Administrador",
+        "Posição de débitos por Inicial",
+        "Posição dos débitos por Processo",
+        "Detalhamento do Parcelamento - Jurídico",
+        "Perfis dos Parcelamentos",
+        "Integração PJE",
+        "Processos Distribuídos",
+        "Taxa Proporcional",
+        "Movimentação dos Processos"
+      ],
+      procedimentos: [
+        "Inicial",
+        "Situação da Inicial",
+        "Processo do Foro",
+        "Situação do Processo do Foro",
+        "Gera Petição",
+        "Arquivo de Remessa",
+        "Manutenção de Parametros",
+        "Download Petições - Administrador",
+        "Gera Petições - Administrador",
+        "Manutenção de Taxas/Custas",
+        "Processo Eletrônico",
+        "Download Petições - Administrador (Novo)",
+        "Geração em Lote - PI Extinção",
+        "Geração em Lote - Relatório de Débitos",
+        "Geração em Lote - PI Extinção - Desistência"
+      ]
     }
   },
   {
