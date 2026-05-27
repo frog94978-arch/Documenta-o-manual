@@ -477,10 +477,11 @@ Lista de movimentos lançados na aba Movimento no cadastro de fornecedor.
 ### Grupo de Fornecimento
 
 Retorna os grupos de fornecimento vinculado no momento do cadastro do fornecedor (aba Subgrupo).
+`,
+  "Cotações de Preços": `
+Nesta rotina é possível realizar a emissão da relação dos orçamentos de solicitações realizados por determinado período, por razão social ou ainda por material.
 
-### Certificados
-
-Lista de certificados já emitidos para o fornecedor.
+**DB:PATRIMONIAL > Compras > Consultas > Cotações de Preços**
 `,
   "Consulta Item": `
 Esta rotina exibe dados do fornecedor cadastrado previamente no cadastro de fornecedores do módulo compras.

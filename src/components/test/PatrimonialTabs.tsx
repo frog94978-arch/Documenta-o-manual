@@ -1,6 +1,7 @@
 // removed unused useState import
 import { getSubmoduleById } from "@/data/submodules";
 import { comprasCadastroContent } from "@/data/compras-content";
+import { comprasRelatorioContent } from "@/data/compras-relatorio-content";
 import MarkdownContent from "@/components/test/MarkdownContent";
 import { Button } from "@/components/test/ui/button";
 
@@ -153,6 +154,9 @@ const PatrimonialTabs = ({
           (selectedCategory === "cadastro" || selectedCategory === "consulta") ?
           comprasCadastroContent[
             selectedFinalSection as keyof typeof comprasCadastroContent
+          ] : selectedCategory === "relatorio" ?
+          comprasRelatorioContent[
+            selectedFinalSection as keyof typeof comprasRelatorioContent
           ] : undefined;
 
         return (
