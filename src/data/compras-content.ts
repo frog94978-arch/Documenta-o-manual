@@ -7,33 +7,49 @@ Assim, formados os grupos, a cada um deles teremos ligados um ou mais elementos 
 Como exemplo, pode-se citar um grupo chamado Gêneros Alimentícios que estará ligado aos elementos de despesa material de consumo e material de distribuição gratuita.
 
 ## Inclusão
-**DB:PATRIMONIAL > Compras > Cadastros > Grupos de Material/Serviço > Inclusão**
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Cadastros > Grupos de Material/Serviço > Inclusão
+\`\`\`
 
 - **Código do grupo**: código sequencial que será criado automaticamente pelo e-cidade no momento da inclusão.
 - **Descrição do grupo**: neste campo usuário deve informar o nome do grupo que está sendo incluído.
 - **Natureza do Grupo**: Por padrão terá o valor "Produto", porém, podendo escolher entre outras duas opções: Serviço e Medicamento.
-- **Ativo**: para o grupo ser utilizado no e-cidade, este campo deverá estar como “SIM”.
+- **Ativo**: para o grupo ser utilizado no e-cidade, este campo deverá estar como "SIM".
 - **Elementos**: são os elementos de despesas que ficarão vinculados ao grupo que está sendo incluso, devendo o usuário selecioná-los através da caixa de seleção.
 
-**NOTA**: todo elemento deve estar vinculado a uma dotação, para que este seja listado entre as opções a serem escolhidas.
+***NOTA:*** todo elemento deve estar vinculado a uma dotação, para que este seja listado entre as opções a serem escolhidas.
+
+---
 
 ## Alteração
-**DB:PATRIMONIAL > Compras > Cadastros > Grupos de Material/Serviço > Alteração**
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Cadastros > Grupos de Material/Serviço > Alteração
+\`\`\`
 
 Através desta rotina é possível realizar a alteração dos grupos de materiais e serviços cadastrados no e-cidade.
 
+---
+
 ## Exclusão
-**DB:PATRIMONIAL > Compras > Cadastros > Grupos de Material/Serviço > Exclusão**
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Cadastros > Grupos de Material/Serviço > Exclusão
+\`\`\`
 
 Através desta rotina é possível realizar a exclusão dos grupos de materiais e serviços cadastrados no e-cidade.
 
-**NOTA**: É vedada a exclusão do grupo caso algum subgrupo de material/serviço esteja vinculado ao mesmo; Para a utilização de um Grupo de Material/Serviços na inclusão Material/Serviço é obrigatório o seu vínculo com ao menos um Subgrupo de Material/Serviço conforme o próximo tópico.
+***NOTA:*** É vedada a exclusão do grupo caso algum subgrupo de material/serviço esteja vinculado ao mesmo; Para a utilização de um Grupo de Material/Serviços na inclusão Material/Serviço é obrigatório o seu vínculo com ao menos um Subgrupo de Material/Serviço conforme o próximo tópico.
 `,
   "Subgrupos de Materiais/Serviços": `
 O subgrupo identifica o material ou serviço que pertence à família do grupo. No e-cidade, o subgrupo liga o material/serviço a um grupo.
 
 ## Inclusão
-**DB:PATRIMONIAL > Compras > Cadastros > Subgrupos de Materiais/Serviços > Inclusão**
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Cadastros > Subgrupos de Materiais/Serviços > Inclusão
+\`\`\`
 
 - **Código do subgrupo**: código sequencial que será criado automaticamente pelo e-cidade no momento a inclusão;
 - **Descrição do subgrupo**: neste campo o usuário deverá informar o nome do subgrupo que está sendo cadastrado;
@@ -52,17 +68,27 @@ Cadastro de um grupo denominado **SERVIÇOS**, o qual estará vinculado aos segu
 
 Neste grupo exemplo poderíamos vincular um **SUBGRUPO** denominado **Serviço no Setor de Construção Civil**.
 
+---
+
 ## Alteração
-**DB:PATRIMONIAL > Compras > Cadastros > Subgrupos de Materiais/Serviços > Alteração**
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Cadastros > Subgrupos de Materiais/Serviços > Alteração
+\`\`\`
 
 Permite realizar a alteração dos subgrupos de materiais/serviços cadastrados no e-cidade;
 
+---
+
 ## Exclusão
-**DB:PATRIMONIAL > Compras > Cadastros > Subgrupos de Materiais/Serviços > Exclusão**
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Cadastros > Subgrupos de Materiais/Serviços > Exclusão
+\`\`\`
 
 Permite realizar a exclusão dos subgrupos de materiais e serviços cadastrados no e-cidade;
 
-**NOTA**: É vedada sua exclusão caso algum Material/Serviço que o contenha tenha sido cadastrado.
+***NOTA:*** É vedada sua exclusão caso algum Material/Serviço que o contenha tenha sido cadastrado.
 `,
   "Materiais/Serviços": `
 Os materiais e serviços são uma divisão do subgrupo, conforme a espécie do material ou serviço. Para se entender a relação entre grupo, subgrupo e material/serviço, deve-se ter em foco que cada grupo estará ligado a um elemento de despesa e, que, todo e qualquer material ou serviço deve necessariamente estar vinculado a um desdobramento, oriundo do elemento de despesa a ele vinculado.
@@ -82,7 +108,10 @@ Nesse exemplo, o administrador orçamentário definiu que os desdobramentos dos 
 - Material Destinado a Assistência Social.
 
 ## Inclusão
-**DB:PATRIMONIAL > Compras > Cadastros > Materiais/Serviços > Inclusão**
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Cadastros > Materiais/Serviços > Inclusão
+\`\`\`
 
 A tela de inclusão possui 3 (três) filtros para pesquisa, sendo eles:
 - **Código do Material**: número atribuído ao Material/Serviço pelo e-cidade;
@@ -107,21 +136,31 @@ Caso o material ou serviço que se deseja cadastrar não exista no e-cidade, o u
 - **Código do Subgrupo**: define qual Subgrupo, dentre os vinculados ao Grupo selecionado, o material será cadastrado.
 - **Lista de desdobramento**: permite escolher os desdobramentos utilizados pelo item, oriundos do(s) elemento(s) de despesa do Grupo.
 
+---
+
 ## Alteração
-**DB:PATRIMONIAL > Compras > Cadastros > Materiais/Serviços > Alteração**
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Cadastros > Materiais/Serviços > Alteração
+\`\`\`
 
 Através desta rotina é possível realizar a alteração de informações de Materiais/Serviços.
 
-**Ponto importante**: caso não identifique um desdobramento para selecionar, o usuário deverá alterar o "Grupos de Material/Serviço" vinculado e habilitar o elemento de despesa origem.
+***Ponto importante:*** caso não identifique um desdobramento para selecionar, o usuário deverá alterar o "Grupos de Material/Serviço" vinculado e habilitar o elemento de despesa origem.
 
-**NOTA**: Não será possível realizar alteração de informações como Código do Grupo/Subgrupo e desvincular desdobramentos que já estejam em Autorização de Empenho, assim como a opção "Serviço" não poderá ser alterada.
+***NOTA:*** Não será possível realizar alteração de informações como Código do Grupo/Subgrupo e desvincular desdobramentos que já estejam em Autorização de Empenho, assim como a opção "Serviço" não poderá ser alterada.
+
+---
 
 ## Exclusão
-**DB:PATRIMONIAL > Compras > Cadastros > Materiais/Serviços > Exclusão**
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Cadastros > Materiais/Serviços > Exclusão
+\`\`\`
 
 Através desta rotina é possível realizar a exclusão de Materiais/Serviços.
 
-**NOTA**: É vetada a exclusão do item caso o mesmo tenha sido utilizado em uma Solicitação de Compras ou Autorização de Empenho Manual.
+***NOTA:*** É vetada a exclusão do item caso o mesmo tenha sido utilizado em uma Solicitação de Compras ou Autorização de Empenho Manual.
 `,
   "Cadastro de Unidades": `
 A unidade nada mais é do que a caracterização da forma como o material deverá ser entregue para a administração pública. Assim que o usuário efetivar a inclusão de uma Solicitação de Compras ou efetivar a inclusão de uma Autorização de Empenho, deverá indicar a forma que será entrega determinado material, podendo optar por exemplo ser em unidade, pacote, lata, quilo, fardo, etc..
