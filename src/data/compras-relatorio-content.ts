@@ -1,4 +1,299 @@
 export const comprasRelatorioContent: Record<string, string> = {
+  "Licitação - Relatório Licitações": `
+\`\`\`
+DB:PATRIMONIAL > Licitações > Relatórios > Licitação
+\`\`\`
+
+Esse relatório permite a conferência de dados da licitação valor adjudicado e empresa vencedora.
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image14.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image14.png)
+
+Ele permite buscas pelos filtros:
+
+- **Modalidade:** filtrar licitações pela modalidade;
+- **Numeração:** filtrar pela numeração da licitação;
+- **Licitação:** filtrar pelo código sequencial da licitação;
+- **Período de:** filtrar licitações dentro de um período determinado;
+- **Listar itens:** informar se sim ou não permite que liste todos os itens da licitação;
+- **Listar movimentos:** informar se sim ou não permite que liste as movimentações da licitação. Ex: julgada, em andamento, etc;
+- **Listar cotações:** informar se sim ou não permite que liste as cotações da licitação;
+- **Sequencial:** permite buscar licitações pela situação. Ex: em andamento, julgada, revogada,etc.;
+- **Opção de seleção:** filtrar pelos selecionados ou menos os selecionados.
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image56.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image56.png)
+`,
+  "Relatório Resumido da Licitação - Relatório Licitações": `
+Este relatório traz informações resumidas da licitação como participantes, vencedores, valores vencedores, origem do recursos julgado, além das informações alimentadas na inclusão da licitação como edital, data da abertura e objeto.
+
+\`\`\`
+DB:PATRIMONIAL > Licitações > Relatórios > Relatório Resumido da Licitação
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image79.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image79.png)
+
+Permite buscar pelos filtros:
+
+- **Modalidade:** filtrar licitações pela modalidade;
+- **Numeração:** filtrar pela numeração da licitação;
+- **Licitação:** filtrar pelo código sequencial da licitação;
+- **Período de:** filtrar licitações dentro de um período determinado;
+- **Sequencial:** permite buscar licitações pela situação. Ex: em andamento, julgada, revogada,etc.;
+- **Opção de seleção:** filtrar pelos selecionados ou menos os selecionados.
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image90.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image90.png)
+`,
+  "Mapa das Propostas - Relatório Licitações": `
+Esse relatório traz as informações de propostas apresentadas na licitação.
+
+\`\`\`
+DB:PATRIMONIAL > Licitações > Relatórios > Mapa das Propostas
+\`\`\`
+
+Ele apresenta 2 modelos.
+
+- **Modelo 1:** traz um relatório sintético.
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image112.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image112.png)
+
+- **Modelo 2:** traz um relatório mais analítico.
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image105.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image105.png)
+
+Permite filtrar por:
+
+- **Licitação:** filtrar pelo código sequencial da licitação;
+- **Modelo:** modelo 1 ou 2 como demonstrado acima;
+- **Imprimir valor unitário:** se sim ou não trazer o valor unitário dos itens;
+- **Imprimir valor total:** se sim ou não trazer o valor total dos itens;
+- **Imprimir justificativa de desclassificação:** se sim ou não trazer justificativa descrita na tela de desclassificação;
+- **Imprimir justificativa de troca de fornecedor:** se sim ou não trazer justificativa descrita na tela de troca de fornecedor;
+- **Imprimir justificativa de lote/itens anulados:** se sim ou não trazer justificativa descrita no cancelamento de itens.
+`,
+  "Gera Lista de Itens em TXT - Relatório Licitações": `
+\`\`\`
+DB:PATRIMONIAL > Licitações > Relatórios > Gera Lista de Itens em TXT
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image23.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image23.png)
+
+Permite a impressão em csv(ou xls) de relatório com a listagem dos itens e valores licitados.
+
+Os filtros de busca são:
+
+- **Licitação:** filtrar pelo código sequencial da licitação;
+- **Separador de colunas:** Escolher qual símbolo delimitar a separação das colunas;
+- **Delimitador de campos:** se aspas duplas ou simples;
+- **Layout:** Escolher entre layout 1 ( traz o sequencial dos itens) ou layout 2(não traz sequencial dos itens).
+`,
+  "Homologação de Processo - Relatório Licitações": `
+Este relatório traz as informações de homologação do processo como itens, vencedores,portaria e data de homologação. Buscando pelo número da licitação clicando no ícone.
+
+\`\`\`
+DB:PATRIMONIAL > Licitações > Relatórios > Homologação de Processo
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image34.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image34.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image110.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image110.png)
+`,
+  "Adjudicação de Processo - Relatório Licitações": `
+Este relatório traz as informações de adjudicação do processo licitatório como ganhador, valor licitado, separando os itens de acordo com os fornecedores vencedores.
+
+\`\`\`
+DB:PATRIMONIAL > Licitações > Relatórios > Adjudicação de Processo
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image73.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image73.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image33.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image33.png)
+`,
+  "Edital (Download) - Relatório Licitações": `
+
+
+\`\`\`
+DB:PATRIMONIAL > Licitações > Relatórios > Edital (Download)
+\`\`\`
+
+Esse relatório permite a emissão do edital da licitação caso esteja previamente cadastrado o modelo na rotina:
+
+\`\`\`
+DB:CONFIGURAÇÃO > Configuração > Procedimentos > Manutenção de Documentos/Template > Inclusão
+\`\`\`
+
+E posteriormente configurado na rotina:
+
+\`\`\`
+DB:PATRIMONIAL > Licitações > Procedimentos > Configuração dos Editais
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image74.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image74.png)
+
+Permite filtrar por:
+
+- **Licitação:** busca pelo ícone pelo sequencial, numeração ou ano;
+- **Numeração:** busca direta pela numeração;
+- **Modalidade:** busca pela modalidade como pregão, convite, etc;
+- **Período de:** busca de editais dentro de determinado período preenchido.
+`,
+  "Situações da Licitação - Relatório Licitações": `
+
+
+\`\`\`
+DB:PATRIMONIAL > Licitações > Relatórios > Situações da Licitação
+\`\`\`
+
+Permite verificar situações de licitações.
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image13.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image13.png)
+
+Podendo filtrar por:
+
+- **Licitação:** buscar por numeração de licitação específica;
+- **Período de:** licitações dentro de período determinado;
+- **Situações da licitação:** buscar licitações que estão em determinada situação no sistema. Ex.: julgada, em andamento, etc;
+- **Opções de seleção:** buscar somente pelos selecionados ou menos os selecionados.
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image63.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image63.png)
+`,
+  "Licitações Liberadas na Web - Relatório Licitações": `
+
+
+\`\`\`
+DB:PATRIMONIAL > Licitações > Relatórios > Licitações Liberadas na Web
+\`\`\`
+
+Esse relatório demonstra as licitações com editais liberados no portal da prefeitura.
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image109.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image109.png)
+`,
+  "Emite Autorização de empenho - Relatório Licitações": `
+
+
+\`\`\`
+DB:PATRIMONIAL > Licitações > Relatórios > Emite Autorização de Empenho
+\`\`\`
+
+Permite a emissão de autorizações de empenho geradas por processos de compras.
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image104.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image104.png)
+
+Pode-se filtrar por:
+
+- **Autorizações de:** buscar por intervalo de autorizações;
+- **Período:** buscar dentro de determinado período;
+- **Informações adicionais:** selecionar entre as opções mostrar autorização de processo de compras ou mostrar somente autorização.
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image28.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image28.png)
+`,
+  "Fornecedores Empatados e Cotações ME/EPP - Relatório Licitações": `
+
+
+\`\`\`
+DB: PATRIMONIAL > Licitações > Relatórios > Fornecedores Empatados e Cotações ME/EPP
+\`\`\`
+
+Permite verificar fornecedores com lances empatados e as cotações de ME/EPP, buscando pelo número da licitação.
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image21.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image21.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image40.png)](https://e-cidade.wiki.br/patrimonial/licitacoes/files/images_licitacoes_tecnico/image40.png)
+`,
+  "Conferências": `
+\`\`\`
+DB:PATRIMONIAL > Contratos > Relatórios > Conferências > Acordos a Vencer
+\`\`\`
+
+Permite filtrar por acordo, por departamento por grupo de acordo ou contratado os acordos a vencer dentro de um período. Pode ser ordenado por data de vigência ou contratado.
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image11.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image58.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image58.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image35.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image35.png)
+`,
+  "Reimpressão Acordo": `
+\`\`\`
+DB:PATRIMONIAL > Contratos > Relatórios > Reimpressão Acordo
+\`\`\`
+
+Permite emitir o acordo desde que haja documento cadastrado. As informações são de acordo com o template do documento cadastrado.
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image26.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image26.png)
+`,
+  "Extrato de Contrato": `
+\`\`\`
+DB:PATRIMONIAL > Contratos > Relatórios > Extrato de Contrato
+\`\`\`
+
+Permite gerar relatório de informações buscando por acordo específico. As informações do relatório são de acordo com modelo cadastrado.
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image20.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image20.png)
+`,
+  "Contratos sem Programação de Competência": `
+\`\`\`
+DB:PATRIMONIAL > Contratos > Relatórios > Contratos sem Programação de Competência
+\`\`\`
+
+Permite buscar pelos contratos vigentes, todos os contratos ou por determinado período, os acordos do departamento que estão sem competência programada, selecionando o filtro e clicando em imprimir.
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image34.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image34.png)
+
+O relatório traz o número dos contratos, a vigência e o valor cadastrado.
+`,
+  "Movimentações": `
+# Movimentações de Acordos
+
+\`\`\`
+DB:PATRIMONIAL > Contratos > Relatórios > Movimentações > Acordos
+\`\`\`
+
+Permite que se busque acordos em um departamento, com os filtros:
+
+- **Acordo:** Busca diretamente pelo número do acordo desejado;
+- **Comissão:** Busca acordos vinculados a comissão selecionada;
+- **Categoria:** Busca acordos com a categoria selecionada;
+- **Classificação:** Busca acordos com a classificação selecionada;
+- **Data de início e fim:** busca dentro do departamento selecionado, todos os acordos criados dentro desse período descrito;
+- **Situação:** Busca acordos com a situação selecionada;
+- **Origem:** Busca acordos com a origem selecionada;
+- **Tipo de acordo:** Busca acordos com o tipo selecionado.
+
+Também permite configurar se sim ou não: Listar itens, listar movimentação e listar empenho. E ordenar por data de criação, contratado, número do contrato ou vigência.
+
+Além dos filtros da primeira aba, temos a aba vínculo de acordos, grupo de acordo e contratado, que se selecionados pelo ícone e lançados clicando em lançar, também filtram os acordos com as informações solicitadas.
+
+O relatório traz listada as informações de Código, Acordo, Tipo do Acordo, Processo, Data da Assinatura, Vigência, Situação Atual, Classificação, Contratado, Grupo de Acordo, Período de Vigência, Número, Categoria, Departamento, Origem, Resumo do Objeto, Comissão, Membros.
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image59.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image59.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image30.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image30.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image31.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image31.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image54.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image54.png)
+`,
+  "Movimentações - Página 2": `
+# Movimentações Financeira
+
+\`\`\`
+DB:PATRIMONIAL > Contratos > Relatórios > Movimentações > Movimentação Financeira
+\`\`\`
+
+Permite que se busque acordos em todas as instituições, com os filtros:
+
+- **Departamento responsável:** Busca pelo departamento selecionado os acordos existentes;
+- **Empenho:** Busca acordos vinculados aos empenhos dentro do intervalo selecionados;
+- **Categoria:** Busca acordos na categoria selecionada;
+- **Código do acordo:** Busca por acordo já determinados;
+- **Vigência do contrato:** Busca acordos dentro do período de vigência descrito;
+- **Origem:** Busca acordos pela origem selecionada.
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image62.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image62.png)
+
+O relatório traz listada as informações:
+
+- Movimentação contrato - número do contrato, valor, executado, vigência, empenhado, a empenhar.
+- Movimentação do empenho vinculado ao acordo - empenho, emissão, empenhado, anulado, liquidado, pago.
+- Saldo a pagar desses empenhos vinculados - liquidado, não liquidado e saldo geral.
+`,
   "Registro de preço": `
 ## Emite Estimativa
 
