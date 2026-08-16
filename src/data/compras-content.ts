@@ -3699,6 +3699,919 @@ Ao clicar sobre o link seja na quantidade Cedida ou Recebida, o usuário poderá
 
 [![](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image80.png)](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image80.png)
 `,
+  "Cadastro de Unidades - Material": `
+A unidade nada mais é do que a caracterização da forma como o material deverá ser entregue para a administração pública. Por exemplo, a unidade de um determinado material poderá ser pacote, lata, kilo, fardo, etc.
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Cadastro de Unidades > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image181.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image181.png)
+
+- **Código da unidade:** número sequencial atribuído automaticamente pelo e-cidade à unidade que está sendo cadastrada;
+- **Descrição da unidade:** nome da unidade que está sendo cadastrada;
+- **Abreviatura da descrição:** abreviatura do nome da unidade que está sendo cadastrada;
+- **Se usa a quantidade da unidade:** estando a quantidade da unidade selecionada como **SIM**, será possível indicar na Solicitação de Compras, além da unidade, a quantidade desta unidade a ser adquirida.
+
+**Exemplo:** podemos citar a unidade Caixa, cuja abreviatura é **cx**. Nesta situação é possível indicar a quantidade desta unidade a ser adquirida, que no exemplo seria 50 cx.
+
+- **Aceita casas decimais:** estando selecionada como **SIM**, o sistema permitirá a utilização de casas decimais para esta unidade em algumas rotinas, como na entrada da ordem de compra. Dependendo do parâmetro, será permitida a digitação de valores com ou sem casas decimais;
+- **Código do Tribunal:** campo livre para referenciar o código específico do tribunal.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Cadastro de Unidades > Alteração
+\`\`\`
+
+Permite alterar informações incluídas para uma unidade de medida no e-cidade.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Cadastro de Unidades > Exclusão
+\`\`\`
+
+Permite excluir uma unidade inclusa no e-cidade.
+
+**Nota:** a exclusão somente será possível se a unidade cadastrada ainda não tiver sido utilizada em uma solicitação de compras.
+`,
+  "Material - Consulta Material": `
+\`\`\`
+DB:PATRIMONIAL > Material > Consultas > Material
+\`\`\`
+
+Rotina que permite ao usuário consultar o estoque de um material específico, entre outras informações.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image134.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image134.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image223.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image223.png)
+
+Como filtro, há o código do material, que pode ser informado no campo indicado. Caso o usuário o desconheça, poderá utilizar filtros complementares para identificar o material desejado.
+
+Após selecionar o material, é exibida uma tela separada em **Dados do Material** e **Movimentações**.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image163.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image163.png)
+
+### Dados do Material
+
+Exibe informações como código do material, descrição, quantidade total em estoque, valor total em estoque, quantidade total reservada e preço médio.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image262.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image262.png)
+
+### Movimentações
+
+- **Estoque:** retorna os registros de depósitos em que existe o material consultado, a quantidade e o valor em estoque para cada depósito.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image303.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image303.png)
+
+- **Lançamentos:** mostra todas as movimentações do material no estoque.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image125.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image125.png)
+
+Os tipos de movimentação mais comuns são implantação, entrada de ordem de compra, transferência, entrada manual, saída manual e devolução de material.
+
+Para facilitar a consulta das movimentações em determinado depósito, o sistema permite selecioná-lo na caixa **Departamento** e filtrar por tipo de lançamento na caixa **Lançamento**.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image53.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image53.png)
+
+- **Requisições:** mostra todas as requisições de saída do material do estoque. O recurso no início da coluna **Código da Requisição** permite visualizar os materiais e dados contidos na requisição de saída.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image284.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image284.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image61.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image61.png)
+
+- **Atendimentos:** exibe atendimentos realizados para determinadas requisições.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image152.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image152.png)
+
+- **Devoluções:** mostra todas as devoluções efetuadas para determinado atendimento do material consultado.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image2.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image2.png)
+
+- **Ponto de Pedido:** mostra as quantidades definidas para o material em relação ao estoque mínimo, máximo e ponto de pedido;
+- **Lotes:** exibe os lotes em que o material está contido;
+- **Nota Fiscal:** mostra as informações de nota fiscal relacionadas ao material;
+- **Imprimir:** permite emitir relatório com as informações consultadas: Estoque, Lançamentos, Requisições, Atendimentos, Devoluções, Ponto de Pedido, Lotes e Nota Fiscal.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image206.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image206.png)
+`,
+  "Ordens de Compra - Consulta Material": `
+\`\`\`
+DB:PATRIMONIAL > Material > Consultas > Ordens de Compra
+\`\`\`
+
+Rotina que permite consultar uma ordem de compra e suas respectivas informações.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image68.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image68.png)
+
+- **Código:** número sequencial gerado para a ordem de compra. Caso o usuário o desconheça, poderá aplicar filtros como data de emissão, nome/razão social e departamento.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image296.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image296.png)
+
+- **Numcgm:** número sequencial atribuído ao CGM do fornecedor. É possível aplicar filtros adicionais; nesse caso, o e-cidade retorna todas as ordens de compra vinculadas ao fornecedor.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image17.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image17.png)
+
+- **Empenho:** código do empenho. Caso o usuário o desconheça, poderá aplicar filtros adicionais.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image260.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image260.png)
+
+- **Seq. Empenho:** número sequencial do empenho criado pelo e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image242.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image242.png)
+
+Após aplicar os filtros, acesse as informações da ordem de compra selecionada.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image187.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image187.png)
+
+As informações são apresentadas de três formas:
+
+- **Dados da Ordem de Compra:** exibe código da ordem, fornecedor, data de emissão, data de anulação quando houver, departamento, tipo de compra, total, valores lançado, a lançar e anulado, além de observações;
+- **Itens:** retorna os itens da ordem com número e sequencial do empenho, código e descrição do material, sequencial do item, descrição da solicitação, quantidade, valor unitário, valor total e quantidade anulada;
+- **Movimentações no Estoque:** retorna movimentações de entrada da ordem de compra, incluindo código e material, quantidade, quantidade de entrada, valor, almoxarifado e tipo de movimentação.
+`,
+  "Consulta Empenho - Consulta Material": `
+\`\`\`
+DB:PATRIMONIAL > Material > Consultas > Consulta Empenho
+\`\`\`
+
+Permite consultar os empenhos da instituição. A rotina disponibiliza os seguintes filtros:
+
+- **Número do empenho:** busca por número ou sequencial do empenho, nome/razão social e CNPJ/CPF;
+- **Sequencial do empenho:** busca por número ou sequencial do empenho, nome/razão social e CNPJ/CPF;
+- **Reduzido:** busca pelo reduzido ou estrutural da despesa;
+- **Código do material:** busca por código ou descrição do material e por situação ativo/inativo;
+- **Numcgm:** busca pelo número do CGM do contratado, nome/razão social e CNPJ/CPF;
+- **Data de emissão:** permite informar um período;
+- **Ordem:** busca pelo número da ordem de compra, código do elemento e valor da ordem;
+- **Processo administrativo:** permite informar o número do processo.
+
+Após selecionar o empenho, é possível consultar resumo da movimentação, itens do empenho, lançamentos contábeis, notas de liquidação, pagamentos, ordens de compra, solicitações de compra, processo de compras, agenda de pagamentos, contratos e imprimir a consulta. A rotina também mostra as informações cadastradas na emissão do empenho.
+
+[![](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image43.png)](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image43.png)
+`,
+  "Controle de Validade - Consulta Material": `
+\`\`\`
+DB:PATRIMONIAL > Material > Consultas > Controle de Validade
+\`\`\`
+
+Rotina que permite consultar a validade de um ou mais materiais por determinado período. É possível filtrar por situação: Todos, Vencidos, À Vencer e No Prazo; e ordenar o resultado da busca por Código ou Alfabética.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image196.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image196.png)
+`,
+  "Implantação de estoque - Procedimentos Material": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Implantação de estoque > Inclusão
+\`\`\`
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Implantação de estoque > Alteração
+\`\`\`
+
+### Cancelar
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Implantação de estoque > Cancelar
+\`\`\`
+`,
+  "Movimentação - Relatório Material": `
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Movimentação > Distribuição
+\`\`\`
+
+Através deste relatório é possível gerar o relatório de Distribuição, informando o Período Inicial e o Período Final desejados para emissão. Também é possível filtrar por Grupo/SubGrupo e visualizar o relatório agrupado por Grupo/Subgrupo.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image146.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image146.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image189.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image189.png)
+`,
+  "Cadastrais - Relatório Material": `
+### Cadastro de Materiais
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Cadastrais > Cadastro de Materiais
+\`\`\`
+
+Este relatório lista todos os materiais existentes no cadastro do módulo Material.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image285.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image285.png)
+
+- **Ordem:** define a ordem de apresentação dos materiais no relatório: Numérica ou Alfabética;
+- **Tipo de Ordem:** define a ordem numérica sequencial dos materiais: Ascendente ou Descendente;
+- **Listar:** permite filtrar os gêneros Materiais, Todos ou Serviços.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image178.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image178.png)
+
+Escolhidos os filtros, gere o relatório pelo botão correspondente.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image287.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image287.png)
+`,
+  "Cadastrais - Página 2 - Relatório Material": `
+### Cadastro de Unidades
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Cadastrais > Cadastro de Unidades
+\`\`\`
+
+Este relatório exibe as unidades cadastradas no módulo Material.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image77.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image77.png)
+
+- **Ordem:** define a ordem de apresentação das unidades no relatório: Numérica, Alfabética ou Abreviatura;
+- **Tipo de Ordem:** define a forma de ordenação dos dados: Ascendente ou Descendente.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image147.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image147.png)
+
+Após selecionar os filtros, gere o relatório pelo botão correspondente.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image261.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image261.png)
+`,
+  "Cadastrais - Página 3 - Relatório Material": `
+### Materiais Interligados
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Cadastrais > Materiais Interligados
+\`\`\`
+
+Este relatório exibe a ligação dos materiais existentes no cadastro do módulo Material com os materiais do módulo Compras.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image30.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image30.png)
+
+- **Ordem:** define a ordem de apresentação dos materiais no relatório: Numérica ou Alfabética;
+- **Tipo de Ordem:** define a ordem numérica sequencial dos materiais: Ascendente ou Descendente;
+- **Listar Materiais:** define quais materiais cadastrados no módulo Material serão apresentados: Materiais, Todos ou Serviços;
+- **Listar:** permite filtrar os gêneros Materiais, Todos ou Serviços.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image294.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image294.png)
+
+Após escolher os filtros, gere o relatório pelo botão correspondente.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image259.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image259.png)
+`,
+  "Cadastrais - Página 4 - Relatório Material": `
+### Tipo de Lançamentos
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Cadastrais > Tipo de Lançamentos
+\`\`\`
+
+Este relatório mostra os tipos de movimentações dos materiais nos depósitos. Essas movimentações são fixas no e-cidade e não podem ser modificadas.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image149.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image149.png)
+
+- **Ordem:** define a ordem de apresentação dos lançamentos no relatório: Numérica ou Alfabética;
+- **Tipo de Ordem:** define a ordem numérica sequencial dos lançamentos: Ascendente ou Descendente.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image274.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image274.png)
+
+Após escolher os filtros, gere o relatório pelo botão correspondente.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image157.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image157.png)
+`,
+  "Documentos - Relatório Material": `
+### Requisição de saída de materiais
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Documentos > Requisição de saída de materiais
+\`\`\`
+
+Através deste relatório é possível reemitir todas as requisições de saída de materiais dos depósitos cadastrados no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image43.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image43.png)
+
+- **Tipos de Atendimento:** Atendidas, Parcialmente Atendidas, Não Atendidas ou Todas;
+- **Requisições:** permite selecionar um intervalo de requisições a serem emitidas. Para reemitir apenas uma, informe o mesmo número nos dois campos;
+- **Período:** permite filtrar o intervalo de datas em que as requisições de saída de materiais foram incluídas.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image96.jpg)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image96.jpg)
+`,
+  "Documentos - Página 2 - Relatório Material": `
+### Termo de Transferência
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Documentos > Termo de Transferência
+\`\`\`
+
+Este relatório permite reemitir os termos de transferência de materiais entre depósitos. Para isso, informe um intervalo numérico das transferências que deseja reemitir.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image251.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image251.png)
+
+- **Transferências de:** permite selecionar um intervalo de termos de transferência a serem emitidos. Para emitir somente um, informe o mesmo número nos dois campos;
+- **Tipos de Período:** Data de Transferência ou Data do Recebimento;
+- **Período:** permite filtrar um intervalo de datas em que foram incluídas as requisições de saída de materiais;
+- **Código Almoxarifado:** permite selecionar um ou mais almoxarifados. Caso o usuário não conheça o código, poderá aplicar filtros complementares.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image90.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image90.png)
+`,
+  "Manutenção de Parâmetros - Procedimentos Material": `
+### Consulta
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Manutenção de Parâmetros > Consulta
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image110.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image110.png)
+
+Permite definir a visualização de itens entre instituições e se devem ser exibidos apenas materiais com estoque.
+
+### Globais
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Manutenção de Parâmetros > Globais
+\`\`\`
+
+Parâmetros configurados antes ou durante a implantação definem a forma de movimentação dos materiais no estoque.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image16.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image16.png)
+
+Inclui o tipo de controle de estoque, regras para requisição sem estoque, visualização de saldo, geração automática de nota de liquidação, data de implantação, prazo a vencer, estrutura dos grupos e parâmetros de solicitação de transferência.
+
+### Por Instituição
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Manutenção de Parâmetros > Por Instituição
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image81.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image81.png)
+
+Permite definir o controle de PIT como ativado ou desativado.
+`,
+  "Entrada de Ordem de Compra - Procedimentos Material": `
+Procedimento para efetivar a entrada das ordens de compra recebidas nos departamentos da instituição.
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Entrada de Ordem de Compra > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image12.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image12.png)
+
+O departamento/almoxarifado da sessão deve ser o mesmo indicado na ordem de compra. Após localizar a ordem, informe os dados de recebimento e selecione os materiais de entrada.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image15.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image15.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image215.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image215.png)
+
+É possível vincular ou cadastrar material de almoxarifado, controlar lote e validade, fracionar quantidades e acertar quantidade ou valor antes de confirmar a entrada.
+
+### Anulação de Entrada
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Entrada de Ordem de Compra > Anulação de Entrada
+\`\`\`
+
+Permite anular uma entrada de ordem de compra. A anulação é sempre total para os materiais incluídos.
+
+### Alteração de Notas Fiscais
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Entrada de Ordem de Compra > Alteração de Notas Fiscais
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image38.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image38.png)
+
+Permite alterar dados como data da nota, data de recebimento, tipo de entrada e número da nota.
+`,
+  "Requisição de Saída de Materiais - Procedimentos Material": `
+Procedimento para solicitar materiais ao depósito ao qual o departamento está vinculado. A requisição manual só reduz o estoque após atendimento do almoxarifado.
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Requisição de Saída de Materiais > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image32.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image32.png)
+
+A rotina possui as abas **Requisição** e **Itens**. Informe departamento, almoxarifado, observação, material e quantidade solicitada.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image217.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image217.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Requisição de Saída de Materiais > Alteração
+\`\`\`
+
+Permite alterar observações e itens enquanto a requisição não tiver atendimento ou anulação.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Requisição de Saída de Materiais > Exclusão
+\`\`\`
+
+Permite excluir uma requisição manual ainda não atendida ou anulada.
+
+### Requisição Automática
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Requisição de Saída de Materiais > Requisição Automática
+\`\`\`
+
+O responsável pelo depósito registra a requisição e o atendimento no momento da retirada do material.
+`,
+  "Atendimento de Requisição - Procedimentos Material": `
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Atendimento de Requisição
+\`\`\`
+
+Procedimento realizado pelo responsável do almoxarifado para efetivar a entrega total ou parcial de uma requisição de saída, conforme a disponibilidade do estoque.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image175.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image175.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image64.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image64.png)
+
+Selecione a requisição, marque os itens e informe a quantidade a entregar quando o atendimento for parcial.
+`,
+  "Entrada manual - Procedimentos Material": `
+Rotina excepcional para ajustes de estoque, correções de implantação ou recebimento de doações.
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Entrada manual > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image40.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image40.png)
+
+Informe departamento, material, quantidades, valor unitário, lote, validade, fabricante, observação e dados da nota fiscal antes de confirmar a entrada.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image127.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image127.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Entrada manual > Alteração
+\`\`\`
+
+Permite alterar nota fiscal, data da nota e observações do lançamento.
+
+### Cancelar
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Entrada manual > Cancelar
+\`\`\`
+
+Valide as informações, informe a observação de cancelamento e confirme.
+`,
+  "Saída manual - Procedimentos Material": `
+Permite ajustar o estoque após implantação, em situações excepcionais como correções, sinistro, roubo ou furto.
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Saída manual > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image185.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image185.png)
+
+Selecione o material, informe a justificativa no campo de observação e a quantidade a retirar do saldo.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image154.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image154.png)
+
+### Alterar e Cancelar
+
+As rotinas de alteração e cancelamento estão indisponíveis/descontinuadas.
+`,
+  "Transferência entre depósitos - Procedimentos Material": `
+Permite transferir material armazenado em um depósito para o estoque de outro.
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Transferência entre depósitos > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image222.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image222.png)
+
+A rotina possui as abas **Departamento destino** e **Itens**. Selecione o destino, informe material, quantidade, observação e confirme.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image283.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image283.png)
+
+### Alteração, Confirmar e Cancelar
+
+Permite alterar transferências pendentes, confirmá-las no depósito de destino ou cancelá-las no depósito de origem.
+
+### Solicitação e Atendimento da Transferência
+
+Permite solicitar materiais a outro almoxarifado e efetivar atendimento total ou parcial da solicitação.
+`,
+  "Devolução de Materiais - Procedimentos Material": `
+Rotina de extrema importância, utilizada nas saídas por requisições automáticas ou manuais. Normalmente é usada para corrigir uma requisição realizada equivocadamente ou quando os materiais não forem utilizados pelo requisitante.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image78.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image78.png)
+
+Ao acessar a rotina, o e-cidade listará as requisições realizadas ao almoxarifado. Pesquise pelo código do atendimento ou da requisição e, se necessário, filtre por data, hora, código e nome do usuário ou departamento de destino.
+
+Caso identifique que não está no almoxarifado/depósito correto, altere-o.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image99.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image99.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image54.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image54.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image4.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image4.png)
+
+Caso tenha selecionado o lançamento de requisição incorreto, use a opção correspondente para retornar e localizar o lançamento correto.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image75.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image75.png)
+
+Na tela é possível verificar código do atendimento, data e hora da requisição, código e nome do usuário, além do departamento de destino.
+
+Adicione uma observação referente à devolução e informe, na última coluna **Quantidade**, a quantidade que deseja devolver ao depósito/almoxarifado. A devolução pode ser total ou parcial.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image166.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image166.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image57.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image57.png)
+
+Por fim, confirme a devolução.
+
+A efetivação da devolução pode ser conferida na rotina:
+
+\`\`\`
+DB:PATRIMONIAL > Material > Consultas > Material Almox
+\`\`\`
+
+No exemplo, o estoque **ALMOXARIFADO CENTRAL** possuía 90 BATERIAS DF. Após uma devolução parcial de 5 quantidades do ATENDIMENTO DE REQUISIÇÃO (10), o estoque atual foi atualizado para 95.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image50.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image50.png)
+
+O campo **Quantidade total em estoque**, disponível em **Dados do material**, é o somatório das quantidades do material em todos os estoques. No exemplo, o material está em somente um depósito: **ALMOXARIFADO CENTRAL**.
+`,
+  "Configuração de texto da ordem de compra - Procedimentos Material": `
+### Cabeçalho 1
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Configuração do texto da ordem de compra > Cabeçalho 1
+\`\`\`
+
+Permite configurar o texto exibido na parte superior do PDF da ordem de compra.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image123.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image123.png)
+
+Informação adicionada ao campo "Texto" será exibida na Ordem de Compra da seguinte forma:
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image256.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image256.png)
+
+### Cabeçalho 2
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Configuração do texto da ordem de compra > Cabeçalho 2
+\`\`\`
+
+Possui a mesma finalidade do Cabeçalho 1, mas exibe o texto em outro local da ordem de compra.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image63.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image63.png)
+
+Informação adicionada ao campo "Texto" será exibida na Ordem de Compra da seguinte forma:
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image227.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image227.png)
+
+**Nota:** o documento "Ordem de Compra" é emitido no módulo Compras, através da rotina:
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Relatórios > Documentos > Emite Ordem de Compra
+\`\`\`
+`,
+  "PIT - Procedimentos Material": `
+### Gerar Arquivo > Processar Arquivo
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > PIT > Gerar Arquivo > Processar Arquivo
+\`\`\`
+
+### Gerar Arquivo > Cancelar Arquivo
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > PIT > Gerar Arquivo > Cancelar Arquivo
+\`\`\`
+
+### Reemitir Arquivo
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > PIT > Reemitir Arquivo
+\`\`\`
+`,
+  "Fechamento do Estoque - Procedimentos Material": `
+Conteúdo da rotina disponível na wiki para Fechamento do Estoque.
+`,
+  "Planilha de Distribuição - Procedimentos Material": `
+Nesta rotina é possível informar quantidades de materiais a serem dispensados para diversos departamentos ao mesmo tempo, por meio de uma planilha de distribuição.
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Planilha de Distribuição > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image304.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image304.png)
+
+Após informar descrição, materiais e departamentos, salve a planilha e gere o arquivo CSV para preenchimento.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image305.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image305.png)
+
+### Alteração e Importar
+
+\`\`\`
+DB:PATRIMONIAL > Material > Procedimentos > Planilha de Distribuição > Alteração
+DB:PATRIMONIAL > Material > Procedimentos > Planilha de Distribuição > Importar
+\`\`\`
+`,
+  "Cadastro de Material - Material": `
+Através desta rotina é possível incluir, alterar ou excluir um material do estoque.
+
+O cadastro de material do estoque estará associado ao cadastro de materiais do módulo Compras, por meio do código do material.
+
+Cumpre observar que um material cadastrado no módulo Compras poderá ter vários registros associados no módulo Material. Isto ocorre porque todo o material cadastrado no Compras possui uma descrição genérica, sofrendo no cadastro de material o detalhamento necessário de acordo com as especificações que lhe são peculiares.
+
+Como exemplo, podemos citar uma bota que no módulo Compras está cadastrada simplesmente como bota. Já no módulo Material poderá ter várias especificações como tamanho, cor, marca, etc.
+
+Assim, a referida bota terá vários materiais no módulo Material a ela associados, tais como: bota tamanho 40, bota tamanho 42, etc.
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Cadastro de Material > Inclusão
+\`\`\`
+
+A tela exibirá três abas:
+
+1. **Material Almox:** relativa ao cadastro do material propriamente dito.
+2. **Material Compras:** relação do material com o material já cadastrado no Compras.
+3. **Material Estoque:** relativa à quantidade de material existente no estoque.
+
+#### Material Almox
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image231.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image231.png)
+
+- **Código do material:** o e-cidade fornecerá automaticamente um código sequencial para o material que está sendo incluso;
+- **Descrição do material:** nome a ser atribuído ao item no módulo Material, com suas características complementares;
+- **Unidade de entrada:** definida no cadastro de unidades. O usuário deverá selecionar a unidade de entrada padrão a ser utilizada;
+- **Unidade de saída:** definida no cadastro de unidades. O usuário deverá selecionar a unidade padrão de saída;
+- **Grupo:** por intermédio deste e das configurações prévias no cadastro de grupo, o e-cidade efetuará os lançamentos necessários, como baixa de estoque e registros contábeis;
+- **Quantidade de entrada:** permite definir a quantidade padrão contida naquela unidade;
+- **Código anterior do item:** uso opcional para guardar código de cadastro anterior;
+- **Ativo:** indica se o material está habilitado para uso;
+- **Controlar Validade:** define se o material terá controle de validade, normalmente usado para medicamentos e alimentos;
+- **Sim/Obrigatório:** torna obrigatório o controle de lote/validade;
+- **Sim/Opcional:** disponibiliza o controle de lote/validade sem torná-lo obrigatório;
+- **Não:** o material não possuirá controle de lote/validade.
+
+Requisitos:
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Cadastro de Unidades
+DB:PATRIMONIAL > Material > Cadastros > Grupo/Subgrupo
+\`\`\`
+
+**Exemplo:** na inclusão do material Caneta Azul, usando a unidade Caixa (Cx), é possível informar quantas canetas (un) compõem a caixa.
+
+#### Material Compras
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image111.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image111.png)
+
+- **Código do material:** exibe o código e a descrição do material que está sendo incluso no e-cidade;
+- **Código do material no Compras:** código do material correspondente no módulo Compras. Caso o usuário o desconheça, poderá realizar uma pesquisa mais avançada por filtros.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image136.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image136.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image131.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image131.png)
+
+Após selecionar o material no módulo Compras que terá relação com o item do almoxarifado, inclua o vínculo. Para selecionar múltiplos materiais, o e-cidade disponibiliza uma tela de filtro por descrição.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image94.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image94.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image184.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image184.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image87.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image87.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image273.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image273.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image258.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image258.png)
+
+Selecione quais materiais de Compras serão vinculados ao material do almoxarifado. Caso um vínculo tenha sido criado incorretamente, ele poderá ser excluído na coluna **Opções**. Os materiais de Compras vinculados serão listados em **Material Compras**.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image29.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image29.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image264.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image264.png)
+
+#### Material Estoque
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image20.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image20.png)
+
+Nesta aba é realizado o controle do estoque mínimo e podem ser incluídas informações complementares, como a localização do material no depósito.
+
+- **Código do material:** exibe o código e a descrição do material que está sendo incluso;
+- **Estoque mínimo:** estoque mínimo desejado para o material;
+- **Estoque máximo:** estoque máximo desejado para o material;
+- **Ponto de pedido:** ponto em que o responsável pelo depósito/almoxarifado deve solicitar aquisição ao setor de Compras;
+- **Localização:** permite indicar a localização do material no estoque.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image124.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image124.png)
+
+**Atenção:** o botão fica desabilitado caso o usuário não esteja em um departamento definido como depósito no e-cidade. Essa configuração é individual por almoxarifado/depósito.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image247.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image247.png)
+
+Para alterar o departamento/almoxarifado, utilize o ícone no canto superior direito da tela durante o acesso à rotina.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image117.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image117.png)
+
+As configurações realizadas para o material naquele depósito/almoxarifado serão listadas em **Material Estoque** e será possível incluir novo registro.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image37.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image37.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image210.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image210.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image31.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image31.png)
+
+É possível excluir uma parametrização pela coluna **Opções** ou alterar sua configuração.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Cadastro de Material > Alteração
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image193.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image193.png)
+
+Informe o código ou a descrição do material que deseja alterar. O caractere % pode ser usado entre informações para realizar pesquisa do tipo contém.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image162.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image162.png)
+
+Após localizar e selecionar o material, o usuário poderá alterar as informações necessárias.
+
+**Importante:** as alterações somente são permitidas se o material não possuir histórico de movimentação de estoque. Se já houver movimentação, o e-cidade exibirá uma mensagem de alerta e impedirá a alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Cadastro de Material > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image58.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image58.png)
+
+Permite excluir um material cadastrado no e-cidade. Pesquise pelo código ou descrição, localize o item e confirme a exclusão.
+`,
+  "Cadastro de Fabricantes - Material": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Cadastro de Fabricantes > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image245.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image245.png)
+
+- **Código do Fabricante:** código sequencial atribuído ao fabricante que está sendo incluso;
+- **Nome do Fabricante:** campo aberto para informar o nome do fabricante;
+- **Código do CGM:** permite informar o CGM ou realizar pesquisa com filtros adicionais.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image82.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image82.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image161.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image161.png)
+
+**Nota:** o fabricante deve estar previamente cadastrado como CGM (Cadastro Geral do Município).
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Cadastro de Fabricantes > Alteração
+\`\`\`
+
+Permite alterar informações de um fabricante cadastrado no e-cidade.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Cadastro de Fabricantes > Exclusão
+\`\`\`
+
+Permite excluir um fabricante cadastrado no e-cidade.
+`,
+  "Depósitos - Material": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Depósitos > Inclusão
+\`\`\`
+
+Permite incluir locais com características de depósitos/almoxarifados. A rotina possui duas abas: **Almoxarifados** e **Departamentos**.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image276.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image276.png)
+
+#### Almoxarifados
+
+- **Código Almoxarifado:** código sequencial gerado e atribuído ao depósito/almoxarifado;
+- **Código departamento:** informe o departamento que deseja definir como depósito/almoxarifado. Caso desconheça o código, utilize a pesquisa com filtros adicionais.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image233.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image233.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image28.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image28.png)
+
+Para consultar depósitos cadastrados, utilize os filtros de pesquisa disponíveis.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image76.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image76.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image72.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image72.png)
+
+Após incluir o depósito/almoxarifado, a aba **Departamentos** será habilitada.
+
+#### Departamentos
+
+Nesta aba, informe quais departamentos ficarão vinculados ao depósito. Basta marcar a caixa de seleção ao lado de cada departamento.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image177.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image177.png)
+
+Os departamentos vinculados podem solicitar e retirar materiais do depósito criado.
+
+**Nota:** somente podem ser marcados departamentos da mesma instituição do depósito.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image250.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image250.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Depósitos > Alteração
+\`\`\`
+
+Permite alterar o departamento vinculado ao depósito e os departamentos que possuem acesso a ele.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Depósitos > Exclusão
+\`\`\`
+
+Permite excluir um depósito.
+
+**Nota:** a exclusão só é possível quando o depósito ainda não possui histórico de movimentações, como entradas e saídas de materiais.
+`,
+  "Grupo/Subgrupo - Material": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Grupo/Subgrupo > Inclusão
+\`\`\`
+
+Permite incluir um Grupo/Subgrupo para posterior vínculo a um material.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image6.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image6.png)
+
+- **Máscara:** definida para a criação dos grupos. Sua estrutura pode ser alterada em DB:PATRIMONIAL > Material > Procedimentos > Manutenção de Parâmetros Globais;
+- **Estrutural:** campo para criação numérica da disposição dos grupos conforme a estrutura desejada pelo almoxarifado;
+- **Descrição:** descrição do grupo;
+- **Tipo:** determina o nível criado. Grupos são sintéticos e subgrupos são analíticos; somente os subgrupos podem ser vinculados a um material;
+- **Conta Contábil:** conta vinculada ao grupo ou subgrupo no plano de contas da instituição;
+- **Conta Contábil VPD:** conta de variação patrimonial diminutiva previamente aberta pela Contabilidade;
+- **Grupo/Subgrupo Ativo:** determina se o grupo ou subgrupo estará disponível para uso.
+
+Exemplos de estrutura:
+
+- 01.00 - Grupo (Material de Consumo)
+- 01.01 - Subgrupo (Material de Copa e Cozinha)
+- 01.02 - Subgrupo (Material de Escritório)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image237.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image237.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image186.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image186.png)
+
+Para consultar rapidamente os grupos/subgrupos existentes, utilize a opção de pesquisa. Após preencher as informações, conclua a inclusão.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Grupo/Subgrupo > Alteração
+\`\`\`
+
+Permite alterar informações de um grupo. Algumas informações são exclusivas do administrador do e-cidade, como contas contábeis.
+`,
+  "Veiculos Tipo/Grupo/Subgrupo - Material": `
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Vínculos Tipo/Grupo/SubGrupo > Grupo / SubGrupo
+\`\`\`
+
+Permite vincular grupos e subgrupos de estruturas entre um nível de origem e outro de destino. O nível de destino não pode ser maior que o nível de origem.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image235.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image235.png)
+
+### Tipo / Grupo
+
+\`\`\`
+DB:PATRIMONIAL > Material > Cadastros > Vínculos Tipo/Grupo/SubGrupo
+\`\`\`
+
+Permite vincular um grupo a um tipo de grupo.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image249.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image249.png)
+`,
   "Libera Fornecedor": `
 ### Inclusão
 

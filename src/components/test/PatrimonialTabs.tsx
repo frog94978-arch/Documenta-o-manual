@@ -40,6 +40,8 @@ const PatrimonialTabs = ({
   const [aditamentosPage, setAditamentosPage] = useState<1 | 2>(1);
   const [acordoPage, setAcordoPage] = useState<1 | 2 | 3 | 4 | 5 | 6>(1);
   const [licitacaoProcedimentosPage, setLicitacaoProcedimentosPage] = useState<1 | 2 | 3 | 4 | 5 | 6 | 7>(1);
+  const [cadastraisMaterialPage, setCadastraisMaterialPage] = useState<1 | 2 | 3 | 4>(1);
+  const [documentosMaterialPage, setDocumentosMaterialPage] = useState<1 | 2>(1);
 
   useEffect(() => {
     if (selectedFinalSection !== "Registro de Preço") {
@@ -77,6 +79,28 @@ const PatrimonialTabs = ({
   }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
 
   useEffect(() => {
+    const isCadastraisRelatorioMaterial =
+      selectedSubmodule === "Material" &&
+      selectedCategory === "relatorio" &&
+      selectedFinalSection === "Cadastrais";
+
+    if (!isCadastraisRelatorioMaterial) {
+      setCadastraisMaterialPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    const isDocumentosRelatorioMaterial =
+      selectedSubmodule === "Material" &&
+      selectedCategory === "relatorio" &&
+      selectedFinalSection === "Documentos";
+
+    if (!isDocumentosRelatorioMaterial) {
+      setDocumentosMaterialPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
     if (selectedFinalSection === "Registro de Preço") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -105,6 +129,18 @@ const PatrimonialTabs = ({
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [licitacaoProcedimentosPage, selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (selectedSubmodule === "Material" && selectedCategory === "relatorio" && selectedFinalSection === "Cadastrais") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [cadastraisMaterialPage, selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (selectedSubmodule === "Material" && selectedCategory === "relatorio" && selectedFinalSection === "Documentos") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [documentosMaterialPage, selectedSubmodule, selectedCategory, selectedFinalSection]);
 
   const submodules = [
     { id: "compras", name: "Compras", icon: <ShoppingCart size={20} /> },
@@ -208,6 +244,8 @@ const PatrimonialTabs = ({
             !(currentSubmoduleId === "contratos" && selectedCategory === "relatorio") &&
             !(currentSubmoduleId === "licitacoes" && selectedCategory === "relatorio") &&
             !(currentSubmoduleId === "licitacoes" && selectedCategory === "procedimentos") &&
+            !(currentSubmoduleId === "material" && selectedCategory === "procedimentos") &&
+            !(currentSubmoduleId === "material" && selectedCategory === "relatorio") &&
             !(currentSubmoduleId === "contratos" && selectedFinalSection === "Acordo" && selectedCategory === "procedimentos") &&
             !isProcedimentoContratosSemNavEspecial);
 
@@ -278,6 +316,32 @@ const PatrimonialTabs = ({
         const isProcedimentosLicitacoes =
           currentSubmoduleId === "licitacoes" &&
           selectedCategory === "procedimentos";
+
+        const isCadastroMaterial =
+          currentSubmoduleId === "material" &&
+          selectedCategory === "cadastro";
+
+        const isConsultaMaterial =
+          currentSubmoduleId === "material" &&
+          selectedCategory === "consulta";
+
+        const isProcedimentosMaterial =
+          currentSubmoduleId === "material" &&
+          selectedCategory === "procedimentos";
+
+        const isRelatorioMaterial =
+          currentSubmoduleId === "material" &&
+          selectedCategory === "relatorio";
+
+        const isCadastraisRelatorioMaterial =
+          currentSubmoduleId === "material" &&
+          selectedCategory === "relatorio" &&
+          selectedFinalSection === "Cadastrais";
+
+        const isDocumentosRelatorioMaterial =
+          currentSubmoduleId === "material" &&
+          selectedCategory === "relatorio" &&
+          selectedFinalSection === "Documentos";
 
         const registroPrecoPages: Record<1 | 2 | 3 | 4, string | undefined> = {
           1: comprasCadastroContent["Registro de Preço"],
@@ -355,6 +419,56 @@ const PatrimonialTabs = ({
           "Integração Licitar Digital": comprasCadastroContent["Integração Licitar Digital - Procedimentos Licitações"],
         };
 
+        const materialCadastroContentBySection: Record<string, string | undefined> = {
+          "Cadastro de Unidades": comprasCadastroContent["Cadastro de Unidades - Material"],
+          "Cadastro de Material": comprasCadastroContent["Cadastro de Material - Material"],
+          "Cadastro de Fabricantes": comprasCadastroContent["Cadastro de Fabricantes - Material"],
+          "Depósitos": comprasCadastroContent["Depósitos - Material"],
+          "Grupo/Subgrupo": comprasCadastroContent["Grupo/Subgrupo - Material"],
+          "Veiculos Tipo/Grupo/Subgrupo": comprasCadastroContent["Veiculos Tipo/Grupo/Subgrupo - Material"],
+        };
+
+        const materialConsultaContentBySection: Record<string, string | undefined> = {
+          "Material": comprasCadastroContent["Material - Consulta Material"],
+          "Ordens de Compra": comprasCadastroContent["Ordens de Compra - Consulta Material"],
+          "Consulta Empenho": comprasCadastroContent["Consulta Empenho - Consulta Material"],
+          "Controle de Validade": comprasCadastroContent["Controle de Validade - Consulta Material"],
+        };
+
+        const materialProcedimentosContentBySection: Record<string, string | undefined> = {
+          "Implantação de estoque": comprasCadastroContent["Implantação de estoque - Procedimentos Material"],
+          "Manutenção de Parâmetros": comprasCadastroContent["Manutenção de Parâmetros - Procedimentos Material"],
+          "Entrada de Ordem de Compra": comprasCadastroContent["Entrada de Ordem de Compra - Procedimentos Material"],
+          "Requisição de Saída de Materiais": comprasCadastroContent["Requisição de Saída de Materiais - Procedimentos Material"],
+          "Atendimento de Requisição": comprasCadastroContent["Atendimento de Requisição - Procedimentos Material"],
+          "Entrada manual": comprasCadastroContent["Entrada manual - Procedimentos Material"],
+          "Saída manual": comprasCadastroContent["Saída manual - Procedimentos Material"],
+          "Transferência entre depósitos": comprasCadastroContent["Transferência entre depósitos - Procedimentos Material"],
+          "Devolução de Materiais": comprasCadastroContent["Devolução de Materiais - Procedimentos Material"],
+          "Configuração de texto da ordem de compra": comprasCadastroContent["Configuração de texto da ordem de compra - Procedimentos Material"],
+          "PIT": comprasCadastroContent["PIT - Procedimentos Material"],
+          "Fechamento do Estoque": comprasCadastroContent["Fechamento do Estoque - Procedimentos Material"],
+          "Planilha de Distribuição": comprasCadastroContent["Planilha de Distribuição - Procedimentos Material"],
+        };
+
+        const materialRelatorioContentBySection: Record<string, string | undefined> = {
+          "Movimentação": comprasCadastroContent["Movimentação - Relatório Material"],
+          "Cadastrais": comprasCadastroContent["Cadastrais - Relatório Material"],
+          "Documentos": comprasCadastroContent["Documentos - Relatório Material"],
+        };
+
+        const cadastraisMaterialPages: Record<1 | 2 | 3 | 4, string | undefined> = {
+          1: comprasCadastroContent["Cadastrais - Relatório Material"],
+          2: comprasCadastroContent["Cadastrais - Página 2 - Relatório Material"],
+          3: comprasCadastroContent["Cadastrais - Página 3 - Relatório Material"],
+          4: comprasCadastroContent["Cadastrais - Página 4 - Relatório Material"],
+        };
+
+        const documentosMaterialPages: Record<1 | 2, string | undefined> = {
+          1: comprasCadastroContent["Documentos - Relatório Material"],
+          2: comprasCadastroContent["Documentos - Página 2 - Relatório Material"],
+        };
+
         const content =
           isRegistroPrecoProcedimento
             ? registroPrecoPages[registroPrecoPage]
@@ -376,6 +490,18 @@ const PatrimonialTabs = ({
               ? licitacoesRelatorioContentBySection[selectedFinalSection]
             : isProcedimentosLicitacoes
               ? licitacoesProcedimentosContentBySection[selectedFinalSection]
+            : isCadastroMaterial
+              ? materialCadastroContentBySection[selectedFinalSection]
+            : isConsultaMaterial
+              ? materialConsultaContentBySection[selectedFinalSection]
+            : isProcedimentosMaterial
+              ? materialProcedimentosContentBySection[selectedFinalSection]
+            : isCadastraisRelatorioMaterial
+              ? cadastraisMaterialPages[cadastraisMaterialPage] || cadastraisMaterialPages[1]
+            : isDocumentosRelatorioMaterial
+              ? documentosMaterialPages[documentosMaterialPage] || documentosMaterialPages[1]
+            : isRelatorioMaterial
+              ? materialRelatorioContentBySection[selectedFinalSection]
             : selectedCategory === "cadastro" ||
                 selectedCategory === "consulta" ||
                 selectedCategory === "procedimentos"
@@ -524,6 +650,58 @@ const PatrimonialTabs = ({
                         onClick={() => setAcordoPage(6)}
                       >
                         Página 6
+                      </Button>
+                    </div>
+                  ) : null}
+
+                  {isCadastraisRelatorioMaterial ? (
+                    <div className="mt-8 flex items-center justify-end gap-2">
+                      <Button
+                        size="sm"
+                        variant={cadastraisMaterialPage === 1 ? "default" : "outline"}
+                        onClick={() => setCadastraisMaterialPage(1)}
+                      >
+                        Página 1
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant={cadastraisMaterialPage === 2 ? "default" : "outline"}
+                        onClick={() => setCadastraisMaterialPage(2)}
+                      >
+                        Página 2
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant={cadastraisMaterialPage === 3 ? "default" : "outline"}
+                        onClick={() => setCadastraisMaterialPage(3)}
+                      >
+                        Página 3
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant={cadastraisMaterialPage === 4 ? "default" : "outline"}
+                        onClick={() => setCadastraisMaterialPage(4)}
+                      >
+                        Página 4
+                      </Button>
+                    </div>
+                  ) : null}
+
+                  {isDocumentosRelatorioMaterial ? (
+                    <div className="mt-8 flex items-center justify-end gap-2">
+                      <Button
+                        size="sm"
+                        variant={documentosMaterialPage === 1 ? "default" : "outline"}
+                        onClick={() => setDocumentosMaterialPage(1)}
+                      >
+                        Página 1
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant={documentosMaterialPage === 2 ? "default" : "outline"}
+                        onClick={() => setDocumentosMaterialPage(2)}
+                      >
+                        Página 2
                       </Button>
                     </div>
                   ) : null}
