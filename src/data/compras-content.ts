@@ -4010,6 +4010,244 @@ Este relatório permite reemitir os termos de transferência de materiais entre 
 
 [![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image90.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image90.png)
 `,
+  "Conferência - Relatório Material": `
+# Conferência > Estoque por Item(Novo)
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Estoque por Item (Novo)
+\`\`\`
+`,
+  "Conferência - Página 2 - Relatório Material": `
+# Saída de Material por departamento
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Saída de Material por departamento
+\`\`\`
+
+Este relatório retorna informações relativas à saída de materiais do depósito. Nele é possível aplicar diversos filtros separados em 4 abas, que são elas:
+
+1. Departamentos
+2. Materiais
+3. Usuários
+4. Órgãos/Tipos de Saídas
+
+(1)Departamentos
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image140.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image140.png)
+
+- Opções: serve como parâmetro de informações.
+- Com os departamentos selecionados: retorna todas as informações indicadas no filtro de departamentos.
+- Sem os departamento selecionados: o usuário poderá optar por emitir os dados “excluindo” os departamentos selecionados (menos os selecionados);
+- Departamentos: seleciona entre os departamentos no qual deseja realizar a conferência de saída de materiais.
+- Grupo/Subgrupo: permite ao usuário selecionar entre os grupos/subgrupos disponíveis.
+- Período: permite ao usuário selecionar entre um intervalo de tempo mensurado por data.
+- Quebra por departamento: Se “SIM”, o e-cidade não irá considerar a parametrização do filtro Ordem, emitindo o relatório por departamento, quebrando a página para cada um dos departamentos selecionados;
+- Ordem: seleciona a ordem de apresentação do relatório que poderá ser:
+  - Alfabética
+  - Código do material
+  - Departamento
+  - Data
+- Tipo:
+  - Analítico: retornará todas as movimentações de cada um dos materiais contidos nos depósitos selecionados.
+  - Sintético - Por Data: retorna a quantidade e o valor total dos materiais, separando por departamento, grupo, subgrupo e datas.
+  - Sintético - Somente Totais: retorna a quantidade e o valor total dos materiais em estoque, não considerando datas.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image62.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image62.png)
+
+(2)Materiais
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image27.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image27.png)
+
+- Opções: serve como parâmetro de informações.
+- Com os departamentos selecionados: retorna todas as informações indicadas no filtro de departamentos.
+- Sem os departamento selecionados: o usuário poderá optar por emitir os dados “excluindo” os departamentos selecionados (menos os selecionados);
+- [![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image115.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image115.png)
+- [![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image248.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image248.png)
+Material: caixa de seleção que permite a escolha dos materiais a serem filtrados. Caso o usuário desconheça o código do material, poderá clicar em e aplicar filtros adicionais, após a seleção basta clicar em para que ocorra a inclusão do item. Esta opção permite ao usuário selecionar quantos materiais desejar.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image59.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image59.png)
+
+(3)Usuários
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image91.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image91.png)
+
+- Opções: serve como parâmetro de informações.
+- Com os departamentos selecionados: retorna todas as informações indicadas no filtro de departamentos.
+- Sem os departamento selecionados: o usuário poderá optar por emitir os dados “excluindo” os departamentos selecionados (menos os selecionados);
+- [![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image214.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image214.png)
+Usuário: caixa de seleção destinada a escolher usuários que o usuário deseja filtrar. Caso desconheça o código do usuário, poderá clicar em e aplicar filtros complementares a fim de localizá-lo.
+
+(4)Órgãos / Tipos de Saída
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image47.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image47.png)
+
+À esquerda (Órgãos - Departamentos de Destino)
+
+O usuário poderá filtrar por órgãos que estejam vinculados ao departamento de destino, ou seja, o que foi destinado para a saída de material.
+
+À direita (Tipos de Saída).
+
+O usuário poderá filtrar entre os tipos de saídas disponíveis:
+
+- Saída Manual
+- Atendimento de Requisição
+- Anulação da Entrada da Ordem de Compra
+- Transferência de Saída
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image139.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image139.png)
+
+Caso as abas não possuam nenhuma informação, o e-cidade irá gerar um relatório com todas as saídas de materiais, em todos os departamentos cadastrados. Vale ressaltar que o relatório somente será gerado através do botão na aba “Departamentos”.
+`,
+  "Conferência - Página 3 - Relatório Material": `
+# Movimentação de Estoque
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Movimentação de Estoque
+\`\`\`
+`,
+  "Conferência - Página 4 - Relatório Material": `
+# Notas
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Notas
+\`\`\`
+
+Esta rotina permite a emissão de um relatório de notas fiscais lançadas no e-cidade, a mesma é dividida em 3 abas: Fornecedores, Elemento Item e Usuário.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image158.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image158.png)
+
+- Opções: serve como parâmetro de informações.
+- Com os departamentos selecionados: retorna todas as informações indicadas no filtro de departamentos.
+- Sem os departamento selecionados: o usuário poderá optar por emitir os dados “excluindo” os departamentos selecionados (menos os selecionados);
+- Fornecedores: neste filtro é possível selecionar o(s) fornecedor(es) para consulta;
+- Período: permite a emissão do relatório de notas por determinado intervalo de datas.
+- Período de recebimento: permite a emissão do relatório de notas por determinado intervalo de datas que caracterizam o recebimento do material.
+- Opção de impressão: filtro referente às notas, o usuário poderá filtrar entre.
+  - Todas
+  - Liquidadas
+  - Não liquidadas
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image103.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image103.png)
+
+Por fim, o usuário poderá utilizar os filtros por Elemento item(2) e Usuário(3), seguindo a mesma lógica dos filtros dos relatórios anteriores.
+`,
+  "Conferência - Página 5 - Relatório Material": `
+# Entrada das ordens de compra
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Entrada das ordens de compra
+\`\`\`
+
+Rotina que permite consultar as ordens de compras existentes para um determinado material ou as emitidas a favor de um ou mais fornecedores.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image35.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image35.png)
+
+- Código do material: código do material (módulo material);
+- Opções: serve como parâmetro de informações.
+- Com os fornecedores selecionados: retorna todas as informações indicadas no filtro de fornecedores.
+- Sem os fornecedores selecionados: o usuário poderá optar por emitir os dados “excluindo” os fornecedores selecionados (menos os selecionados);
+- Agrupar por: permite agrupar de quatro maneiras diferentes:
+  - Por Nota
+  - Por Ordem de Compra
+- Ordenar: permite ordenar de quatro maneiras diferentes:
+  - Fornecedor
+  - Ordem de Compra
+  - Nota
+  - Data
+- Fornecedores: neste filtro serão selecionados os fornecedores paraconsulta;
+- Período: emite o relatório de ordens de compra por período determinado entre os campos.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image101.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image101.png)
+
+O próximo exemplo deste relatório traz a indicação de um fornecedor. Nele o usuário irá visualizar todas as ordens de compras que estejam vinculadas ao fornecedor indicado.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image188.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image188.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image44.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image44.png)
+`,
+  "Conferência - Página 6 - Relatório Material": `
+# Arquivos PIT
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Arquivos PIT
+\`\`\`
+`,
+  "Conferência - Página 7 - Relatório Material": `
+# Anulações de Entrada de Ordem de Compra
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Anulações de Entrada de Ordem de Compra
+\`\`\`
+`,
+  "Conferência - Página 8 - Relatório Material": `
+# Devolução de Material ao Almoxarifado
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Devolução de Material ao Almoxarifado
+\`\`\`
+`,
+  "Conferência - Página 9 - Relatório Material": `
+# Entrada de Materiais por Departamentos
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Entrada de Materiais por Departamentos
+\`\`\`
+`,
+  "Conferência - Página 10 - Relatório Material": `
+# Estoque de Ponto de Pedido
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Estoque de Ponto de Pedido
+\`\`\`
+
+Este relatório exibe o ponto de pedido do estoque atual de todos os materiais de um determinado almoxarifado.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image93.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image93.png)
+
+O mesmo retorna os seguintes filtros:
+
+- Departamento
+- Ordem
+  - Alfabética
+  - Numérica
+- Tipo
+  - Todos
+  - Ponto de pedido
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image201.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image201.png)
+
+Após escolher o(s) depósito(s), basta ao usuário clicar no botão para gerar o relatório.
+
+[![](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image5.png)](https://e-cidade.wiki.br/patrimonial/material/files/material_tecnico/image5.png)
+`,
+  "Conferência - Página 11 - Relatório Material": `
+# Transferências em Aberto
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Transferências em Aberto
+\`\`\`
+`,
+  "Conferência - Página 12 - Relatório Material": `
+# Fechamento do Estoque
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Fechamento do Estoque
+\`\`\`
+`,
+  "Conferência - Página 13 - Relatório Material": `
+# Controle de Estoque (Novo)
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Controle de Estoque (Novo)
+\`\`\`
+`,
+  "Conferência - Página 14 - Relatório Material": `
+# Ficha financeira
+
+\`\`\`
+DB:PATRIMONIAL > Material > Relatórios > Conferência > Ficha financeira
+\`\`\`
+`,
   "Manutenção de Parâmetros - Procedimentos Material": `
 ### Consulta
 
@@ -4680,5 +4918,18 @@ DB:PATRIMONIAL > Compras > Procedimentos > Libera Fornecedor > Cancelamento
 \`\`\`
 
 Permite efetivar o cancelamento da liberação do fornecedor, porém, não a exclui, mantendo os registros no e-cidade.
+`,
+  "Unidade Compradora - Cadastro PNCP": `
+Permite a inclusão e manutenção de **Unidades Compradoras**. As unidades compradoras são divisões administrativas que realizam as contratações e celebram os contratos. Todo órgão/entidade deverá ter cadastrado ao menos uma unidade no PNCP.
+
+**Item de menu:** **PATRIMONIAL > PNCP > Cadastros > Unidade Compradora**
+
+- **Órgão/Entidade:** através do documento CGC vinculado à instituição, irá buscar e exibir o órgão/entidade vinculado a ele no PNCP.
+- **Código da Unidade:** campo aberto para definição do código da unidade compradora do órgão/entidade, com no máximo 30 dígitos.
+- **Nome da Unidade:** nome da unidade compradora do órgão/entidade, com no máximo 100 caracteres.
+- **Município:** município da instituição (órgão/entidade).
+- **Ativo:** recurso que permite definir uma unidade compradora como não ativa, uma vez que o PNCP não disponibiliza alteração/exclusão.
+
+**Notas:** somente será possível utilizar esta rotina caso a integração com o PNCP esteja ativa; caso contrário, será emitido um alerta solicitando que seja verificada a configuração inicial. Em “Unidades” serão listadas unidades compradoras já cadastradas no PNCP. Caso deseje utilizar a mesma no e-cidade, efetive a alteração e salve-a como “Ativo” sim.
 `,
 };

@@ -27,6 +27,9 @@ interface PatrimonialTabsProps {
   setSelectedFinalSection: (section: string | null) => void;
 }
 
+type ConferenciaMaterialPage = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14;
+type ConferenciaMaterialPaginationItem = ConferenciaMaterialPage | "ellipsis";
+
 const PatrimonialTabs = ({
   selectedSubmodule,
   setSelectedSubmodule,
@@ -42,6 +45,7 @@ const PatrimonialTabs = ({
   const [licitacaoProcedimentosPage, setLicitacaoProcedimentosPage] = useState<1 | 2 | 3 | 4 | 5 | 6 | 7>(1);
   const [cadastraisMaterialPage, setCadastraisMaterialPage] = useState<1 | 2 | 3 | 4>(1);
   const [documentosMaterialPage, setDocumentosMaterialPage] = useState<1 | 2>(1);
+  const [conferenciaMaterialPage, setConferenciaMaterialPage] = useState<ConferenciaMaterialPage>(1);
 
   useEffect(() => {
     if (selectedFinalSection !== "Registro de Preço") {
@@ -101,6 +105,17 @@ const PatrimonialTabs = ({
   }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
 
   useEffect(() => {
+    const isConferenciaRelatorioMaterial =
+      selectedSubmodule === "Material" &&
+      selectedCategory === "relatorio" &&
+      selectedFinalSection === "Conferência";
+
+    if (!isConferenciaRelatorioMaterial) {
+      setConferenciaMaterialPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
     if (selectedFinalSection === "Registro de Preço") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -141,6 +156,12 @@ const PatrimonialTabs = ({
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [documentosMaterialPage, selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (selectedSubmodule === "Material" && selectedCategory === "relatorio" && selectedFinalSection === "Conferência") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [conferenciaMaterialPage, selectedSubmodule, selectedCategory, selectedFinalSection]);
 
   const submodules = [
     { id: "compras", name: "Compras", icon: <ShoppingCart size={20} /> },
@@ -246,6 +267,9 @@ const PatrimonialTabs = ({
             !(currentSubmoduleId === "licitacoes" && selectedCategory === "procedimentos") &&
             !(currentSubmoduleId === "material" && selectedCategory === "procedimentos") &&
             !(currentSubmoduleId === "material" && selectedCategory === "relatorio") &&
+            !(currentSubmoduleId === "ouvidoria" && selectedCategory === "relatorio") &&
+            !(currentSubmoduleId === "ouvidoria" && selectedCategory === "procedimentos") &&
+            !(currentSubmoduleId === "pncp" && selectedCategory === "procedimentos") &&
             !(currentSubmoduleId === "contratos" && selectedFinalSection === "Acordo" && selectedCategory === "procedimentos") &&
             !isProcedimentoContratosSemNavEspecial);
 
@@ -342,6 +366,29 @@ const PatrimonialTabs = ({
           currentSubmoduleId === "material" &&
           selectedCategory === "relatorio" &&
           selectedFinalSection === "Documentos";
+
+        const isConferenciaRelatorioMaterial =
+          currentSubmoduleId === "material" &&
+          selectedCategory === "relatorio" &&
+          selectedFinalSection === "Conferência";
+
+        const isDocumentosRelatorioOuvidoria =
+          currentSubmoduleId === "ouvidoria" &&
+          selectedCategory === "relatorio" &&
+          selectedFinalSection === "Documentos";
+
+        const isProcedimentosOuvidoria =
+          currentSubmoduleId === "ouvidoria" &&
+          selectedCategory === "procedimentos";
+
+        const isProcedimentosPncp =
+          currentSubmoduleId === "pncp" &&
+          selectedCategory === "procedimentos";
+
+        const isCadastroUnidadeCompradoraPncp =
+          currentSubmoduleId === "pncp" &&
+          selectedCategory === "cadastro" &&
+          selectedFinalSection === "Unidade Compradora";
 
         const registroPrecoPages: Record<1 | 2 | 3 | 4, string | undefined> = {
           1: comprasCadastroContent["Registro de Preço"],
@@ -453,6 +500,7 @@ const PatrimonialTabs = ({
 
         const materialRelatorioContentBySection: Record<string, string | undefined> = {
           "Movimentação": comprasCadastroContent["Movimentação - Relatório Material"],
+          "Conferência": comprasCadastroContent["Conferência - Relatório Material"],
           "Cadastrais": comprasCadastroContent["Cadastrais - Relatório Material"],
           "Documentos": comprasCadastroContent["Documentos - Relatório Material"],
         };
@@ -467,6 +515,23 @@ const PatrimonialTabs = ({
         const documentosMaterialPages: Record<1 | 2, string | undefined> = {
           1: comprasCadastroContent["Documentos - Relatório Material"],
           2: comprasCadastroContent["Documentos - Página 2 - Relatório Material"],
+        };
+
+        const conferenciaMaterialPages: Record<ConferenciaMaterialPage, string | undefined> = {
+          1: comprasCadastroContent["Conferência - Relatório Material"],
+          2: comprasCadastroContent["Conferência - Página 2 - Relatório Material"],
+          3: comprasCadastroContent["Conferência - Página 3 - Relatório Material"],
+          4: comprasCadastroContent["Conferência - Página 4 - Relatório Material"],
+          5: comprasCadastroContent["Conferência - Página 5 - Relatório Material"],
+          6: comprasCadastroContent["Conferência - Página 6 - Relatório Material"],
+          7: comprasCadastroContent["Conferência - Página 7 - Relatório Material"],
+          8: comprasCadastroContent["Conferência - Página 8 - Relatório Material"],
+          9: comprasCadastroContent["Conferência - Página 9 - Relatório Material"],
+          10: comprasCadastroContent["Conferência - Página 10 - Relatório Material"],
+          11: comprasCadastroContent["Conferência - Página 11 - Relatório Material"],
+          12: comprasCadastroContent["Conferência - Página 12 - Relatório Material"],
+          13: comprasCadastroContent["Conferência - Página 13 - Relatório Material"],
+          14: comprasCadastroContent["Conferência - Página 14 - Relatório Material"],
         };
 
         const content =
@@ -500,8 +565,18 @@ const PatrimonialTabs = ({
               ? cadastraisMaterialPages[cadastraisMaterialPage] || cadastraisMaterialPages[1]
             : isDocumentosRelatorioMaterial
               ? documentosMaterialPages[documentosMaterialPage] || documentosMaterialPages[1]
+            : isConferenciaRelatorioMaterial
+              ? conferenciaMaterialPages[conferenciaMaterialPage] || conferenciaMaterialPages[1]
             : isRelatorioMaterial
               ? materialRelatorioContentBySection[selectedFinalSection]
+            : isDocumentosRelatorioOuvidoria
+              ? undefined
+            : isProcedimentosOuvidoria
+              ? undefined
+            : isProcedimentosPncp
+              ? undefined
+            : isCadastroUnidadeCompradoraPncp
+              ? comprasCadastroContent["Unidade Compradora - Cadastro PNCP"]
             : selectedCategory === "cadastro" ||
                 selectedCategory === "consulta" ||
                 selectedCategory === "procedimentos"
@@ -702,6 +777,71 @@ const PatrimonialTabs = ({
                         onClick={() => setDocumentosMaterialPage(2)}
                       >
                         Página 2
+                      </Button>
+                    </div>
+                  ) : null}
+
+                  {isConferenciaRelatorioMaterial ? (
+                    <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-9 shrink-0 px-3"
+                        disabled={conferenciaMaterialPage === 1}
+                        onClick={() => setConferenciaMaterialPage((conferenciaMaterialPage - 1) as ConferenciaMaterialPage)}
+                      >
+                        « Anterior
+                      </Button>
+                      {(() => {
+                        const paginationPages = new Set<number>([
+                          1,
+                          2,
+                          3,
+                          12,
+                          13,
+                          14,
+                          conferenciaMaterialPage - 1,
+                          conferenciaMaterialPage,
+                          conferenciaMaterialPage + 1,
+                        ]);
+                        const orderedPages = [...paginationPages]
+                          .filter((page) => page >= 1 && page <= 14)
+                          .sort((firstPage, secondPage) => firstPage - secondPage);
+                        const paginationItems: ConferenciaMaterialPaginationItem[] = [];
+
+                        orderedPages.forEach((page, index) => {
+                          if (index > 0 && page - orderedPages[index - 1] > 1) {
+                            paginationItems.push("ellipsis");
+                          }
+                          paginationItems.push(page as ConferenciaMaterialPage);
+                        });
+
+                        return paginationItems.map((page, index) =>
+                          page === "ellipsis" ? (
+                            <span key={`ellipsis-${index}`} className="px-1 text-muted-foreground">
+                              ...
+                            </span>
+                          ) : (
+                            <Button
+                              key={page}
+                              size="sm"
+                              className="h-9 min-w-9 shrink-0 px-3"
+                              variant={conferenciaMaterialPage === page ? "default" : "outline"}
+                              onClick={() => setConferenciaMaterialPage(page)}
+                            >
+                              {page}
+                            </Button>
+                          ),
+                        );
+                      })()}
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-9 shrink-0 px-3"
+                        disabled={conferenciaMaterialPage === 14}
+                        onClick={() => setConferenciaMaterialPage((conferenciaMaterialPage + 1) as ConferenciaMaterialPage)}
+                      >
+                        Próximo »
                       </Button>
                     </div>
                   ) : null}
