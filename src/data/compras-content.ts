@@ -42,6 +42,1270 @@ Através desta rotina é possível realizar a exclusão dos grupos de materiais 
 
 ***NOTA:*** É vedada a exclusão do grupo caso algum subgrupo de material/serviço esteja vinculado ao mesmo; Para a utilização de um Grupo de Material/Serviços na inclusão Material/Serviço é obrigatório o seu vínculo com ao menos um Subgrupo de Material/Serviço conforme o próximo tópico.
 `,
+  "Dados dos Veiculos": `
+# Marcas
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Marcas > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)
+Ao usuário será necessário informar a “Descrição da Marca” e clicar em , ainda possui a opção de clicar em e efetivar uma busca entre as marcas já cadastradas no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image97.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image97.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Marcas > Alteração
+\`\`\`
+
+Permite a alteração do campo “Descrição da Marca” atribuído a Marca. Ao acessar a rotina serão listadas as que encontram-se cadastradas no e-cidade, podendo ser efetivado a busca pelo código, descrição ou apenas clicando sobre a linha da marca.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image29.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image29.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image109.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image109.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image51.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image51.png)
+Para alterar a marca selecionada, basta clicar em .
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Marcas > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão das marcas que estão cadastradas no e-cidade. Ao acessar a rotina será listado as mesmas, podendo ser efetivada abusca pelo código, descrição ou simplesmente clicando sobre a linha da marca, conclui-se a ação clicando no botão .
+`,
+  "Dados dos Veiculos - Página 2": `
+# Tipos
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Tipos > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image23.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image23.png)
+Permite a inclusão de tipos (finalidade do automóvel por sua natureza). Exemplos: ônibus, camionete, passageiro/automóvel, micro-ônibus, ambulância e etc...) dos veículos que fazem parte da frota Municipal. Ao usuário basta informar a “Descrição do Tipo” e clicar sobre o botão.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image18.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image18.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Tipos > Alteração
+\`\`\`
+
+Permite a alteração do campo “Descrição do Tipo” atribuído ao Tipo. Ao acessar a rotina serão listados os que encontram-se cadastrados no e-cidade, podendo ser efetivado a busca pelo código, descrição ou apenas clicando sobre a linha do Tipo.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image74.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image74.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image78.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image78.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image51.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image51.png)
+Para alterar o tipo selecionado, basta clicar em .
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Tipos > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão dos tipos que estão cadastrados no e-cidade. Ao acessar a rotina, será listado os que encontram-se cadastrados no e-cidade, podendo ser efetivada a busca pelo código do tipo, descrição ou simplesmente clicando sobre a linha do tipo, conclui-se a ação clicando no botão .
+`,
+  "Dados dos Veiculos - Página 3": `
+# Combustíveis
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Combustíveis > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)
+Ao usuário será necessário informar a “Descrição do Combustível” e clicar em , ainda possui a opção de clicar em e efetivar uma busca entre os combustíveis já cadastrados no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image110.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image110.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Combustíveis > Alteração
+\`\`\`
+
+Permite a alteração do campo “Descrição do Combustível” atribuído ao Combustível. Ao acessar a rotina serão listados os que encontram-se cadastrados no e-cidade, podendo ser efetivada a busca pelo código, descrição ou apenas clicando sobre a linha do combustível.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image67.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image67.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image54.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image54.png)
+
+#### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Combustíveis > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão de Combustíveis que estão cadastrados no e-cidade. Ao acessar a rotina, será listado os mesmos, podendo ser efetivada a busca pelo código do tipo, descrição ou simplesmente clicando sobre a linha do combustível, conclui-se a ação clicando em .
+`,
+  "Dados dos Veiculos - Página 4": `
+# Modelos
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Modelos > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)
+Ao usuário será necessário informar a "Descrição do Modelo" e clicar em , ainda possui a opção de clicar em e efetivar uma busca entre as marcas já cadastradas no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image12.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image12.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Modelos > Alteração
+\`\`\`
+
+Permite a alteração do campo “Descrição do Modelo” atribuído ao Modelo. Ao acessar a rotina serão listados os que encontram-se cadastrados no e-cidade, podendo ser efetivado a busca pelo código, descrição ou apenas clicando sobre a linha do Modelo.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image25.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image25.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image53.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image53.png)
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Modelos > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão dos modelos que estão cadastrados no e-cidade. Ao acessar a rotina, será listado os mesmos, podendo ser efetivada a busca pelo código do tipo, descrição ou simplesmente clicando sobre a linha do modelo, conclui-se a ação clicando em .
+`,
+  "Dados dos Veiculos - Página 5": `
+# Tipos de capacidade
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Tipo de Capacidade > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)
+Ao usuário será necessário informar a “Descrição Tipo de Capacidade” e clicar em , ainda possui a opção de clicar em e efetivar uma busca entre os tipos de capacidade já cadastrados no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image100.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image100.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Tipo de Capacidade > Alteração
+\`\`\`
+
+Permite a alteração do campo “Descrição Tipo de Capacidade” atribuído ao Tipo de Capacidade. Ao acessar a rotina serão listados os que encontram-se cadastrados no e-cidade, podendo ser efetivado a busca pelo código, descrição ou apenas clicando sobre a linha do tipo de capacidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image5.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image5.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image96.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image96.png)
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Tipo de Capacidade > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão dos Tipos de Capacidade que estão cadastrados no e-cidade. Ao acessar a rotina, será listado os mesmos, podendo ser
+`,
+  "Dados dos Veiculos - Página 6": `
+# Cores
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veiculos > Cores > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)
+Ao usuário será necessário informar a “Descrição da Cor” e clicar em , ainda possui a opção de clicar em e efetivar uma busca entre as cores já cadastradas no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image73.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image73.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veiculos > Cores > Alteração
+\`\`\`
+
+Permite a alteração do campo “Descrição da Cor” atribuído a Cor. Ao acessar a rotina serão listados as que encontram-se cadastradas no e-cidade, podendo ser efetivado a busca pelo código, descrição ou apenas clicando sobre a linha da cor.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image83.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image83.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image93.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image93.png)
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veiculos > Cores > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão de Cores que estão cadastrados no e-cidade. Ao acessar a rotina, será listado as mesmas, podendo ser efetivada a busca pelo código do tipo, descrição ou simplesmente clicando sobre a linha da cor, conclui-se a ação clicando em .
+`,
+  "Dados dos Veiculos - Página 7": `
+# Utilização dos veículos
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Utilização de veículos > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)
+Ao usuário será necessário informar a “Descrição” e clicar em , ainda possui a opção de clicar em e efetivar uma busca entre as utilizações de veículos já cadastradas no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image119.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image119.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Utilização de veículos > Alteração
+\`\`\`
+
+Permite a alteração do campo “Descrição” atribuído a utilização de veículos. Ao acessar a rotina serão listados as que encontram-se cadastradas no e-cidade, podendo ser efetivado a busca pelo código, descrição ou apenas clicando sobre a linha da descrição da utilização de veículos.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image103.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image103.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image47.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image47.png)
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Utilização de veículos > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão de utilização de veículos que estão cadastrados no e-cidade. Ao acessar a rotina, será listado os mesmos, podendo ser efetivada a busca pelo código do tipo, descrição ou simplesmente clicando sobre a linha da descrição da utilização, conclui-se a ação clicando em .
+`,
+  "Dados dos Veiculos - Página 8": `
+# Potência
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Potências > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)
+Ao usuário será necessário informar a “Descrição Potência”, “Descrição Completa da Potência” e clicar em , ainda possui a opção de clicar em e efetivar uma busca entre as potências já cadastradas no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image37.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image37.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Potências > Alteração
+\`\`\`
+
+Permite a alteração dos campos “Descrição Potência”, “Descrição Completa da Potência” atribuído a potência. Ao acessar a rotina serão listados as que encontram-se cadastradas no e-cidade, podendo ser efetivado a busca pelo código, descrição ou apenas clicando sobre a linha da potência.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image91.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image91.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image87.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image87.png)
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Potências > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão de Potências que estão cadastradas no e-cidade. Ao acessar a rotina, será listado as mesmas, podendo ser efetivada a busca pelo código do tipo, descrição ou simplesmente clicando sobre a linha da potência, conclui-se a ação clicando em .
+`,
+  "Dados dos Veiculos - Página 9": `
+# Categorias
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Categorias > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)
+Ao usuário será necessário informar a “Descrição Categoria” e clicar em , ainda possui a opção de clicar em e efetivar uma busca entre as categorias já cadastradas no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image94.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image94.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Categorias > Alteração
+\`\`\`
+
+Permite a alteração do campo “Descrição Categoria” atribuído a categoria. Ao acessar a rotina serão listados as que encontram-se cadastradas no e-cidade, podendo ser efetivado a busca pelo código, descrição ou apenas clicando sobre a linha da categoria.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Categorias > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão de categorias que estão cadastradas no e-cidade. Ao acessar a rotina, será listado as mesmas, podendo ser efetivada a busca pelo código do tipo, descrição ou simplesmente clicando sobre a linha da categoria, conclui-se a ação clicando em .
+`,
+  "Dados dos Veiculos - Página 10": `
+# Procedências
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Procedências > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)
+Ao usuário será necessário informar a “Descrição Procedência” e clicar em , ainda possui a opção de clicar em e efetivar uma busca entre as procedências já cadastradas no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image33.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image33.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Procedências > Alteração
+\`\`\`
+
+Permite a alteração do campo “Descrição da Procedência” atribuído a procedência. Ao acessar a rotina serão listados as que encontram-se cadastradas no e-cidade, podendo ser efetivado a busca pelo código, descrição ou apenas clicando sobre a linha da procedência.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image80.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image80.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image40.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image40.png)
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Procedências > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão de Procedências que estão cadastradas no e-cidade. Ao acessar a rotina, será listado as mesmas, podendo ser efetivada a busca pelo código do tipo, descrição ou simplesmente clicando sobre a linha da procedência, conclui-se a ação clicando em .
+`,
+  "Manutenção de Medidas": `
+### Cancela Manutenção
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Manutenção de Medidas > Cancela Manutenção
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image76.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image76.png)
+
+Sistema disponibiliza o cancelamento da manutenção de medida realizado.Informamos o código da manutenção ou clicamos na âncora para pesquisarmos. Ainda o campo motivo deve ser preenchido com a justificativa.clicar em Salvar.
+`,
+  "Manutenção de Parâmetros": `
+Tipo padrão: Este link abre a tela de pesquisa “tipos de veículos” , a qual o usuário pode definir o tipo de veículo que aparecerá por padrão nas telas onde esta informação for solicitada.
+
+Categoria CNH exigida: Este link abre a tela de pesquisa das categorias de CNH e permite ao usuário escolher a categoria padrão apresentada nas telas onde esta informação for solicitada.
+
+Integrado com patrimônio: Este campo permite ao usuário escolher se haverá relação entre os veículos e os bens patrimoniais que eles representam.
+
+Integrado com módulo pessoal: Este campo permite ao sistema controlar o cadastro de motoristas através da lista dos funcionários ativos ou do cadastro geral do Município.
+
+Qualquer alteração necessária nestes parâmetros deve ser confirmada no botão “alterar”.
+`,
+  "Baixa de Veículos": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Baixa de Veículos > Inclusão
+\`\`\`
+
+Inclusão: Ao clicar no sub-menu “incluir”, se abrirá uma tela contendo todos os carros da central em que o usuário estiver logado, permitindo o mesmo. escolher o carro a ser dado baixa.
+
+Uma vez feito isto, se abrirá uma tela conforme a figura 40:
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image62.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image62.png)
+
+Veículo: Este campo é preenchido no momento em que o usuário escolhe o carro a ser dado baixa.
+
+Data da baixa: clicando-se no campo “D”, a data da baixa poderá ser escolhida através do calendário, ou simplesmente digitando a data neste campo.
+
+Hora da baixa: Neste campo é digitado a hora da baixa do veículo.
+
+Tipo da baixa: Este link traz os dados cadastrados no sub-menu tipo de cadastro na guia cadastros.
+
+Motivo: Neste campo será descrito o motivo pelo qual o veículo está dando baixa.
+
+O processo encerra-se clicando-se no botão “incluir”.
+
+A alteração não é contemplada neste menu.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Baixa de Veículos > Exclusão
+\`\`\`
+
+A exclusão poderá ser feita clicando-se no sub-menu excluir, esta tela tem os mesmos campos da tela de inclusão. Este processo encerra-se clicando-se no botão “excluir”.
+`,
+  "Manutenção de Veículos": `
+A figura 41 apresenta esta tela com suas duas abas:
+
+Manutenção e itens.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image111.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image111.png)
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Manutenção de Veículos > Inclusão
+\`\`\`
+
+Código Manutenção: Este campo é preenchido automáticamente pelo sistema.
+
+Veículos: Este link abre uma tela de pesquisa onde estão todos os veículos cadastrados no sistema.
+
+Data: Neste campo é informado a data em que foi feita a manutenção.
+
+Valor da mão de obra: Neste campo é informado o valor do serviço de manutenção executado no veículo.
+
+Serviço executado: Neste campo é informado o serviço executado.
+
+Nº da nota fiscal: Neste campo é informado o número da nota do serviço executado.
+
+Medida: Neste campo é informado a medida do hodômetro no momento da execução da manutenção.
+
+Tipos de serviços: Este link permite ao usuário informar o serviço de manutenção ao qual o veículo foi submetido.
+
+Oficina: Este link permite ao usuário informar a oficina responsável pela execução do serviço de manutenção solicitado.
+
+Retirada: Este link permite ao usuário vincular a retirada ao serviço de manutenção realizado.
+
+O processo segue clicando no botão “ incluir “.
+
+A figura 42 traz a aba Itens.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image7.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image7.png)
+
+Manutenção: Este campo é preenchido automáticamente pelo sistema.
+
+Descrição da peça: Neste campo é informado o nome das peças que foram necessárias para a manutenção realizada.
+
+Quantidade: Neste campo é informado a quantidade dos tipos de peças solicitadas para a manutenção do veículo.
+
+Valor unitário: Neste campo será informado o valor unitário de cada peça informada.
+
+Material: Este link permitirá ao usuário vincular a peça solicitada ao cadastro de materiais.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Manutenção de Veículos > Alteração
+\`\`\`
+
+A alteração poderá ser executada ao clicar no sub-menu alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Manutenção de Veículos > Exclusão
+\`\`\`
+
+A exclusão poderá ser executada ao clicar no sub-menu exclusão.
+
+O processo encerra-se ao clicar no botão “Incluir”.
+`,
+  "Retirada de Veículos": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Retirada de Veículos > Inclusão
+\`\`\`
+
+Ao clicar no sub-menu “Incluir”, uma tela de pesquisa com os veículos cadastrados na central onde se está logado se abrirá, permitindo a escolha do veículo para proceder a retirada.
+
+Código Retirada: Este campo é preenchido automaticamente pelo sistema.
+
+Veículo: Este link é preenchido com o veículo informado na primeira tela logo após se ter clicado no sub-menu “incluir”.
+
+Motorista: Este campo traz a lista de todos os motoristas cadastrados no sistema.
+
+Data retirada: Neste campo será informado a data em que se está fazendo a retirada do veículo.
+
+Hora da retirada: Neste campo será informado a hora da retirada do veículo.
+
+Última devolução: Neste campo será informado a última medida do hodômetro no momento da devolução do veículo.
+
+Medida de saída: Neste campo será informado a medida do hodômetro no momento da saída do veículo.
+
+Destino: Neste campo será informado o destino ao qual o veículo se deslocará nesta retirada.
+
+Ver figura 43:
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image95.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image95.png)
+
+O procedimento encerra-se clicando no botão incluir.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Retirada de Veículos > Alteração
+\`\`\`
+
+A alteração da retirada de veículos poderá ser feita clicando-se no sub-menu alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Retirada de Veículos > Exclusão
+\`\`\`
+
+A exclusão da retirada de veículos poderá ser feita clicando-se no sub-menu exclusão.
+`,
+  "Devolução de Veículos": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Devolução de Veículos > Inclusão
+\`\`\`
+
+Ao clicar no sub-menu “Incluir”, uma tela de pesquisa com os veículos cadastrados na central onde se está logado se abrirá, permitindo a escolha do veículo para proceder a devolução.
+
+Código devolução: Este campo é preenchido automáticamente pelo sistema.
+
+Código retirada: Este link trará todos os veículos que ainda nãoforam devolvidos, permitindo ao usuário então, escolher a qual veículo proceder devolução. Uma vez escolhido o veículo, os campos: veículo, data retirada, hora retirada, medida de saída, motorista, serão preenchidos automaticamente. Restando apenas o preenchimento dos seguintes campos:
+
+Data da devolução: Neste campo será informado a data da devolução do veículo.
+
+Hora da devolução: Neste campo é informado a hora da devolução do veículo.
+
+Medida da devolução: Neste campo é informado a medida do hodômetro no momento da devolução do veículo.
+
+Ver figura 44.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image112.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image112.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Devolução de Veículos > Alteração
+\`\`\`
+
+A alteração será possível através do sub-menu alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Devolução de Veículos > Exclusão
+\`\`\`
+
+A exclusão será possível através do sub-menu exclusão.
+`,
+  "Abastecimento": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Abastecimento > Inclusão
+\`\`\`
+
+Código abastecimento: Este código é preenchido automaticamente pelo sistema.
+
+Veículo: Este link trará todos os carros cadastrados na central onde se estiver logado, permitindo ao usuário escolher qual o carro a ser abastecido.
+
+Combustível: Este link trará todos os combustíveis cadastrados no sistema, permitindo então ao usuário informar qual o combustível o veículo recebeu.
+
+Data do abastecimento: Neste campo informa-se a data em que o veículo foi abastecido.
+
+Litros: Neste campo é informado a quantidade de litros abastecido no veículo.
+
+Medida de consumo: Neste campo é informado a medida do hodômetro no momento do abastecimento.
+
+Retirada: Este link trará uma tabela contendo todas as retiradas de veículos desta central de veículos.
+
+Posto: Este link traz os postos cadastrados no sistema.
+
+Ver figura 45.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image86.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image86.png)
+
+O processo encerra-se clicando no botão incluir.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Abastecimento > Alteração
+\`\`\`
+
+A alteração será possível clicando no sub-menu alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Abastecimento > Exclusão
+\`\`\`
+
+A exclusão será possível clicando no sub-menu exclusão.
+`,
+  "Baixa de itens obrigatórios": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Baixa de itens obrigatórios > Inclusão
+\`\`\`
+
+Cód sequêncial: Este campo é preenchido automaticamente pelo sistema.
+
+Tipo de baixa: Este link trará todas as alternativas de baixa cadastradas no sistema, permitindo ao usuário especificar o tipo de baixa dos itens obrigatórios.
+
+Item: Este link traz todos os itens obrigatórios cadastrados no sistema, desde que estes itens estejam vinculados a algum carro da central em que se está logado.
+
+Data: Neste campo a data virá automaticamente preenchida com a data do dia, permitindo também a alteração da mesma caso seja necessária, clicando no calendário “D”.
+
+Hora: Neste campo deverá ser informado a hora em que o a baixa do item ocorreu ( este campo é útil principalmente nos casos em que o tipo de baixa ocorre em função de roubos, furtos e etc...).
+
+Motivo: Neste campo é informado a ocorrência da baixa, as situações ou observações que levaram a baixa do item.
+
+Ver figura 46.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image34.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image34.png)
+
+O processo encerra-se clicando no botão incluir.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Baixa de itens obrigatórios > Alteração
+\`\`\`
+
+A alteração será possível através do sub-menu alteração, onde os mesmos campos da tela de inclusão serão disponibilizados para o usuário alterar conforme necessário.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Procedimentos > Baixa de itens obrigatórios > Exclusão
+\`\`\`
+
+A exclusão será possível clicando no sub-menu exclusão.
+`,
+  "Processar Tabela ANP": `
+Conteudo não encontrado.
+`,
+  "Autorização de Circulação": `
+Conteudo não encontrado
+`,
+  "Veiculos": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Veículos > Inclusão
+\`\`\`
+
+Rotina que permite a inclusão de veículos, está é dividida em 3 abas, sendo elas:
+
+1. Dados do veículo
+2. Itens obrigatório
+3. Utilização
+4. Central de Veículos
+
+## 1. Dados do veículo
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image120.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image120.png)
+
+- **Código do veículo**: Este código é gerado automaticamente pelo e-cidade.
+- **Placa**: Neste campo é informado a placa do veículo.
+- **Responsável**: Neste campo informa-se o nome do motorista responsável pelo veículo que está sendo incluso. Serão listados os que encontram-se cadastrados na rotina: **DB:PATRIMONIAL > Veículos > Cadastros > Motoristas**
+- **Tipo**: Neste campo será informado o tipo do veículo, especificando-o por sua utilidade. Serão listados os que encontram-se cadastrados na rotina: **DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Tipos**
+- **Marca**: Neste campo será informado a marca do veículo (fabricante). Serão listados os que encontram-se cadastrados na rotina: **DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Marcas**
+- **Modelo**: Neste campo será informado o modelo do veículo. Clicando sobre o botão de busca serão listados os que encontram-se cadastrados na rotina: **DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Modelos**
+- **Cor**: Neste campo será informado a cor do veículo. Serão listados as que encontram-se cadastradas na rotina: **DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veiculos > Cores**
+- **Procedência**: Neste campo serão listados as procedências que encontram-se cadastradas na rotina: **DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Procedências**
+- **Categoria**: Neste campo serão listadas as categorias que encontram-se cadastradas na rotina: **DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Categorias**
+- **N° do chassi**: Neste campo será informado o número do chassi do veículo cadastrado (esta informação se encontra no certificado de registro do veículo).
+- **Renavam**: Neste campo será informado o número do renavam do veículo cadastrado (esta informação se encontra no certificado de registro do veículo).
+- **Placa em números**: Neste campo será informado as letras e os números da placa do veículo em dígitos.
+- **Número do certificado**: Neste campo será informado o número do certificado de registro e licenciamento do veículo (esta informação se encontra no certificado de registro do veículo).
+- **Quantidade potência**: Neste campo será informado a potência do motor do veículo cadastrado (esta informação se encontra no certificado de registro do veículo).
+- **Tipos de abastecimento**: Serão listados os tipos de controle para consumo de abastecimento do veículo cadastrados na rotina abaixo, por padrão normalmente hodômetro ou horímetro. **DB:PATRIMONIAL > Veículos > Cadastros > Tipo de Abastecimento de Veículo**
+- **Medida inicial**: Neste campo será informado a medida do hodômetro ou horímetro (conforme determinação de cada localidade) inicial com a qual o veículo ingressa na frota da instituição.
+- **Quantidade capacidade**: Neste campo será informado o limite da capacidade do veículo, conforme o propósito do veículo, ou seja, se for um veículo de carga medida em toneladas, se informará a opção carga/tonelada e mais a quantidade de toneladas suportada por este veículo. Os tipos de capacidades são incluídos através da rotina: **DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Tipo de Capacidade**
+- **Data de aquisição**: Neste campo será informado a data em que foi adquirido o veículo.
+- **Combustível**: Neste campo será informado o combustível do veículo. Clicando sobre o botão de busca serão listados os que encontram-se cadastrados na rotina: **DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veiculos > Combustíveis**
+- **Categoria CNH exigida**: Neste campo deverá ser informado, a categoria da carteira nacional de habilitação, que o motorista responsável pelo veículo deve ter para guiar este veículo. As Categorias CNH são cadastradas através da rotina: **DB:PATRIMONIAL > Veículos > Cadastros > Dados dos motoristas > Categoria CNH**
+- **Ano de fabricação**: Neste campo será informado tão somente o ano de fabricação do veículo.
+- **Ano de modelo**: Neste campo será informado tão somente o ano do modelo do veículo.
+- **Município**: Neste campo será informado o município onde o veículo passará a ser utilizado, consequentemente de onde tem seu emplacamento vigente.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image39.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image39.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image52.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image52.png)
+
+O processo de inclusão nesta aba encerra-se ao clicar no botão . Caso o usuário deseja realizar uma consulta rápida entre os que já estão cadastrados basta clicar em .
+
+## 2. Itens obrigatório
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image71.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image71.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image20.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image20.png)
+Nesta tela serão informados os itens obrigatórios que cada veículo terá. Para selecionar entre os cadastrados basta clicar em , serão listados os que encontram-se devidamente cadastrados através da rotina:
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Itens obrigatórios
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image68.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image68.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image38.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image38.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image21.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image21.png)
+Após selecionar o item, basta clicar em para finalizar a inclusão.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image99.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image99.png)
+Uma vez feito isto, o item será listado logo abaixo em “Itens”, para conferência dos que já encontram-se referenciados no veículo. Para exclusão de um item obrigatório basta clicar em na última coluna descrita como “Opções”.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image31.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image31.png)
+
+## 3. Utilização
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image105.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image105.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image106.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image106.png)
+Nesta tela é possível realizar a inclusão de utilização a respeito do veículo. Para selecionar entre os cadastrados basta clicar em , serão listados os que encontram-se devidamente cadastrados através da rotina:
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos Veículos > Utilização de veículos
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image22.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image22.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image4.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image4.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image21.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image21.png)
+Após selecionar o item, basta clicar em para finalizar a inclusão.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image99.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image99.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image84.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image84.png)
+Uma vez feito isto, a utilização será listada logo abaixo em “Utilização”, para conferência dos que já encontram-se referenciados no veículo. Para exclusão de um item obrigatório basta clicar em na última coluna descrita como “Opções” ou em para efetivar alteração da Utilização já cadastrada.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image75.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image75.png)
+
+Selecionado a Utilização CONVÊNIO será listado o campo “Convênio” para que seja informado qual conforme mostra a imagem abaixo:
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image89.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image89.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image113.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image113.png)
+Para selecionar entre os disponíveis basta clicar em .
+
+Selecionado a Utilização PRÓPRIO será listado o campo “Cod. Bem” para que seja informado qual conforme mostra a imagem abaixo:
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image101.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image101.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image27.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image27.png)
+Para selecionar entre os disponíveis basta clicar em .
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image13.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image13.png)
+Tanto para “CONVÊNIO” como para “PRÓPRIO” não é obrigatório informar os campos adicionais, porém, poderá ser informado somente uma única utilização. Para concluir a ação de inclusão clique sobre .
+
+## 4. Central de Veículos
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image102.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image102.png)
+
+Nesta tela será possível informar a central de veículos a que pertence o veículo.
+
+Como pré-requisito requer que a “Central de Veículos” esteja devidamente cadastrada na rotina abaixo:
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Centrais de Veículos
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image50.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image50.png)
+Para selecionar uma central de veículos basta clicar em , serão listadas as que encontram-se cadastradas no e-cidade. Para concluir basta selecionar qual deseja.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image46.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image46.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image59.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image59.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image43.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image43.png)
+Conclui-se a ação clicar no botão .
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image99.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image99.png)
+Uma vez feito isto, a central de veículo será listada logo abaixo em “Itens”, para conferência dos que já encontram-se referenciados ao veículo. Para exclusão de uma central de veículo basta clicar em na última coluna descrita como “Opções”.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Veículos > Alteração
+\`\`\`
+
+Permite a alteração de qualquer informação atribuída ao veículo, se tratando de dados do veículo, itens obrigatórios, utilização e central de veículos.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Veículos > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão de veículos que estão cadastrados no e-cidade. Ao acessar a rotina, será listado os mesmos, podendo ser efetivada a busca por diversas informações, aplicando filtros como modelo, marca, tipo... conclui-se a ação clicando em .
+`,
+  "Dados dos motoristas": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos motoristas > Categoria CNH > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image1.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image11.png)
+Ao usuário será necessário informar a “Descrição Categoria CNH” e clicar em , ainda possui a opção de clicar em e efetivar uma busca entre as categorias CNH já cadastradas no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image28.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image28.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos motoristas > Categoria CNH > Alteração
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image9.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image9.png)
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image32.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image32.png)
+Permite a alteração do campo “Descrição Categoria CNH” atribuído a Categoria CNH. Ao acessar a rotina serão listados as que encontram-secadastradas no e-cidade, podendo ser efetivado a busca pelo código, descrição ou apenas clicando sobre a linha da descrição da categoriaCNH, conclui-se a ação clicando em , para alternar entre a categoria selecionada, basta clicar em .
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos motoristas > Categoria CNH > Exclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image10.png)
+Permite a exclusão de categorias de CNH que estão cadastrados no e-cidade. Ao acessar a rotina, será listado as mesmas, podendo ser efetivada a busca pelo código da categoria, descrição ou simplesmente clicando sobre a linha da categoria de CNH, conclui-se a ação clicando em .
+`,
+  "Motoristas": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Motoristas > Inclusão
+\`\`\`
+
+Rotina que permite a inclusão de motoristas, está é dividida em 2 abas, sendo elas:
+
+1. Dados do motorista
+2. Central de Abastecimento
+
+1.Dados do motorista
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image3.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image3.png)
+
+- Código do motorista: Este código é gerado automaticamente pelo e-cidade.
+- [![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image36.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image36.png)
+Motorista: Após clicar sobre poderá ser apresentando uma tela de pesquisa onde é apresentada uma busca por Cadastro Geral do Município (CGM) ou funcionários ativos, essa opção pode ser parametrizada alterando “Integração com módulo Pessoal” na rotina:
+
+DB:PATRIMONIAL > Veículos > Procedimentos > Manutenção de Parâmetros
+- Nº habilitação: Neste campo será informado o número da carteira de habilitação (CNH) do motorista escolhido no campo anterior.
+- [![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image63.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image63.png)
+Categoria CNH: Após clicar sobre serão listadas as categorias que encontram-se devidamente cadastradas através da rotina:
+
+DB:PATRIMONIAL > Veículos > Cadastros > Dados dos motoristas > Categoria CNH
+- [![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image90.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image90.png)
+Validade: Este campo traz a opção de o usuário escolher se prefere digitar a data de validade da CNH do motorista que está sendo incluso ou clicar sobre e selecionar no calendário.
+- Primeira habilitação: Este campo traz a opção de o usuário escolher se prefere digitar a data da primeira CNH do motorista cadastrado, ou clicando na janela a direita do campo em cima da letra ” D “ se abrirá o calendário onde o usuário poderá clicar sobre a data de validade e esta se transpõe ao campo 'validade'.
+- Situação do condutor: Este link uma clicado, abre uma tela onde será possível informar em que situação se encontra o motorista cadastrado(Ativo ou Inativo).
+
+O botão pesquisar traz a lista dos motoristas cadastrados, um recurso interessante afim de confirmar se o motorista à ser cadastrado não encontra-se na base se fazendo necessário somente a atualização.
+
+Ao final, clica-se no botão “Incluir”, você será direcionado para aba “Central de abastecimento”.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image55.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image55.png)
+
+Central: Este link de pesquisa retorna todas as centrais cadastradas na rotina abaixo:
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Centrais de Veículos
+\`\`\`
+
+Com esta informação, fica especificado a qual central este motorista encontra-se.
+
+Data inicial: determina a data inicial ao qual o motorista passou a fazer parte desta central.
+
+Data final: determina a data limite/final que este motorista faz parte desta central.
+
+É válido dizer que o campo Data final é opcional, pois se o motorista que está sendo cadastrado para esta central não tem previsão de deixar os serviço da mesma, não será necessário que o campo “Data final” seja preenchido.
+
+Cada central a que o motorista for ligado após clicar no botão incluir, passará a ser exibida nesta mesma tela, logo abaixo na caixa “Centrais”.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image17.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image17.png)
+
+Para alteração de informação como data inicial/final basta clicar em “A”.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Motoristas > Alteração
+\`\`\`
+
+Permite a manutenção de dados de um determinado motorista, alteração destes dados será possível clicando no sub-menu “Alterar”, ao fazê-lo o Cadastro geral do Município será aberto e o item apontado poderá ser alterado, tanto na aba Dados do Motorista, quanto na aba Central de abastecimento. Na aba “ Central de abastecimento” a alteração para ser realizada deverá ser indicada entre as centrais ali disponíveis na caixa “centrais”, clicando-se no “A” de “alterar” a direita do nome da central, assim uma vez feito isto, a alteração será consumada quando os dados forem confirmados clicando-se no botão “alterar”.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Motoristas > Exclusão
+\`\`\`
+
+A exclusão dos dados deste menu “motoristas”, é feita no sub menu exclusão.
+`,
+  "Oficinas": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Oficinas > Inclusão
+\`\`\`
+
+**Código da oficina:** Este campo é preenchido automaticamente pelo sistema.
+
+**Oficina:** Este link traz o cadastro geral do município, uma vez clicado sobre o nome desejado, o campo é preenchido e o processo pode ser encerrado clicando-se no botão “incluir”.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image60.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image60.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Oficinas > Alteração
+\`\`\`
+
+A alteração destes dados poderá ser feito clicando-se no sub-menu alteração .
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Oficinas > Exclusão
+\`\`\`
+
+A exclusão destes dados poderá ser feito clicando-se no sub-menu exclusão .
+`,
+  "Tipo de Serviço": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Tipo de Serviço > Inclusão
+\`\`\`
+
+Este menu é destinado a registrar os tipos de serviços relacionados a manutenção dos veículos da frota Municipal, todo o serviço poderá ser registrado de forma genérica ( elétrica, geometria, mecânica, eletrônica, e etc...).
+
+Código de tipo de serviço: Este campo é preenchido automaticamente pelo sistema.
+
+Descrição do tipo de serviço: Neste campo deverá ser informado o tipo de serviço ao qual os veículos poderão ser submetidos.
+
+O botão pesquisar uma vez clicado, traz a tela contendo todos os tipos de serviços já cadastrados.
+
+Uma vez todos os campos preenchidos, o processo encerra-se clicando-se no botão “incluir”.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image114.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image114.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Tipo de Serviço > Alteração
+\`\`\`
+
+A alteração do tipo de serviço poderá ser feita clicando-se no sub-menu alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Tipo de Serviço > Exclusão
+\`\`\`
+
+A exclusão do tipo de serviço poderá ser feita clicando-se no sub-menu exclusão.
+`,
+  "Postos": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Postos > Inclusão
+\`\`\`
+
+Código do posto: Este campo é preenchido automaticamente pelo sistema.
+
+Tipo: Este campo deve ser preenchido clicando-se na seta ao lado do campo, este campo dá conta se o posto a ser cadastrado é interno ou externo. Se o tipo escolhido for “interno” ao clicar no link “depart:” a lista trazida por este link será a lista de departamentos adastrados no módulo configurações, se o tipo escolhido for “externo” ao clicar no link “depart:” a lista trazida por este será o Cadastro Geral do Município. Ver figura 25:
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image56.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image56.png)
+
+O processo de inclusão termina ao clicar no botão “incluir”.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Postos > Alteração
+\`\`\`
+
+A alteração poderá ser efetuada ao se clicar no sub-menu alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Postos > Exclusão
+\`\`\`
+
+A exclusão poderá ser efetuada ao se clicar no sub-menu exclusão.
+`,
+  "Tipo de baixa veiculo": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Tipo de baixa veículo > Inclusão
+\`\`\`
+
+Neste cadastro será informado as possíveis formas de baixa que os veículos da frota Municipal poderão ocorrer (roubo, furto, sinistro, doação, alienação...).
+
+Cód sequencial: Este campo será preenchido automaticamente pelo sistema.
+
+Descrição: Neste campo serão informados os tipos de baixas que os veículos poderão sofrer. Ver figura 27:
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image77.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image77.png)
+
+O processo se encerra ao clicar no botão “incluir”.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Tipo de baixa veículo > Alteração
+\`\`\`
+
+A alteração será possível clicando-se no sub-menu alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Tipo de baixa veículo > Exclusão
+\`\`\`
+
+A exclusão será possível clicando-se no sub-menu exclusão.
+
+O botão pesquisar, uma vez clicado trará a lista de motivos de baixas cadastrados no sistema.
+`,
+  "Itens obrigatorios": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Itens obrigatórios > Inclusão
+\`\`\`
+
+Semelhante ao cadastro de “tipo de baixa de veículos”, este cadastro atenderá o controle de baixa dos itens obrigatórios relacionados aos veículos da frota Municipal, especificando o tipo de baixa (roubo, extravio,dano, e etc...) pelo qual o item sofreu a baixa.
+
+A inclusão dos motivos de baixa:
+
+Código sequêncial: Este campo será preenchido automaticamente pelo sistema.
+
+Descrição: Neste campo será informado a descrição do motivo de baixa dos veículos. Ver figura 29:
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image108.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image108.png)
+
+O botão de pesquisar trará a tela contendo todos os tipos de baixa de itens já cadastrados no sistema.
+
+O processo encerra-se clicando no botão “incluir”.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Itens obrigatórios > Alteração
+\`\`\`
+
+Será possível alterar os tipos de baixa dos itens clicando-se no sub-menu alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Itens obrigatórios > Exclusão
+\`\`\`
+
+Será possível alterar os tipos de baixa dos itens clicando-se no sub-menu alteração.
+`,
+  "Tipo de baixa de itens": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Tipo de baixa de itens > Inclusão
+\`\`\`
+
+Semelhante ao cadastro de “tipo de baixa de veículos”, este cadastro atenderá o controle de baixa dos itens obrigatórios relacionados aos veículos da frota Municipal, especificando o tipo de baixa (roubo, extravio,dano, e etc...) pelo qual o item sofreu a baixa.
+
+A inclusão dos motivos de baixa:
+
+Código sequêncial: Este campo será preenchido automaticamente pelo sistema.
+
+Descrição: Neste campo será informado a descrição do motivo de baixa dos veículos. Ver figura 29:
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image108.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image108.png)
+
+O botão de pesquisar trará a tela contendo todos os tipos de baixa de itens já cadastrados no sistema.
+
+O processo encerra-se clicando no botão “incluir”.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Tipo de baixa de itens > Alteração
+\`\`\`
+
+Será possível alterar os tipos de baixa dos itens clicando-se no sub-menu alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Tipo de baixa de itens > Exclusão
+\`\`\`
+
+Será possível alterar os tipos de baixa dos itens clicando-se no sub-menu alteração.
+`,
+  "Convênios de uso veicular": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Convênios de uso veicular > Inclusão
+\`\`\`
+
+Neste cadastro será informado o nome das pessoas jurídicas ou físicas com quem a Prefeitura mantem contrato de convênio para uso veicular.
+
+Código sequêncial: Este campo será automaticamente preenchido pelo sistema.
+
+Descrição: Neste campo será informado o nome da instituição ou pessoa física com quem está se firmando contrato de uso veicular.
+
+CGM: Este link é destinado a fazer a ligação do nome colocado no campo “Descrição” com a sua inscrição no CGM (Cadastro Geral do Município).
+
+Observações: Este campo de uso não obrigatório, serve para adicionar alguma observação em relação a alguma das partes envolvidas no convênio cadastrado.
+
+O botão pesquisar, uma vez clicado, apresentará todos os nomes já cadastrados com quem a Prefeitura mantem contrato de convênio de uso veicular. Ver figura 30:
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image16.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image16.png)
+
+O processo encerra-se clicando no botão “incluir”.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Convênios de uso veicular > Alteração
+\`\`\`
+
+Será possível alterar os convênios de uso veiculares clicando-se no sub-menu alterar.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Convênios de uso veicular > Exclusão
+\`\`\`
+
+Será possível excluir os convênios de uso veiculares clicando-se no sub-menu exclusão.
+`,
+  "Centrais de Veículos": `
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Centrais de Veículos > Inclusão
+\`\`\`
+
+O cadastro Centrais de veículos traz quatro abas:
+
+Dados da Central;
+
+Departamentos;
+
+Motoristas;
+
+Veículos.
+
+A figura 31 traz a aba Dados do Central
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image104.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image104.png)
+
+Código sequêncial: Este campo é preenchido automaticamente pelo sistema.
+
+Depto: Este link uma vez clicado abrirá uma tela de pesquisa onde se terá a relação dos departamentos cadastrados no módulo configurações.
+
+O botão “pesquisar” traz somente os departamentos cadastrados como centrais.
+
+O processo segue clicando no botão incluir.
+
+A figura 32 traz a aba Departamentos
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image88.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image88.png)
+
+Nesta tela, o campo “Central” já vem preenchido com os dados da primeira aba, restando apenas marcar os departamentos que ficarão ligados a esta central.
+
+O processo segue clicando no botão “atualizar”.
+
+A figura 33 traz a aba Motoristas
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image26.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image26.png)
+
+Motoristas: Este campo traz a lista de todos os motoristas cadastrados no sistema. Os campos de datas “inicial” e “final”, tanto podem serem preenchidos manualmente como podem ser preenchidos pelo calendário, clicando nos ícones “D”.
+
+O campo data final é um campo opcional, se ele for preenchido, o motorista relacionado terá uma data limite para fazer parte daquela central de veículos, caso este campo não seja preenchido o motorista relacionado terá sua permanência por tempo indefinido naquela central. Todos os motoristas que forem incluídos serão lançados na caixa logo abaixo chamada Motoristas.
+
+O processo segue clicando no botão “incluir”.
+
+A figura 34 traz a aba Veículos.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image6.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image6.png)
+
+Código do veículo: Neste link, tem-se a relação dos carros cadastrados na Frota Municipal, uma vez escolhido o veículo aparecerá descrito neste campo com seu respectivo código, restando apenas confirmar o veículo clicando no botão incluir.
+
+Todos os veículos cadastrados nesta central, aparecerão relacionados dentro da caixa Veículos, sendo nesta também permitido a Exclusão do veículo, clicando na letra “E” dentro da coluna “opções”.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Centrais de Veículos > Alteração
+\`\`\`
+
+A alteração serão permitidas através do sub-menu alteração.
+
+### Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Cadastros > Centrais de Veículos > Exclusão
+\`\`\`
+
+A exclusão serão permitidas através do sub-menu exclusão.
+`,
+  "Veículos": `
+\`\`\`
+DB:PATRIMONIAL > Veículos > Consultas > Veículos
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image66.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image66.png)
+
+Ao abrir a tela de consulta surgirá os links “código do veículo”, “placa”, “cód. Central” que, qualquer um deles ao ser escolhido e informado o código, a seguir clicando no botão “processar”, abrirá uma tela contendo informações sobre o veículo apontado, restando apenas consultar os seguintes botões:
+
+Retiradas: Este botão uma vez clicado trará a lista de todas as retiradas deste veículo escolhido.
+
+Abastecimentos: Este botão trará todos os registros dos abastecimentos do veículo escolhido.
+
+Manutenções: Este botão trará a lista de todas as manutenções que foram realizadas no veículo escolhido.
+
+Manutenção de Medidas: este botão trará a lista de todas as manutenções de medidas realizadas no veículo escolhido.
+
+Impressão: Este botão trará um relatório completo do veículo escolhido, contendo nele todas as dos botões anteriores.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image57.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image57.png)
+
+Abastecimentos
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image115.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image115.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image2.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image2.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image14.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image14.png)
+`,
   "Subgrupos de Materiais/Serviços": `
 O subgrupo identifica o material ou serviço que pertence à família do grupo. No e-cidade, o subgrupo liga o material/serviço a um grupo.
 

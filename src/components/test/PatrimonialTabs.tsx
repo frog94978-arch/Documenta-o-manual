@@ -46,6 +46,7 @@ const PatrimonialTabs = ({
   const [cadastraisMaterialPage, setCadastraisMaterialPage] = useState<1 | 2 | 3 | 4>(1);
   const [documentosMaterialPage, setDocumentosMaterialPage] = useState<1 | 2>(1);
   const [conferenciaMaterialPage, setConferenciaMaterialPage] = useState<ConferenciaMaterialPage>(1);
+  const [dadosVeiculosPage, setDadosVeiculosPage] = useState<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10>(1);
 
   useEffect(() => {
     if (selectedFinalSection !== "Registro de Preço") {
@@ -120,6 +121,12 @@ const PatrimonialTabs = ({
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [registroPrecoPage, selectedFinalSection]);
+
+  useEffect(() => {
+    if (selectedFinalSection !== "Dados dos Veiculos") {
+      setDadosVeiculosPage(1);
+    }
+  }, [selectedFinalSection]);
 
   useEffect(() => {
     if (selectedFinalSection === "Movimentações") {
@@ -270,10 +277,32 @@ const PatrimonialTabs = ({
             !(currentSubmoduleId === "ouvidoria" && selectedCategory === "relatorio") &&
             !(currentSubmoduleId === "ouvidoria" && selectedCategory === "procedimentos") &&
             !(currentSubmoduleId === "pncp" && selectedCategory === "procedimentos") &&
+            !(currentSubmoduleId === "veiculos" && selectedCategory === "procedimentos") &&
             !(currentSubmoduleId === "contratos" && selectedFinalSection === "Acordo" && selectedCategory === "procedimentos") &&
             !isProcedimentoContratosSemNavEspecial);
 
         if (isSpecialRoot && submoduleData) {
+          if (selectedCategory === "procedimentos" || selectedCategory === "relatorio") {
+            return (
+              <div className="max-w-none">
+                <div>
+                  <Button
+                    onClick={handleBackClick}
+                    variant="outline"
+                    size="sm"
+                    className="mb-4 bg-card"
+                  >
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Voltar para {selectedSubmodule}
+                  </Button>
+                  <h2 className="text-2xl font-bold mb-6">{selectedFinalSection}</h2>
+                  <hr className="mb-8 border-t border-border" />
+                  <p>Conteúdo não encontrado.</p>
+                </div>
+              </div>
+            );
+          }
+
           return (
             <div className="max-w-none">
               <div>
@@ -577,6 +606,19 @@ const PatrimonialTabs = ({
               ? undefined
             : isCadastroUnidadeCompradoraPncp
               ? comprasCadastroContent["Unidade Compradora - Cadastro PNCP"]
+            : selectedFinalSection === "Dados dos Veiculos"
+              ? {
+                  1: comprasCadastroContent["Dados dos Veiculos"],
+                  2: comprasCadastroContent["Dados dos Veiculos - Página 2"],
+                  3: comprasCadastroContent["Dados dos Veiculos - Página 3"],
+                  4: comprasCadastroContent["Dados dos Veiculos - Página 4"],
+                  5: comprasCadastroContent["Dados dos Veiculos - Página 5"],
+                  6: comprasCadastroContent["Dados dos Veiculos - Página 6"],
+                  7: comprasCadastroContent["Dados dos Veiculos - Página 7"],
+                  8: comprasCadastroContent["Dados dos Veiculos - Página 8"],
+                  9: comprasCadastroContent["Dados dos Veiculos - Página 9"],
+                  10: comprasCadastroContent["Dados dos Veiculos - Página 10"],
+                }[dadosVeiculosPage]
             : selectedCategory === "cadastro" ||
                 selectedCategory === "consulta" ||
                 selectedCategory === "procedimentos"
@@ -896,6 +938,69 @@ const PatrimonialTabs = ({
                         onClick={() => setLicitacaoProcedimentosPage(7)}
                       >
                         Página 7
+                      </Button>
+                    </div>
+                  ) : null}
+
+                  {selectedFinalSection === "Dados dos Veiculos" ? (
+                    <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-9 shrink-0 px-3"
+                        disabled={dadosVeiculosPage === 1}
+                        onClick={() => setDadosVeiculosPage((Math.max(1, dadosVeiculosPage - 1)) as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10)}
+                      >
+                        « Anterior
+                      </Button>
+                      {(() => {
+                        const paginationPages = new Set<number>([
+                          1,
+                          2,
+                          3,
+                          10,
+                          dadosVeiculosPage - 1,
+                          dadosVeiculosPage,
+                          dadosVeiculosPage + 1,
+                        ]);
+                        const orderedPages = [...paginationPages]
+                          .filter((page) => page >= 1 && page <= 10)
+                          .sort((firstPage, secondPage) => firstPage - secondPage);
+                        const paginationItems: Array<number | "ellipsis"> = [];
+
+                        orderedPages.forEach((page, index) => {
+                          if (index > 0 && page - orderedPages[index - 1] > 1) {
+                            paginationItems.push("ellipsis");
+                          }
+                          paginationItems.push(page);
+                        });
+
+                        return paginationItems.map((page, index) =>
+                          page === "ellipsis" ? (
+                            <span key={`ellipsis-${index}`} className="px-1 text-muted-foreground">
+                              ...
+                            </span>
+                          ) : (
+                            <Button
+                              key={page}
+                              size="sm"
+                              className="h-9 min-w-9 shrink-0 px-3"
+                              variant={dadosVeiculosPage === page ? "default" : "outline"}
+                              onClick={() => setDadosVeiculosPage(page as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10)}
+                            >
+                              {page}
+                            </Button>
+                          ),
+                        );
+                      })()}
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-9 shrink-0 px-3"
+                        disabled={dadosVeiculosPage === 10}
+                        onClick={() => setDadosVeiculosPage((Math.min(10, dadosVeiculosPage + 1)) as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10)}
+                      >
+                        Próximo »
                       </Button>
                     </div>
                   ) : null}
