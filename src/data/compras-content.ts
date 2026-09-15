@@ -1,4 +1,622 @@
 export const comprasCadastroContent: Record<string, string> = {
+  "Documento - Cadastro Protocolo": `
+### Inclusão
+
+Nesta rotina são cadastrados os documentos que serão solicitados como conferência durante a inclusão de um processo interno ou até mesmo para um processo eletrônico, neste caso será necessário especificar o tipo de dado em "Sistemas Externos", porém, indiferente de ser interno ou externo, será necessário o vinculo com o tipo do processo.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Documento > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image27.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image27.png)
+
+- **Código:** O campo é gerado automaticamente.
+- **Descrição:** Preencher o nome do documento.
+- **Sistemas Externos**
+
+- **Tipo de Dado:** o usuário poderá selecionar entre: TEXTO LIVRE, NÚMERICO, VALOR, ENDEREÇO E ARQUIVO.
+
+### Alteração
+
+Nesta rotina é possível realizar alteração do campo Descrição ou o Tipo de Dado quando aplicável sistemas externos no caso o Protocolo Eletrônico.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Documento > Alteração
+\`\`\`
+
+### Exclusão
+
+Esta rotina permite a exclusão de um documento, caso o mesmo não esteja vinculado a nenhum processo.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Documento > Exclusão
+\`\`\`
+`,
+  "Documento / Tipo de Processo - Cadastro Protocolo": `
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Documento / Tipo de Processo
+\`\`\`
+
+Nesta rotina é possível cadastrar documentos referentes a um tipo de processo, podendo ele ser interno ou externo (Protocolo Eletrônico). Estes vinculos são a relação dos documentos solicitados para abertura de um processo na instituição ou através do Portal de Atendimento.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image58.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image58.png)
+
+- **Tipo de Processo:** Preencher o código do tipo de processo ou clicar no link "Tipo de Processo", para abrir/acessar a função de pesquisa. O cadastro de Tipo de Processos é realizado através da rotina abaixo:
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipos de Processos > Inclusão
+\`\`\`
+
+- **Documento:** Preencher o código do documento ou clicar no link "Documento" para abrir/acessar a função de pesquisa. Se este tipo de processo solicitar mais de um documento, basta repetir a ação de inclusão para os documentos referente ao tipo. O cadastro de Documentos é realizado através da rotina abaixo:
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Documento > Inclusão
+\`\`\`
+
+- **Obrigatório (Sistema Externo):** Define se este documento que está sendo vinculado ao tipo de processo será obrigatório ao ser solicitado durante a inclusão do atendimento no portal do protocolo eletrônico.
+`,
+  "Variável - Cadastro Protocolo": `
+### Inclusão
+
+Nesta rotina são cadastrados os campos das tabelas do sistema como variáveis para o tipo de processo. Ao escolher um tipo de processo na inclusão de um processo, o sistema busca os campos cadastrados nesta rotina na tela principal do processo.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Variável > Inclusão
+\`\`\`
+
+- **Código do tipo:** Preencher o código do tipo de processo ou clicar no link para pesquisar.
+- **Código:** Preencher o código dos campos ou clicar no link para pesquisar. São os campos das tabelas do sistema que podem ser inseridos no processo.
+- **Obrigatório:** Define se a variável que está sendo inclusa será obrigatória no momento da inclusão do processo ou não.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image74.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image74.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image21.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image21.png)
+
+### Alteração
+
+Esta rotina permite alteração dos dados definidos na rotina de inclusão de variável.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Variável > Alteração
+\`\`\`
+
+### Exclusão
+
+Esta rotina permite a exclusão de uma variável adicional definida para um tipo de processo, desde que não tenha sido utilizada e vinculada a nenhum processo já incluso.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Variável > Exclusão
+\`\`\`
+`,
+  "Tipo de Documento - Cadastro Protocolo": `
+Rotina que permite incluir um Tipo de Documento para que durante a inclusão de um novo processo o usuário possa determinar qual o tipo de documento se refere.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipo de Documento
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image137.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image137.png)
+
+O e-cidade possui 5 tipos definidos como padrões, que são eles:
+
+- 1-Processo
+- 2-Memorando
+- 3-Oficio
+- 4-Decreto
+- 5-Ouvidoria
+
+A seleção do tipo de documento durante a inclusão de um novo processo somente será possível caso o parametro global tipo de controle esteja definido como: **Órgão**.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Parâmetros > Parâmetros Globais
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image136.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image136.png)
+`,
+  "Cadastro de Estados - Cadastro Protocolo": `
+### Inclusão
+
+Rotina que permite incluir um Estado para ser utilizado no cadastro de localidade.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Cadastro de Estados > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image119.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image119.png)
+
+Esta inclusão também está disponivel através da rotina:
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Estados > Inclusão
+\`\`\`
+
+### Alteração
+
+Rotina que permite alteração um Estado cadastrado pela rotina de inclusão.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Cadastro de Estados > Alteração
+\`\`\`
+
+Esta alteração também está disponivel através da rotina:
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Estados > Alteração
+\`\`\`
+
+### Exclusão
+
+Rotina que permite a exclusão de um Estado cadastrado por uma das rotinas de inclusão mencionadas anteriores.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Estados > Exclusão
+\`\`\`
+`,
+  "Cadastro de Municípios - Cadastro Protocolo": `
+### Inclusão
+
+Rotina que permite incluir um Município para ser utilizado no cadastro de logradouro.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Cadastro de Municípios > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image120.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image120.png)
+
+### Alteração
+
+Rotina que permite alteração de um Município cadastrado pela rotina de inclusão.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Cadastro de Municípios > Alteração
+\`\`\`
+`,
+  "Logradouro - Cadastro Protocolo": `
+### Inclusão
+
+Rotina que permite incluir um logradouro para utilizar no cadastro de CGM.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Logradouro > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image122.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image122.png)
+
+### Alteração
+
+Rotina que permite a alteração de logradouro, conclui-se a ação clicando-se no botão "alterar".
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Logradouro > Inclusão
+\`\`\`
+
+### Exclusão
+
+Rotina que permite a exclusão de logradouro, conclui-se a ação clicando-se no botão "excluir".
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Logradouro > Exclusão
+\`\`\`
+`,
+  "Localidade - Cadastro Protocolo": `
+### Inclusão
+
+Rotina que permite incluir um logradouro para utilizar no cadastro de CGM.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Logradouro > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image122.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image122.png)
+
+### Alteração
+
+Rotina que permite a alteração de uma localidade, conclui-se a ação clicando-se no botão "Alterar".
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Localidade > Alteração
+\`\`\`
+
+### Exclusão
+
+Rotina que permite a exclusão de uma localidade, conclui-se a ação clicando-se no botão "Excluir".
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Localidade > Exclusão
+\`\`\`
+`,
+  "CEP - Cadastro Protocolo": `
+### Inclusão
+
+Rotina que permite a inclusão de um CEP (código de endereçamento postal) para um novo logradouro que porventura não conste no cadastro de logradouro.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > CEP > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image123.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image123.png)
+
+### Alteração
+
+Rotina que permite a alteração do CEP cadastrado pela rotina de inclusão.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > CEP > Alteração
+\`\`\`
+
+### Exclusão
+
+Rotina que permite a exclusão do CEP cadastrado pela rotina de inclusão.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > CEP > Exclusão
+\`\`\`
+`,
+  "Tipo de Processo - Cadastro Protocolo": `
+Nesta rotina são incluídos os tipos de processos para o controle dos processos de protocolo, assim como permite parametrizações especificas referente ao Protocolo Eletrônico(Se aplicável). Não é possível realizar a inclusão de um processo no e-cidade sem um tipo de processo e o mesmo deve estar vinculado a um andamento padrão. É através do tipo de processo que é possível realizar vinculos com documentos e com as taxas do protocolo.
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipo de Processo > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image124.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image124.png)
+
+- **Tipo de processo:** Numeração gerada automaticamente.
+- **Descrição:** Preencher o nome do Tipo de Processo, como por exemplo: Abertura de Rua, Abaixo Assinado...
+- **Tipo de Documento:** Permite selecionar entre tipos de documento como: Processo, Memorando, Oficio, Decreto, Ouvidoria. Quer saber mais como incluir um novo tipo de documento? [clique aqui](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_tipo_de_documento.md)
+- **Data Limite:** Preencher a data de validade para esse Tipo de Processo, se definida, o e-cidade deixa de exibir esse tipo após a data.
+
+Conclui-se a inclusão do Tipo de Processo clicando em "Incluir".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image125.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image125.png)
+
+Se aplicavel, além das informações de preenchimentos anteriores, a rotina de inclusão de Tipo de Processo retornará o campo abaixo na aba Tipo de Processo e outras novas abas como: Departamentos, Formas de Reclamação, Andamento Padrão, Arquivo Json Formulario e Link Saiba mais...
+
+- **Identificado:** Sim/Não. Esta parametrização está destinado ao Protocolo Eletronico. Caso seja definido "Sim", este tipo de processo caracteriza que há obrigatoriamente uma identificação/login/acesso para utilização da inclusão do atendimento online. Se não, poderá ser efetivado a inclusão do atendimento como "ANÔNIMO".
+
+**[ABA Departamentos]**
+
+Nesta aba é possível definir qual o departamento responsável que irá efetivar a primeira ação referente a este tipo de processo. Basta selecionar o departamento e clicar em "Atualizar".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image126.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image126.png)
+
+**[ABA Forma de Reclamação]**
+
+Nesta aba será disponibilizada as formas de comunicação entre a Instituição e o Cidadão, no caso de cadastro de tipos de processo com o objetivo de acesso à informação, deve ser marcada a opção Processo Eletrônico.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image127.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image127.png)
+
+Novas formas de reclamação podem ser inclusas através da rotina abaixo:
+
+\`\`\`
+DB:PATRIMONIAL > Ouvidoria > Cadastros > Forma Reclamação
+\`\`\`
+
+**[ABA Andamento Padrão]**
+
+Está aba é uma extensão da rotina abaixo:
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Andamento Padrão
+\`\`\`
+
+A mesma foi incorporada na rotina de inclusão do Tipo de Processo, afim de centralizar e facilitar essa parametrização, esta configuração é pre-requisito para a utilização de um Tipo de Processo. Sua finalidade é estabelecer uma ordem padrão do andamento do processo, ou seja, por quais departamentos este tipo de processo é sugestivo tramitar e quantos dias permanecerão no máximo em cada um.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image128.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image128.png)
+
+**[ABA Arquivo Json Formulario]**
+
+Nesta aba é possível realizar a escolha do arquivo JSON, podendo ser selecionado por meio de rota ou arquivo JSON.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image129.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image129.png)
+
+Selecionando o tipo: Rota, o e-cidade exibirá um campo para indicar qual a rotina do arquivo JSON.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image130.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image130.png)
+
+Selecionando o tipo: Json, o e-cidade permitirá selecionar o arquivo com extensão JSON afim de que seja realizado o upload.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image131.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image131.png)
+
+Mais informações referente aos arquivos de configuração JSON e como parametriza-los, podem ser encontradas no link abaixo:
+
+[WIKI - Protocolo Eletronico](https://e-cidade.wiki.br/patrimonial/patrimonio/#!procedimentos_alterar_placa.md)
+
+**[ABA Link Saiba mais...]**
+
+A finalidade dessa aba é configurar opções de "Ajuda" dentro do Portal de Atendimento/Protocolo Eletrônico visando facilitar usuários a como utilizar o portal.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image133.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image133.png)
+
+Essa configuração é refletida no Portal de Atendimento/Protocolo Eletrônico, conforme imagem abaixo:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image134.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image134.png)
+
+**[ABA Mensagem]**
+
+Esta aba permite definir uma mensagem que será emitida no processo eletrônico após a inclusão de um atendimento. Caso não tenha sido definido nenhuma mensagem, será exibido uma mensagem padrão.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image185.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image185.png)
+
+Abaixo a emissão de um alerta parametrizado na aba Mensagem no Tipo de Processo "Primeiro Acesso".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image186.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image186.png)
+
+Exemplo mensagem padrão, se não difinido a mensagem para o Tipo do Processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image187.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image187.png)
+
+### Alteração
+
+Rotina que permite alterar no cadastro a descrição do tipo de processo, data limite e Tipo de Documento caso não exista um processo cadastrado para o tipo escolhido, quando aplicável será possível realizar manutenção de demais configurações referente ao protocolo eletrônico.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipo de Processo > Alteração
+\`\`\`
+
+### Exclusão
+
+Rotina que permite a exclusão do tipo, desde que o mesmo não esteja vinculado a nenhum processo, documento ou taxa.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipo de Processo > Exclusão
+\`\`\`
+`,
+  "Tipo de Processo / Receita - Cadastro Protocolo": `
+### Inclusão
+
+Nesta rotina é possível realizar o cadastro de todas as receitas vinculadas a um tipo de processo, com o valor da taxa a ser cobrada na criação de um novo processo.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipo de Processo / Receita > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image54.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image54.png)
+
+- **Tipo de Processo:** Preencher o código do tipo de processo ou clicar no link para abrir a função de pesquisa.
+- **Receita:** Preencher o código da receita ou clicar no link para abrir a função de pesquisa.
+- **Valor da Taxa:** Preencher o valor da taxa cobrada por tipo de processo.
+
+### Alteração
+
+Rotina que permite alteração dos campos Receita e Valor da Taxa.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipo de Processo / Receita > Alteração
+\`\`\`
+
+### Exclusão
+
+Rotina que permite a exclusão, quando não estiver vinculado a nenhum processo.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipo de Processo / Receita > Exclusão
+\`\`\`
+`,
+  "Geral do Município - CGM - Cadastro Protocolo": `
+Neste item será cadastrado o CGM (Cadastro Geral do Município), que tem como finalidade principal gerar um cadastro único de pessoas físicas e jurídicas do município, possibilitando a total integração das informações em todos os módulos do e-cidade.
+
+### Inclusão
+
+Rotina que permite incluir um novo CGM, a primeira tela deve-se informar o CPF ou CNPJ.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Geral do Município - CGM (novo) > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image77.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image77.png)
+
+Após confirmar, o e-cidade abrirá a página de cadastro com os campos personalizados conforme a seleção anterior (CPF / CNPJ).
+
+Campos em comuns entre PESSOA FISICA(CPF) e JURÍDICA(CNPJ).
+
+- **Numcgm:** n° do CGM é gerado automaticamente pelo sistema.
+- **Data do cadastramento:** data do sistema adicionada automaticamente.
+- **Última Alteração:** data da última alteração no cadastro do CGM setada automaticamente.
+- **Nome/Razão Social:** nome completo da pessoa física ou jurídica.
+- **Nome Completo:** nome completo da pessoa física ou jurídica.
+- **Inscrição Estadual:** número liberado pela Sefaz do estado no cadastro do ICMS.
+- **Tipo Empresa:** pessoa Física, Jurídica, Privada, Personificada...
+- **Telefone:** Telefone residencial
+- **Celular:** Telefone Celular
+- **Fax:** Fax (Não se utiliza)
+- **Email:** e-mail para contato
+- **Endereço Primário:** Lançar um endereço primário com logradouro e bairro previamente cadastrado.
+- **Caixa Postal:** Serviço para recebimento de correspondências pelos correios para endereço primário.
+- **Endereço Secundário:** Lançar um endereço secundário com logradouro e bairro previamente cadastrado.
+- **Observações:** Campo disponível para inserir observações adicionais sobre o CGM.
+
+Campos especificos para PESSOA FISICA(CPF).
+
+- **CPF:** número do cadastro de pessoa física.
+- **Identidade:** número do Registro Geral (RG).
+- **Órgão Emissor:** órgão público por ter sido responsável por emitir o documento.
+- **Data Expedição:** data em que o documento foi encaminhado ou entregue.
+- **Pai:** nome completo do pai.
+- **Mãe:** nome completo da mãe.
+- **Naturalidade:** município origem de nascimento.
+- **Nascimento:** data de nascimento.
+- **Falecimento:** data de falecimento.
+- **Estado civil:** solteiro, casado, viúvo, divorciado, separado consensual, separado judicial ou união estável.
+- **Sexo:** masculino/feminino.
+- **Nacionalidade:** Brasileira ou Estrangeira.
+- **Escolaridade:** Sem definição, Analfabeto, fundamental incompleto...
+- **Profissão:** Preencher o nome da profissão.
+- **CBO:** Classificação Brasileira de Ocupações.
+- **Pis/Pasep/CI:** Preencher com o Pis/Pasep/CI do empregado.
+- **Trabalha:** Sim/Não
+- **Renda:** Valor da renda do empregado.
+- **Local de Trabalho:** Endereço de local de trabalho.
+- **Telefone comercial:** Telefone comercial para contato.
+- **Celular comercial:** Celular comercial para contato.
+- **Email comercial:** E-mail comercial para contato.
+
+Na imagem abaixo exemplifica os campos referente a um cadastro de PESSOA FISICA.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image135.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image135.png)
+
+Campos especificos para PESSOA JURÍDICA(CNPJ).
+
+- **CGM do Município:** Sim/Não, se sim, indica que o CGM que está sendo cadastrado pertence ao munícipio, se não, o mesmo não pertence. A mesma irá definir como poderá ser vinculado o endereço primário e secundário.
+- **Nome Fantasia:** Designação popular do Nome/Razão Social. Ou seja, o nome de marca, nome comercial ou nome de fachada, enfim como é conhecida pelas pessoas e divulgada em publicidades.
+- **Contato:** Contato.
+- **Nire:** Número de Identificação do Registro de Empresas. Número que comprova que a empresa existe oficialmente. São 11 dígitos formados pela Unidade de Federação (UF), mais o tipo de empresa e um dígito verificador.
+
+Na imagem abaixo exemplifica os campos referente a um cadastro de PESSOA JURÍDICA.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image83.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image83.png)
+
+Após inclusão, na aba "Documentos" o e-cidade permite anexar documentos ao CGM cadastrado.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image57.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image57.png)
+
+Na última aba "Fotos" o e-cidade permite atribuir uma imagem ao CGM cadastrado.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image20.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image20.png)
+
+### Alteração
+
+Rotina que permite alterar os campos do cadastro realizado na inclusão do CGM.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Geral do Município - CGM (novo) > Alteração
+\`\`\`
+
+Ao realizar a busca por um CGM onde o CNPJ/CPF é vazio consequentemente o e-cidade não irá conseguir identificar se trata de uma Pessoa Física ou Jurídica, sendo assim será emitido um alerta para que seja definido o Tipo de Pessoa, conforme a imagem abaixo:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image173.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image173.png)
+
+Se Física listará os campos para atualização referente a uma Pessoa Física, da mesma forma se for definido tipo de pessoa Jurídica.
+
+Se o CGC/CPF estiver zerado, o e-cidade irá considerar a quantidade de caracter, Física(11) e Jurídica(14).
+
+### Exclusão
+
+Rotina que permite a exclusão de um CGM quando não possuir nenhuma matrícula, inscrição, dívida ou processo referente a este CGM.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Geral do Município - CGM (novo) > Exclusão
+\`\`\`
+`,
+  "Geral Financeira - Consulta Protocolo": `
+Esta rotina permite consulta financeira dos débitos dos contribuintes.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Consultas > Geral Financeira
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image90.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image90.png)
+`,
+  "Processo - Consulta Protocolo": `
+Neste menu a consulta do processo poderá ser feita pelo número do processo/ano, sendo o processo do exercicio, basta o usuário digitar o número do mesmo ou então pelo titular. Ao clicar sobre o link *"Processo"* ou *"Titular"* o e-cidade retornará opções de filtros adicionais.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Consultas > Processo
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image98.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image98.png)
+
+O filtro por órgão na rotina de consulta processo assim como na exibição, somente é aplicável em instituições que utilizam o parâmetro Global tipo de controle por órgão, esta opção de filtro e exibição não será listada caso tenha sido definido uma configuração diferente desta, as imagens abaixo exemplificam uma instituição que utiliza esta forma de controle.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image13.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image13.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image96.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image96.png)
+
+- **Dados do Processos:** exibe informações gerais do processo, como n° do controle, n° do processo, data/hora, tipo de processo, licitação o n°/ano(caso possua algum vinculo), departamento, titular do processo, requerente, atendente, instituição origem, localização, tipo de processo e órgão(se aplicável). À direita ainda possui o campo observações com informações adicionais a respeito do processo.
+
+**NOTA:** *A exibição da numeração do processo poderá variar de acordo com a parametrização também, na imagem exemplo se trata do tipo de controle por órgão, o número do processo é PRO0400002000/2021. Diferente dessa configuração, o e-cidade irá exibir a numeração padrão NUM./ANO podendo ser controlado por Campo Sequencial Geral ou Sequencial do Ano.*
+
+DadosDescriçãoPROTipo Documento: Processo (3 Digitos)04Órgão 4-SEC MUNIC DE GESTÃO, PLANEJ. E CAPTAÇÃO DE RECURSO (2 digitos)00002Numeração do Processo (5 digitos)000Numeração referente ao volume caso se aplique (3 digitos)/2021Exercicio do processo (4 digitos)
+
+Se estiver no departamento atual do processo que está sendo consultado, o e-cidade poderá exibir o botão "Andamento do processo" no canto superior direito, logo acima do campo "Observações" este nada mais é que um atalho para a rotina abaixo:
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Andamento do processo
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image184.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image184.png)
+
+Sua principal função é agilizar a realização de alguma ação no processo, seja efetivar um recebimento, despacho ou até mesmo uma transferência durante a consulta do processo.
+
+- **Movimentações:** O e-cidade retornará todas as movimentações do processo com informações como despachos e seus anexos, data/hora, departamentos(transferências/recebimentos) entre outras, desde sua inclusão até sua posição atual.
+- **Apensados:** Mostrará os processos que estão apensos ao processo que esta sendo consultado.
+- **Documentos:** Exibirá os documentos anexados ao processo.
+- **Imprimir:** permite imprimir somente as movimentações ou somente os apensados ou ainda marcando os dois filtros. As informações em Dados do Processo estão sendo exibidos sem estar configurado o parâmetro global tipo de controle por órgão.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image64.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image64.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image138.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image138.png)
+
+O processo sendo do tipo ELETRONICO, o e-cidade irá habilitar um botão adicional com descrição "Visualizar Documentos" conforme imagem abaixo:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image171.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image171.png)
+
+Ao clicar no botão "Visualizar Documentos" será possível visualizar os documentos anexados de uma forma simples, organizada e inteligente. O gerenciador eletrônico de documentos(GED) permite visualizar os documentos de forma digital, sendo possível folhar o processo, além de possuir recursos como ampliar, girar, download do arquivo selecionado ou download de todos os arquivos de forma simultanea.
+
+- **Volumes:** Lista volumes vinculados ao processo. O Volume constitui-se em nova pasta aberta, em continuidade a um determinado processo. Ocorre quando o processo tiver atingido a média alta de quantidade de folhas, ou antes, se a gramatura ou o formato dos documentos estiverem dificultando o manuseio físico.
+`,
+  "CGM - Consulta Protocolo": `
+Nesta rotina é possível realizar a consulta por informações de um determinado CGM(Cadastro Geral Municipal).
+
+Na tela de pesquisa será solicitado o número do CGM, caso o usuário desconheça, poderá clicar no link "Numcgm" e pesquisar por filtros adicionais.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image49.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image49.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image99.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image99.png)
+
+- **Dados Cadastrais:** retorna informações gerais como nome/razão social, CPF, Data de Nascimento, Nome Pai, Nome Mãe, entre outras conforme a imagem acima.
+
+***Detalhamento do Cadastro***
+
+- **Endereço Principal:** consta informações a respeito do endereço cadastrado como principal.
+- **Endereço Secundário:** consta informações a respeito do endereço cadastrado como secundário.
+- **Documentos:** constam os documentos vinculados ao cadastro do CGM na aba "Documentos" na inclusão de CGM. Estes documentos adicionais são tratados em forma de texto, portanto para visualizar o usuário terá que clicar em "Ver".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image25.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image25.png)
+
+- **Emprego:** informações como Profissão, CBO, PIS/PASEP/CI, Renda e Local de Trabalho.
+- **Outras Informações:** informações como o login do usuário que incluiu o CGM, a data da última alteração e a data do cadastro do CGM.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image139.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image139.png)
+
+Existindo uma ou mais alterações, o usuário poderá clicar em "Alterações" para visualizar outras existentes.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image140.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image140.png)
+
+Ao clicar sobre a linha, o e-cidade irá exibir a posição e os respectivos dados referente à posição.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image153.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image153.png)
+
+Para visualizar o CGM na posição original atual, basta clicar no botão "Original".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image154.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image154.png)
+
+- **Usuário do processo eletrônico:** exibirá informações referentes às credenciais do eauth. Portanto, caso o CGM possua um usuário no processo eletrônico, este será exibido nesta opção.
+`,
+  "CGM Duplo Processado - Consulta Protocolo": `
+Rotina que permite consulta aos CGM's processados.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Consultas > CGM Duplo Processado
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image12.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image12.png)
+
+- **CGM correto:** informar o número do CGM atualmente utilizado, para filtros adicionais basta clicar em "CGM correto".
+- **CGM errado:** informar o número do CGM anterior ao processamento, para filtros adicionais basta clicar em "CGM errado".
+- **Data do processamento:** permite filtrar por uma data repetindo entre os campos ou um intervalo entre.
+- **Código do Usuário:** permite informar um ou mais usuários através do código do mesmo, e-cidade retornará uma lista de todos processamentos realizados por este. Para filtros adicionais basta clicar em "Código do Usuário".
+
+Ao informar um CGM correto ou errado, por exemplo, o e-cidade retornará dados contendo, razão social, data/hora em que foi processado, usuário que efetuou o processamento, seguido do CGM(s) errado(s). O mesmo acontece ao informar somente a data do processamento.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image87.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image87.png)
+
+Já ao informar o código do usuário, o e-cidade retorna listagem de todos os CGM's processados pelo usuário.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image56.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image56.png)
+`,
   "Grupos de Material/Serviço": `
 Os grupos compreendem a agregação de elementos de despesa que apresentam as mesmas características quanto ao objeto de gasto.
 

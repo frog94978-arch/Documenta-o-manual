@@ -40,10 +40,12 @@ const PatrimonialTabs = ({
 }: PatrimonialTabsProps) => {
   const [registroPrecoPage, setRegistroPrecoPage] = useState<1 | 2 | 3 | 4>(1);
   const [movimentacoesPage, setMovimentacoesPage] = useState<1 | 2>(1);
+  const [movimentacoesVeiculosPage, setMovimentacoesVeiculosPage] = useState<1 | 2 | 3 | 4>(1);
   const [aditamentosPage, setAditamentosPage] = useState<1 | 2>(1);
   const [acordoPage, setAcordoPage] = useState<1 | 2 | 3 | 4 | 5 | 6>(1);
   const [licitacaoProcedimentosPage, setLicitacaoProcedimentosPage] = useState<1 | 2 | 3 | 4 | 5 | 6 | 7>(1);
   const [cadastraisMaterialPage, setCadastraisMaterialPage] = useState<1 | 2 | 3 | 4>(1);
+  const [cadastraisVeiculosPage, setCadastraisVeiculosPage] = useState<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17>(1);
   const [documentosMaterialPage, setDocumentosMaterialPage] = useState<1 | 2>(1);
   const [conferenciaMaterialPage, setConferenciaMaterialPage] = useState<ConferenciaMaterialPage>(1);
   const [dadosVeiculosPage, setDadosVeiculosPage] = useState<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10>(1);
@@ -59,6 +61,12 @@ const PatrimonialTabs = ({
       setMovimentacoesPage(1);
     }
   }, [selectedFinalSection]);
+
+  useEffect(() => {
+    if (selectedSubmodule !== "Veículos" || selectedCategory !== "relatorio" || selectedFinalSection !== "Movimentações") {
+      setMovimentacoesVeiculosPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
 
   useEffect(() => {
     if (selectedFinalSection !== "Aditamentos") {
@@ -91,6 +99,12 @@ const PatrimonialTabs = ({
 
     if (!isCadastraisRelatorioMaterial) {
       setCadastraisMaterialPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (selectedSubmodule !== "Veículos" || selectedCategory !== "relatorio" || selectedFinalSection !== "Cadastrais") {
+      setCadastraisVeiculosPage(1);
     }
   }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
 
@@ -278,6 +292,9 @@ const PatrimonialTabs = ({
             !(currentSubmoduleId === "ouvidoria" && selectedCategory === "procedimentos") &&
             !(currentSubmoduleId === "pncp" && selectedCategory === "procedimentos") &&
             !(currentSubmoduleId === "veiculos" && selectedCategory === "procedimentos") &&
+            !(currentSubmoduleId === "veiculos" && selectedCategory === "relatorio" && selectedFinalSection === "Movimentações") &&
+            !(currentSubmoduleId === "veiculos" && selectedCategory === "relatorio" && selectedFinalSection === "Documentos") &&
+            !(currentSubmoduleId === "veiculos" && selectedCategory === "relatorio" && selectedFinalSection === "Cadastrais") &&
             !(currentSubmoduleId === "contratos" && selectedFinalSection === "Acordo" && selectedCategory === "procedimentos") &&
             !isProcedimentoContratosSemNavEspecial);
 
@@ -343,6 +360,48 @@ const PatrimonialTabs = ({
           selectedCategory === "relatorio" &&
           selectedFinalSection === "Movimentações";
 
+        const isAbastecimentoRelatorioVeiculos =
+          currentSubmoduleId === "veiculos" &&
+          selectedCategory === "relatorio" &&
+          selectedFinalSection === "Movimentações";
+
+        const isDocumentosRelatorioVeiculos =
+          currentSubmoduleId === "veiculos" &&
+          selectedCategory === "relatorio" &&
+          selectedFinalSection === "Documentos";
+
+        const isCadastraisRelatorioVeiculos =
+          currentSubmoduleId === "veiculos" &&
+          selectedCategory === "relatorio" &&
+          selectedFinalSection === "Cadastrais";
+
+        const movimentacoesVeiculosPages: Record<1 | 2 | 3 | 4, string | undefined> = {
+          1: comprasRelatorioContent["Abastecimento - Relatório Veículos"],
+          2: comprasRelatorioContent["Manutenção - Relatório Veículos"],
+          3: comprasRelatorioContent["Ficha de Controle de Manutenção - Relatório Veículos"],
+          4: comprasRelatorioContent["Controle de Hodômetro - Relatório Veículos"],
+        };
+
+        const cadastraisVeiculosPages: Record<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17, string | undefined> = {
+          1: comprasRelatorioContent["Veículos - Relatório Cadastrais"],
+          2: comprasRelatorioContent["Motoristas - Relatório Cadastrais Veículos"],
+          3: comprasRelatorioContent["Oficinas - Relatório Cadastrais Veículos"],
+          4: comprasRelatorioContent["Postos - Relatório Cadastrais Veículos"],
+          5: comprasRelatorioContent["Modelos - Relatório Cadastrais Veículos"],
+          6: comprasRelatorioContent["Marcas - Relatório Cadastrais Veículos"],
+          7: comprasRelatorioContent["Categorias - Relatório Cadastrais Veículos"],
+          8: comprasRelatorioContent["Categoria CNH - Relatório Cadastrais Veículos"],
+          9: comprasRelatorioContent["Combustíveis - Relatório Cadastrais Veículos"],
+          10: comprasRelatorioContent["Tipo de capacidade - Relatório Cadastrais Veículos"],
+          11: comprasRelatorioContent["Tipos de serviços - Relatório Cadastrais Veículos"],
+          12: comprasRelatorioContent["Tipos - Relatório Cadastrais Veículos"],
+          13: comprasRelatorioContent["Procedências - Relatório Cadastrais Veículos"],
+          14: comprasRelatorioContent["Cores - Relatório Cadastrais Veículos"],
+          15: comprasRelatorioContent["Potências - Relatório Cadastrais Veículos"],
+          16: comprasRelatorioContent["Situação de condutores - Relatório Cadastrais Veículos"],
+          17: comprasRelatorioContent["Central de veículos - Relatório Cadastrais Veículos"],
+        };
+
         const isAcordoProcedimentosContratos =
           currentSubmoduleId === "contratos" &&
           selectedCategory === "procedimentos" &&
@@ -377,6 +436,45 @@ const PatrimonialTabs = ({
         const isConsultaMaterial =
           currentSubmoduleId === "material" &&
           selectedCategory === "consulta";
+
+        const isConsultaGeralFinanceiraProtocolo =
+          currentSubmoduleId === "protocolo" &&
+          selectedCategory === "consulta" &&
+          selectedFinalSection === "Geral Financeira";
+
+        const isConsultaProcessoProtocolo =
+          currentSubmoduleId === "protocolo" &&
+          selectedCategory === "consulta" &&
+          selectedFinalSection === "Processo";
+
+        const isConsultaCgmProtocolo =
+          currentSubmoduleId === "protocolo" &&
+          selectedCategory === "consulta" &&
+          selectedFinalSection === "CGM";
+
+        const isConsultaCgmDuploProcessadoProtocolo =
+          currentSubmoduleId === "protocolo" &&
+          selectedCategory === "consulta" &&
+          selectedFinalSection === "CGM Duplo Processado";
+
+        const isCadastroProtocolo =
+          currentSubmoduleId === "protocolo" && selectedCategory === "cadastro";
+
+        const protocoloCadastroContentBySection: Record<string, string | undefined> = {
+          "Cadastro de Estados": comprasCadastroContent["Cadastro de Estados - Cadastro Protocolo"],
+          "Geral do Município - CGM": comprasCadastroContent["Geral do Município - CGM - Cadastro Protocolo"],
+          "Geral do Município - CGM (novo)": comprasCadastroContent["Geral do Município - CGM - Cadastro Protocolo"],
+          "Cadastro de Municípios": comprasCadastroContent["Cadastro de Municípios - Cadastro Protocolo"],
+          Logradouro: comprasCadastroContent["Logradouro - Cadastro Protocolo"],
+          Localidade: comprasCadastroContent["Localidade - Cadastro Protocolo"],
+          CEP: comprasCadastroContent["CEP - Cadastro Protocolo"],
+          "Tipo de Processo": comprasCadastroContent["Tipo de Processo - Cadastro Protocolo"],
+          "Tipo de Processo / Receita": comprasCadastroContent["Tipo de Processo / Receita - Cadastro Protocolo"],
+          Documento: comprasCadastroContent["Documento - Cadastro Protocolo"],
+          "Documento / Tipo de Processo": comprasCadastroContent["Documento / Tipo de Processo - Cadastro Protocolo"],
+          Variável: comprasCadastroContent["Variável - Cadastro Protocolo"],
+          "Tipo de Documento": comprasCadastroContent["Tipo de Documento - Cadastro Protocolo"],
+        };
 
         const isProcedimentosMaterial =
           currentSubmoduleId === "material" &&
@@ -619,6 +717,16 @@ const PatrimonialTabs = ({
                   9: comprasCadastroContent["Dados dos Veiculos - Página 9"],
                   10: comprasCadastroContent["Dados dos Veiculos - Página 10"],
                 }[dadosVeiculosPage]
+            : isConsultaGeralFinanceiraProtocolo
+              ? comprasCadastroContent["Geral Financeira - Consulta Protocolo"]
+            : isConsultaProcessoProtocolo
+              ? comprasCadastroContent["Processo - Consulta Protocolo"]
+            : isConsultaCgmProtocolo
+              ? comprasCadastroContent["CGM - Consulta Protocolo"]
+            : isConsultaCgmDuploProcessadoProtocolo
+              ? comprasCadastroContent["CGM Duplo Processado - Consulta Protocolo"]
+            : isCadastroProtocolo
+              ? protocoloCadastroContentBySection[selectedFinalSection]
             : selectedCategory === "cadastro" ||
                 selectedCategory === "consulta" ||
                 selectedCategory === "procedimentos"
@@ -626,9 +734,15 @@ const PatrimonialTabs = ({
                   selectedFinalSection as keyof typeof comprasCadastroContent
                 ]
               : selectedCategory === "relatorio"
-                ? comprasRelatorioContent[
-                    selectedFinalSection as keyof typeof comprasRelatorioContent
-                  ]
+                ? isCadastraisRelatorioVeiculos
+                  ? cadastraisVeiculosPages[cadastraisVeiculosPage]
+                  : isDocumentosRelatorioVeiculos
+                  ? comprasRelatorioContent["Ordem de Serviço - Relatório Veículos"]
+                  : isAbastecimentoRelatorioVeiculos
+                  ? movimentacoesVeiculosPages[movimentacoesVeiculosPage]
+                  : comprasRelatorioContent[
+                      selectedFinalSection as keyof typeof comprasRelatorioContent
+                    ]
                 : undefined;
 
         return (
@@ -701,6 +815,95 @@ const PatrimonialTabs = ({
                         onClick={() => setMovimentacoesPage(2)}
                       >
                         Página 2
+                      </Button>
+                    </div>
+                  ) : null}
+
+                  {isAbastecimentoRelatorioVeiculos ? (
+                    <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-9 shrink-0 px-3"
+                        disabled={movimentacoesVeiculosPage === 1}
+                        onClick={() => setMovimentacoesVeiculosPage((movimentacoesVeiculosPage - 1) as 1 | 2 | 3 | 4)}
+                      >
+                        « Anterior
+                      </Button>
+                      {[1, 2, 3, 4].map((page) => (
+                        <Button
+                          key={page}
+                          size="sm"
+                          className="h-9 min-w-9 shrink-0 px-3"
+                          variant={movimentacoesVeiculosPage === page ? "default" : "outline"}
+                          onClick={() => setMovimentacoesVeiculosPage(page as 1 | 2 | 3 | 4)}
+                        >
+                          {page}
+                        </Button>
+                      ))}
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-9 shrink-0 px-3"
+                        disabled={movimentacoesVeiculosPage === 4}
+                        onClick={() => setMovimentacoesVeiculosPage((movimentacoesVeiculosPage + 1) as 1 | 2 | 3 | 4)}
+                      >
+                        Próximo »
+                      </Button>
+                    </div>
+                  ) : null}
+
+                  {isCadastraisRelatorioVeiculos ? (
+                    <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-9 shrink-0 px-3"
+                        disabled={cadastraisVeiculosPage === 1}
+                        onClick={() => setCadastraisVeiculosPage((cadastraisVeiculosPage - 1) as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17)}
+                      >
+                        « Anterior
+                      </Button>
+                      {(() => {
+                        const paginationPages = new Set<number>([
+                          1,
+                          2,
+                          3,
+                          15,
+                          16,
+                          17,
+                          cadastraisVeiculosPage - 1,
+                          cadastraisVeiculosPage,
+                          cadastraisVeiculosPage + 1,
+                        ]);
+                        const orderedPages = [...paginationPages]
+                          .filter((page) => page >= 1 && page <= 17)
+                          .sort((firstPage, secondPage) => firstPage - secondPage);
+
+                        return orderedPages.map((page, index) => (
+                          <span key={page} className="contents">
+                            {index > 0 && page - orderedPages[index - 1] > 1 ? (
+                              <span className="px-1 text-muted-foreground">...</span>
+                            ) : null}
+                            <Button
+                              size="sm"
+                              className="h-9 min-w-9 shrink-0 px-3"
+                              variant={cadastraisVeiculosPage === page ? "default" : "outline"}
+                              onClick={() => setCadastraisVeiculosPage(page as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17)}
+                            >
+                              {page}
+                            </Button>
+                          </span>
+                        ));
+                      })()}
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-9 shrink-0 px-3"
+                        disabled={cadastraisVeiculosPage === 17}
+                        onClick={() => setCadastraisVeiculosPage((cadastraisVeiculosPage + 1) as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17)}
+                      >
+                        Próximo »
                       </Button>
                     </div>
                   ) : null}

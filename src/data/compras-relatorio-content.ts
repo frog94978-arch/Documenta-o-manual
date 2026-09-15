@@ -294,6 +294,275 @@ O relatório traz listada as informações:
 - Movimentação do empenho vinculado ao acordo - empenho, emissão, empenhado, anulado, liquidado, pago.
 - Saldo a pagar desses empenhos vinculados - liquidado, não liquidado e saldo geral.
 `,
+  "Abastecimento - Relatório Veículos": `
+# Abastecimento
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Movimentações > Abastecimento
+\`\`\`
+
+Este relatório traz a lista dos abastecimentos que cada veículo fez, com as datas, consumos, quilometragens, e demais informações.
+
+A figura 35 traz a tela de filtros para a emissão deste relatório.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image19.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image19.png)
+
+Período: Este campo possibilita ao usuário emitir um relatório de abastecimento limitado a um determinado período de tempo, clicando para tanto nos calendários disponiblizados pelos campos “D”. Este campo é opcional, se o usuário não preenche-lo, o relatório trará toda a história de abastecimento do veículo indicado pelo usuário.
+
+Código do veículo: Este link, uma vez clicado trará todos os veículos cadastrados no sistema, através dele será indicado o veículo do qual será emitido o relatório. Uma vez que este campo estiver preenchido, o usuário deverá clicar no botão “lançar”, o que fará com que o veículo seja lançado para dentro da caixa localizada logo abaixo, após feito isto, se o usuário não desejar especificar maiores detalhes,
+poderá clicar no botão “processar”.
+
+Dos filtros a seguir, apenas um deve ser escolhido se o usuário desejar especificar sua pesquisa.
+
+Tipo: Este link traz todos os tipos de veículos cadastrados, possibilitando especificar o relatório a ser processado.
+
+Marca: Este link traz todas as marcas cadastradas no sistema, possibilitando especificar o relatório a ser processado.
+
+Modelo: Este link traz todos os modelos cadastrados no sistema, possibilitando especificar o relatório a ser processado.
+
+Combustível: Este link traz todos os combustíveis cadastrados no sistema, possibilitando especificar o relatório a ser processado.
+
+Feito isto logo a seguir se assim o desejar já será possível processar o relatório clicando no botão “Processar”.
+
+Quebra por página: Este campo permite ao usuário escolher como se dará a quebra de página, se esta será por modelo, marca, tipo ou combustível
+
+O relatório é processado clicando-se no botão “processar”. Como pode ser observado na figura 36.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image72.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image72.png)
+`,
+  "Manutenção - Relatório Veículos": `
+# Manutenção
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Movimentações > Manutenção
+\`\`\`
+`,
+  "Ficha de Controle de Manutenção - Relatório Veículos": `
+# Ficha de Controle de Manutenção
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Movimentações > Ficha de Controle de Manutenção
+\`\`\`
+`,
+  "Controle de Hodômetro - Relatório Veículos": `
+# Controle de Hodômetro
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Movimentações >  Controle de Hodômetro
+\`\`\`
+`,
+  "Ordem de Serviço - Relatório Veículos": `
+# Ordem de Serviço
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Documentos > Ordem de Serviço
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image79.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image79.png)
+`,
+  "Veículos - Relatório Cadastrais": `
+# Veículos
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Veículos
+\`\`\`
+
+Este relatório traz a lista dos veículos cadastrados no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image82.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image82.png)
+`,
+  "Motoristas - Relatório Cadastrais Veículos": `
+# Motoristas
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Motoristas
+\`\`\`
+
+Este relatório traz a lista de motoristas cadastrados no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image117.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image117.png)
+`,
+  "Oficinas - Relatório Cadastrais Veículos": `
+# Oficinas
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Oficinas
+\`\`\`
+
+Este relatório traz a lista das oficinas cadastradas no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image107.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image107.png)
+`,
+  "Postos - Relatório Cadastrais Veículos": `
+# Postos
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Postos
+\`\`\`
+
+Este relatório traz a lista dos postos cadastrados no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image116.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image116.png)
+`,
+  "Modelos - Relatório Cadastrais Veículos": `
+# Modelos
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Modelos
+\`\`\`
+
+Este relatório traz a lista dos modelos cadastrados no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image30.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image30.png)
+`,
+  "Marcas - Relatório Cadastrais Veículos": `
+# Marcas
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Marcas
+\`\`\`
+
+Este relatório traz a lista das marcas cadastradas no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image45.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image45.png)
+`,
+  "Categorias - Relatório Cadastrais Veículos": `
+# Categorias
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Categorias
+\`\`\`
+
+Este relatório traz a relação das categorias cadastradas no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image44.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image44.png)
+`,
+  "Categoria CNH - Relatório Cadastrais Veículos": `
+# Categoria CNH
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Categoria CNH
+\`\`\`
+
+Este relatório traz a relação das categorias de CNH cadastradas no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image24.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image24.png)
+`,
+  "Combustíveis - Relatório Cadastrais Veículos": `
+# Combustíveis
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Combustíveis
+\`\`\`
+
+Este relatório traz a relação dos combustíveis cadastrados.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image81.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image81.png)
+`,
+  "Tipo de capacidade - Relatório Cadastrais Veículos": `
+# Tipo de capacidade
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Tipo de capacidade
+\`\`\`
+
+Este relatório traz a lista dos tipos de capacidade cadastrados no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image98.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image98.png)
+`,
+  "Tipos de serviços - Relatório Cadastrais Veículos": `
+# Tipos de serviços
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Tipos de serviços
+\`\`\`
+
+Este relatório traz a relação dos serviços de manutenção cadastrados no sistema aos quais os veículos da frota Municipal são submetidos.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image85.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image85.png)
+`,
+  "Tipos - Relatório Cadastrais Veículos": `
+# Tipos
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Tipos
+\`\`\`
+
+Este relatório traz a relação dos tipos de veículos cadastrados no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image65.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image65.png)
+`,
+  "Procedências - Relatório Cadastrais Veículos": `
+# Procedências
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Procedências
+\`\`\`
+
+Este relatório traz a lista das procedências dos veículos.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image64.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image64.png)
+`,
+  "Cores - Relatório Cadastrais Veículos": `
+# Cores
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Cores
+\`\`\`
+
+Este relatório traz a lista das cores dos carros cadastrados no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image49.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image49.png)
+`,
+  "Potências - Relatório Cadastrais Veículos": `
+# Potências
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Potências
+\`\`\`
+
+Este relatório traz a relação das potências cadastradas no sistema.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image58.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image58.png)
+`,
+  "Situação de condutores - Relatório Cadastrais Veículos": `
+# Situação de condutores
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Situação de condutores
+\`\`\`
+
+Este relatório traz a lista das possibilidades de situação dos motorista em que os motoristas podem ser classificados.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image48.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image48.png)
+`,
+  "Central de veículos - Relatório Cadastrais Veículos": `
+# Central de veículos
+
+\`\`\`
+DB:PATRIMONIAL > Veículos > Relatórios > Cadastrais > Central de veículos
+\`\`\`
+
+Este relatório informa ao usuário quais as centrais de veículos que a instituição dispõe, nele também é informado o código de cada veículo, bem como a placa, tipo de veículo, modelo, marca, ano de fabricação, renavam e também informa se o carro sofreu baixa ou não. Além disso, informa os motoristas com seus códigos, carteiras de habilitação, validade da carteira, e ainda se o motorista encontra-se ativo ou não.
+
+A figura 37 traz os seguintes filtros: central, quebra por página.
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image61.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image61.png)
+
+Central: Este campo permite ao usuário escolher ou conhecer as centrais de veículos que deseja verificar. Esta consulta poderá ser feita estando o usuário logado em qualquer departamento.
+
+Quebra por página: Este campo permitirá ao usuário no momento de imprimir o relatório, escolher se o relatório apresentará as informações de forma contínua ou se fará a quebra de página das informações por central.
+
+O relatório poderá ser gerado clicando-se no botão Processar. Como podemos observar na figura 38 e 39.
+
+Saída por Quebra por Página: Sim
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image69.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image69.png)
+
+Saída por Quebra por Página: Não
+
+[![](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image118.png)](https://e-cidade.wiki.br/patrimonial/veiculos/files/veiculos_tecnico/image118.png)
+`,
   "Registro de preço": `
 ## Emite Estimativa
 
