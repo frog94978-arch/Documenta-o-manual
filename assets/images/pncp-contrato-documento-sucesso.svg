@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="568" height="94" viewBox="0 0 568 94">
+  <rect width="568" height="94" fill="#fff"/>
+  <rect x="6" y="8" width="551" height="88" rx="5" fill="#f8f8f8" stroke="#555" stroke-width="1.5"/>
+  <rect x="7" y="9" width="549" height="52" fill="#fff"/>
+  <text x="21" y="42" font-family="Arial,sans-serif" font-size="14" fill="#111">Documento anexado com sucesso ao contrato!</text>
+  <path d="M7 61h549" stroke="#ddd"/>
+  <rect x="505" y="66" width="47" height="29" rx="5" fill="#4c84ad" stroke="#356486"/>
+  <text x="519" y="86" font-family="Arial,sans-serif" font-size="14" fill="#fff">OK</text>
+</svg>

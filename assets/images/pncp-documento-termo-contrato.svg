@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="928" height="294" viewBox="0 0 928 294">
+  <rect width="928" height="294" fill="#dedcdb"/>
+  <rect x="177" y="26" width="573" height="125" fill="#dedcdb" stroke="#bbb"/>
+  <text x="186" y="31" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#111">Documento Termo Contrato</text>
+  <g font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#111">
+    <text x="186" y="59">Termo:</text><text x="186" y="83">Título do Documento:</text><text x="186" y="108">Tipo:</text><text x="186" y="132">Documento:</text>
+  </g>
+  <g fill="#deb986" stroke="#b99865">
+    <rect x="322" y="45" width="231" height="19" rx="2"/><rect x="557" y="45" width="184" height="19" rx="2"/>
+  </g>
+  <g fill="#fff" stroke="#888">
+    <rect x="322" y="70" width="419" height="19" rx="3"/><rect x="322" y="94" width="419" height="19" rx="5"/><rect x="322" y="117" width="419" height="23"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="12" fill="#111">
+    <text x="327" y="59">Termo Aditivo</text><text x="562" y="59">777</text>
+    <text x="328" y="108">Selecione</text><path d="m731 101 5 5 5-5" fill="none" stroke="#333"/>
+    <rect x="323" y="118" width="76" height="21" rx="2" fill="#fafafa" stroke="#999"/><text x="330" y="133">Procurar...</text>
+    <text x="405" y="133">Nenhum arquivo selecionado.</text>
+  </g>
+  <rect x="403" y="158" width="64" height="25" rx="5" fill="#fafafa" stroke="#999"/><text x="411" y="175" font-family="Arial,sans-serif" font-size="12" fill="#111">▣ Salvar</text>
+  <rect x="472" y="158" width="54" height="25" rx="5" fill="#fafafa" stroke="#999"/><text x="480" y="175" font-family="Arial,sans-serif" font-size="12" fill="#111">Fechar</text>
+  <text x="11" y="197" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#111">Termos</text>
+  <rect x="11" y="207" width="905" height="82" fill="#dedcdb" stroke="#bbb"/>
+  <rect x="14" y="209" width="899" height="25" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="81" y="226">Título</text><text x="332" y="226">Tipo Documento</text><text x="671" y="226">Data Publicação</text><text x="870" y="226">Ações</text>
+  </g>
+  <g stroke="#d2d2d2" fill="none"><path d="M147 209v68M518 209v68M826 209v68"/></g>
+  <rect x="14" y="234" width="899" height="43" fill="#fff" stroke="#ddd"/>
+  <g font-family="Arial,sans-serif" font-size="12" fill="#111" text-anchor="middle"><text x="81" y="260">teste</text><text x="332" y="260">Termo de Rescisão</text><text x="671" y="260">09/03/2023</text></g>
+  <g fill="#1684c7">
+    <path d="M857 249h12v3h-12zm3 4h6v7h-6zm1-6h4v2h-4z"/>
+    <path d="M879 249h11v3h-11zm1 4h9v8h-9z"/>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="439" height="260" viewBox="0 0 439 260">
+  <rect width="439" height="260" fill="#dedcdb"/>
+  <rect x="0" y="1" width="438" height="29" fill="#315d8c"/>
+  <text x="12" y="20" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#fff">Alteração Ata Registro Preço</text>
+  <path d="m419 10 9 9m0-9-9 9" stroke="#fff" stroke-width="2"/>
+  <rect x="52" y="61" width="334" height="158" fill="#dedcdb" stroke="#bbb"/>
+  <text x="59" y="66" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">Retificar Ata de Registro de Preço</text>
+  <g font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">
+    <text x="59" y="89">Cancelar:</text><text x="59" y="109">Data Cancelamento:</text><text x="59" y="170">Justificativa:</text>
+  </g>
+  <rect x="163" y="78" width="214" height="17" rx="4" fill="#fff" stroke="#888"/>
+  <text x="170" y="91" font-family="Arial,sans-serif" font-size="11" fill="#111">Sim</text><path d="m367 84 4 4 4-4" fill="none" stroke="#333"/>
+  <rect x="163" y="99" width="84" height="16" fill="#fff" stroke="#888"/>
+  <text x="166" y="111" font-family="Arial,sans-serif" font-size="10" fill="#777">__/__/____</text>
+  <rect x="249" y="99" width="12" height="16" fill="#fafafa" stroke="#888"/><text x="252" y="111" font-family="Arial,sans-serif" font-size="10" fill="#111">D</text>
+  <rect x="163" y="120" width="214" height="89" rx="2" fill="#fff" stroke="#888"/>
+  <path d="m367 201 10 8" stroke="#888"/>
+  <rect x="189" y="225" width="60" height="20" rx="5" fill="#fafafa" stroke="#999"/>
+  <text x="196" y="239" font-family="Arial,sans-serif" font-size="11" fill="#111">▣ Retificar</text>
+</svg>

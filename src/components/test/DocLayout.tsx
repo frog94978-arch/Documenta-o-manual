@@ -63,8 +63,8 @@ const DocLayout = () => {
                             }}
                           >
                             <div className="font-medium">{result.title}</div>
-                            <div className="text-xs text-muted-foreground line-clamp-1">
-                              {result.description}...
+                            <div className="text-xs text-muted-foreground line-clamp-2">
+                              {result.description}
                             </div>
                             <div className="text-[10px] mt-1 text-primary-foreground/60 bg-primary/10 px-1 rounded-sm w-fit">
                               {result.type === 'page' ? 'Documento' : result.type === 'submodule' ? 'Módulo' : 'Opção'}

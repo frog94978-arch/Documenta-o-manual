@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="465" height="132" viewBox="0 0 465 132">
+  <rect width="465" height="132" fill="#dedcdb"/>
+  <rect x="8" y="7" width="454" height="124" rx="8" fill="#fff" stroke="#ddd"/>
+  <text x="25" y="24" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#202124">◉ ecidade56.setelagoas.libresolucoes.com.br</text>
+  <text x="25" y="68" font-family="Arial,sans-serif" font-size="13" fill="#111">Confirma a exclusão data Ata de Registro de Preço?</text>
+  <rect x="305" y="88" width="84" height="33" rx="5" fill="#f1f3f4"/>
+  <text x="319" y="109" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#202124">Cancelar</text>
+  <rect x="397" y="88" width="49" height="33" rx="5" fill="#0b57d0"/>
+  <text x="412" y="109" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#fff">OK</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1170" height="100" viewBox="0 0 1170 100">
+  <rect width="1170" height="100" fill="#dedcdb"/>
+  <text x="16" y="15" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#111">Termos</text>
+  <rect x="17" y="22" width="1146" height="76" fill="#dedcdb" stroke="#bbb"/>
+  <rect x="20" y="24" width="1136" height="26" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="48" y="41">Número</text><text x="147" y="41">Tipo</text><text x="375" y="41">Objeto</text><text x="583" y="41">Assinatura</text><text x="700" y="41">Acréscimo/Supressão</text><text x="807" y="41">Vigência</text><text x="890" y="41">Fornecedor</text><text x="962" y="41">Reajuste</text><text x="1030" y="41">Informativo</text><text x="1114" y="41">Ações</text>
+  </g>
+  <g stroke="#d2d2d2" fill="none"><path d="M79 24v71M214 24v71M538 24v71M625 24v71M775 24v71M839 24v71M920 24v71M1004 24v71M1065 24v71"/></g>
+  <rect x="20" y="50" width="1136" height="44" fill="#fff" stroke="#d5d5d5"/>
+  <g font-family="Arial,sans-serif" font-size="12" fill="#111" text-anchor="middle">
+    <text x="48" y="76">1</text><text x="147" y="76">Termo de Rescisão</text><text x="375" y="76">Renovação do contrato com Júnior por mais 1 ano.</text><text x="583" y="76">10/03/2023</text><text x="700" y="76">Não</text><text x="807" y="76">Sim</text><text x="890" y="76">Não</text><text x="962" y="76">Não</text><text x="1030" y="76">-</text>
+  </g>
+  <g fill="#1684c7">
+    <path d="M1087 64h11v14h-11zm2 3h7v2h-7zm0 4h7v2h-7z"/>
+    <path d="M1105 65h12v3h-4l-7 7-2-2 7-7v-1zM1104 74l3 3-3 3h-3v-3z"/>
+    <path d="M1125 65h11v3h-11zm1 4h9v10h-9zm2-6h5v2h-5z"/>
+  </g>
+</svg>

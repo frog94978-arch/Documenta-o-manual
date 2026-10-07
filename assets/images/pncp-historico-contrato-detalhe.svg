@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="770" viewBox="0 0 1250 770">
+  <rect width="1250" height="770" fill="#dedcdb"/>
+  <rect x="38" y="18" width="1173" height="730" fill="none" stroke="#aaa"/>
+  <text x="48" y="15" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#111">Histórico Contratações</text>
+  <rect x="52" y="32" width="1145" height="510" fill="none" stroke="#bbb"/>
+  <g font-family="Arial,sans-serif" font-size="12" fill="#111">
+    <g font-weight="700">
+      <text x="67" y="63">Sequencial do PNCP:</text><text x="635" y="63">Órgão:</text>
+      <text x="67" y="96">Número do Processo:</text><text x="635" y="96">Poder:</text>
+      <text x="67" y="129">Tipo de Contrato:</text><text x="635" y="129">Esfera:</text>
+      <text x="67" y="162">Categoria do Processo:</text><text x="635" y="162">Unidade Compradora:</text>
+      <text x="67" y="195">Receita ou Despesa:</text><text x="635" y="195">Município:</text>
+      <text x="67" y="228">Objeto:</text><text x="635" y="228">Estado:</text>
+      <text x="635" y="261">Órgão Sub-rogado:</text><text x="635" y="294">Poder:</text>
+      <text x="635" y="327">Esfera:</text><text x="635" y="360">Unidade Compradora Sub-rogado:</text>
+      <text x="635" y="393">Município:</text><text x="635" y="426">Estado:</text>
+    </g>
+    <g fill="#28506c">
+      <text x="286" y="63">23</text><text x="286" y="96">003/2024</text><text x="286" y="129">1 - Contrato (termo inicial)</text><text x="286" y="162">2 - Compras</text><text x="286" y="195">Despesa</text>
+      <text x="822" y="63">24.996.969/0001-22 - MUNICIPIO DE SETE LAGOAS</text><text x="822" y="96">N - Não se aplica</text><text x="822" y="129">M - Municipal</text><text x="822" y="162">Sec Mun de Obras, Infraest e Políticas Urbanas</text><text x="822" y="195">161 - Sete Lagoas</text><text x="822" y="228">MG - Minas Gerais</text>
+    </g>
+  </g>
+  <g fill="#fff" stroke="#d2d2d2">
+    <rect x="281" y="44" width="332" height="31"/><rect x="281" y="77" width="332" height="31"/><rect x="281" y="110" width="332" height="31"/><rect x="281" y="143" width="332" height="31"/><rect x="281" y="176" width="332" height="31"/>
+    <rect x="814" y="44" width="360" height="31"/><rect x="814" y="77" width="360" height="31"/><rect x="814" y="110" width="360" height="31"/><rect x="814" y="143" width="360" height="31"/><rect x="814" y="176" width="360" height="31"/><rect x="814" y="209" width="360" height="31"/>
+    <rect x="281" y="209" width="332" height="239"/><rect x="281" y="449" width="332" height="32"/><rect x="814" y="241" width="360" height="32"/><rect x="814" y="274" width="360" height="32"/><rect x="814" y="307" width="360" height="32"/><rect x="814" y="340" width="360" height="48"/><rect x="814" y="389" width="360" height="32"/><rect x="814" y="422" width="360" height="32"/>
+  </g>
+  <text x="292" y="232" font-family="Arial,sans-serif" font-size="12" fill="#28506c">
+    <tspan x="292" dy="0">O OBJETO DO PRESENTE INSTRUMENTO É A</tspan><tspan x="292" dy="16">CONTRATAÇÃO DE EMPRESA IRMÃOS SILVA SA PARA</tspan><tspan x="292" dy="16">FORNECIMENTO DE COMBUSTÍVEIS (ÓLEO DIESEL S-10)</tspan><tspan x="292" dy="16">PARA ATENDER AS NECESSIDADES DA SECRETARIA</tspan><tspan x="292" dy="16">MUNICIPAL DE OBRAS, INFRAESTRUTURA E SERVIÇOS</tspan><tspan x="292" dy="16">URBANOS, NO ABASTECIMENTO DE VEÍCULOS,</tspan><tspan x="292" dy="16">MÁQUINAS E TRATORES DO MUNICÍPIO, CONVENIADOS</tspan><tspan x="292" dy="16">E CONTRATADOS, NO ÂMBITO DA PREFEITURA</tspan><tspan x="292" dy="16">MUNICIPAL DE SETE LAGOAS, NOS TERMOS DA TABELA</tspan><tspan x="292" dy="16">DESCRITA NO SUBITEM 5.1 DESTE CONTRATO,</tspan><tspan x="292" dy="16">CONFORME CONDIÇÕES E EXIGÊNCIAS ESTABELECIDAS</tspan><tspan x="292" dy="16">NESTE INSTRUMENTO E NO TERMO DE REFERÊNCIA, O</tspan><tspan x="292" dy="16">QUAL É PARTE INTEGRANTE DESTE INSTRUMENTO,</tspan><tspan x="292" dy="16">INDEPENDENTEMENTE DE TRANSCRIÇÃO.</tspan>
+  </text>
+  <text x="67" y="464" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#111">Informações Complementares:</text>
+  <path d="M43 555h1167" stroke="#555"/><text x="48" y="568" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#111">Fornecedor/Dados do Contrato</text>
+  <g font-family="Arial,sans-serif" font-size="12" fill="#111" font-weight="700">
+    <text x="67" y="601">Tipo:</text><text x="67" y="634">Nome/Razão Social:</text><text x="67" y="667">CNPJ/CPF:</text><text x="67" y="700">Tipo SubContratado:</text><text x="67" y="733">Nome/Razão Social SubContratado:</text>
+    <text x="640" y="601">Valor Inicial:</text><text x="640" y="634">Número de Parcelas:</text><text x="640" y="667">Valor da Parcela:</text><text x="640" y="700">Valor Global:</text><text x="640" y="733">Valor Acumulado:</text>
+  </g>
+  <g fill="#fff" stroke="#d2d2d2">
+    <rect x="276" y="581" width="330" height="32"/><rect x="276" y="614" width="330" height="32"/><rect x="276" y="647" width="330" height="32"/><rect x="276" y="680" width="330" height="32"/><rect x="276" y="713" width="330" height="32"/>
+    <rect x="820" y="581" width="355" height="32"/><rect x="820" y="614" width="355" height="32"/><rect x="820" y="647" width="355" height="32"/><rect x="820" y="680" width="355" height="32"/><rect x="820" y="713" width="355" height="32"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="12" fill="#28506c">
+    <text x="286" y="602">Pessoa jurídica</text><text x="286" y="635">IRMAOS SILVA SA</text><text x="286" y="668">21.012.190/0009-94</text>
+    <text x="831" y="602">R$ 65.175,13</text><text x="831" y="635">1</text><text x="831" y="668">R$ 0,00</text><text x="831" y="701">R$ 65.175,13</text><text x="831" y="734"></text>
+  </g>
+</svg>

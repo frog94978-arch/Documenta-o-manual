@@ -30,6 +30,9 @@ interface PatrimonialTabsProps {
 type ConferenciaMaterialPage = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14;
 type ConferenciaMaterialPaginationItem = ConferenciaMaterialPage | "ellipsis";
 
+const normalizeSubmoduleId = (value: string) =>
+  value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
 const PatrimonialTabs = ({
   selectedSubmodule,
   setSelectedSubmodule,
@@ -49,6 +52,105 @@ const PatrimonialTabs = ({
   const [documentosMaterialPage, setDocumentosMaterialPage] = useState<1 | 2>(1);
   const [conferenciaMaterialPage, setConferenciaMaterialPage] = useState<ConferenciaMaterialPage>(1);
   const [dadosVeiculosPage, setDadosVeiculosPage] = useState<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10>(1);
+  const [transferenciaBensPage, setTransferenciaBensPage] = useState<1 | 2>(1);
+  const [bensCadastroPage, setBensCadastroPage] = useState<1 | 2 | 3>(1);
+  const [cadastraisPatrimonioPage, setCadastraisPatrimonioPage] = useState<1 | 2 | 3 | 4>(1);
+  const [fichaBensPage, setFichaBensPage] = useState<1 | 2>(1);
+  const [conferenciaPatrimonioPage, setConferenciaPatrimonioPage] = useState<1 | 2 | 3 | 4 | 5 | 6>(1);
+  const [legaisPatrimonioPage, setLegaisPatrimonioPage] = useState<1 | 2 | 3>(1);
+  const [inventarioPatrimonioPage, setInventarioPatrimonioPage] = useState<1 | 2>(1);
+  const [contratacaoPncpPage, setContratacaoPncpPage] = useState<1 | 2 | 3 | 4 | 5>(1);
+  const [contratoPncpPage, setContratoPncpPage] = useState<1 | 2 | 3>(1);
+
+  useEffect(() => {
+    if (
+      selectedSubmodule !== "Patrimônio" ||
+      selectedCategory !== "cadastro" ||
+      selectedFinalSection !== "Bens"
+    ) {
+      setBensCadastroPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (
+      selectedSubmodule !== "Patrimônio" ||
+      selectedCategory !== "relatorio" ||
+      selectedFinalSection !== "Ficha de bens"
+    ) {
+      setFichaBensPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (
+      selectedSubmodule !== "Patrimônio" ||
+      selectedCategory !== "relatorio" ||
+      selectedFinalSection !== "Cadastrais"
+    ) {
+      setCadastraisPatrimonioPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (
+      selectedSubmodule !== "Patrimônio" ||
+      selectedCategory !== "relatorio" ||
+      selectedFinalSection !== "Conferência"
+    ) {
+      setConferenciaPatrimonioPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (
+      selectedSubmodule !== "Patrimônio" ||
+      selectedCategory !== "relatorio" ||
+      selectedFinalSection !== "Legais"
+    ) {
+      setLegaisPatrimonioPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (
+      selectedSubmodule !== "Patrimônio" ||
+      selectedCategory !== "relatorio" ||
+      selectedFinalSection !== "Inventário"
+    ) {
+      setInventarioPatrimonioPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (
+      selectedSubmodule !== "PNCP" ||
+      selectedCategory !== "procedimentos" ||
+      selectedFinalSection !== "Contratação/Edital/Aviso"
+    ) {
+      setContratacaoPncpPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (
+      selectedSubmodule !== "PNCP" ||
+      selectedCategory !== "procedimentos" ||
+      selectedFinalSection !== "Contrato"
+    ) {
+      setContratoPncpPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (
+      selectedSubmodule !== "Patrimônio" ||
+      selectedCategory !== "procedimentos" ||
+      selectedFinalSection !== "Transferência de bens"
+    ) {
+      setTransferenciaBensPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
 
   useEffect(() => {
     if (selectedFinalSection !== "Registro de Preço") {
@@ -253,9 +355,10 @@ const PatrimonialTabs = ({
   if (selectedSubmodule) {
     if (selectedCategory) {
       if (selectedFinalSection) {
+        const normalizedSubmoduleId = normalizeSubmoduleId(selectedSubmodule);
         const currentSubmoduleId =
-          submodules.find((s) => s.name === selectedSubmodule)?.id ||
-          selectedSubmodule.toLowerCase();
+          submodules.find((s) => s.name === selectedSubmodule || s.id === normalizedSubmoduleId)?.id ||
+          normalizedSubmoduleId;
 
         const submoduleData = getSubmoduleById(currentSubmoduleId);
 
@@ -296,6 +399,10 @@ const PatrimonialTabs = ({
             !(currentSubmoduleId === "veiculos" && selectedCategory === "relatorio" && selectedFinalSection === "Documentos") &&
             !(currentSubmoduleId === "veiculos" && selectedCategory === "relatorio" && selectedFinalSection === "Cadastrais") &&
             !(currentSubmoduleId === "contratos" && selectedFinalSection === "Acordo" && selectedCategory === "procedimentos") &&
+            !(currentSubmoduleId === "patrimonio" && selectedCategory === "procedimentos" && ["Transferência de bens", "Termo de Guarda", "Devolução do Termo de Guarda", "Confirmação de Transferência", "Alterar Placa", "Alterar Situação", "Parâmetros", "Processamento da Depreciação", "Baixa de Bens", "Inventário"].includes(selectedFinalSection)) &&
+            !(currentSubmoduleId === "patrimonio" && selectedCategory === "relatorio" && ["Remite ficha de transferência", "Baixa de bens", "Apólices", "Termo de responsabilidade", "Emissão Termo de Guarda", "Reimpressão do Termo de Guarda", "Reimpressão da Devolução Termo de Guarda", "Bens por Classificação", "Geral de bens", "Financeiro Patrimonial", "Cadastrais", "Ficha de bens", "Conferência", "Legais", "Inventário"].includes(selectedFinalSection)) &&
+            !(currentSubmoduleId === "protocolo" && selectedCategory === "procedimentos" && selectedFinalSection in comprasCadastroContent) &&
+            !(currentSubmoduleId === "protocolo" && selectedCategory === "relatorio") &&
             !isProcedimentoContratosSemNavEspecial);
 
         if (isSpecialRoot && submoduleData) {
@@ -437,6 +544,43 @@ const PatrimonialTabs = ({
           currentSubmoduleId === "material" &&
           selectedCategory === "consulta";
 
+        const isConsultaSolicitacoesCompras =
+          currentSubmoduleId === "compras" &&
+          selectedCategory === "consulta" &&
+          selectedFinalSection === "Solicitações";
+
+        const isConsultaPatrimonio =
+          currentSubmoduleId === "patrimonio" &&
+          selectedCategory === "consulta";
+
+        const isCadastroPatrimonio =
+          currentSubmoduleId === "patrimonio" &&
+          selectedCategory === "cadastro";
+
+        const patrimonioCadastroContentBySection: Record<string, string | undefined> = {
+          "Tipos de baixa": comprasCadastroContent["Tipos de baixa - Cadastro Patrimônio"],
+          "Tipo de Aquisição": comprasCadastroContent["Tipo de Aquisição - Cadastro Patrimônio"],
+          "Tipo de Depreciação": comprasCadastroContent["Tipo de Depreciação - Cadastro Patrimônio"],
+          "Modelo": comprasCadastroContent["Modelo - Cadastro Patrimônio"],
+          "Marca": comprasCadastroContent["Marca - Cadastro Patrimônio"],
+          "Medidas": comprasCadastroContent["Medidas - Cadastro Patrimônio"],
+          "Convênios": comprasCadastroContent["Convênios - Cadastro Patrimônio"],
+          "Comissões": comprasCadastroContent["Comissões - Cadastro Patrimônio"],
+          "Seguradoras": comprasCadastroContent["Seguradoras - Cadastro Patrimônio"],
+          "Apólices": comprasCadastroContent["Apólices - Cadastro Patrimônio"],
+          "Situação dos Bens": comprasCadastroContent["Situação dos Bens - Cadastro Patrimônio"],
+          "Classificação dos Bens": comprasCadastroContent["Classificação dos Bens - Cadastro Patrimônio"],
+          "Bens": comprasCadastroContent["Bens - Cadastro Patrimônio"],
+          "Tipo de Guarda": comprasCadastroContent["Tipo de Guarda - Cadastro Patrimônio"],
+          "Cadastro de Divisões": comprasCadastroContent["Cadastro de Divisões - Cadastro Patrimônio"],
+        };
+
+        const patrimonioConsultaContentBySection: Record<string, string | undefined> = {
+          "Bens": comprasCadastroContent["Bens - Consulta Patrimônio"],
+          "Historico dos Bens": comprasCadastroContent["Historico dos Bens - Consulta Patrimônio"],
+          "Consulta Empenho": comprasCadastroContent["Consulta Empenho - Consulta Patrimônio"],
+        };
+
         const isConsultaGeralFinanceiraProtocolo =
           currentSubmoduleId === "protocolo" &&
           selectedCategory === "consulta" &&
@@ -460,6 +604,29 @@ const PatrimonialTabs = ({
         const isCadastroProtocolo =
           currentSubmoduleId === "protocolo" && selectedCategory === "cadastro";
 
+        const isRelatorioProtocolo =
+          currentSubmoduleId === "protocolo" && selectedCategory === "relatorio";
+
+        const protocoloRelatorioContentBySection: Record<string, string | undefined> = {
+          "CGMs corretos": comprasRelatorioContent["CGMs corretos - Relatório Protocolo"],
+          "Relatório de Processos/CGM": comprasRelatorioContent["Relatório de Processos/CGM - Relatório Protocolo"],
+          "Variáveis": comprasRelatorioContent["Variáveis - Relatório Protocolo"],
+          "Documentos": comprasRelatorioContent["Documentos - Relatório Protocolo"],
+          "Tipos de Processo": comprasRelatorioContent["Tipos de Processo - Relatório Protocolo"],
+          "Documentos / Tipo de Processo": comprasRelatorioContent["Documentos / Tipo de Processo - Relatório Protocolo"],
+          "Duplos no CGM": comprasRelatorioContent["Duplos no CGM - Relatório Protocolo"],
+          "Reimpressão da Capa do Processo": comprasRelatorioContent["Reimpressão da Capa do Processo - Relatório Protocolo"],
+          "Reimpressão do Termo de Transferência": comprasRelatorioContent["Reimpressão do Termo de Transferência - Relatório Protocolo"],
+          "Processos": comprasRelatorioContent["Processos - Relatório Protocolo"],
+          "Consistência de CPF/CNPJ": comprasRelatorioContent["Consistência de CPF/CNPJ - Relatório Protocolo"],
+          "Etiquetas": comprasRelatorioContent["Etiquetas - Relatório Protocolo"],
+          "Processos por departamento": comprasRelatorioContent["Processos por departamento - Relatório Protocolo"],
+          "CGMs Incluídos/Alterados": comprasRelatorioContent["CGMs Incluídos/Alterados - Relatório Protocolo"],
+          "Tipo dos Processo com Receitas": comprasRelatorioContent["Tipo dos Processo com Receitas - Relatório Protocolo"],
+          "Relatório de Andamento Padrão": comprasRelatorioContent["Relatório de Andamento Padrão - Relatório Protocolo"],
+          "Relatório Processos/Departamentos": comprasRelatorioContent["Relatório Processos/Departamentos - Relatório Protocolo"],
+        };
+
         const protocoloCadastroContentBySection: Record<string, string | undefined> = {
           "Cadastro de Estados": comprasCadastroContent["Cadastro de Estados - Cadastro Protocolo"],
           "Geral do Município - CGM": comprasCadastroContent["Geral do Município - CGM - Cadastro Protocolo"],
@@ -480,9 +647,78 @@ const PatrimonialTabs = ({
           currentSubmoduleId === "material" &&
           selectedCategory === "procedimentos";
 
+        const isProcedimentosPatrimonio =
+          currentSubmoduleId === "patrimonio" &&
+          selectedCategory === "procedimentos";
+
+        const patrimonioProcedimentosContentBySection: Record<string, string | undefined> = {
+          "Transferência de bens": comprasCadastroContent["Transferência de bens - Procedimentos Patrimônio"],
+          "Termo de Guarda": comprasCadastroContent["Termo de Guarda - Procedimentos Patrimônio"],
+          "Devolução do Termo de Guarda": comprasCadastroContent["Devolução do Termo de Guarda - Procedimentos Patrimônio"],
+          "Confirmação de Transferência": comprasCadastroContent["Confirmação de Transferência - Procedimentos Patrimônio"],
+          "Alterar Placa": comprasCadastroContent["Alterar Placa - Procedimentos Patrimônio"],
+          "Alterar Situação": comprasCadastroContent["Alterar Situação - Procedimentos Patrimônio"],
+          "Parâmetros": comprasCadastroContent["Parâmetros - Procedimentos Patrimônio"],
+          "Processamento da Depreciação": comprasCadastroContent["Processamento da Depreciação - Procedimentos Patrimônio"],
+          "Baixa de Bens": comprasCadastroContent["Baixa de Bens - Procedimentos Patrimônio"],
+          "Inventário": comprasCadastroContent["Inventário - Procedimentos Patrimônio"],
+        };
+
         const isRelatorioMaterial =
           currentSubmoduleId === "material" &&
           selectedCategory === "relatorio";
+
+        const isRelatorioPatrimonio =
+          currentSubmoduleId === "patrimonio" &&
+          selectedCategory === "relatorio";
+
+        const patrimonioRelatorioContentBySection: Record<string, string | undefined> = {
+          "Ficha de bens": comprasRelatorioContent["Ficha de bens - Relatório Patrimônio"],
+          "Remite ficha de transferência": comprasRelatorioContent["Remite ficha de transferência - Relatório Patrimônio"],
+          "Baixa de bens": comprasRelatorioContent["Baixa de bens - Relatório Patrimônio"],
+          "Apólices": comprasRelatorioContent["Apólices - Relatório Patrimônio"],
+          "Termo de responsabilidade": comprasRelatorioContent["Termo de responsabilidade - Relatório Patrimônio"],
+          "Emissão Termo de Guarda": comprasRelatorioContent["Emissão Termo de Guarda - Relatório Patrimônio"],
+          "Reimpressão do Termo de Guarda": comprasRelatorioContent["Reimpressão do Termo de Guarda - Relatório Patrimônio"],
+          "Reimpressão da Devolução Termo de Guarda": comprasRelatorioContent["Reimpressão da Devolução Termo de Guarda - Relatório Patrimônio"],
+          "Bens por Classificação": comprasRelatorioContent["Bens por Classificação - Relatório Patrimônio"],
+          "Geral de bens": comprasRelatorioContent["Geral de bens - Relatório Patrimônio"],
+          "Financeiro Patrimonial": comprasRelatorioContent["Financeiro Patrimonial - Relatório Patrimônio"],
+          "Cadastrais": comprasRelatorioContent["Cadastrais - Relatório Patrimônio"],
+          "Legais": comprasRelatorioContent["Legais - Relatório Patrimônio - Página 1"],
+        };
+
+        const patrimonioCadastraisPages: Record<1 | 2 | 3 | 4, string | undefined> = {
+          1: comprasRelatorioContent["Cadastrais - Relatório Patrimônio"],
+          2: comprasRelatorioContent["Cadastrais - Página 2 - Relatório Patrimônio"],
+          3: comprasRelatorioContent["Cadastrais - Página 3 - Relatório Patrimônio"],
+          4: comprasRelatorioContent["Cadastrais - Página 4 - Relatório Patrimônio"],
+        };
+        const patrimonioConferenciaPages: Record<1 | 2 | 3 | 4 | 5 | 6, string | undefined> = {
+          1: comprasRelatorioContent["Conferência - Relatório Patrimônio - Página 1"],
+          2: comprasRelatorioContent["Conferência - Relatório Patrimônio - Página 2"],
+          3: comprasRelatorioContent["Conferência - Relatório Patrimônio - Página 3"],
+          4: comprasRelatorioContent["Conferência - Relatório Patrimônio - Página 4"],
+          5: comprasRelatorioContent["Conferência - Relatório Patrimônio - Página 5"],
+          6: comprasRelatorioContent["Conferência - Relatório Patrimônio - Página 6"],
+        };
+
+        const patrimonioLegaisPages: Record<1 | 2 | 3, string | undefined> = {
+          1: comprasRelatorioContent["Legais - Relatório Patrimônio - Página 1"],
+          2: comprasRelatorioContent["Legais - Relatório Patrimônio - Página 2"],
+          3: comprasRelatorioContent["Legais - Relatório Patrimônio - Página 3"],
+        };
+
+        const patrimonioInventarioPages: Record<1 | 2, string | undefined> = {
+          1: comprasRelatorioContent["Inventário - Relatório Patrimônio - Página 1"],
+          2: comprasRelatorioContent["Inventário - Relatório Patrimônio - Página 2"],
+        };
+
+        const fichaBensPages: Record<1 | 2, string | undefined> = {
+          1: comprasRelatorioContent["Ficha de bens - Relatório Patrimônio"],
+          2: comprasRelatorioContent["Ficha de bens - Página 2 - Relatório Patrimônio"],
+          "Conferência": patrimonioConferenciaPages[conferenciaPatrimonioPage],
+        };
 
         const isCadastraisRelatorioMaterial =
           currentSubmoduleId === "material" &&
@@ -512,10 +748,51 @@ const PatrimonialTabs = ({
           currentSubmoduleId === "pncp" &&
           selectedCategory === "procedimentos";
 
+        const isContratacaoEditalAvisoPncp =
+          isProcedimentosPncp &&
+          selectedFinalSection === "Contratação/Edital/Aviso";
+
+        const contratacaoEditalAvisoPncpPages: Record<1 | 2 | 3 | 4 | 5, string | undefined> = {
+          1: comprasCadastroContent["Contratação/Edital/Aviso - Procedimentos PNCP - Página 1"],
+          2: comprasCadastroContent["Contratação/Edital/Aviso - Procedimentos PNCP - Página 2"],
+          3: comprasCadastroContent["Contratação/Edital/Aviso - Procedimentos PNCP - Página 3"],
+          4: comprasCadastroContent["Contratação/Edital/Aviso - Procedimentos PNCP - Página 4"],
+          5: comprasCadastroContent["Contratação/Edital/Aviso - Procedimentos PNCP - Página 5"],
+        };
+
+        const isContratoPncp =
+          isProcedimentosPncp && selectedFinalSection === "Contrato";
+
+        const contratoPncpPages: Record<1 | 2 | 3, string | undefined> = {
+          1: comprasCadastroContent["Contrato - Procedimentos PNCP - Página 1"],
+          2: comprasCadastroContent["Contrato - Procedimentos PNCP - Página 2"],
+          3: comprasCadastroContent["Contrato - Procedimentos PNCP - Página 3"],
+        };
+
+        const pncpProcedimentosContentBySection: Record<string, string | undefined> = {
+          "Ata de Registro de Preço": comprasCadastroContent["Ata de Registro de Preço - Procedimentos PNCP"],
+          "Termo de Contrato": comprasCadastroContent["Termo de Contrato - Procedimentos PNCP"],
+          "Plano de Contratações": comprasCadastroContent["Plano de Contratações - Procedimentos PNCP"],
+        };
+
         const isCadastroUnidadeCompradoraPncp =
           currentSubmoduleId === "pncp" &&
           selectedCategory === "cadastro" &&
           selectedFinalSection === "Unidade Compradora";
+
+        const isCadastroOrgaoPncp =
+          currentSubmoduleId === "pncp" &&
+          selectedCategory === "cadastro" &&
+          selectedFinalSection === "Orgão";
+
+        const isConsultaPncp =
+          currentSubmoduleId === "pncp" &&
+          selectedCategory === "consulta";
+
+        const pncpConsultaContentBySection: Record<string, string | undefined> = {
+          "Unidade Compradora": comprasCadastroContent["Unidade Compradora - Consulta PNCP"],
+          "Contratos de Contratação": comprasCadastroContent["Contratos de Contratação - Consulta PNCP"],
+        };
 
         const registroPrecoPages: Record<1 | 2 | 3 | 4, string | undefined> = {
           1: comprasCadastroContent["Registro de Preço"],
@@ -662,7 +939,9 @@ const PatrimonialTabs = ({
         };
 
         const content =
-          isRegistroPrecoProcedimento
+          isConsultaSolicitacoesCompras
+            ? comprasCadastroContent["Solicitações - Consulta Compras"]
+            : isRegistroPrecoProcedimento
             ? registroPrecoPages[registroPrecoPage]
             : isMovimentacoesRelatorioContratos
               ? movimentacoesPage === 1
@@ -684,6 +963,18 @@ const PatrimonialTabs = ({
               ? licitacoesProcedimentosContentBySection[selectedFinalSection]
             : isCadastroMaterial
               ? materialCadastroContentBySection[selectedFinalSection]
+            : isCadastroPatrimonio
+              ? selectedFinalSection === "Bens" && bensCadastroPage === 2
+                ? comprasCadastroContent["Bens - Cadastro Patrimônio - Página 2"]
+                : selectedFinalSection === "Bens" && bensCadastroPage === 3
+                  ? comprasCadastroContent["Bens - Cadastro Patrimônio - Página 3"]
+                : patrimonioCadastroContentBySection[selectedFinalSection]
+            : isConsultaPatrimonio
+              ? patrimonioConsultaContentBySection[selectedFinalSection]
+            : isProcedimentosPatrimonio
+              ? selectedFinalSection === "Transferência de bens" && transferenciaBensPage === 2
+                ? comprasCadastroContent["Transferência de bens - Página 2 - Procedimentos Patrimônio"]
+                : patrimonioProcedimentosContentBySection[selectedFinalSection]
             : isConsultaMaterial
               ? materialConsultaContentBySection[selectedFinalSection]
             : isProcedimentosMaterial
@@ -694,16 +985,36 @@ const PatrimonialTabs = ({
               ? documentosMaterialPages[documentosMaterialPage] || documentosMaterialPages[1]
             : isConferenciaRelatorioMaterial
               ? conferenciaMaterialPages[conferenciaMaterialPage] || conferenciaMaterialPages[1]
+            : isRelatorioPatrimonio
+              ? selectedFinalSection === "Cadastrais"
+                ? patrimonioCadastraisPages[cadastraisPatrimonioPage]
+                : selectedFinalSection === "Ficha de bens"
+                  ? fichaBensPages[fichaBensPage]
+                  : selectedFinalSection === "Conferência"
+                    ? patrimonioConferenciaPages[conferenciaPatrimonioPage]
+                    : selectedFinalSection === "Legais"
+                      ? patrimonioLegaisPages[legaisPatrimonioPage]
+                        : selectedFinalSection === "Inventário"
+                          ? patrimonioInventarioPages[inventarioPatrimonioPage]
+                  : patrimonioRelatorioContentBySection[selectedFinalSection]
             : isRelatorioMaterial
               ? materialRelatorioContentBySection[selectedFinalSection]
             : isDocumentosRelatorioOuvidoria
               ? undefined
             : isProcedimentosOuvidoria
               ? undefined
+            : isContratacaoEditalAvisoPncp
+              ? contratacaoEditalAvisoPncpPages[contratacaoPncpPage]
+            : isContratoPncp
+              ? contratoPncpPages[contratoPncpPage]
             : isProcedimentosPncp
-              ? undefined
+              ? pncpProcedimentosContentBySection[selectedFinalSection]
+            : isConsultaPncp
+              ? pncpConsultaContentBySection[selectedFinalSection]
             : isCadastroUnidadeCompradoraPncp
               ? comprasCadastroContent["Unidade Compradora - Cadastro PNCP"]
+            : isCadastroOrgaoPncp
+              ? comprasCadastroContent["Orgão - Cadastro PNCP"]
             : selectedFinalSection === "Dados dos Veiculos"
               ? {
                   1: comprasCadastroContent["Dados dos Veiculos"],
@@ -725,6 +1036,8 @@ const PatrimonialTabs = ({
               ? comprasCadastroContent["CGM - Consulta Protocolo"]
             : isConsultaCgmDuploProcessadoProtocolo
               ? comprasCadastroContent["CGM Duplo Processado - Consulta Protocolo"]
+            : isRelatorioProtocolo
+              ? protocoloRelatorioContentBySection[selectedFinalSection]
             : isCadastroProtocolo
               ? protocoloCadastroContentBySection[selectedFinalSection]
             : selectedCategory === "cadastro" ||
@@ -766,6 +1079,156 @@ const PatrimonialTabs = ({
                   <article className="prose prose-slate prose-lg max-w-none">
                     <MarkdownContent content={content} />
                   </article>
+
+                  {isContratacaoEditalAvisoPncp ? (
+                    <div className="mt-8 flex flex-wrap items-center justify-end gap-2">
+                      {[1, 2, 3, 4, 5].map((page) => (
+                        <Button
+                          key={page}
+                          size="sm"
+                          variant={contratacaoPncpPage === page ? "default" : "outline"}
+                          onClick={() => setContratacaoPncpPage(page as 1 | 2 | 3 | 4 | 5)}
+                        >
+                          Página {page}
+                        </Button>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {isContratoPncp ? (
+                    <div className="mt-8 flex flex-wrap items-center justify-end gap-2">
+                      {[1, 2, 3].map((page) => (
+                        <Button
+                          key={page}
+                          size="sm"
+                          variant={contratoPncpPage === page ? "default" : "outline"}
+                          onClick={() => setContratoPncpPage(page as 1 | 2 | 3)}
+                        >
+                          Página {page}
+                        </Button>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {isRelatorioPatrimonio && selectedFinalSection === "Cadastrais" ? (
+                    <div className="mt-8 flex items-center justify-end gap-2">
+                      {[1, 2, 3, 4].map((page) => (
+                        <Button
+                          key={page}
+                          size="sm"
+                          variant={cadastraisPatrimonioPage === page ? "default" : "outline"}
+                          onClick={() => setCadastraisPatrimonioPage(page as 1 | 2 | 3 | 4)}
+                        >
+                          Página {page}
+                        </Button>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {isRelatorioPatrimonio && selectedFinalSection === "Ficha de bens" ? (
+                    <div className="mt-8 flex items-center justify-end gap-2">
+                      {[1, 2].map((page) => (
+                        <Button
+                          key={page}
+                          size="sm"
+                          variant={fichaBensPage === page ? "default" : "outline"}
+                          onClick={() => setFichaBensPage(page as 1 | 2)}
+                        >
+                          Página {page}
+                        </Button>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {isRelatorioPatrimonio && selectedFinalSection === "Conferência" ? (
+                    <div className="mt-8 flex flex-wrap items-center justify-end gap-2">
+                      {[1, 2, 3, 4, 5, 6].map((page) => (
+                        <Button
+                          key={page}
+                          size="sm"
+                          variant={conferenciaPatrimonioPage === page ? "default" : "outline"}
+                          onClick={() => setConferenciaPatrimonioPage(page as 1 | 2 | 3 | 4 | 5 | 6)}
+                        >
+                          Página {page}
+                        </Button>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {isRelatorioPatrimonio && selectedFinalSection === "Legais" ? (
+                    <div className="mt-8 flex flex-wrap items-center justify-end gap-2">
+                      {[1, 2, 3].map((page) => (
+                        <Button
+                          key={page}
+                          size="sm"
+                          variant={legaisPatrimonioPage === page ? "default" : "outline"}
+                          onClick={() => setLegaisPatrimonioPage(page as 1 | 2 | 3)}
+                        >
+                          Página {page}
+                        </Button>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {isRelatorioPatrimonio && selectedFinalSection === "Inventário" ? (
+                    <div className="mt-8 flex items-center justify-end gap-2">
+                      {[1, 2].map((page) => (
+                        <Button
+                          key={page}
+                          size="sm"
+                          variant={inventarioPatrimonioPage === page ? "default" : "outline"}
+                          onClick={() => setInventarioPatrimonioPage(page as 1 | 2)}
+                        >
+                          Página {page}
+                        </Button>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {isCadastroPatrimonio && selectedFinalSection === "Bens" ? (
+                    <div className="mt-8 flex items-center justify-end gap-2">
+                      <Button
+                        size="sm"
+                        variant={bensCadastroPage === 1 ? "default" : "outline"}
+                        onClick={() => setBensCadastroPage(1)}
+                      >
+                        Página 1
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant={bensCadastroPage === 2 ? "default" : "outline"}
+                        onClick={() => setBensCadastroPage(2)}
+                      >
+                        Página 2
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant={bensCadastroPage === 3 ? "default" : "outline"}
+                        onClick={() => setBensCadastroPage(3)}
+                      >
+                        Página 3
+                      </Button>
+                    </div>
+                  ) : null}
+
+                  {isProcedimentosPatrimonio && selectedFinalSection === "Transferência de bens" ? (
+                    <div className="mt-8 flex items-center justify-end gap-2">
+                      <Button
+                        size="sm"
+                        variant={transferenciaBensPage === 1 ? "default" : "outline"}
+                        onClick={() => setTransferenciaBensPage(1)}
+                      >
+                        Página 1
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant={transferenciaBensPage === 2 ? "default" : "outline"}
+                        onClick={() => setTransferenciaBensPage(2)}
+                      >
+                        Página 2
+                      </Button>
+                    </div>
+                  ) : null}
 
                   {isRegistroPrecoProcedimento ? (
                     <div className="mt-8 flex items-center justify-end gap-2">
@@ -1221,9 +1684,10 @@ const PatrimonialTabs = ({
       }
       // If a category is selected, but no final section, display the options for final sections
       // find the id for the currently selected submodule (component stores the displayed name)
+      const normalizedSubmoduleId = normalizeSubmoduleId(selectedSubmodule);
       const currentSubmoduleId =
-        submodules.find((s) => s.name === selectedSubmodule)?.id ||
-        selectedSubmodule.toLowerCase();
+        submodules.find((s) => s.name === selectedSubmodule || s.id === normalizedSubmoduleId)?.id ||
+        normalizedSubmoduleId;
 
       return (
         <div>

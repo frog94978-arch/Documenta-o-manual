@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="130" viewBox="0 0 1366 130">
+  <rect width="1366" height="130" fill="#dedcdb"/>
+  <text x="7" y="20" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">Atas</text>
+  <rect x="7" y="19" width="1336" height="111" fill="#dedcdb" stroke="#bbb"/>
+  <rect x="8" y="30" width="1326" height="24" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="109" y="46">Número da Ata RP</text>
+    <text x="260" y="46">Ano Ata</text>
+    <text x="397" y="46">Data Assinatura</text>
+    <text x="595" y="46">Data Vigência Início</text>
+    <text x="804" y="46">Data Vigência Fim</text>
+    <text x="966" y="46">Cancelado</text>
+    <text x="1134" y="46">Data Cancelamento</text>
+    <text x="1287" y="46">Ações</text>
+  </g>
+  <g stroke="#d5d5d5" fill="none">
+    <path d="M212 30v86M308 30v86M486 30v86M704 30v86M903 30v86M1027 30v86M1240 30v86"/>
+    <path d="M8 85h1326M8 116h1326"/>
+  </g>
+  <g fill="#fff" stroke="#d5d5d5">
+    <rect x="8" y="54" width="1326" height="31"/><rect x="8" y="85" width="1326" height="31"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="10" fill="#111" text-anchor="middle">
+    <text x="109" y="73">543</text><text x="260" y="73">2022</text><text x="397" y="73">28/12/2022</text><text x="595" y="73">28/12/2022</text><text x="804" y="73">31/03/2023</text><text x="966" y="73">Não</text><text x="1134" y="73">-</text>
+    <text x="109" y="104">892</text><text x="260" y="104">2022</text><text x="397" y="104">23/12/2022</text><text x="595" y="104">23/12/2022</text><text x="804" y="104">23/01/2023</text><text x="966" y="104">Sim</text><text x="1134" y="104">01/03/2023</text>
+  </g>
+  <g fill="#1684c7" stroke="#1684c7" stroke-width="1.5">
+    <path d="M1275 67h9v2h-9zm-1 3 6 6 6-6" fill="none"/><path d="M1303 65h9v2h-9zm1 3h7v8h-7zm2-2v-2h3v2"/>
+    <path d="M1275 98h9v2h-9zm-1 3 6 6 6-6" fill="none"/><path d="M1303 96h9v2h-9zm1 3h7v8h-7zm2-2v-2h3v2"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="82" viewBox="0 0 1366 82">
+  <rect width="1366" height="82" fill="#dedcdb"/>
+  <text x="10" y="13" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">Itens do Plano</text>
+  <rect x="10" y="18" width="1344" height="61" fill="#dedcdb" stroke="#bbb"/>
+  <rect x="19" y="19" width="1325" height="22" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="84" y="34">Número do Item</text><text x="232" y="34">Categoria Item</text><text x="361" y="34">Material/Serviço</text><text x="447" y="34">Catálogo</text><text x="553" y="34">Grupo Material/Serviço</text><text x="702" y="34">Unidade Fornecimento</text><text x="815" y="34">Quantidade</text><text x="901" y="34">Valor Unitário</text><text x="996" y="34">Valor Total</text><text x="1101" y="34">Valor Orçamento</text><text x="1227" y="34">Unidade Requisitante</text><text x="1320" y="34">Ações</text>
+  </g>
+  <g stroke="#ddd" fill="none"><path d="M152 19v59M308 19v59M414 19v59M478 19v59M628 19v59M776 19v59M855 19v59M948 19v59M1045 19v59M1157 19v59M1296 19v59"/></g>
+  <rect x="19" y="41" width="1325" height="36" fill="#fff" stroke="#ddd"/>
+  <g font-family="Arial,sans-serif" font-size="10" fill="#111" text-anchor="middle"><text x="84" y="63">1</text><text x="232" y="63">Serviços de Engenharia</text><text x="361" y="63">Serviço</text><text x="447" y="63">Outros</text><text x="553" y="63">SERVIÇOS</text><text x="702" y="63">UNIDADE</text><text x="815" y="63">1</text><text x="901" y="63">200.000</text><text x="996" y="63">200.000,0000</text><text x="1101" y="63">200.000,0000</text><text x="1227" y="63">COMPRAS</text></g>
+  <path d="M1316 54h9v3h-9zm1 4h7v9h-7zm1-6h5v2h-5z" fill="#1684c7"/>
+</svg>

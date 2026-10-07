@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="170" viewBox="0 0 1366 170">
+  <rect width="1366" height="170" fill="#dedcdb"/>
+  <text x="14" y="25" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#111">Contratos</text>
+  <rect x="21" y="37" width="1326" height="133" fill="#dedcdb" stroke="#bbb"/>
+  <rect x="23" y="39" width="1311" height="24" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="73" y="55">Acordo</text>
+    <text x="176" y="55">Número</text>
+    <text x="274" y="55">Ano</text>
+    <text x="405" y="55">Código PNCP</text>
+    <text x="790" y="55">Unidade Compradora</text>
+    <text x="1189" y="55">Data Publicação</text>
+    <text x="1315" y="55">Ações</text>
+  </g>
+  <g stroke="#d2d2d2" fill="none">
+    <path d="M123 39v131M229 39v131M318 39v131M491 39v131M1089 39v131M1291 39v131"/>
+    <path d="M23 98h1311M23 133h1311"/>
+  </g>
+  <g fill="#fff" stroke="#d2d2d2">
+    <rect x="23" y="63" width="1311" height="35"/><rect x="23" y="98" width="1311" height="35"/><rect x="23" y="133" width="1311" height="35"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="12" fill="#111" text-anchor="middle">
+    <text x="73" y="85">3352</text><text x="176" y="85">69</text><text x="274" y="85">2023</text><text x="405" y="85">1</text><text x="790" y="85">Núcleo de Licitações e Compras</text><text x="1189" y="85">16/07/2023</text>
+    <text x="73" y="120">3343</text><text x="176" y="120">76</text><text x="274" y="120">2023</text><text x="405" y="120">2</text><text x="790" y="120">Núcleo de Licitações e Compras</text><text x="1189" y="120">20/07/2023</text>
+    <text x="73" y="155">3369</text><text x="176" y="155">82</text><text x="274" y="155">2023</text><text x="405" y="155">3</text><text x="790" y="155">Núcleo de Licitações e Compras</text><text x="1189" y="155">31/07/2023</text>
+  </g>
+  <g fill="#1684c7">
+    <path d="M1311 76h10v3h-10zm1 4h8v11h-8zm1-6h6v2h-6z"/>
+    <path d="M1311 111h10v3h-10zm1 4h8v11h-8zm1-6h6v2h-6z"/>
+    <path d="M1311 146h10v3h-10zm1 4h8v11h-8zm1-6h6v2h-6z"/>
+  </g>
+</svg>

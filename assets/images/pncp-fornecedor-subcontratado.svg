@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="588" height="56" viewBox="0 0 588 56">
+  <rect width="588" height="56" fill="#e4e1e0"/>
+  <g font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#111">
+    <text x="16" y="18">Fornecedor Subcontratado:</text>
+    <text x="16" y="44" fill="#00e" text-decoration="underline">Subcontratado:</text>
+  </g>
+  <rect x="195" y="4" width="385" height="18" rx="2" fill="#fff" stroke="#888"/>
+  <text x="201" y="17" font-family="Arial,sans-serif" font-size="12" fill="#111">Sim</text>
+  <path d="m568 11 5 5 5-5" fill="none" stroke="#222" stroke-width="1.5"/>
+  <rect x="195" y="29" width="82" height="17" rx="1" fill="#fff" stroke="#888"/>
+  <rect x="282" y="29" width="298" height="17" rx="1" fill="#deb986" stroke="#b99865"/>
+</svg>

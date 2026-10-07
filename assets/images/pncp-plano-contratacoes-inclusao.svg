@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="516" viewBox="0 0 1366 516">
+  <rect width="1366" height="516" fill="#dedcdb"/>
+  <rect x="1" y="1" width="1364" height="23" fill="#4b7b9a"/>
+  <text x="24" y="17" font-family="Arial,sans-serif" font-size="14" fill="#fff">Procedimentos &gt; Plano de Contratações</text>
+  <g fill="#236987" stroke="#164e6a" stroke-width="2"><circle cx="1249" cy="12" r="8"/><path d="M1272 6l7 12h-14z"/><path d="M1293 6h13v12h-13z"/><path d="M1320 6h12v12h-12z"/><path d="M1346 6l12 12m0-12-12 12" stroke="#fff"/></g>
+  <rect x="412" y="51" width="540" height="366" fill="#dedcdb" stroke="#bbb"/>
+  <text x="420" y="56" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">Plano de Contratações</text>
+  <g font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">
+    <text x="429" y="81">Órgão:</text><text x="429" y="103">Unidade Compradora:</text><text x="429" y="124">Ano PCA:</text>
+    <text x="429" y="164">Unidade E-Cidade:</text><text x="429" y="186" fill="#00e" text-decoration="underline">Unidade Requisitante:</text><text x="429" y="208">Catálogo de materiais/serviços:</text>
+    <text x="429" y="230" fill="#00e" text-decoration="underline">Código do Material/Serviço:</text><text x="429" y="250">Categoria do Item do PCA:</text><text x="429" y="272">Unidade E-Cidade:</text>
+    <text x="429" y="294">Unidade de Fornecimento:</text><text x="429" y="316">Quantidade:</text><text x="429" y="337">Valor Unitário:</text><text x="429" y="357">Valor Total:</text><text x="429" y="378">Valor Orçamento Exercício:</text><text x="429" y="399">Data Desejada:</text>
+  </g>
+  <g fill="#deb986" stroke="#b99865"><rect x="589" y="71" width="344" height="16"/><rect x="589" y="214" width="75" height="16"/><rect x="668" y="214" width="265" height="16"/></g>
+  <g fill="#fff" stroke="#888">
+    <rect x="589" y="92" width="344" height="17" rx="4"/><rect x="589" y="113" width="344" height="16"/>
+    <rect x="589" y="150" width="344" height="17" rx="4"/><rect x="589" y="172" width="73" height="16"/><rect x="667" y="172" width="266" height="16" fill="#deb986" stroke="#b99865"/>
+    <rect x="589" y="193" width="344" height="17" rx="4"/><rect x="589" y="235" width="344" height="17" rx="4"/>
+    <rect x="589" y="257" width="344" height="17" rx="4"/><rect x="589" y="278" width="344" height="17" rx="4"/><rect x="589" y="300" width="344" height="16"/>
+    <rect x="589" y="321" width="344" height="16"/><rect x="589" y="342" width="344" height="16" fill="#f2f2f2"/><rect x="589" y="363" width="344" height="16"/><rect x="589" y="385" width="83" height="16"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="11" fill="#111">
+    <text x="593" y="83">MUNICIPIO E-CIDADE</text><text x="593" y="104">Departamento de Compras da Saúde</text><path d="m925 98 4 4 4-4" fill="none" stroke="#333"/><text x="593" y="125"></text>
+    <text x="593" y="163">Sim</text><path d="m925 156 4 4 4-4" fill="none" stroke="#333"/><text x="593" y="184">10</text><text x="672" y="184">COMPRAS</text>
+    <text x="593" y="207">Outros</text><path d="m925 199 4 4 4-4" fill="none" stroke="#333"/><text x="593" y="249">Selecione</text><path d="m925 242 4 4 4-4" fill="none" stroke="#333"/>
+    <text x="593" y="271">Sim</text><path d="m925 264 4 4 4-4" fill="none" stroke="#333"/><text x="593" y="292">UNIDADE</text><path d="m925 285 4 4 4-4" fill="none" stroke="#333"/>
+    <text x="593" y="397" fill="#777">__/__/____</text><rect x="675" y="385" width="13" height="16" fill="#fafafa" stroke="#888"/><text x="679" y="397">D</text>
+  </g>
+  <rect x="614" y="422" width="73" height="22" rx="5" fill="#fafafa" stroke="#999"/><text x="622" y="437" font-family="Arial,sans-serif" font-size="11" fill="#111">⊕ Adicionar</text>
+  <rect x="692" y="422" width="58" height="22" rx="5" fill="#fafafa" stroke="#999"/><text x="700" y="437" font-family="Arial,sans-serif" font-size="11" fill="#111">▣ Salvar</text>
+  <text x="10" y="463" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">Itens do Plano</text>
+  <rect x="10" y="465" width="1344" height="50" fill="#dedcdb" stroke="#bbb"/>
+  <rect x="19" y="466" width="1325" height="20" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="91" y="480">Número do Item</text><text x="216" y="480">Categoria Item</text><text x="325" y="480">Material/Serviço</text><text x="416" y="480">Catálogo</text><text x="529" y="480">Grupo Material/Serviço</text><text x="686" y="480">Unidade Fornecimento</text><text x="808" y="480">Quantidade</text><text x="900" y="480">Valor Unitário</text><text x="987" y="480">Valor Total</text><text x="1086" y="480">Valor Orçamento</text><text x="1219" y="480">Unidade Requisitante</text><text x="1317" y="480">Ações</text>
+  </g>
+  <g stroke="#ddd" fill="none"><path d="M163 466v49M269 466v49M382 466v49M450 466v49M609 466v49M766 466v49M851 466v49M948 466v49M1027 466v49M1145 466v49M1294 466v49"/></g>
+  <rect x="19" y="486" width="1325" height="28" fill="#fff" stroke="#ddd"/>
+  <text x="681" y="504" font-family="Arial,sans-serif" font-size="11" fill="#111" text-anchor="middle">Nenhum registro encontrado</text>
+</svg>

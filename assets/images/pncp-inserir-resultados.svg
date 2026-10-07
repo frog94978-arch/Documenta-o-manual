@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1344" height="260" viewBox="0 0 1344 260">
+  <rect width="1344" height="260" fill="#dfdddd"/>
+  <rect x="482" y="29" width="400" height="123" fill="#dfdddd" stroke="#aaa"/>
+  <text x="489" y="34" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">Inserir Resultado(s)</text>
+  <g font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">
+    <text x="489" y="56" fill="#00e">Contratação/Edital/Aviso:</text>
+    <text x="489" y="80">Modalidade de Compra:</text>
+    <text x="489" y="99">Instrumento Convocatório:</text>
+    <text x="489" y="119">Número/Ano da Compra:</text>
+    <text x="489" y="139">Objeto da Compra:</text>
+  </g>
+  <g fill="#dfbd87" stroke="#999" stroke-width="0.8">
+    <rect x="627" y="47" width="74" height="17"/><rect x="627" y="69" width="248" height="16"/><rect x="627" y="89" width="248" height="16"/><rect x="627" y="109" width="248" height="16"/><rect x="627" y="129" width="248" height="16"/>
+  </g>
+  <g fill="#f6f6f6" stroke="#999">
+    <rect x="705" y="46" width="89" height="18" rx="4"/><rect x="799" y="46" width="73" height="18" rx="4"/>
+    <rect x="482" y="158" width="84" height="20" rx="4" fill="#f4f4f4"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#333">
+    <text x="711" y="59">⌕ Buscar Dados</text><text x="806" y="59">⌕ PNCP</text><text x="646" y="172">▣ Enviar Dados</text>
+  </g>
+  <text x="17" y="186" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">Itens</text>
+  <rect x="10" y="183" width="1324" height="70" fill="#fff" stroke="#bbb"/>
+  <rect x="19" y="196" width="1314" height="23" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="33" y="212">+</text><text x="139" y="212">Número do Item</text><text x="294" y="212">Descrição</text><text x="423" y="212">Quantidade</text><text x="604" y="212">Unidade de medida</text><text x="817" y="212">Vlr unit. estimado</text><text x="981" y="212">Valor Total</text><text x="1190" y="212">Indicador sub-contratação</text>
+  </g>
+  <g stroke="#d2d2d2" fill="none"><path d="M19 219h1314M47 196v57M232 196v57M355 196v57M492 196v57M715 196v57M919 196v57M1045 196v57"/></g>
+  <text x="621" y="237" font-family="Arial,sans-serif" font-size="11" fill="#111">Nenhum registro encontrado</text>
+</svg>

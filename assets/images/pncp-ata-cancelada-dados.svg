@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="545" height="206" viewBox="0 0 545 206">
+  <rect width="545" height="206" fill="#dedcdb"/>
+  <rect x="5" y="19" width="535" height="173" fill="#dedcdb" stroke="#bbb"/>
+  <text x="19" y="29" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">Ata de Registro de Preço</text>
+  <g font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#111">
+    <text x="19" y="46">Órgão:</text><text x="19" y="70" fill="#00e" text-decoration="underline">Compra/Edital/Aviso:</text>
+    <text x="19" y="91">Número Ata de Registro de Preço:</text><text x="19" y="111">Ano Ata:</text><text x="19" y="132">Data da Assinatura:</text><text x="19" y="153">Período Vigência de:</text><text x="19" y="174">Data Cancelamento:</text>
+  </g>
+  <g fill="#deb986" stroke="#b99865">
+    <rect x="195" y="35" width="336" height="16"/><rect x="195" y="57" width="151" height="16"/><rect x="350" y="57" width="111" height="16"/>
+    <rect x="195" y="78" width="336" height="16"/><rect x="195" y="98" width="336" height="16"/><rect x="195" y="119" width="84" height="16"/><rect x="195" y="140" width="84" height="16"/><rect x="316" y="140" width="84" height="16"/><rect x="195" y="161" width="84" height="16"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="10" fill="#111">
+    <text x="199" y="47">MUNICIPIO E-CIDADE</text><text x="199" y="69">170</text><text x="355" y="69">2023</text><text x="199" y="90">892</text><text x="199" y="110">2022</text><text x="199" y="131">23/12/2022</text><text x="199" y="152">23/12/2022</text><text x="320" y="152">Até:</text><text x="320" y="173">01/03/2023</text>
+    <text x="282" y="131">D</text><text x="282" y="152">D</text><text x="403" y="152">D</text><text x="282" y="173">D</text>
+  </g>
+  <rect x="463" y="55" width="68" height="20" rx="5" fill="#fafafa" stroke="#999"/><text x="478" y="69" font-family="Arial,sans-serif" font-size="10" fill="#111">⌕ PNCP</text>
+  <rect x="190" y="194" width="85" height="19" rx="5" fill="#fafafa" stroke="#999"/><text x="197" y="207" font-family="Arial,sans-serif" font-size="10" fill="#111">▣ Enviar Dados</text>
+  <rect x="280" y="194" width="90" height="19" rx="5" fill="#fafafa" stroke="#999"/><text x="286" y="207" font-family="Arial,sans-serif" font-size="10" fill="#111">◈ Limpar Dados</text>
+</svg>

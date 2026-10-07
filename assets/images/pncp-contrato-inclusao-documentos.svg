@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="398" viewBox="0 0 1366 398">
+  <rect width="1366" height="398" fill="#dedcdb"/>
+  <rect x="1" y="1" width="1364" height="396" fill="#dedcdb" stroke="#aaa"/>
+  <rect x="2" y="1" width="1362" height="29" fill="#4b7b9a"/>
+  <text x="29" y="21" font-family="Arial,sans-serif" font-size="17" fill="#fff">Contrato &gt; Inclusão de documento</text>
+  <g fill="#236987" stroke="#164e6a" stroke-width="2">
+    <circle cx="1249" cy="15" r="10"/><path d="M1272 8l8 13h-16z"/><path d="M1293 9h15v12h-15zM1297 6h7v3h-7z"/><path d="M1325 8h14v14h-14z"/><path d="M1352 8l10 13m0-13-10 13" stroke="#fff"/>
+  </g>
+  <rect x="397" y="66" width="572" height="131" fill="#dedcdb" stroke="#bbb"/>
+  <text x="406" y="71" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#111">Documento</text>
+  <g font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#111">
+    <text x="406" y="103" fill="#00e" text-decoration="underline">Contrato:</text>
+    <text x="406" y="128">Título do Documento:</text>
+    <text x="406" y="152">Tipo:</text>
+    <text x="406" y="177">Documento:</text>
+  </g>
+  <g fill="#fff" stroke="#888">
+    <rect x="541" y="88" width="185" height="20" rx="2" fill="#deb986"/><rect x="729" y="88" width="138" height="20" rx="2" fill="#deb986"/>
+    <rect x="541" y="115" width="418" height="19" rx="3"/><rect x="541" y="139" width="418" height="19" rx="5"/><rect x="541" y="163" width="418" height="23"/>
+  </g>
+  <rect x="870" y="85" width="91" height="25" rx="6" fill="#fafafa" stroke="#888"/>
+  <text x="887" y="102" font-family="Arial,sans-serif" font-size="13" fill="#111">⌕ PNCP</text>
+  <text x="549" y="153" font-family="Arial,sans-serif" font-size="13" fill="#222">Selecione</text>
+  <path d="m948 146 5 5 5-5" fill="none" stroke="#444"/>
+  <rect x="542" y="164" width="76" height="21" rx="2" fill="#fafafa" stroke="#999"/>
+  <text x="549" y="179" font-family="Arial,sans-serif" font-size="13" fill="#222">Procurar...</text>
+  <text x="626" y="179" font-family="Arial,sans-serif" font-size="13" fill="#222">Nenhum arquivo selecionado.</text>
+  <rect x="651" y="203" width="65" height="25" rx="5" fill="#fafafa" stroke="#999"/>
+  <text x="660" y="220" font-family="Arial,sans-serif" font-size="13" fill="#222">▣ Salvar</text>
+  <text x="146" y="244" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#111">Documentos</text>
+  <rect x="137" y="252" width="1090" height="146" fill="#dedcdb" stroke="#bbb"/>
+  <rect x="148" y="253" width="1070" height="37" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="230" y="277">Título</text><text x="495" y="277">Tipo Documento</text><text x="861" y="277">Data Publicação</text><text x="1132" y="277">Ações</text>
+  </g>
+  <path d="M310 253v37M679 253v37M1042 253v37" stroke="#eee"/>
+  <rect x="148" y="290" width="1070" height="39" fill="#fff" stroke="#d1d1d1"/>
+  <text x="683" y="315" font-family="Arial,sans-serif" font-size="13" fill="#111" text-anchor="middle">Nenhum registro encontrado</text>
+  <rect x="148" y="329" width="1070" height="68" fill="#fff" stroke="#d1d1d1"/>
+</svg>

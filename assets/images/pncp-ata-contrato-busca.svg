@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="588" height="30" viewBox="0 0 588 30">
+  <rect width="588" height="30" fill="#e4e1e0"/>
+  <text x="4" y="19" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#00e" text-decoration="underline">Contrato:</text>
+  <rect x="179" y="7" width="151" height="16" rx="2" fill="#deb986" stroke="#b99865"/>
+  <rect x="334" y="5" width="111" height="20" rx="5" fill="#fafafa" stroke="#999"/>
+  <text x="344" y="19" font-family="Arial,sans-serif" font-size="11" fill="#111">⌕ Buscar Dados</text>
+  <rect x="449" y="5" width="107" height="20" rx="5" fill="#fafafa" stroke="#999"/>
+  <text x="460" y="19" font-family="Arial,sans-serif" font-size="11" fill="#111">⌕ Consultar</text>
+</svg>

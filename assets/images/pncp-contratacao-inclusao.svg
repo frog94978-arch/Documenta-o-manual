@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="547" height="423" viewBox="0 0 547 423">
+  <rect width="547" height="423" fill="#dfdddd"/>
+  <rect x="20" y="14" width="507" height="369" fill="#dfdddd" stroke="#aaa"/>
+  <path d="M21 15h505v18H21z" fill="#477899"/>
+  <text x="29" y="28" fill="#fff" font-family="Arial,sans-serif" font-size="12" font-weight="700">Contrata&#231;&#227;o/Edital/Aviso</text>
+  <g font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">
+    <text x="28" y="47">Org&#227;o:</text><text x="28" y="64">Unidade Compradora:</text><text x="28" y="83">Origem:</text><text x="28" y="103" fill="#00e">Licita&#231;&#227;o:</text>
+    <text x="28" y="125">Modalidade de Contrata&#231;&#227;o:</text><text x="28" y="145">Instrumento Convocat&#243;rio:</text><text x="28" y="165">Modo de Disputa:</text>
+    <text x="28" y="185">N&#250;mero da Contrata&#231;&#227;o:</text><text x="28" y="205">Ano Contrata&#231;&#227;o:</text><text x="28" y="225">N&#250;mero do Processo:</text><text x="28" y="245">Objeto da Contrata&#231;&#227;o:</text>
+    <text x="28" y="265">SRP:</text><text x="28" y="285">Data Abertura Proposta:</text><text x="28" y="305">Data Encerramento Proposta:</text>
+    <text x="28" y="327">Amparo Legal:</text><text x="28" y="348">Link sistema origem:</text><text x="28" y="369">Informa&#231;&#227;o Complementar:</text>
+  </g>
+  <g fill="#fff" stroke="#888" stroke-width="0.8">
+    <rect x="180" y="36" width="343" height="16" fill="#deb986"/>
+    <rect x="180" y="54" width="343" height="16"/><rect x="180" y="75" width="343" height="16"/>
+    <rect x="180" y="95" width="176" height="16"/><rect x="358" y="93" width="91" height="19" fill="#f5f5f5"/><rect x="452" y="93" width="67" height="19" fill="#f5f5f5"/>
+    <rect x="180" y="116" width="343" height="16"/><rect x="180" y="136" width="343" height="16"/><rect x="180" y="156" width="343" height="16"/>
+    <rect x="180" y="176" width="343" height="16"/><rect x="180" y="196" width="343" height="16"/><rect x="180" y="216" width="343" height="16"/><rect x="180" y="236" width="343" height="16"/>
+    <rect x="180" y="256" width="343" height="16"/><rect x="180" y="276" width="82" height="16"/><rect x="280" y="276" width="19" height="16"/><rect x="303" y="276" width="33" height="16"/>
+    <rect x="180" y="296" width="82" height="16"/><rect x="280" y="296" width="19" height="16"/><rect x="303" y="296" width="33" height="16"/>
+    <rect x="180" y="317" width="343" height="16"/><rect x="180" y="338" width="343" height="16"/><rect x="180" y="359" width="343" height="16"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="11" fill="#333">
+    <text x="185" y="48">MUNICIPIO E-CIDADE</text><text x="185" y="66" fill="#777">Selecione</text><text x="185" y="87" fill="#777">Licita&#231;&#227;o</text>
+    <text x="185" y="128" fill="#777">Selecione</text><text x="185" y="148" fill="#777">Selecione</text><text x="185" y="168" fill="#777">Selecione</text>
+    <text x="185" y="268" fill="#777">Selecione</text><text x="185" y="329" fill="#777">Selecione</text><text x="185" y="371" fill="#777">N&#227;o</text>
+    <text x="369" y="106" font-weight="700">▣ Buscar Dados</text><text x="460" y="106" font-weight="700">◉ Consultar</text>
+  </g>
+  <g fill="#3d7da2" stroke="#286386">
+    <rect x="175" y="389" width="85" height="27" rx="4"/><rect x="264" y="389" width="112" height="27" rx="4"/>
+  </g>
+  <g fill="#fff" font-family="Arial,sans-serif" font-size="11" font-weight="700">
+    <text x="191" y="406">▣ Enviar Dados</text><text x="276" y="406">♢ Anexar Documento</text>
+  </g>
+</svg>

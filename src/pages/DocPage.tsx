@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { useParams, Navigate, useNavigate } from "react-router-dom";
+import { useParams, Navigate, useNavigate, useLocation } from "react-router-dom";
 import { getPageById } from "@/data/documentation";
+import { getSubmoduleById } from "@/data/submodules";
 import Breadcrumbs from "@/components/test/Breadcrumbs";
 import MarkdownContent from "@/components/test/MarkdownContent";
 import PatrimonialTabs from "@/components/test/PatrimonialTabs";
@@ -18,12 +19,16 @@ const DocPage = () => {
   const [selectedFinalSection, setSelectedFinalSection] = useState<string | null>(null);
   const { category, page } = useParams<{ category: string; page: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    setSelectedSubmodule(null);
-    setSelectedCategory(null);
-    setSelectedFinalSection(null);
-  }, [category, page]);
+    const searchParams = new URLSearchParams(location.search);
+    const requestedSubmodule = searchParams.get("submodule");
+    const submodule = requestedSubmodule ? getSubmoduleById(requestedSubmodule) : undefined;
+    setSelectedSubmodule(submodule?.title ?? null);
+    setSelectedCategory(searchParams.get("category"));
+    setSelectedFinalSection(searchParams.get("section"));
+  }, [category, page, location.search]);
 
   if (!page || !category) {
     return <Navigate to="/" replace />;

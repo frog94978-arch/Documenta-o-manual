@@ -13,7 +13,6 @@ DB:PATRIMONIAL > Protocolo > Cadastros > Documento > Inclusão
 - **Código:** O campo é gerado automaticamente.
 - **Descrição:** Preencher o nome do documento.
 - **Sistemas Externos**
-
 - **Tipo de Dado:** o usuário poderá selecionar entre: TEXTO LIVRE, NÚMERICO, VALOR, ENDEREÇO E ARQUIVO.
 
 ### Alteração
@@ -37,17 +36,17 @@ DB:PATRIMONIAL > Protocolo > Cadastros > Documento > Exclusão
 DB:PATRIMONIAL > Protocolo > Cadastros > Documento / Tipo de Processo
 \`\`\`
 
-Nesta rotina é possível cadastrar documentos referentes a um tipo de processo, podendo ele ser interno ou externo (Protocolo Eletrônico). Estes vinculos são a relação dos documentos solicitados para abertura de um processo na instituição ou através do Portal de Atendimento.
+Nesta rotina é possível cadastrar documentos referentes a um tipo de processo, podendo ele ser interno ou externo (Protocolo Eletrônico). Estes vínculos são a relação dos documentos solicitados para abertura de um processo na instituição ou através do Portal de Atendimento.
 
 [![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image58.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image58.png)
 
-- **Tipo de Processo:** Preencher o código do tipo de processo ou clicar no link "Tipo de Processo", para abrir/acessar a função de pesquisa. O cadastro de Tipo de Processos é realizado através da rotina abaixo:
+- **Tipo de Processo:** Preencher o código do tipo de processo ou clicar no link "Tipo de Processo" para abrir/acessar a função de pesquisa. O cadastro de Tipo de Processos é realizado através da rotina abaixo:
 
 \`\`\`
 DB:PATRIMONIAL > Protocolo > Cadastros > Tipos de Processos > Inclusão
 \`\`\`
 
-- **Documento:** Preencher o código do documento ou clicar no link "Documento" para abrir/acessar a função de pesquisa. Se este tipo de processo solicitar mais de um documento, basta repetir a ação de inclusão para os documentos referente ao tipo. O cadastro de Documentos é realizado através da rotina abaixo:
+- **Documento:** Preencher o código do documento ou clicar no link "Documento" para abrir/acessar a função de pesquisa. Se este tipo de processo solicitar mais de um documento, basta repetir a ação de inclusão para os documentos referentes ao tipo. O cadastro de Documentos é realizado através da rotina abaixo:
 
 \`\`\`
 DB:PATRIMONIAL > Protocolo > Cadastros > Documento > Inclusão
@@ -66,7 +65,7 @@ DB:PATRIMONIAL > Protocolo > Cadastros > Variável > Inclusão
 
 - **Código do tipo:** Preencher o código do tipo de processo ou clicar no link para pesquisar.
 - **Código:** Preencher o código dos campos ou clicar no link para pesquisar. São os campos das tabelas do sistema que podem ser inseridos no processo.
-- **Obrigatório:** Define se a variável que está sendo inclusa será obrigatória no momento da inclusão do processo ou não.
+- **Obrigatório:** Define se a variável que está sendo incluída será obrigatória no momento da inclusão do processo ou não.
 
 [![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image74.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image74.png)
 
@@ -89,6 +88,8 @@ DB:PATRIMONIAL > Protocolo > Cadastros > Variável > Exclusão
 \`\`\`
 `,
   "Tipo de Documento - Cadastro Protocolo": `
+### Inclusão
+
 Rotina que permite incluir um Tipo de Documento para que durante a inclusão de um novo processo o usuário possa determinar qual o tipo de documento se refere.
 
 \`\`\`
@@ -616,6 +617,780 @@ Ao informar um CGM correto ou errado, por exemplo, o e-cidade retornará dados c
 Já ao informar o código do usuário, o e-cidade retorna listagem de todos os CGM's processados pelo usuário.
 
 [![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image56.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image56.png)
+`,
+  "CGM Duplos": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > CGM Duplos > Inclusão
+\`\`\`
+
+Nesse procedimento deve ser informado o Nome / Razão Social dos CGMs, para que o e-cidade processe e mostre todos os registros com o mesmo nome, marque um como principal e os demais como secundários. Após gravar, em um horário agendado no servidor, o e-cidade irá processar e gerar um único CGM com o código do principal marcado.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image8.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image8.png)
+
+## Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > CGM Duplos > Exclusão
+\`\`\`
+
+Permite a exclusão, quando não estiver vinculado a nenhum cadastro do e-cidade. A primeira tela a ser aberta será uma função de pesquisa para seleção, após irá exibir as informações do CGM a ser excluído, lançando informações na aba CGM Correto e na aba CGM Errado, será exibido a relação dos CGMs marcados como errado, permitindo alteração ou exclusão.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image11.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image11.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image108.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image108.png)
+`,
+  "Processos": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Processos > Inclusão
+\`\`\`
+
+Através desta é possível realizar inclusão de processos referente a aquisição de materiais, contratação de serviços, rotinas, resolução de problemas, informações da instituição entre outros, também possui a finalidade de se obter um controle geral dos processos internos de forma institucional ou multi-institucional. A exibição da tela inicial se dará de acordo com a parametrização do módulo Protocolo no e-cidade.
+
+*Caso o parâmetro global tipo de controle esteja definido por: **Órgão**, a primeira tela a ser exibida será Tipo de Documento.*
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Parâmetros > Parâmetros Globais
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image141.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image141.png)
+
+Em seguida irá disponibilizar a seleção do Tipo de Processo. A principal diferença é que caso o parâmetro global tipo de controle esteja definido por: **Campo Sequencial Geral** ou **Sequencial do Ano**, a primeira tela será a seleção do tipo de processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image110.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image110.png)
+
+Em seguida, a tela para seleção do titular do processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image17.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image17.png)
+
+**NOTA:** *O titular do processo deve possuir um CGM cadastrado no e-cidade. O cadastro pode ser realizado através da rotina:*
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Geral do Município - CGM (novo)
+\`\`\`
+
+[Mais informações clique aqui](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_geral_do_municipio.md)
+
+Após, o e-cidade listará as informações selecionadas como prévia em Dados Processo conforme a imagem abaixo:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image142.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image142.png)
+
+- **Usuário:** usuário que encontra-se logado no e-cidade.
+- **Departamento:** departamento atual configurado na sessão ao acessar a rotina.
+- **Órgão:** órgão ao qual encontra-se o departamento atual.
+
+Caso o seu perfil possua mais de um departamento configurado e identifique a necessidade de alterar para inclusão do processo, clique na engrenagem no canto superior direito e efetive alteração.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image143.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image143.png)
+
+- **Número de Controle:** Número de controle atribuido automáticamente ao processo de forma sequencial.
+- **Data do Processo:** Data referente a inclusão do processo, sendo a informação obtida na sessão em que o usuário se encontra.
+- **Hora da inclusão do processo:** Hora da inclusão do processo conforme horário local(servidor).
+
+**Tipo de Documento:** Se aplicável o tipo de controle por órgão listará o tipo de documento selecionado na primeira tela. [Mais informações clique aqui.](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_tipo_de_documento.md)
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipo de Documento
+\`\`\`
+
+**Tipo:** Tipo de processo selecionado. [Mais informações clique aqui.](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_tipo_de_processo.md)
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipos de Processos
+\`\`\`
+
+- **Titular:** Titular do processo com vinculo CGM.
+- **Requerente:** Indivíduo que fez o requerimento, ou seja, solicitou a inclusão do processo.
+
+**Assunto:** Assunto no que se refere a abertura do processo.
+
+**Campos Complementares:** Se aplicável listará as variáveis configuradas de forma adicional ao tipo de procesos. [Mais informações clique aqui.](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_variavel.md)
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Variável
+\`\`\`
+
+**Documentos:** listará os documentos definidos ao tipo de processo como necessário para inclusão do processo. [Mais informações clique aqui.](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_tipo_de_documento.md)
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Documento
+\`\`\`
+
+Se o CGM não estiver atualizado e os parâmetros abaixo estiverem definidos como "Sim", o e-cidade irá alertar e abrir a tela de alteração de CGM.
+
+- **Obriga alterar CGM durante a inclusão de processo**
+- **Valida CPF/CNPJ na inclusão de Processo**
+
+Estes parâmetros encontram-se na rotina:
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Parâmetros > Parâmetros da Instituição
+\`\`\`
+
+Para conclusão e inclusão do processo, o usuário deverá clicar em *"Incluir"*, o e-cidade irá emitir a Capa do Processo na tela.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image30.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image30.png)
+
+Ainda nessa tela é possível anexar documentos ao processo clicando em *"Em Anexar Documentos"*, porém, somente após a inclusão do processo. Caso o usuário tenha anexado um documento incorreto, poderá excluí-lo , para isso basta marcar o(os) anexo(s)clicando e clicar em *"Excluir Selecionados"*.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image7.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image7.png)
+
+A aba *"Processos Apensados"* somente ficará habilitada na rotina de alteração de processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image91.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image91.png)
+
+## Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Processos > Alteração
+\`\`\`
+
+Permite alteração de um processo e seus campos antes de ser realizado o trâmite inicial que nada mais é que a primeira movimentação do processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image66.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image66.png)
+
+Note na imagem abaixo que o e-cidade habilita a aba *"Processos Apensados"*, onde lista processos já apensados ao que está sendo alterado ou caso deseje poderá apensar um novo processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image28.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image28.png)
+
+Para apensar basta clicar em *"Processo à Apensar"*, selecionar o que deseja e clicar em incluir.
+
+## Anexar Documentos
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Processos > Anexar Documentos
+\`\`\`
+
+Está rotina permite a manutenção de documentos no processo, sendo possível realizar a inclusão de um novo ou então alterar/excluir um já adicionado anteriormente, desde que o usuário esteja no departamento atual.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image117.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image117.png)
+`,
+  "Volumes": `
+## Inclusão
+
+Permite a inclusão de um volume vinculando ao processo principal.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Volumes > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image146.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image146.png)
+
+- **Usuário:** usuário que encontra-se logado no e-cidade.
+- **Departamento:** departamento atual configurado na sessão ao acessar a rotina.
+- **Órgão:** órgão ao qual encontra-se o departamento atual.
+- **Processo Principal:** permite selecionar o processo principal ao qual ficará vinculado o volume que está sendo incluso, para isso basta o usuário clicar no link *"Processo Principal"* aplicando os possíveis filtros disponíveis para localizar o processo.
+
+Após o e-cidade irá questionar qual o titular deseja vincular ao volume que está sendo incluso. Lembrando que o titular precisa possuir um cadastro geral do município (CGM) para mais informações de como realizar a inclusão de um CGM [clique aqui](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_geral_do_municipio.md)
+
+Após a seleção do titular do volume, o e-cidade irá listar os demais campos baseado nas informações do processo principal, sendo possível ajustar o requerente que ficará como sugestão o titular, adicionar um assunto referente ao volume, bem como se aplicável informar campos complementares e marcar os documentos apresentados.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image147.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image147.png)
+
+O Volume incluso terá um formato exemplo PRO.08.00001.001/2021 este ficará disponível para visualização ao consultar o processo principal que como exemplo é o PRO.08.00001.000/2021, para mais informações a respeito do volume basta efetuar dois cliques sobre o que deseja.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image148.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image148.png)
+
+## Alteração
+
+Permite realizar a alteração de informações como Titular, Requerente, Assunto, Campos Complementares e Documentos.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Volumes > Alteração
+\`\`\`
+
+## Anexar Documentos
+
+Permite anexar um documento a um volume.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Volumes > Anexar Documentos
+\`\`\`
+`,
+  "Trâmite Inicial": `
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Trâmite Inicial
+\`\`\`
+
+Neste procedimento é feito a primeira transferência do processo no e-cidade. Após esta ação, o processo ficará disponível para recebimento no departamento definido como destino.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image19.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image19.png)
+
+- **Usuário:** Usuário logado na sessão do e-cidade.
+- **Departamento:** Departamento atual em que o usuário se encontra, ou seja, o departamento origem do trâmite.
+- **Órgão:** Órgão atual equivalente ao departamento atual.
+- **Transferência:** Código da transferência, este será gerado automaticamente após a inclusão.
+- **Data:** Data atual do servidor local no momento que está sendo efetivado o trâmite inicial.
+- **Departamento:** Departamento ao qual terá como destino o processo.
+- **Recebimento:** Usuários pertencentes passíveis de recebimento no departamento destino. Somente o usuário selecionado poderá receber o processo; caso deixe a opção como *"Selecione o Usuário"*, todos os usuários daquele departamento que possuam permissão poderão efetivar o recebimento.
+- **Tramitar Volumes com Processo Principal:** Permite tramitar os volumes vinculados ao processo principal juntamente com o mesmo. Visível e aplicável se o parâmetro global Tipo de Controle estiver definido por órgão.
+- **Processos Existentes:** Processos existentes pendentes de trâmite inicial no departamento em que o usuário encontra-se no momento em que acessa a rotina de Trâmite Inicial.
+
+**NOTA:** *Se marcar processos de diferentes departamentos da configuração padrão realizada no momento da inclusão do tipo do processo ou através da rotina de andamento padrão, o e-cidade irá verificar um parâmetro "Tramite/transferencia" na rotina abaixo:*
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Parâmetros > Parâmetros da Instituição
+\`\`\`
+
+- **Permite escolher departamentos diferentes do padrão.**
+- **Não permite escolher departamentos diferentes.**
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image145.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image145.png)
+
+- **Permite escolher departamento diferente, mas avisa o usuário.**
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image144.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image144.png)
+
+Ao efetivar, será emitido um termo de recebimento do processo para impressão e retorna para a página de trâmite inicial.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image85.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image85.png)
+`,
+  "Despachos": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Despachos > Inclusão
+\`\`\`
+
+Nesse procedimento é possível realizar a inclusão de pareceres dos processos. O usuário poderá incluir um despacho caso esteja no mesmo departamento e já tenha efetuado o recebimento do processo.
+
+Assim que acessar a rotina será listado os processos que encontram-se com situação recebido no departamento.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image149.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image149.png)
+
+Basta clicar sobre o que deseja ou então aplicar filtros disponíveis para localizá-lo; após selecionar o processo, a informação como número/titular será exibida nos campos. Para concluir a ação clique em "Processar".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image150.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image150.png)
+
+**[ABA] Despacho Atual**
+
+Ao processar, os dados referentes ao processo serão definidos nos seus respectivos campos com a finalidade do usuário revisar as informações como assunto, origem, entre outras listadas conforme a imagem abaixo:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image151.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image151.png)
+
+- **Despacho Público:** Permite selecionar a opção SIM ou NÃO. Se sim, este ficará público onde poderá ser consultado pela internet ou internamente na consulta de processos, apenas pelos usuários do e-cidade.
+- **Despacho Interno:** Campo para o usuário descrever seu despacho/parecer.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image103.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image103.png)
+
+Após a inclusão do parecer, o sistema habilita o botão "Imprimir Despacho"; ao clicá-lo emite um documento.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image71.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image71.png)
+
+**[ABA] Despacho Anterior**
+
+Exibe os despachos do processo efetuados anteriormente pelo departamento atual.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image53.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image53.png)
+
+**[ABA] Anexar Documentos**
+
+Também através dessa rotina o usuário poderá anexar documentos juntamente com o seu despacho, porém, a aba somente ficará habilitada após efetivar a inclusão do despacho na aba "Despacho Atual".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image70.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image70.png)
+
+Despachos inclusos ficarão disponíveis para visualização e impressão através da rotina abaixo:
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Consultas > Processo
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image152.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image152.png)
+
+## Alterar
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Despachos > Alteração
+\`\`\`
+
+Esta rotina permite alterar o último despacho realizado pelo usuário no departamento em questão.
+`,
+  "Transferências": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Transferências > Inclusão
+\`\`\`
+
+Nesse procedimento é possível realizar a transferência do processo no e-cidade.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image97.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image97.png)
+
+- **Usuário:** Usuário logado na sessão do e-cidade.
+- **Departamento:** Departamento atual em que o usuário se encontra, ou seja, o departamento origem da transferência.
+- **Órgão:** Órgão atual equivalente ao departamento atual.
+- **Transferência:** Código da transferência, este será gerado automaticamente após a inclusão.
+- **Data:** Data atual do servidor local no momento que está sendo efetivada a transferência do processo.
+- **Departamento:** Departamento ao qual terá como destino o processo.
+- **Recebimento:** Usuários pertencentes passíveis de recebimento no departamento destino. Somente o usuário selecionado poderá receber o processo; caso deixe a opção como *"Selecione o Usuário"*, todos os usuários daquele departamento que possuam permissão poderão efetivar o recebimento.
+- **Tramitar Volumes com Processo Principal:** Permite tramitar os volumes vinculados ao processo principal juntamente com o mesmo. Visível e aplicável se o parâmetro global Tipo de Controle estiver definido por órgão.
+- **Processos No Departamento:** Exibe de forma total a quantidade de processos que se encontram com situação recebidos no departamento.
+- **Processos Existentes:** Processos existentes pendentes de transferência no departamento em que o usuário se encontra.
+
+Se aplicável o parâmetro, ao selecionar o processo automaticamente será sugerido o departamento padrão para transferência conforme a ordem definida em "Andamento do Processo" para o "Tipo Processo".
+
+**NOTA:** *Se marcar processos de departamentos diferentes da configuração padrão realizada no momento da inclusão do tipo do processo ou através da rotina de andamento padrão, o e-cidade irá verificar um parâmetro "Tramite/transferencia" na rotina abaixo:*
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Parâmetros > Parâmetros da Instituição
+\`\`\`
+
+- **Permite escolher departamentos diferentes do padrão.**
+- **Não permite escolher departamentos diferentes.**
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image145.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image145.png)
+
+- **Permite escolher departamento diferente, mas avisa o usuário.**
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image144.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image144.png)
+
+Ao efetivar a transferência do processo, o e-cidade irá emitir um termo de transferência para impressão.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image36.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image36.png)
+
+## Cancelamento Parcial
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Transferências > Cancelamento Parcial
+\`\`\`
+
+Permite a exclusão da transferência dos processos vinculados à mesma, podendo ser realizado de forma parcial ou total o cancelamento. Para isso basta marcar o(s) processo(s) a ser(em) cancelado(s) e clicar no botão "Cancelar os Processos".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image86.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image86.png)
+
+**NOTA:** *Os processos somente poderão ser cancelados antes de serem recebidos pelo departamento de destino.*
+`,
+  "Recebimento": `
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Recebimento
+\`\`\`
+
+Nesse procedimento é possível realizar o recebimento de processos em transferências disponíveis no departamento, podendo uma única transferência possuir um ou mais processos.
+
+Ao acessar a rotina, o e-cidade irá listar todos os processos que encontram-se no departamento e estão com situação "Pendente de Recebimento" ou processos transferidos diretamente ao usuário em que se encontra logado.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image101.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image101.png)
+
+Digite o código de transferência ou clique sobre um dos registros listados. É possível localizar o código de transferência no documento emitido no momento que foi efetivada a transferência do processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image155.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image155.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image156.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image156.png)
+
+Ao clicar sobre a transferência o e-cidade irá abrir uma tela com os processos da transferência e um resumo de seus dados como N° do Controle, Processo (N°/Ano), Requerente, Tipo, Data e Observação. Neste momento, em segundo plano, o código do campo transferência é preenchido com o mesmo selecionado; ao usuário basta clicar em "Receber".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image67.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image67.png)
+
+Também há opção do usuário clicar no botão "Inf" de informações; ao efetivar, o e-cidade irá abrir uma janela com informações adicionais a respeito do processo e uma opção de impressão.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image44.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image44.png)
+`,
+  "Arquivamento": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Arquivamento > Inclusão
+\`\`\`
+
+No arquivamento individual, assim que o usuário acessar a rotina serão listados os processos que são passíveis de arquivamento; poderá ser feita a busca pelo número de controle ou pelo processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image157.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image157.png)
+
+Assim que selecionar o processo, o e-cidade irá exibir os seguintes dados e campos:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image158.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image158.png)
+
+- **Processo:** Processo (numeração/ano) selecionado e que será arquivado.
+- **Requerente:** Requerente definido durante a inclusão do processo.
+- **Usuário:** Usuário logado na sessão do e-cidade.
+- **Departamento:** Departamento atual em que o usuário se encontra.
+- **Código do Arquivamento:** Código do arquivamento, este será gerado automaticamente após a inclusão.
+- **Data do Arquivamento:** Data em que está sendo arquivado o processo.
+- **Arquivar Volumes:** Se marcada esta opção, os volumes serão arquivados juntamente com o processo principal. *(Aplicável somente ao parâmetro global tipo de controle por órgão.)*
+- **Histórico do Arquivamento:** Permite digitar uma descrição/histórico referente ao arquivamento que está sendo realizado.
+- **Volumes:** Ao selecionar o processo principal que possua volumes vinculados, os mesmos serão listados nesta opção. *(Aplicável somente ao parâmetro global tipo de controle por órgão.)*
+
+Caso note que tenha selecionado o processo incorreto, poderá efetivar novamente a busca e seleção clicando no botão "Pesquisar" ou também poderá efetivar uma pesquisa rápida por processos arquivados no departamento em questão, para isso basta clicar em "Pesquisar Arquivamento".
+
+Assim que finalizar o preenchimento das informações necessárias para o arquivamento, basta efetivar a ação clicando em "Incluir".
+
+## Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Arquivamento > Alteração
+\`\`\`
+
+Permite alterar os campos Data do Arquivamento e Histórico do Arquivamento. A alteração somente estará disponível para processos arquivados pelo próprio usuário da sessão.
+
+## Lote
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Arquivamento > Lote
+\`\`\`
+
+Rotina que permite o arquivamento de múltiplos processos, ou seja, em lote. Para isso, é necessário que seja aplicado inicialmente um intervalo de inclusão dos processos a serem arquivados e clicar em "Processar".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image93.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image93.png)
+
+Após, o e-cidade exibirá uma tela onde retornará os processos que foram criados dentro do intervalo selecionado. Descreva o histórico do arquivamento, confirme a data de arquivamento, marque os processos que terão a baixa realizada e clique em "Arquivar Processos".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image6.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image6.png)
+
+**NOTA:** *O arquivamento gera o término do processo no e-cidade. A rotina de arquivamento em lote somente lista os processos que se encontram no departamento em que o usuário está logado ou em transferência (sem recebimento). O arquivamento individual lista qualquer processo que tenha sido recebido pelo departamento ou usuário logado (com recebimento).*
+`,
+  "Desarquivamento": `
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Desarquivamento
+\`\`\`
+
+Nesse procedimento é possível realizar o desarquivamento dos processos arquivados no departamento. Assim que acessar a rotina serão listados os processos, podendo clicar sobre o que deseja ou então pesquisar pelo número de controle do mesmo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image159.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image159.png)
+
+Ao clicar sobre a linha do processo ou selecionando através do filtro número de controle, o e-cidade irá exibir um alerta de confirmação se deseja efetivar o desarquivamento, podendo ser concluído clicando em "Ok" ou então realizar o cancelamento da ação clicando em "Cancelar".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image105.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image105.png)
+
+Confirmado, o e-cidade informará que o processo foi desarquivado com sucesso, retornando ao último departamento no qual tramitou.
+`,
+  "Andamento Padrão": `
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Andamento Padrão
+\`\`\`
+
+Nesse procedimento é possível efetuar o vínculo de um determinado tipo de processo a um departamento, sendo possível parametrizar quantidade de dias em que o processo poderá permanecer no mesmo, bem como a ordem de tramitação para o tipo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image37.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image37.png)
+
+- **Código do Tipo:** Digite o código do tipo ou então clique sobre "Código do tipo" para aplicar filtros adicionais como a busca pela descrição.
+- **Código do Departamento:** Digite o código do departamento ou então clique sobre "Código do departamento" para aplicar filtros adicionais como a busca por instituição, órgão, descrição do departamento.
+- **Quantidade de Dias:** Preencha quantos dias por padrão que o processo normalmente permanece no departamento informado.
+- **Ordem:** Preencher a ordem de cada departamento.
+
+**NOTA:** *Somente será possível realizar a inclusão de um processo para um determinado tipo caso o mesmo possua no mínimo um andamento padrão. Deverá ser informado para quais departamentos o tipo de processo deverá ser transferido, como um "caminho" padrão que aquele determinado tipo de processo deverá seguir. Se aplicável o parâmetro, essa função estará incorporada dentro da rotina de inclusão de tipo de processo, facilitando ao usuário essa configuração, uma vez que é pré-requisito para tramitação de um novo tipo de processo ou um que não possua definido o andamento padrão.*
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Cadastros > Tipos de Processos > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image160.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image160.png)
+`,
+  "Recibo de Receita": `
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Recibo de Receita
+\`\`\`
+
+Esse procedimento consiste na emissão de recibo de receita tributária e não tributária. Caso seja emitido um recibo avulso e o mesmo não for pago, o contribuinte não ficará devendo, mas se houver pagamento, o e-cidade credita um débito.
+
+Podemos visualizar isso através da consulta de pagamentos efetuados, na rotina:
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Consultas > Geral Financeira
+\`\`\`
+
+Quando for fazer uma arrecadação de um valor negativo, normalmente para casos de deduções, devemos utilizar a rotina de planilha, acessando:
+
+\`\`\`
+DB:FINANCEIRO > Caixa > Procedimentos > Planilha de Lançamento > Inclusão
+\`\`\`
+
+Ao lançar um recibo vinculado ao processo de protocolo, o e-cidade lança o valor ao CGM do titular do processo, ficando vinculado ao processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image59.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image59.png)
+
+- **Receita:** Preencher o código da receita ou, caso desconheça, poderá clicar em "Receita" e aplicar filtros adicionais.
+- **Taxa:** Preencher o valor da taxa ou clicar em "Taxas" para pesquisar as taxas referentes à receita escolhida.
+- **C.Peculiar/C.Aplicação:** Característica peculiar com aplicação.
+- **Histórico:** Preencher uma descrição referente ao recibo.
+- **Data Vencimento:** Preencher a data de vencimento do recibo de pagamento.
+
+Ao preencher as informações necessárias, o usuário poderá clicar em "Confirmar"; será emitido um alerta se confirma a emissão do recibo, podendo cancelar ou efetivar. Ao efetivar, o e-cidade emitirá o documento.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image161.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image161.png)
+`,
+  "Cancela Recibo": `
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Cancela Recibo
+\`\`\`
+
+Ao acessar a rotina serão listados os recibos emitidos; basta selecionar o recibo que deseja e clicar no botão "Excluir". Caso tenha selecionado o recibo incorreto, utilize o botão "Pesquisar recibo" para efetivar uma nova busca.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image118.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image118.png)
+`,
+  "Trâmite Interno": `
+## Despacho
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Trâmite Interno > Despacho
+\`\`\`
+
+Esta rotina permite gerar um registro de despacho interno no departamento, quando for necessário o parecer de mais de uma pessoa do departamento.
+
+Assim que acessar a rotina será listado os processos que encontram-se com situação recebido no departamento.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image149.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image149.png)
+
+Basta clicar sobre o que deseja ou então aplicar filtros disponíveis para localizá-lo. Após selecionar o processo, a informação como número/titular será exibida nos campos; para concluir a ação clique em "Processar".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image150.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image150.png)
+
+**[ABA] Despacho Atual**
+
+Ao processar, os dados referentes ao processo serão definidos nos seus respectivos campos com a finalidade do usuário revisar as informações como assunto, origem, entre outras listadas conforme a imagem abaixo:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image151.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image151.png)
+
+- **Despacho Público:** Permite selecionar a opção "SIM" ou "NÃO". Se sim, este ficará público onde poderá ser consultado pela internet ou internamente na consulta de processos, apenas pelos usuários do e-cidade.
+- **Despacho Interno:** Campo para o usuário descrever seu despacho/parecer.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image103.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image103.png)
+
+Após a inclusão do parecer, o e-cidade habilita o botão "Imprimir Despacho"; ao clicá-lo emite um documento.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image162.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image162.png)
+
+**[ABA] Despacho Anterior**
+
+Exibe os despachos do processo efetuados anteriormente pelo departamento atual.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image53.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image53.png)
+
+**[ABA] Anexar Documentos**
+
+Também através dessa rotina o usuário poderá anexar documentos juntamente com o seu despacho, porém, a aba somente ficará habilitada após efetivar a inclusão do despacho na aba "Despacho Atual".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image70.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image70.png)
+
+Despachos inclusos ficarão disponíveis para visualização e impressão através da rotina abaixo:
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Consultas > Processo
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image152.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image152.png)
+
+**NOTA:** *Após efetivar o lançamento de um despacho, o mesmo não poderá ser excluído; se for o caso o usuário deve efetivar o lançamento novamente do despacho retificando o anterior.*
+
+## Transferência
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Trâmite Interno > Transferência
+\`\`\`
+
+Na transferência de processos entre os usuários do mesmo departamento, digite o parecer para transferência do processo no campo "Despacho Interno", selecione o usuário no campo "Usuário Destino" (este receberá o processo internamente), marque "Sim" ou "Não" no campo "Despacho Público", marque o ou os processos a serem transferidos e clique em "Transferir".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image38.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image38.png)
+
+## Cancela Transferência
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Trâmite Interno > Cancela Transferência
+\`\`\`
+
+Ao selecionar o código da transferência interna a ser cancelada, o e-cidade irá exibir os dados da transferência na parte inferior da tela "Processos da Transferência". Para efetivar o cancelamento da transferência, marque o ou os processos e clique no botão "Cancelar os Processos".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image26.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image26.png)
+
+## Recebimento
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Trâmite Interno > Recebimento
+\`\`\`
+
+Marque o(s) processo(s) referente(s) ao usuário e clique no botão "Receber". No registro da transferência, na última coluna "Info", o usuário pode clicar no botão "Ver" para visualizar mais informações do processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image81.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image81.png)
+`,
+  "Apensar Processo": `
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Apensar Processo
+\`\`\`
+
+Através desta rotina é possível realizar a inclusão de apensamentos de processos. Para isso basta digitar o número de controle do processo no campo principal ou clicar em "Principal" e aplicar filtros adicionais. O mesmo se repete para o campo "Apensar", onde poderá efetivar a busca digitando o número de controle ou clicando em "Apensar" para aplicar filtros adicionais.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image112.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image112.png)
+
+Após selecionar o Principal, ou seja, o que receberá o apensamento de outro processo, assim como o processo a ser apensado, basta clicar em "Apensar".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image88.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image88.png)
+
+As informações serão listadas em "Processos Apensados", podendo ser realizada a exclusão da vinculação, ou seja, desvincular o processo apensado do principal.
+
+Processos apensados ficarão visíveis durante a consulta do processo principal.
+
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Consultas > Processo
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image166.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image166.png)
+`,
+  "Andamento do processo": `
+\`\`\`
+DB:PATRIMONIAL > Protocolo > Procedimentos > Andamento do processo
+\`\`\`
+
+Esta nova rotina traz um conceito centralizado sobre processos no departamento e seus respectivos status, podendo aplicar diversos filtros, bem como ações gerais como recebimento, despachos, anexos e transferências. Conta com diversos recursos voltados ao Protocolo Eletrônico para facilitar e agilizar ações. A rotina retorna processos que já tiveram seu trâmite inicial ou que estão no departamento.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image46.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image46.png)
+
+## Filtros
+
+A imagem abaixo exibe os principais filtros para busca de processos:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image167.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image167.png)
+
+- **Processo:** Numeração do Processo/Ano.
+- **Requerente:** Requerente do processo, ou seja, quem solicitou a abertura do processo.
+- **Descrição:** Assunto/Observações referentes ao processo.
+- **Data:** Data da última movimentação.
+
+## Filtrar Responsável
+
+A imagem abaixo exibe os filtros aplicáveis ao responsável:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image168.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image168.png)
+
+- **Meu:** Meus processos pelos quais sou responsável.
+- **Outros:** Processos onde o responsável é diferente do meu.
+- **Departamento:** Processos que se encontram no departamento.
+
+## Filtrar Tipo Processo
+
+A imagem abaixo exibe os filtros para busca por tipo de processo:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image170.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image170.png)
+
+- **Eletrônico:** Processos incluídos por intermédio do Protocolo Eletrônico.
+- **Manual:** Processos incluídos por intermédio do e-cidade.
+
+## Filtrar status
+
+A imagem abaixo exibe os filtros para busca por status:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image169.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image169.png)
+
+- **A receber:** Filtra processos que estão com status de pendente de recebimento.
+- **Recebidos:** Filtra processos que já foram efetivamente recebidos.
+- **Despachados:** Filtra processos que já tiveram despacho efetivado.
+- **Externos:** Filtra processos externos, oriundos do Protocolo Eletrônico.
+- **Mensagens não lidas:** Filtra processos com mensagens originadas através de um atendimento aberto de forma online pelo processo eletrônico que ainda não foram lidas.
+
+### Uso dos filtros
+
+Ao marcar somente o check **"À receber"**, o e-cidade retornará somente processos que estão com este status.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image50.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image50.png)
+
+Ao marcar somente o check **"Recebidos"**, o e-cidade retornará somente processos que estão com este status.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image116.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image116.png)
+
+Ao marcar somente o check **"Despachados"**, o e-cidade retornará somente processos que estão com este status.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image29.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image29.png)
+
+Ao marcar o check **"Externos"**, o e-cidade retornará somente processos cuja origem foi externa. Os status também podem ser combinados entre si.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image174.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image174.png)
+
+Ao marcar somente o check **"Mensagens não lidas"**, o e-cidade retornará somente processos com mensagens enviadas pelo cidadão que ainda não foram lidas. Por serem caixas de seleção, os filtros podem ser combinados entre si.
+
+## Exibição das informações
+
+- **Transferência:** Código da transferência referente ao último andamento. A ausência de transferência caracteriza um processo externo que ainda não teve aprovação e tramitação no e-cidade, ou seja, ainda é apenas uma solicitação de atendimento externo.
+- **Processo Número:** Poderá ser o número do processo no e-cidade ou, caso ainda não tenha sido aprovado, o número de atendimento criado no Protocolo Eletrônico.
+- **Requerente:** Indivíduo que fez o requerimento, ou seja, solicitou a inclusão do processo.
+- **Descrição:** Descrição referente ao tipo do processo.
+- **Data:** Data de criação do processo.
+- **Observação:** Observação definida no momento da inclusão do processo.
+- **Status:** Status atual do processo.
+
+A última coluna está relacionada às ações possíveis no processo.
+
+## Apenas Receber
+
+Para apenas receber um processo no departamento basta clicar sobre o ícone de "check".
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image40.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image40.png)
+
+**NOTA:** O e-cidade não emitirá nenhum alerta solicitando a confirmação. Portanto, atente-se ao executar essa ação e confirme se é o processo correto a ser recebido.
+
+Essa ação também é possível acessando as ações e clicando sobre o ícone através do botão "Apenas Receber".
+
+## Mensagens
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image175.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image175.png)
+
+Permite visualizar as mensagens pendentes de leitura, assim como o histórico das mensagens trocadas com o cidadão. O número ao lado do ícone se refere à quantidade de mensagens pendentes de leitura; no exemplo acima, zero.
+
+Essa ação também é possível acessando as ações e clicando sobre o ícone através do botão "Mensagens".
+
+Ao clicar sobre o ícone e não houver nenhuma mensagem pendente de leitura ou histórico de troca de mensagens, o e-cidade irá emitir o alerta abaixo:
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image177.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image177.png)
+
+À direita, há um botão para atualização do chat e outro que permite a inclusão de mensagens. Ao clicar sobre este, o e-cidade irá permitir digitar a mensagem para o cidadão e, se desejar, anexar um arquivo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image179.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image179.png)
+
+Para concluir o envio basta clicar em **"Enviar Mensagem"**; a mensagem será exibida.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image178.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image178.png)
+
+## Ações
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image176.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image176.png)
+
+Através desta opção é possível realizar um despacho, anexar documentos ou transferir sem um recebimento, além de outros procedimentos e da visualização de dados do processo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image180.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image180.png)
+
+### Despacho Interno
+
+Permite efetivar o despacho interno com o parecer do usuário. Caso não tenha o que registrar, basta não preencher este campo.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image60.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image60.png)
+
+O e-cidade também retorna uma prévia de despachos efetivados anteriormente. Na última coluna "Ações" há um ícone que permite visualizar digitalmente o documento "Despacho Interno", facilitando a conferência do parecer realizado.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image42.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image42.png)
+
+### Anexo de Documentos
+
+Opção que permite ao usuário anexar documentos ao processo, assim como excluir ou fazer download de um documento existente.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image39.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image39.png)
+
+### Transferência de Processos
+
+Permite a transferência do processo ao departamento na instituição ou entre instituições, bem como definir um usuário que realizará o recebimento.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image33.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image33.png)
+
+**NOTA:** Caso seja definido um usuário para recebimento, somente este poderá efetivar o recebimento e tramitação do processo. Definindo como *"Selecione o Usuário"*, o processo será listado para recebimento a todos que possuem acesso à rotina do andamento do processo no departamento.
+
+### Dados do Processo
+
+Permite visualizar informações referentes ao processo, como número, tipo, data do processo, titular, requerente, instituição de origem, departamento inicial e observação.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image181.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image181.png)
+
+Para visualizar mais informações sobre o processo, como movimentação entre outras informações, clique sobre *"Processo"*.
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image182.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image182.png)
+
+### Botões de Ação
+
+[![](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image183.png)](https://e-cidade.wiki.br/patrimonial/protocolo/files/images_protocolo_tecnico/image183.png)
+
+- **Apenas Receber:** Este botão somente ficará visível caso o processo esteja com o status *"A Receber"*, ou seja, pendente de recebimento. Permite efetivar o recebimento de forma rápida.
+- **Salvar:** Permite salvar informações e efetivar ações, seja realizar um despacho, anexar um documento ou uma transferência. Estas três ações podem ser efetivadas de uma única vez, se assim desejar, otimizando o tempo de quem está realizando a ação.
+- **Visualizar Documentos:** Permite visualizar documentos anexados de forma digital, folheando o processo como se fosse fisicamente.
+- **Mensagens:** Permite visualizar mensagens trocadas com o cidadão.
+- **Voltar:** Retorna para a tela anterior onde estão listados os processos do departamento.
 `,
   "Grupos de Material/Serviço": `
 Os grupos compreendem a agregação de elementos de despesa que apresentam as mesmas características quanto ao objeto de gasto.
@@ -2225,6 +3000,75 @@ Através desta rotina é possível realizar a exclusão de um fornecedor.
 
 **NOTA**: Não é possível realizar a exclusão de um fornecedor caso o mesmo já se tenha emitido algum Certificado de Registro Cadastral.
 `,
+  "Solicitações - Consulta Compras": `
+Esta rotina possibilita a consulta e acompanhamento das principais fases do processo de aquisição de materiais/serviços realizados pela administração pública.
+
+\`\`\`
+DB:PATRIMONIAL > Compras > Consultas > Solicitações
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image137.png)](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image137.png)
+
+Conforme a imagem acima, o usuário poderá digitar o número da solicitação de compras no campo indicado ou, caso não saiba, clicar sobre *"Número da solicitação"* e aplicar filtros adicionais, como intervalo de data de solicitação.
+
+Filtros complementares podem ser utilizados inserindo conteúdo entre o caractere % para busca que contenha determinada expressão ou informação exata no campo “Indique o Conteúdo”. Em seguida, clique sobre o link de uma das colunas disponíveis, como resumo, departamento ou nome do usuário.
+
+[![](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image237.png)](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image237.png)
+
+Junto com essa forma de filtro, ainda é possível alterar a quantidade padrão de listagem (15), bem como mostrar resultados diferentes, retornando registros únicos entre a coluna selecionada.
+
+Após selecionar a Solicitação de Compras e clicar em "Enviar" (ou "Pesquisar", caso tenha acessado o link), será exibida a seguinte tela:
+
+[![](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image70.png)](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image70.png)
+
+***Dados da Solicitação:***
+
+- **Solicitação de Compras:** N° sequencial gerado automaticamente pelo sistema e atribuído à solicitação de compras no momento da inclusão.
+- **Processo Administrativo (P.A):** processo administrativo informado no momento da inclusão da solicitação de compras.
+- **Departamento:** departamento utilizado durante a inclusão da solicitação de compras.
+- **Usuário Solicitante:** usuário que realizou a inclusão da solicitação de compras, determinado no canto superior direito da tela do e-cidade.
+- **Data da Solicitação:** data de inclusão da solicitação de compras, exibida na parte inferior direita da tela no momento da inclusão.
+- **Instituição:** instituição em que o usuário estava no momento da inclusão da solicitação de compras.
+- **Tipo Solicitação:** definido na primeira tela da inclusão, podendo ser Normal, Pacto ou Registro de Preço.
+- **Resumo:** resumo definido no momento da inclusão da solicitação de compras.
+- **Situação:** indica se a solicitação está "Liberado" ou "Não Liberado".
+- **Anulada:** indica se a solicitação está anulada (SIM ou NÃO).
+- **Fornecedor Sugerido:** se aplicável, exibe o fornecedor informado na última aba durante a inclusão da solicitação de compras.
+
+[![](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image329.png)](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image329.png)
+
+***Itens/Dotações:***
+
+Retorna os dados dos materiais/serviços requisitados, bem como a dotação a ser utilizada para esta aquisição.
+
+[![](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image42.png)](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image42.png)
+
+***Orçamento de Solicitações:***
+
+Se existente, retorna os dados relativos aos orçamentos de solicitações de compras.
+
+***Processo de Compras:***
+
+Se existente, retorna os dados relativos ao processo de compras.
+
+***Orçamento de Processo de Compras:***
+
+Se existente, retorna os dados relativos ao orçamento do processo de compras.
+
+***Licitação:***
+
+Caso esta solicitação de compras esteja vinculada a uma licitação, ela será listada através desse botão.
+
+***Autorização de Empenho:***
+
+Se houver, retorna o código de autorização e empenho gerados pelo módulo Compras. O usuário poderá obter informações relativas à autorização de empenho e ao empenho clicando nos links destes códigos.
+
+[![](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image43.png)](https://e-cidade.wiki.br/patrimonial/compras/files/compras_tecnico/image43.png)
+
+***Pendências:***
+
+Caso tenha sido lançada alguma pendência durante o trâmite da solicitação de compras, ela será listada através desse botão.
+`,
   "Solicitações": `
 Esta rotina possibilita a consulta e acompanhamento das principais fases do processo de aquisição de materiais/serviços realizados pela administração pública.
 
@@ -2453,6 +3297,100 @@ Ao acessar o menu é possível consultar a despesa de duas formas:
 Após pesquisar, o sistema demonstra os dados da dotação escolhida para visualização:
 
 Apresentação dos dados da dotação, saldos e também a lista detalhada de reservas vinculadas a ela, caso tenha.
+`,
+  "Bens - Consulta Patrimônio": `
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Consultas > Bens
+\`\`\`
+
+Através dessa rotina de consulta é possível obter todos os dados relativos a um determinado bem patrimonial.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image58.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image58.png)
+
+Os filtros possíveis de serem utilizados:
+
+- **Placa:** número da placa identificadora do bem.
+- **Código do bem:** código do bem atribuído pelo sistema.
+- **Departamento:** código do departamento no qual se encontra o bem.
+- **Características adicionais do bem:** representa o campo observações contido no cadastro de bens patrimoniais.
+
+Caso desconheça o código do bem ou departamento, poderá optar por pesquisá-los, clicando nos links [código do bem] ou [departamento].
+
+Poderá ainda acrescentar na consulta as características adicionais do bem. Para isso, deve utilizar o filtro **Características adicionais do bem**, configurando-o como "SIM".
+
+Feito isso, é possível gerar o relatório de bens clicando no botão gerar relatório ou consultá-lo através do botão pesquisa.
+
+A pesquisa gerada trará o código e a descrição do bem, o estrutural de sua classificação, o código e o nome do departamento no qual o bem está lotado, o código e o nome do fornecedor, a data de aquisição, o valor do bem e o número de sua placa identificadora.
+
+Caso o bem esteja segurado, o relatório trará os dados da seguradora e da apólice de seguro. Por fim, pode-se observar nesta consulta os históricos relativos ao bem e sua placa identificadora.
+
+No botão [gerar relatório], o sistema irá gerar um relatório com as mesmas informações acima descritas.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image68.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image68.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image57.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image57.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image8.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image8.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image29.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image29.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image16.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image16.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image31.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image31.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image73.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image73.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image90.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image90.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image12.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image12.png)
+`,
+  "Historico dos Bens - Consulta Patrimônio": `
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Consultas > Histórico dos bens
+\`\`\`
+
+Nesta consulta é possível obter informações sobre o histórico do bem, enquanto este estiver sob o domínio da administração pública.
+
+Para consultar um bem, o usuário deve informar:
+
+- **Código do bem:** código do bem atribuído pelo sistema.
+- **Características adicionais do bem:** representa o campo observações contido no cadastro de bens patrimoniais.
+
+Caso desconheça o código, pode optar por pesquisá-lo clicando no link [código do bem].
+
+Poderá ainda acrescentar na consulta as características adicionais do bem. Para isso, o filtro características adicionais do bem deverá estar marcado como "SIM".
+
+Feito isso, é possível gerar o relatório do histórico do bem clicando no botão gerar relatório ou consultá-lo através do botão [pesquisa].
+
+Na pesquisa, o sistema abrirá uma tela contendo os dados atuais do bem: o código do bem, o departamento onde se encontra lotado, o número estrutural de sua classificação e a data de sua aquisição.
+
+Abaixo, trará o histórico propriamente dito, que conterá informações relativas à data da inclusão do bem no sistema, seu departamento de origem, seu departamento destino, seu histórico e situação do bem, transferências e baixa, se houver.
+
+No botão gerar relatório, o sistema gerará um relatório com as mesmas informações acima descritas.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image71.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image71.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image74.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image74.png)
+`,
+  "Consulta Empenho - Consulta Patrimônio": `
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Consultas > Consulta Empenho
+\`\`\`
+
+Permite a consulta de empenhos da instituição. Exibe os filtros com ícones:
+
+- **Número do empenho:** Permite buscar por número do empenho, sequencial do empenho, nome/razão social e CNPJ/CPF.
+- **Sequencial do empenho:** Permite buscar por número do empenho, sequencial do empenho, nome/razão social e CNPJ/CPF.
+- **Reduzido:** Permite buscar pelo reduzido ou pelo estrutural da despesa.
+- **Código do material:** Permite buscar por código do material, descrição do material e se ativo/inativo.
+- **Numcgm:** Permite buscar pelo número do CGM do contratado, nome/razão social e CNPJ/CPF.
+- **Data de emissão:** Permite preencher período.
+- **Ordem:** Permite buscar pelo número da ordem de compra, código do elemento e valor da ordem.
+- **Processo administrativo:** Permite preencher o campo com número do processo.
+
+Após selecionar o empenho, terá informações de resumo da movimentação, itens do empenho, lançamentos contábeis, notas de liquidação, pagamento, ordens de compra, solicitações de compra, processo de compras, agenda de pagamentos, contratos e imprimir a consulta. Também traz as informações cadastradas na emissão do empenho:
+
+![Imagem da documentação](https://e-cidade.wiki.br/patrimonial/contratos/files/images_contratos_tecnico/image43.png)
 `,
   "Consulta Empenho": `
 \`\`\`
@@ -6801,6 +7739,444 @@ DB:PATRIMONIAL > Compras > Procedimentos > Libera Fornecedor > Cancelamento
 
 Permite efetivar o cancelamento da liberação do fornecedor, porém, não a exclui, mantendo os registros no e-cidade.
 `,
+  "Unidade Compradora - Consulta PNCP": `
+Permite realizar a consulta de “Unidades Compradoras”.
+
+***Item de menu:***
+
+\`\`\`
+PATRIMONIAL > PNCP > Consultas > Unidade Compradora
+\`\`\`
+
+![Consulta de Unidades Compradoras no PNCP](../../assets/images/pncp-unidades-consulta.svg)
+
+**Nota:** Caso já tenha sido realizado o cadastro de unidade compradora através de algum outro portal que possui integração com o PNCP, a mesma será listada aqui, pois é realizada uma consulta de todas as unidades vinculadas à instituição (órgão) através do documento CGC. Também serão listadas unidades cadastradas no PNCP pelo e-cidade.
+`,
+  "Contratos de Contratação - Consulta PNCP": `
+Permite consultar os contratos das contratações/licitações que tenham sido publicados pelo e-Cidade no PNCP.
+
+***Item de menu:***
+
+\`\`\`
+PATRIMONIAL > PNCP > Consultas > Contratos de Contratação
+\`\`\`
+
+![Lista do Histórico de Contratações no PNCP](../../assets/images/pncp-historico-contratacoes-lista.svg)
+
+![Contratos vinculados à contratação](../../assets/images/pncp-historico-contratos-vinculados.svg)
+
+![Detalhes do contrato no PNCP](../../assets/images/pncp-historico-contrato-detalhe.svg)
+`,
+  "Contratação/Edital/Aviso - Procedimentos PNCP - Página 1": `
+### Inclusão
+
+***Item de menu:***
+
+\`\`\`
+PATRIMONIAL > PNCP > Procedimentos > Contratação/Edital/Aviso > Inclusão
+\`\`\`
+
+![Tela de Inclusão de Contratação/Edital/Aviso](../../assets/images/pncp-contratacao-inclusao.svg)
+
+- **Unidade Compradora:** serão listadas unidades compradoras cadastradas como ativas no e-cidade.
+- **Origem:** por padrão, os dados serão originados de licitações cadastradas no e-cidade.
+- **Licitação:** âncora de busca que permite selecionar licitações da instituição com itens e situações “Em andamento” ou “Homologadas”, cuja data de abertura seja igual ou posterior a 01/04/2021; a mesma condição se aplica ao ano (2021).
+
+O botão “Buscar Dados” disponibiliza nos respectivos campos os dados vinculados à licitação selecionada. O botão “Consultar” permite uma consulta rápida à licitação cadastrada no e-cidade.
+
+- **Modalidade de Compra:** lista de modalidades aplicáveis disponibilizadas pelo PNCP.
+- **Instrumento Convocatório:** lista de instrumentos convocatórios disponibilizados pelo PNCP.
+- **Modo de Disputa:** lista de modos de disputa disponibilizados pelo PNCP.
+
+**NOTA:** As opções e combinações do modo de disputa serão listadas conforme as regras de conformidade entre Instrumento Convocatório e Modo de Disputa estabelecidas pelo PNCP.
+
+Número da Compra, Ano da Compra, Número do Processo, Objeto da Compra, SRP e Data/Hora Abertura Proposta serão definidos conforme as informações retornadas da licitação selecionada.
+
+- **Data/Hora Encerramento Proposta:** informar a data e hora de encerramento do recebimento das propostas, pelo horário de Brasília.
+
+**NOTA:** Os campos Data/Hora para Abertura e Encerramento Proposta somente serão exibidos e obrigatórios para o tipo de Instrumento Convocatório Edital ou Aviso de Contratação Direta. Para o tipo Ato que autoriza a Contratação Direta, esses campos não serão listados.
+
+- **Amparo Legal:** serão listados os amparos legais aplicáveis.
+- **Link sistema origem:** permite definir um link da compra no sistema de origem. Essa informação ficará vinculada e poderá ser acessada através da compra/edital/aviso publicado.
+- **Informação Complementar:** se existir, altere para “Sim” e especifique.
+
+![Tabela de itens da Contratação/Edital/Aviso](../../assets/images/pncp-contratacao-itens.svg)
+
+## Itens / Resultado(s)
+
+Serão listados os itens e suas respectivas informações conforme a licitação selecionada. Caso ela esteja com a situação “Homologada”, serão retornados os resultados julgados e homologados para cada item.
+
+- **Material/Serviço:** definido conforme o cadastro do material: se Serviço = Sim, será “Serviço”; caso contrário, “Material”. Para leilão, o e-cidade define “Material” e não permite alteração.
+- **Tipo de Benefício:** quando aplicável, definido conforme “Tipo de Benefício à Microempresa e Empresa de Pequeno Porte” (Informações Complementares). Para leilão, o e-cidade define “Não se aplica” e não permite alteração.
+- **Incentivo Fiscal PPB:** indica se possui incentivo fiscal PPB (Produto Manufaturado Nacional). Para leilão, o e-cidade define “Não possui o incentivo” e não permite alteração.
+- **Critério Julgamento:** quando aplicável, definido conforme “Critério de Julgamento” (Informações Complementares); caso contrário, disponibiliza as opções previstas no manual do PNCP.
+- **Categoria Item:** Bens Imóveis e Bens Móveis ficam disponíveis para modalidade leilão; nos demais casos, a opção aplicável é “Não se aplica”.
+- **Registro Imobiliário:** código de Registro Imobiliário. Obrigatório para contratação na modalidade leilão cuja categoria do item seja “Bens Imóveis”.
+- **Orçamento Sigiloso:** identifica se o orçamento do item é “Sigiloso” ou “Não sigiloso”. Para leilão, o padrão é “Não sigiloso” e não pode ser alterado.
+- **Indicador sub-contratação:** opção exibida e obrigatória quando a licitação possuir resultados homologados para envio.
+- **Aplica Margem de Preferência Normal:** indica se a margem é aplicável ao item (Não/Sim).
+- **Percentual Preferência Normal:** percentual da margem normal, maior ou igual a 0 e menor que 100. Exemplo: 10.0000.
+- **Aplica Margem de Preferência Adicional:** indica se a margem adicional é aplicável ao item (Não/Sim).
+- **Percentual Preferência Adicional:** percentual da margem adicional, maior ou igual a 0 e menor que 100. Exemplo: 10.0000.
+- **Amparo Legal da Margem de Preferência:** código da fundamentação legal da aplicação da margem de preferência.
+- **Aplica Margem Critério de Desempate:** indica a aplicação de critério de desempate conforme Art. 60 para o item (Não/Sim).
+- **Amparo Legal do Critério:** código da fundamentação legal do critério de desempate conforme o Art. 60.
+
+Com todos os dados preenchidos e corretos, o botão “Enviar Dados” compila as informações e efetiva a publicação da Contratação/Edital/Aviso no PNCP, disponibilizando um link de acesso. É obrigatório anexar um documento para efetivar a ação; para isso, clique em “Anexar Documento”.
+
+**NOTA:** Extensões de arquivos suportadas pelo PNCP: pdf, txt, rtf, doc, docx, xls, xlsx, odt, sxw, zip, 7z, rar, dwg, dwt, dxf, dwf, dwfx, svg, sldprt, sldasm, dgn, ifc, skp, 3ds, dae, obj, rfa e rte. O tamanho máximo por arquivo é 30 MB.
+`,
+  "Contratação/Edital/Aviso - Procedimentos PNCP - Página 2": `
+### Inserir Resultados
+
+***Item de menu:***
+
+\`\`\`
+PATRIMONIAL > PNCP > Procedimentos > Contratação/Edital/Aviso > Inserir Resultado
+\`\`\`
+
+![Tela de Inserir Resultados no PNCP](../../assets/images/pncp-inserir-resultados.svg)
+
+**Contratação/Edital/Aviso:** permite selecionar entre as licitações já publicadas e homologadas no e-cidade a fim de buscar as propostas julgadas a serem enviadas como resultados para a contratação/edital/aviso.
+
+Após clicar no botão “Buscar Dados”, será possível visualizar dados da compra selecionada, como Modalidade de Compra, Instrumento Convocatório, Número/Ano da Compra e Objeto da Compra.
+
+Em Itens serão listados os dados da licitação. Ao clicar no ícone de mais (+), é possível ver mais detalhes sobre os resultados a serem enviados.
+
+A única opção a ser preenchida é “Indicador sub-contratação”, que será obrigatória para cada resultado a ser enviado. Após o preenchimento, clique em “Enviar Dados”.
+
+**NOTA:** Esta rotina é obrigatória quando a licitação for publicada com o status “Em Andamento”, para que os resultados da licitação sejam publicados após a homologação.
+`,
+  "Contratação/Edital/Aviso - Procedimentos PNCP - Página 3": `
+### Exclusão
+
+***Item de menu:***
+
+\`\`\`
+PATRIMONIAL > PNCP > Procedimentos > Contratação/Edital/Aviso > Exclusão
+\`\`\`
+
+![Histórico de Contratações para exclusão no PNCP](../../assets/images/pncp-historico-contratacoes-excluir.svg)
+
+Ao acessar a rotina será listado o histórico de contratações/editais/avisos publicados através do e-cidade. Clique no ícone que representa a exclusão para efetivar a ação, quando aplicável. Caso não seja possível concluir o procedimento, será exibido um alerta indicando o motivo.
+
+Para atualizar o histórico de contratações, clique no botão “Atualizar”.
+`,
+  "Contratação/Edital/Aviso - Procedimentos PNCP - Página 4": `
+### Retificar Licitação
+
+***Item de menu:***
+
+\`\`\`
+PATRIMONIAL > PNCP > Procedimentos > Contratação/Edital/Aviso > Retificar
+\`\`\`
+
+O item de menu não é obrigatório; será utilizado apenas quando houver modificações no processo licitatório.
+
+![Tela de Retificar Contratação/Edital/Aviso](../../assets/images/pncp-retificar-contratacao.svg)
+
+Para retificar informações, utilize a âncora Contratação/Edital/Aviso para buscar a licitação que será retificada.
+
+Na aba Contratações, edite as informações alteradas e insira os dados atualizados. O campo Justificativa é obrigatório.
+
+- **Unidade Compradora:** serão listadas unidades compradoras cadastradas como ativas no e-cidade.
+- **Origem:** por padrão, a origem dos dados serão licitações cadastradas no e-cidade.
+- **Licitação:** âncora de busca para selecionar licitações da instituição com itens, situações “Em andamento” ou “Homologadas” e data de abertura igual ou posterior a 01/04/2021 (ano 2021).
+
+O botão “Buscar Dados” disponibiliza as informações da licitação selecionada nos respectivos campos. O botão “Consultar” permite consulta rápida à licitação cadastrada no e-cidade.
+
+- **Modalidade de Compra:** lista modalidades aplicáveis disponibilizadas pelo PNCP.
+- **Instrumento Convocatório:** lista instrumentos convocatórios disponibilizados pelo PNCP.
+- **Modo de Disputa:** lista modos de disputa disponibilizados pelo PNCP.
+
+**NOTA:** As opções e combinações do modo de disputa seguem as regras de conformidade entre Instrumento Convocatório e Modo de Disputa estabelecidas pelo PNCP.
+
+Número da Compra, Ano da Compra, Número do Processo, Objeto da Compra, SRP e Data/Hora Abertura Proposta são definidos conforme as informações retornadas da licitação selecionada.
+
+- **Data/Hora Encerramento Proposta:** informar a data e hora de encerramento do recebimento das propostas, pelo horário de Brasília.
+
+**NOTA:** Data/Hora para Abertura e Encerramento Proposta somente são exibidos e obrigatórios para Instrumento Convocatório Edital ou Aviso de Contratação Direta. Para Ato que autoriza a Contratação Direta, esses campos não são listados.
+
+- **Amparo Legal:** lista os amparos legais aplicáveis.
+- **Link sistema origem:** permite definir o link da compra no sistema de origem, que ficará vinculado à compra/edital/aviso publicado.
+- **Informação Complementar:** se existir, altere para “Sim” e especifique.
+
+![Aba Itens da retificação de Contratação/Edital/Aviso](../../assets/images/pncp-retificar-itens.svg)
+
+## Itens
+
+Serão listados os itens e suas respectivas informações conforme a licitação selecionada. Se estiver “Homologada”, serão retornados os resultados julgados e homologados para cada item.
+
+- **Situação para os itens selecionados:** permite definir, nos itens marcados, uma das situações: Em andamento, Homologado, Anulado/Revogado/Cancelado, Deserto ou Fracassado.
+- **Justificativa:** campo para justificar as retificações dos itens.
+- **Material/Serviço:** definido conforme o cadastro do material. Para leilão, o e-cidade define “Material” e não permite alteração.
+- **Tipo de Benefício:** quando aplicável, definido conforme “Tipo de Benefício à Microempresa e Empresa de Pequeno Porte” (Informações Complementares). Para leilão, fica “Não se aplica” e não pode ser alterado.
+- **Incentivo Fiscal PPB:** indica incentivo fiscal PPB (Produto Manufaturado Nacional). Para leilão, fica “Não possui o incentivo” e não pode ser alterado.
+- **Critério Julgamento:** quando aplicável, definido conforme “Critério de Julgamento” (Informações Complementares); caso contrário, lista opções do manual PNCP.
+- **Categoria Item:** Bens Imóveis e Bens Móveis são disponíveis para leilão; nos demais casos, “Não se aplica”.
+- **Registro Imobiliário:** código obrigatório para leilão com categoria “Bens Imóveis”.
+- **Orçamento Sigiloso:** indica “Sigiloso” ou “Não sigiloso”. Para leilão, o padrão é “Não sigiloso” e não pode ser alterado.
+- **Indicador sub-contratação:** exibido e obrigatório quando a licitação possuir resultados homologados para envio.
+- **Aplica Margem de Preferência Normal:** indicador (Não/Sim) de aplicabilidade ao item.
+- **Percentual Preferência Normal:** percentual maior ou igual a 0 e menor que 100. Exemplo: 10.0000.
+- **Aplica Margem de Preferência Adicional:** indicador (Não/Sim) de aplicabilidade ao item.
+- **Percentual Preferência Adicional:** percentual maior ou igual a 0 e menor que 100. Exemplo: 10.0000.
+- **Amparo Legal da Margem de Preferência:** código da fundamentação legal correspondente.
+- **Aplica Margem Critério de Desempate:** indicador (Não/Sim) conforme Art. 60.
+- **Amparo Legal do Critério:** código da fundamentação legal do critério de desempate conforme Art. 60.
+
+Com os dados preenchidos e corretos, clique em “Retificar Itens” para compilar e publicar as informações atualizadas da Contratação/Edital/Aviso no PNCP, que disponibilizará um link de acesso.
+`,
+  "Contratação/Edital/Aviso - Procedimentos PNCP - Página 5": `
+### Publicação de Documentos
+
+***Item de menu:***
+
+\`\`\`
+PATRIMONIAL > PNCP > Procedimentos > Contratação/Edital/Aviso > Publicação de Documentos
+\`\`\`
+
+Rotina que permite inserir documentos na contratação.
+
+![Tela de Publicação de Documentos da Contratação/Edital/Aviso](../../assets/images/pncp-publicar-documentos.svg)
+
+- **Contratação/Edital/Aviso:** permite buscar a licitação à qual serão anexados documentos no PNCP.
+- **Título do Documento:** aceita no máximo 50 caracteres, conforme o manual do PNCP.
+- **Tipo:** serão disponibilizados os tipos Aviso de Contratação Direta, Edital, Minuta de Contrato, Termo de Referência, Anteprojeto, Projeto Básico, Estudo Técnico Preliminar, Projeto Executivo, Mapa de Riscos, DFD, Minuta da ata de registro de preços e Ato que autoriza a contratação direta, como informação complementar a ser enviada junto com o documento ao PNCP.
+`,
+  "Contrato - Procedimentos PNCP - Página 1": `
+### Inclusão
+
+**Item de menu:**
+
+~~~
+PATRIMONIAL > PNCP > Procedimentos > Contrato > Inclusão
+~~~
+
+![Formulário de inclusão de Contrato no PNCP](../../assets/images/pncp-contrato-inclusao.svg)
+
+- **Unidade Compradora:** serão listadas unidades compradoras cadastradas como ativas no e-cidade.
+- **Contratação/Edital/Aviso:** âncora de busca que lista contratações/editais/avisos já publicados no PNCP cuja licitação esteja homologada no e-cidade, permitindo vincular as informações.
+- **Contrato:** âncora de busca que permite selecionar contratos da instituição com itens vinculados, cuja data de assinatura e início de vigência sejam iguais ou posteriores a 01/04/2021; a mesma condição se aplica ao ano (2021).
+
+Para consultar rapidamente a Contratação/Edital/Aviso selecionada e já publicada, clique em “PNCP”. O botão “Buscar Dados” disponibiliza nos respectivos campos as informações vinculadas ao contrato selecionado; “Consultar” permite uma consulta rápida ao contrato cadastrado no e-cidade.
+
+- **Tipo de Contrato:** lista os tipos de contratos disponibilizados pelo PNCP.
+
+Número do Contrato/Empenho, Ano do Contrato, Fornecedor, Objeto do Contrato, Processo, Valor Inicial, Data da Assinatura e período de vigência (de e até) serão preenchidos conforme as informações cadastradas no e-cidade para o contrato.
+
+![Fornecedor Subcontratado selecionado como Sim](../../assets/images/pncp-fornecedor-subcontratado.svg)
+
+- **Fornecedor Subcontratado:** se aplicável, defina como “Sim” e selecione o fornecedor subcontratado pelo cadastro de CGM. A opção fica disponível somente quando a modalidade vinculada à contratação for diferente de leilão.
+- **Categoria do Processo:** lista as categorias de processo disponibilizadas pelo PNCP.
+- **Receita:** indica se o contrato gera receita ou despesa.
+- **Quantidade de Parcelas:** define a quantidade de parcelas; campo obrigatório que aceita apenas números inteiros.
+- **Informação Complementar:** se aplicável, defina como “Sim” e adicione informações complementares sobre o contrato a ser publicado no PNCP.
+- **CIPI:** se aplicável, defina como “Sim”. Os campos Identificador e URL tornam-se obrigatórios. O identificador aceita no máximo 14 dígitos, conforme o manual do PNCP. A opção fica disponível somente quando a modalidade vinculada à contratação for diferente de leilão.
+
+Com os dados preenchidos e corretos, clique em “Enviar Dados” para publicar o contrato no PNCP; será disponibilizado um link de acesso.
+
+![Alerta de publicação de contrato efetuada com sucesso no PNCP](../../assets/images/pncp-contrato-publicacao-sucesso.svg)
+
+Após a publicação do contrato, o botão “Anexar Documento” ficará habilitado para anexar um documento nesta tela.
+
+![Formulário para anexar documento ao contrato publicado](../../assets/images/pncp-contrato-anexar-documento.svg)
+
+- **Título do Documento:** aceita no máximo 50 caracteres, conforme o manual do PNCP.
+- **Tipo:** serão disponibilizados os tipos “Contrato”, “Nota de empenho” e “Outros” como informação complementar a ser enviada junto com o documento ao PNCP.
+
+![Alerta de documento anexado com sucesso ao contrato](../../assets/images/pncp-contrato-documento-sucesso.svg)
+
+Também é possível acessar a rotina de inclusão de documentos para anexar novos documentos complementares.
+`,
+  "Contrato - Procedimentos PNCP - Página 2": `
+### Inclusão de Documentos
+
+**Item de menu:**
+
+~~~
+PATRIMONIAL > PNCP > Procedimentos > Contrato > Inclusão de documento
+~~~
+
+Rotina que permite inserir documentos ao contrato.
+
+![Tela de inclusão de documentos do contrato no PNCP](../../assets/images/pncp-contrato-inclusao-documentos.svg)
+
+- **Contrato:** permite buscar o contrato que terá documentos anexados ao PNCP.
+- **Título do Documento:** aceita no máximo 50 caracteres, conforme o manual do PNCP.
+- **Tipo:** serão disponibilizados os tipos “Contrato”, “Nota de empenho”, “Relatório Final de Contrato” e “Outros” como informação complementar a ser enviada junto com o documento ao PNCP.
+`,
+  "Contrato - Procedimentos PNCP - Página 3": `
+### Exclusão
+
+**Item de menu:**
+
+~~~
+PATRIMONIAL > PNCP > Procedimentos > Contrato > Exclusão
+~~~
+
+![Lista de contratos publicados no PNCP com ações de exclusão](../../assets/images/pncp-contrato-exclusao-lista.svg)
+
+Ao acessar a rotina, será listado o histórico de contratos já publicados através do e-cidade. Clique no ícone que representa a exclusão para efetivar a ação, quando aplicável. Caso não seja possível concluir o procedimento, será exibido um alerta indicando o motivo.
+
+Para atualizar o histórico de contratos, clique no botão **“Atualizar”**.
+`,
+  "Ata de Registro de Preço - Procedimentos PNCP": `
+### Inclusão
+
+**Item de menu:**
+
+~~~
+PATRIMONIAL > PNCP > Procedimentos > Ata de Registro de Preço
+~~~
+
+![Tela de inclusão de Ata de Registro de Preço no PNCP](../../assets/images/pncp-ata-registro-preco-inclusao.svg)
+
+- **Contratação/Edital/Aviso:** âncora de busca que lista contratações/editais/avisos publicados no PNCP pelo e-cidade para vincular as informações. Ao selecionar uma compra/edital/aviso, o e-cidade lista automaticamente as atas vinculadas e seus dados em “Atas”.
+- **Contrato do sistema:** por padrão, “Não” permite preencher manualmente os campos seguintes. Ao selecionar “Sim”, é possível selecionar contratos da instituição com itens vinculados, cuja data de assinatura e início de vigência sejam iguais ou posteriores a 01/04/2021; a mesma condição se aplica ao ano (2021).
+
+![Campo Contrato com as opções Buscar Dados e Consultar](../../assets/images/pncp-ata-contrato-busca.svg)
+
+Após selecionar o contrato, clique em “Consultar” para obter mais informações ou em “Buscar Dados” para preencher automaticamente os campos.
+
+- **Número Ata de Registro de Preço:** número da ata, com no máximo 50 caracteres.
+- **Ano Ata:** ano da ata com quatro dígitos numéricos, igual ou superior a 2021, ano da publicação da NLLC 14.133.
+- **Data da Assinatura:** data de assinatura da ata, igual ou posterior a 01/04/2021, data da publicação da NLLC 14.133.
+- **Período Vigência de - até:** datas de início e fim da vigência da ata. O início da vigência deve ser igual ou posterior a 01/04/2021, data da publicação da NLLC 14.133.
+
+Após preencher corretamente as informações, clique em “Enviar Dados” para publicar a Ata de Registro de Preço no PNCP. Para limpar os campos, clique em “Limpar”. O e-cidade exibirá um alerta após a publicação; o link indicado permite conferi-la.
+
+![Alerta de publicação da Ata de Registro de Preço no PNCP](../../assets/images/pncp-ata-publicacao-sucesso.svg)
+
+Em “Atas” são listadas as atas de registro de preço publicadas e vinculadas à compra/edital/aviso selecionada, com seus respectivos dados.
+
+![Tabela de atas de registro de preço publicadas](../../assets/images/pncp-ata-registros-publicados.svg)
+
+Entre as ações disponíveis está “Alteração”, que permite retificar e cancelar a ata. Para isso, selecione “Cancelar” como “Sim”, informe a data do cancelamento e a justificativa, e clique em “Retificar”.
+
+![Janela de retificação e cancelamento da Ata de Registro de Preço](../../assets/images/pncp-ata-retificar-cancelamento.svg)
+
+Após a ação, o e-cidade exibirá “Cancelado” como “Sim” e a respectiva “Data Cancelamento”.
+
+![Ata de Registro de Preço marcada como cancelada na lista](../../assets/images/pncp-ata-cancelada-grade.svg)
+
+Ao clicar em “Alterar” para uma ata cancelada, o e-cidade apenas exibirá os dados nos respectivos campos.
+
+![Dados da Ata de Registro de Preço cancelada](../../assets/images/pncp-ata-cancelada-dados.svg)
+
+Para excluir uma ata, clique no ícone de exclusão nas ações e confirme.
+
+![Confirmação de exclusão da Ata de Registro de Preço](../../assets/images/pncp-ata-exclusao-confirmar.svg)
+`,
+  "Termo de Contrato - Procedimentos PNCP": `
+### Inclusão
+
+**Item de menu:**
+
+~~~
+PATRIMONIAL > PNCP > Procedimentos > Termo de Contrato
+~~~
+
+![Tela de inclusão de Termo de Contrato no PNCP](../../assets/images/pncp-termo-contrato-inclusao.svg)
+
+- **Contrato:** âncora de busca que lista contratos publicados no PNCP pelo e-cidade para vincular as informações. Ao selecionar um contrato, o e-cidade lista automaticamente os termos aditivos vinculados e seus dados em “Termos”.
+- **Tipo Termo de Contrato:** permite selecionar Termo de Rescisão, Termo Aditivo ou Termo de Apostilamento.
+- **Nº Termo de Contrato:** número do termo de contrato com no máximo 50 caracteres.
+- **Objeto do Termo de Contrato:** descrição do objeto do termo.
+- **Data Assinatura Termo:** data de assinatura do termo, igual ou posterior a 01/04/2021, data da publicação da NLLC 14.133.
+- **Qualificação Acréscimo/Supressão:** identifica se o termo aditivo terá acréscimo ou supressão.
+- **Qualificação Vigência:** identifica se o termo aditivo altera a vigência e o número de parcelas.
+- **Qualificação Fornecedor:** identifica se o termo aditivo altera o fornecedor.
+- **Qualificação Reajuste:** identifica se o termo aditivo altera o valor unitário do item do contrato.
+- **Qualificação Informativo:** identifica se o termo aditivo contém alguma observação. Se sim, será exibido o campo “Observação Informativo”, de preenchimento obrigatório.
+
+Após preencher as informações, clique em “Enviar Dados”. O e-cidade exibirá o alerta abaixo.
+
+![Alerta de termo incluído com sucesso](../../assets/images/pncp-termo-inclusao-sucesso.svg)
+
+Logo abaixo em “Termos” será listado o termo incluído.
+
+![Termo de contrato incluído na lista de Termos](../../assets/images/pncp-termo-incluso-lista.svg)
+
+Nas ações disponíveis, é possível alterar os dados ou excluir o termo aditivo. Para anexar um documento, ou consultar/excluir um documento já incluído, clique no ícone “Documento”.
+
+### Documento Termo Contrato
+
+![Formulário e lista de documentos do Termo de Contrato](../../assets/images/pncp-documento-termo-contrato.svg)
+
+Para incluir um documento, informe o “Título do Documento”, selecione o tipo (Termo de Rescisão, Termo Aditivo, Termo de Apostilamento ou Outros), anexe o arquivo e clique em “Salvar”. As ações disponíveis permitem baixar ou excluir o documento.
+`,
+  "Plano de Contratações - Procedimentos PNCP": `
+### Inclusão
+
+**Item de menu:**
+
+~~~
+PATRIMONIAL > PNCP > Procedimentos > Plano de Contratações
+~~~
+
+![Tela de inclusão do Plano de Contratações no PNCP](../../assets/images/pncp-plano-contratacoes-inclusao.svg)
+
+- **Unidade Compradora:** serão listadas unidades compradoras cadastradas como ativas no e-cidade.
+- **Ano PCA:** ano do Plano de Contratações Anual.
+- **Unidade E-Cidade (unidade requisitante):** por padrão, será indicado como unidade requisitante o departamento da sessão. É possível alterar e selecionar outro departamento cadastrado no e-cidade.
+
+![Unidade requisitante preenchida com o departamento da sessão](../../assets/images/pncp-pca-unidade-requisitante-sim.svg)
+
+Na opção “Não”, será exibido um campo aberto para descrever o nome da unidade requisitante.
+
+![Campo aberto para informar a unidade requisitante](../../assets/images/pncp-pca-unidade-requisitante-nao.svg)
+- **Catálogo de materiais/serviços:** por padrão, “Outros”, correspondente ao catálogo de materiais do e-cidade.
+- **Código do Material/Serviço:** a âncora de pesquisa disponibiliza filtros por Código, Descrição do Material, Grupo e Subgrupo para localizar materiais/serviços no e-cidade.
+- **Categoria do Item do PCA:** opções Material, Serviço, Obras, Serviços de Engenharia, Soluções de TIC, Locação de Imóveis, Alienação/Concessão/Permissão e Obras e Serviços de Engenharia, conforme o manual do PNCP.
+- **Unidade E-Cidade (unidade de fornecimento):**
+  - **Sim (padrão):** serão listadas unidades cadastradas no e-cidade.
+  - **Não:** será possível descrever a Unidade de Fornecimento em um campo aberto.
+- **Quantidade:** quantidade de itens do plano, maior ou igual a zero, com precisão de quatro casas decimais. Exemplo: 100.0000.
+- **Valor Unitário:** valor unitário do item, maior ou igual a zero, com precisão de quatro casas decimais. Exemplo: 100.0000.
+- **Valor Total:** calculado automaticamente pelo e-cidade, multiplicando a Quantidade pelo Valor Unitário.
+- **Valor Orçamento Exercício:** valor orçamentário estimado para o exercício, maior ou igual a zero, com precisão de quatro casas decimais. Exemplo: 100.0000.
+- **Data Desejada:** data desejada para a contratação.
+
+Após preencher os campos obrigatórios, clique em “Adicionar” para incluir o material/serviço na lista de itens.
+
+**Nota:** o serviço requer o envio de pelo menos um item e aceita no máximo 1.000 itens.
+
+![Item adicionado à lista do Plano de Contratações](../../assets/images/pncp-pca-itens-adicionados.svg)
+
+Os campos a seguir são preenchidos automaticamente:
+
+- **Número do Item:** número sequencial do material/serviço adicionado.
+- **Material/Serviço:** indicador de serviço ou material, relacionado ao cadastro de material do e-cidade.
+- **Grupo Material/Serviço:** grupo vinculado ao material/serviço adicionado, também relacionado ao cadastro do material.
+
+Na última coluna de cada linha, em “Ações”, é possível excluir os itens adicionados.
+
+Após adicionar todos os itens relacionados ao PCA, clique em “Salvar” para efetivar a publicação. Ao concluir a ação, o e-cidade exibirá o alerta abaixo.
+
+![Alerta de publicação do Plano de Contratações concluída](../../assets/images/pncp-pca-publicacao-sucesso.svg)
+`,
+  "Orgão - Cadastro PNCP": `
+### Incluir
+
+***Item de menu:***
+
+\`\`\`
+PATRIMONIAL > PNCP > Cadastros > Órgão > Incluir
+\`\`\`
+
+Permite inserir um órgão/entidade que eventualmente não se encontre nos repositórios do PNCP. O portal possui uma base de dados com as informações dos Órgãos ou Entes da Federação. Caso o órgão ou ente não esteja incluído nessa base, o usuário pode utilizar este serviço para solicitar sua inclusão.
+
+Desde 25/08/2023 este serviço está integrado com o sistema CNPJ, sendo necessário informar apenas o número de CNPJ do órgão.
+
+- **CNPJ:** documento de 14 dígitos referente ao órgão/entidade.
+
+![Tela de inclusão de Órgão no PNCP](../../assets/images/pncp-orgao-incluir.svg)
+
+### Alterar
+
+Permite atualizar os dados de um órgão/entidade no repositório do PNCP que eventualmente estejam desatualizados.
+`,
   "Unidade Compradora - Cadastro PNCP": `
 Permite a inclusão e manutenção de **Unidades Compradoras**. As unidades compradoras são divisões administrativas que realizam as contratações e celebram os contratos. Todo órgão/entidade deverá ter cadastrado ao menos uma unidade no PNCP.
 
@@ -6813,5 +8189,1211 @@ Permite a inclusão e manutenção de **Unidades Compradoras**. As unidades comp
 - **Ativo:** recurso que permite definir uma unidade compradora como não ativa, uma vez que o PNCP não disponibiliza alteração/exclusão.
 
 **Notas:** somente será possível utilizar esta rotina caso a integração com o PNCP esteja ativa; caso contrário, será emitido um alerta solicitando que seja verificada a configuração inicial. Em “Unidades” serão listadas unidades compradoras já cadastradas no PNCP. Caso deseje utilizar a mesma no e-cidade, efetive a alteração e salve-a como “Ativo” sim.
+`,
+  "Transferência de bens - Procedimentos Patrimônio": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Transferência de bens > Interna > Inclusão
+\`\`\`
+
+Na aba “Gera transferência” têm-se:
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image18.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image18.png)
+
+- **Transferência**
+- **Código do Usuário**
+- **Departamento de Origem**
+- **Departamento Destino**
+- **Data da Transferência**
+- **Observação**
+
+O código da transferência será criado automaticamente pelo sistema, que traz igualmente as informações relativas ao usuário que está realizando a transferência e ao departamento que está efetivando a transferência.
+
+Cabe ao usuário informar o departamento destino do bem e a data de sua transferência. Caso desconheça o código do departamento destino, poderá optar pela pesquisa, clicando no link [departamento destino]. Por fim, poderá informar algum detalhe específico da transferência no campo observação.
+
+Informado ao sistema o departamento destino e a data da transferência, deve o usuário clicar no botão [incluir] para prosseguir a inclusão.
+
+Feito isso, a aba Itens da Transferência ficará habilitada com as seguintes informações:
+
+- **Transferência**
+- **Código do bem**
+- **Código da situação**
+- **Histórico**
+- **Divisão destino**
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image87.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image87.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image35.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image35.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image34.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image34.png)
+
+A transferência trará o código criado pelo sistema, devendo o usuário informar o código do bem e da situação do mesmo. Caso desconheça esses códigos, pode optar pela pesquisa clicando nos links [código do bem] e [código da situação]. No campo histórico, o usuário pode fazer observações relativas ao bem que está transferindo.
+
+Encerra-se o processo de inclusão clicando no botão [incluir].
+
+## Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Transferência de bens > Interna > Alteração
+\`\`\`
+
+Incluída a transferência, o usuário tem a opção de alterar o código da situação do bem e seu histórico. Para isso, deve clicar no link “A”, existente na tabela Itens Lançados, confirmando após no botão [alterar].
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image1.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image1.png)
+
+Itens da transferência:
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image77.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image77.png)
+
+## Excluir
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Transferência de bens > Interna > Excluir
+\`\`\`
+
+Caso deseje excluir o item, deve clicar no link “E”, existente na tabela Itens Lançados, confirmando após no botão [excluir].
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image21.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image21.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image3.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image3.png)
+`,
+  "Transferência de bens - Página 2 - Procedimentos Patrimônio": `
+# Transferência de bens em Lote
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Transferência de bens > Em Lote > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image55.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image55.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image26.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image26.png)
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Transferência de bens > Em Lote > Alteração
+\`\`\`
+
+### Cancelar Transferência
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Transferência de bens > Em Lote > Cancela Transferência
+\`\`\`
+`,
+  "Termo de Guarda - Procedimentos Patrimônio": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Termo de Guarda > Inclusão
+\`\`\`
+
+Neste procedimento verifica-se a presença de duas abas: Guarda e Itens. A aba Guarda é composta pelos campos abaixo:
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image70.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image70.png)
+
+- **Código da guarda:** gerado automaticamente pelo sistema; cabe ao usuário informar o responsável pela guarda do bem ou bens patrimoniais.
+- **Responsável:** caso desconheça o código do responsável poderá proceder à pesquisa clicando no link [responsável].
+- **Tipo de guarda:** informar o código do tipo de guarda que se quer incluir. Caso desconheça o código, poderá pesquisar clicando no link [tipo de guarda].
+- **Data da guarda**
+- **Observação:** observações que julgar necessárias para a guarda que se está incluindo.
+
+Encerra-se a primeira etapa da inclusão do termo de guarda clicando no botão [incluir].
+
+A aba Itens é composta por:
+
+- **Código da guarda:** após o preenchimento da aba Guarda, o código já pode ser observado nesta etapa.
+- **Código do bem:** informar o código do bem ou bens que quer incluir neste termo. Caso desconheça o código, poderá pesquisá-lo clicando no link [código do bem].
+
+A tela de pesquisa trará todos os bens do departamento no qual o usuário está logado, devendo proceder à escolha do bem que deseja incluir no termo de guarda.
+
+- **Data inicial:** data inicial da guarda do bem.
+- **Data final:** final do termo de guarda, não obrigatória quando não for possível determinar o prazo final da guarda.
+- **Observação:** o conteúdo do texto deve versar especificamente sobre o bem que está sendo incluído.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image91.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image91.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image25.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image25.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image14.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image14.png)
+
+## Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Termo de Guarda > Alteração
+\`\`\`
+
+Incluído o bem, este poderá ser alterado neste mesmo procedimento, bastando clicar no link A.
+
+## Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Termo de Guarda > Exclusão
+\`\`\`
+
+Incluído o bem, este poderá ser excluído neste mesmo procedimento, bastando clicar no link E. Feito isso, poderá proceder à inclusão de outros bens, seguindo o mesmo roteiro acima especificado.
+
+Para emitir o Termo de Guarda, basta o usuário clicar no botão Imprimir.
+
+É possível inserir e/ou alterar textos no termo de guarda. Se o termo já é utilizado pelo usuário, basta alterar ou acrescentar o texto existente acessando **Configurações > Procedimentos > Manutenção do doc/parágrafo > Alteração** (figura 30).
+
+Caso o termo nunca tenha sido usado, verifique seu código em **Configurações > Cadastros > Tipos de documentos** (figura 31). Uma vez conhecido o código, acesse **Configurações > Procedimentos > Manutenção de documentos/parágrafos > Inclusão** (figura 32). Na aba Documentos, informe o nome e o código do termo de guarda e clique em “Incluir” (figura 33). Na aba Parágrafo, o campo “Parágrafo Novo” abre uma caixa de texto para digitação do novo texto do termo.
+`,
+  "Devolução do Termo de Guarda - Procedimentos Patrimônio": `
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Devolução do Termo de Guarda
+\`\`\`
+
+Este procedimento é destinado a interromper a vigência do Termo de Guarda, cujo bem foi entregue antes do vencimento final do termo.
+
+Em havendo mais de um Termo de Guarda, o sistema trará inicialmente uma tabela enumerando todas as guardas vigentes. Ao usuário caberá escolher o termo de guarda na tabela ou informar o código da guarda no campo indicado.
+
+Feito isso, a próxima tela trará todas as informações da guarda realizada:
+
+- **Código da guarda**
+- **Data da devolução**
+- **Código da situação**
+- **Observação**
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image19.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image19.png)
+
+Além das informações acima, a tela mostra uma listagem do bem ou bens contidos no termo de guarda selecionado. Conferidas as informações, o usuário deve marcar os bens que deixarão de ficar sob a guarda de determinado servidor no checkbox localizado ao lado do código da guarda.
+`,
+  "Confirmação de Transferência - Procedimentos Patrimônio": `
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Confirmação de Transferência
+\`\`\`
+
+Para que um bem seja transferido de forma efetiva para outro departamento, deverá sempre receber a confirmação de transferência.
+
+A tela de confirmação traz:
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image49.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image49.png)
+
+- **Data da confirmação:** informa a data em que se está confirmando a transferência dos bens patrimoniais.
+- **Nome do usuário:** informa o usuário que está procedendo à confirmação de transferência.
+- **Transferência:** representa o código da transferência a ser digitada pelo usuário. Caso desconheça o código, poderá pesquisar clicando no link [transferência].
+
+Selecionada a transferência, basta o usuário clicar no botão [incluir] para confirmar a operação. Feito isso, o sistema dará ao usuário a possibilidade de imprimir um relatório de transferência, bastando clicar no botão [ok] na caixa de mensagem.
+`,
+  "Alterar Placa - Procedimentos Patrimônio": `
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Alterar Placa
+\`\`\`
+
+Esta rotina é destinada à alteração do número da placa de um bem patrimonial, cujos critérios de modificação da placa identificadora devem ficar a cargo da administração pública.
+
+Para ter acesso ao bem, o usuário deverá proceder à pesquisa, informando ao sistema um destes filtros:
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image95.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image95.png)
+
+- **Placa**
+- **Código do bem**
+- **Classificação**
+- **Descrição do bem**
+- **Descrição departamento**
+
+Prestada esta informação, deve o usuário clicar no botão Pesquisar para que o sistema proceda à procura.
+
+A tela de alteração contém:
+
+- **Código do bem**
+- **Descrição do bem**
+- **Placa**
+- **Observação referente à placa**
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image47.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image47.png)
+
+O código e a descrição do bem não poderão ser alterados. O usuário deverá informar o novo número de placa no campo Placa e justificar a troca no campo Observação referente à placa.
+`,
+  "Alterar Situação - Procedimentos Patrimônio": `
+## Individual
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Alterar Situação > Individual
+\`\`\`
+
+Para ter acesso ao bem o usuário deverá obrigatoriamente proceder à pesquisa, informando ao sistema um destes filtros:
+
+- **Placa**
+- **Código do bem**
+- **Classificação**
+- **Descrição do bem**
+- **Descrição departamento**
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image79.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image79.png)
+
+Prestada esta informação, o usuário deve clicar no botão Pesquisar para que o sistema proceda à procura. A tela de alteração irá trazer:
+
+- **Código bem**
+- **Data**
+- **Departamento**
+- **Divisão**
+- **Código da situação**
+- **Justificativa**
+
+Ao usuário é permitido alterar a divisão na qual o bem está lotado, o código da situação do bem e registrar a justificativa da alteração.
+
+## Global
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Alterar Situação > Global
+\`\`\`
+
+A tela de alteração trará uma tabela com todos os lotes cadastrados, devendo o usuário informar ao sistema o código do lote ou sua descrição.
+
+Selecionado o lote, a nova tela conterá:
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image4.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image4.png)
+
+- **Código do lote**
+- **Descrição do lote**
+- **Data**
+- **Departamento**
+- **Divisão**
+- **Código de situação**
+- **Justificativa**
+
+Ao usuário é permitido alterar a divisão na qual o bem está vinculado, a situação do bem e registrar a justificativa das alterações realizadas. Todos os bens vinculados a esse lote sofrerão as alterações realizadas neste procedimento.
+`,
+  "Parâmetros - Procedimentos Patrimônio": `
+## Parâmetros da Instituição
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Parâmetros > Parâmetros da Instituição
+\`\`\`
+
+## Parâmetros Globais
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Parâmetros > Parâmetros Globais
+\`\`\`
+
+Define a classificação estrutural a ser utilizada na codificação dos bens patrimoniais.
+
+A tela de inclusão contém:
+
+- **Código:** código da classificação estrutural cadastrada no sistema.
+
+Caso haja mais de um estrutural cadastrado, o sistema abrirá uma tela onde o usuário deverá informar o código do estrutural ou sua descrição para que o sistema proceda à pesquisa. Selecionado o estrutural, conclui-se o processo clicando no botão [incluir].
+
+Uma vez definido o estrutural, este não mais poderá ser modificado, devendo ser definido no momento da implantação do sistema, antes do cadastramento de bens patrimoniais.
+
+## Parâmetros de Placa
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Parâmetros > Parâmetros de placa
+\`\`\`
+
+Este procedimento define o tipo de configuração de placa que será utilizada pela administração pública no controle de seus bens patrimoniais.
+
+Na tela, deve o usuário informar:
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image30.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image30.png)
+
+- **Tipo de configuração de placa**
+- **Obrigar a informar placa**
+- **Quantidade de dígitos da sequência da placa**
+- **Sequencial da placa**
+
+No tipo de configuração de placa, o usuário deve informar o código da configuração que irá utilizar. Caso desconheça o código, poderá pesquisar clicando no link [tipo de configuração de placa].
+
+Se o tipo escolhido pelo administrador for o sequencial digitado, será possível configurar o parâmetro Obrigar a informar a placa. Se definido como “SIM”, ao cadastrar um bem patrimonial será obrigatório informar o número da placa identificadora. Se definido como “NÃO”, o número deixará de ser obrigatório.
+
+Escolhida a configuração, deve preencher a quantidade de dígitos da sequência da placa e o sequencial inicial da placa. Por exemplo, em uma conversão de dados, se o último bem convertido possuía a numeração 555, deve-se informar 555 para que o próximo bem cadastrado receba o número 556.
+
+Este parâmetro não será utilizado se o tipo de configuração de placa for o sequencial digitado. A configuração deverá ser definida previamente, no momento da implantação do sistema e antes do cadastro dos bens patrimoniais.
+`,
+  "Processamento da Depreciação - Procedimentos Patrimônio": `
+## Automático
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Processamento da Depreciação > Automático
+\`\`\`
+
+## Manual
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Processamento da Depreciação > Manual
+\`\`\`
+
+## Desprocessamento
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Processamento da Depreciação > Desprocessamento
+\`\`\`
+`,
+  "Baixa de Bens - Procedimentos Patrimônio": `
+## Individual
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Baixa de Bens > Individual
+\`\`\`
+
+## Cancelamento da Baixa
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Baixa de Bens > Cancelamento da Baixa
+\`\`\`
+
+## Por Lote
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Baixa de Bens > Por Lote
+\`\`\`
+`,
+  "Inventário - Procedimentos Patrimônio": `
+## Inclusão de Abertura
+
+Para inclusão de um inventário, a tela que se apresenta é a seguinte:
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Inventário > Abertura > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario10.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario10.png)
+
+Com os seguintes campos:
+
+- **Código do Inventário:** sequencial automático gerado pelo e-cidade.
+- **Data de Abertura:** data do e-cidade.
+- **Período Inicial:** informa data inicial do inventário.
+- **Período Final:** informa data final do inventário.
+- **Exercício:** ano de exercício do e-cidade.
+- **Processo:** abre campo de pesquisa com processos vinculados ao protocolo.
+- **Comissão:** informa comissão já cadastrada anteriormente em cadastro de comissões.
+- **Observação:** campo de livre preenchimento, para mais informações.
+
+## Anulação
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Inventário > Abertura > Anulação
+\`\`\`
+
+## Manutenção
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Inventário > Manutenção
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario8.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario8.png)
+
+- **Inventário:** clicando na âncora abre a lista de inventários incluídos.
+- **Itens Vinculados:** opção de executar a manutenção do inventário, com bens já vinculados ou filtrar novos bens para inclusão.
+- **Departamento:** informa o departamento para a busca.
+- **Divisão:** informa a divisão caso o departamento possua.
+- **Convênio:** convênio cadastrado anteriormente.
+- **Classificação:** seleciona intervalo de classificações de bens do patrimônio.
+- **Código do Bem:** intervalo de códigos de bem, código criado automaticamente pelo sistema para cada bem incluído.
+- **Placa:** intervalo de placas de identificação dos bens do patrimônio.
+- **Intervalo de Valor:** intervalo de valor de aquisição dos bens.
+- **Período de Aquisição Inicial:** data inicial da aquisição para a busca.
+- **Período de Aquisição Final:** data final da aquisição para a busca.
+- **Tipo:** selecionar o tipo a ser filtrado (Todos, Materiais, Imóveis, Semoventes).
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario7.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario7.png)
+
+Ao clicar no bem, o mesmo já está sendo encaminhado para processamento. Porém, para realizar alterações nos campos situação, departamento, divisão e vida útil, é preciso selecioná-lo.
+
+Os bens selecionados para o inventário informado ficarão em destaque na cor verde. Os bens não incluídos em um inventário ficarão na cor branca e os que pertencem a outro inventário na cor lilás, conforme legenda:
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario6.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario6.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario4.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario4.png)
+
+## Desvincular Bem
+
+Havendo a necessidade de desvincular algum bem já incluído no inventário, deverá ser acessada a rotina:
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Inventário > Desvincular Bem
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario2.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario2.png)
+
+Selecione o bem a ser desvinculado e clique em Desvincular Itens.
+
+***ATENÇÃO! Para realizar este procedimento, o inventário não pode ter sido processado!***
+
+Para processar os dados informados, basta informar o código do inventário e a data inicial, além da comissão, que deverá ser previamente cadastrada em:
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Comissões > Inclusão
+\`\`\`
+
+Com os responsáveis pelo levantamento do inventário.
+
+## Processar Inventário
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Inventário > Processar Inventário
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario13.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario13.png)
+
+## Desprocessar Inventário
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Inventário > Desprocessar Inventário
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario15.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/inventario15.png)
+`,
+  "Tipos de baixa - Cadastro Patrimônio": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Tipos de baixa > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image100.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image100.png)
+
+- **Motivo da baixa:** código sequencial criado automaticamente a partir da inclusão do novo Tipo de Baixa.
+- **Descrição do motivo da baixa:** descrição do tipo de baixa, por exemplo venda, doação, furto ou sinistro.
+- **Obrigatório Anexar Documento:** se marcada, ao realizar a baixa será obrigatório anexar um documento que a justifique. Exemplo: para baixa por furto, poderá ser obrigatório anexar o Boletim de Ocorrência (BO).
+
+## Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Tipos de baixa > Alteração
+\`\`\`
+
+Permite alterar a descrição do tipo de baixa e adicionar ou remover a obrigatoriedade de anexo no momento da baixa do bem.
+
+## Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Tipos de baixa > Exclusão
+\`\`\`
+
+Permite excluir o tipo de baixa, desde que ainda não tenha sido utilizado para baixar nenhum bem.
+`,
+  "Tipo de Aquisição - Cadastro Patrimônio": `
+## Inclusão
+
+Rotina que permite incluir um tipo de aquisição para melhor controle do cadastro de bens. São exemplos: compra, permuta, doação e inventário.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Tipo de Aquisição > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image104.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image104.png)
+
+## Alteração
+
+Rotina que permite alterar a descrição do tipo de aquisição.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Tipo de Aquisição > Alteração
+\`\`\`
+
+## Exclusão
+
+Rotina que permite excluir um tipo de aquisição, desde que não esteja vinculado a nenhum bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Tipo de Aquisição > Exclusão
+\`\`\`
+`,
+  "Modelo - Cadastro Patrimônio": `
+## Inclusão
+
+Rotina que permite incluir um modelo para utilização no cadastro de um bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Modelo > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image41.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image41.png)
+
+## Alteração
+
+Rotina que permite alterar a descrição de um modelo cadastrado.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Modelo > Alteração
+\`\`\`
+
+## Exclusão
+
+Rotina que permite excluir um modelo, desde que não esteja vinculado a nenhum bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Modelo > Exclusão
+\`\`\`
+`,
+  "Marca - Cadastro Patrimônio": `
+## Inclusão
+
+Rotina que permite incluir uma marca para utilização no cadastro de um bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Marca > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image44.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image44.png)
+
+## Alteração
+
+Rotina que permite alterar a descrição da marca.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Marca > Alteração
+\`\`\`
+
+## Exclusão
+
+Rotina que permite excluir uma marca, desde que não esteja vinculada a nenhum bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Marca > Exclusão
+\`\`\`
+`,
+  "Medidas - Cadastro Patrimônio": `
+## Inclusão
+
+Rotina que permite incluir medidas para utilização no cadastro de um bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Medidas > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image61.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image61.png)
+
+## Alteração
+
+Rotina que permite alterar a descrição das medidas.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Medidas > Alteração
+\`\`\`
+
+## Exclusão
+
+Rotina que permite excluir uma medida, desde que não esteja vinculada a nenhum bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Medidas > Exclusão
+\`\`\`
+`,
+  "Convênios - Cadastro Patrimônio": `
+## Inclusão
+
+Rotina que permite incluir um convênio para utilização durante a inclusão de um bem. Como pré-requisito, o convênio deve possuir um Cadastro Geral do Município (CGM). Caso não possua, efetive-o; para mais informações [clique aqui](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_geral_do_municipio.md).
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Convênios > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image62.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image62.png)
+
+## Alteração
+
+Rotina que permite alterar o Cadastro Geral do Município (CGM) vinculado a um convênio.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Convênios > Alteração
+\`\`\`
+
+## Exclusão
+
+Rotina que permite excluir um convênio, desde que não esteja vinculado a nenhum bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Convênios > Exclusão
+\`\`\`
+`,
+  "Comissões - Cadastro Patrimônio": `
+## Inclusão
+
+A inclusão de uma comissão consiste em informar as datas inicial e final, atribuir membros à comissão e definir seu tipo. A comissão poderá ser utilizada, por exemplo, na abertura de um inventário, onde é obrigatório designar uma comissão.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Comissões > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image43.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image43.png)
+
+- **Sequencial:** sequencial atribuído automaticamente à comissão.
+- **Descrição:** descrição da comissão.
+- **Data Inicial:** início dos trabalhos da comissão.
+- **Data Final:** data final de exercício da comissão.
+- **Observação:** campo de texto livre para informações adicionais, como a finalidade da comissão.
+
+A segunda aba (Membros) destina-se à inclusão dos membros da comissão.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image106.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image106.png)
+
+- **Comissão:** sequencial atribuído automaticamente à comissão.
+- **Número CGM:** o membro precisa possuir Cadastro Geral do Município (CGM). Caso não possua, efetive a inclusão; para mais informações [clique aqui](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_geral_do_municipio.md).
+- **Tipo Membro:** Gestor, Secundário, Suplente ou Fiscal.
+- **Data de Início:** data em que o membro foi designado à comissão.
+- **Data de Término:** data de término da participação do membro.
+
+Após a inclusão, o membro será listado em “Membros Cadastrados” junto com os demais.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image107.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image107.png)
+
+## Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Comissões > Alteração
+\`\`\`
+
+Permite alterar descrição da comissão, datas inicial/final, observação e membros. Não é permitida a exclusão de membros; para indicar que um membro não participa mais, defina uma data de término.
+
+## Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Comissões > Exclusão
+\`\`\`
+
+Permite excluir uma comissão, desde que não esteja vinculada a nenhum inventário.
+`,
+  "Seguradoras - Cadastro Patrimônio": `
+## Inclusão
+
+Rotina que permite incluir uma seguradora. Como pré-requisito, é necessário que possua um Cadastro Geral do Município (CGM).
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Seguradoras > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image66.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image66.png)
+
+- **Seguradora:** código sequencial automático atribuído à seguradora incluída.
+- **Número do CGM:** número atribuído à seguradora no cadastro geral do município. Caso não saiba o número, clique em “Numcgm” e efetive a busca. Se a seguradora não possuir CGM, efetive-o; para mais informações [clique aqui](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_geral_do_municipio.md).
+- **Contato na seguradora:** nome do representante legal ou preposto da seguradora.
+
+## Alteração
+
+Permite alterar a seguradora e suas informações, como CGM vinculado e contato.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Seguradoras > Alteração
+\`\`\`
+
+## Exclusão
+
+Permite excluir uma seguradora, desde que não esteja vinculada a nenhuma apólice.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Seguradoras > Exclusão
+\`\`\`
+`,
+  "Apólices - Cadastro Patrimônio": `
+## Inclusão
+
+No e-cidade, a tela de inclusão é composta de duas abas: “Cadastro de apólices” e “Itens da apólice”.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Apólices > Inclusão
+\`\`\`
+
+**[ABA Cadastro de apólices]**
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image42.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image42.png)
+
+- **Código da apólice:** código sequencial atribuído automaticamente após a inclusão.
+- **Código da seguradora:** caso desconheça o código, clique em “Código da seguradora” e aplique filtros adicionais, como busca por CGM. Se a seguradora não possuir cadastro, será necessário realizá-lo; para mais informações [clique aqui](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_geral_do_municipio.md).
+- **Apólice:** número da apólice de seguro.
+- **Vencimento da Apólice:** vencimento da apólice incluída.
+
+Para efetivar a ação, clique em *“Incluir”*; para consultar apólices cadastradas, clique em *“Pesquisar”*.
+
+**[ABA Itens da apólice]**
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image23.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image23.png)
+
+- **Código apólice:** código atribuído após a inclusão na aba “Cadastro de apólices”.
+- **Código do bem:** informe o código do bem segurado. Caso desconheça, clique em “Código do bem” e aplique filtros como placa, código ou descrição do bem.
+
+Ao clicar em *“Incluir”*, o bem será listado em “Itens Lançados”.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio_tecnico/image108.png)](https://e-cidade.wiki.br/patrimonial/patrimonio_tecnico/image108.png)
+
+Se o bem incluído não for o desejado, clique no “E” da coluna “Opções” e confirme em *“Excluir”*.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio_tecnico/image109.png)](https://e-cidade.wiki.br/patrimonial/patrimonio_tecnico/image109.png)
+
+## Alteração
+
+Rotina que permite alterar as apólices e as informações vinculadas a elas.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Apólices > Alteração
+\`\`\`
+
+## Exclusão
+
+Rotina que permite excluir uma apólice cadastrada no e-cidade.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Apólices > Exclusão
+\`\`\`
+`,
+  "Situação dos Bens - Cadastro Patrimônio": `
+## Inclusão
+
+Rotina que permite incluir uma situação que poderá ser atribuída durante o cadastro do bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Situação dos Bens > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image81.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image81.png)
+
+- **Código da situação:** código sequencial automático atribuído à situação incluída.
+- **Descrição da situação:** descrição da situação cadastrada.
+
+## Alteração
+
+Permite alterar a descrição de uma situação cadastrada no e-cidade.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Situação dos Bens > Alteração
+\`\`\`
+
+## Exclusão
+
+Permite excluir uma situação, desde que não esteja vinculada a nenhum bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Situação dos Bens > Exclusão
+\`\`\`
+`,
+  "Classificação dos Bens - Cadastro Patrimônio": `
+## Inclusão
+
+Rotina que permite incluir uma classificação para utilização durante o cadastro de um bem ou conjunto de bens.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Classificação dos Bens > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image69.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image69.png)
+
+- **Código:** código sequencial automático atribuído ao concluir a inclusão.
+- **Máscara:** estrutura numérica configurada para criar a classificação e identificar seus níveis.
+- **Classificação:** classificação numérica a criar conforme a estrutura definida em Máscara, para organizar os bens patrimoniais.
+- **Descrição:** nome/descrição da classificação.
+- **Observações:** campo livre para detalhes referentes à classificação.
+- **Conta Plano:** código da Conta do Plano de Contas (Contabilidade) onde os bens desta classificação farão seus lançamentos contábeis.
+- **Conta Depreciação:** código da conta em que serão lançados os registros de depreciação dos bens desta classificação.
+- **Nível:** Sintética ou Analítica.
+  - **Sintética:** contas de nível maior referentes ao grupo e classe dos bens.
+  - **Analítica:** contas de nível menor referentes ao identificador do bem; somente classificações desta opção estarão disponíveis para vinculação ao bem.
+- **Bem Tipo:** MÓVEIS, IMÓVEIS ou SEMOVENTES.
+- **Tipo de Depreciação:** tipo válido para a classificação, que ficará como padrão.
+- **Vida Útil:** vida útil padrão dos bens da classificação, em anos.
+
+Para concluir, clique em *“Incluir”*. Para consultar classificações cadastradas, clique em *“Pesquisar”*.
+
+## Alteração
+
+Rotina que permite alterar a classificação e suas informações.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Classificação dos Bens > Alteração
+\`\`\`
+
+## Exclusão
+
+Rotina que permite excluir uma classificação, desde que não esteja sendo utilizada por nenhum bem.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Classificação dos Bens > Exclusão
+\`\`\`
+`,
+  "Bens - Cadastro Patrimônio": `
+# Bens
+
+## Individual
+
+### Inclusão
+
+Nesta rotina é possível incluir os bens que a administração pública detém propriedade ou domínio, de forma direta ou indireta.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Bens > Individual > Inclusão
+\`\`\`
+
+Ao acessar a rotina, o e-cidade abrirá uma janela “Notas Pendentes” caso haja integração e a devida parametrização. Ela lista notas pendentes de cadastro originadas por uma entrada da Ordem de Compra no módulo Material cujo empenho vinculado possui natureza material permanente. Somente será possível efetivar a liquidação do empenho após cadastrar os bens vinculados às notas fiscais.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image110.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image110.png)
+
+Há duas formas de cadastrar um bem:
+
+- **(1) MANUAL:** feche a tela “Notas Pendentes” e prossiga com o cadastro.
+- **(2) NOTAS PENDENTES:** efetue dois cliques sobre a linha do bem desejado.
+
+Ao usar Notas Pendentes, Data de Aquisição, Descrição do Bem, Fornecedor e Valor de Aquisição já estarão preenchidos.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image111.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image111.png)
+
+Ao efetuar dois cliques sobre uma Nota Pendente cuja quantidade seja superior a um, será exibida a tela de inclusão global de bens.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Bens > Global > Inclusão
+\`\`\`
+
+### Individual > Inclusão
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image115.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image115.png)
+
+**[ABA Cadastro de bens]**
+
+*Informações do Bem*
+
+- **Foto:** clique no ícone para selecionar um arquivo do computador e visualizar uma prévia. Para remover a foto, clique em “Remover”.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image116.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image116.png)
+
+- **Código do bem:** código sequencial atribuído automaticamente após a inclusão.
+- **Placa:** habilitada para digitação quando a configuração for “SEQUENCIAL DIGITADO”; se estiver como “SEQUENCIAL AUTOMÁTICO”, ficará bloqueada e sugerirá a placa sequencial.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Parâmetros > Parâmetros de placa
+\`\`\`
+
+***NOTA:** Se a configuração for SEQUENCIAL DIGITADO e a placa estiver em uso por outro bem ou constar no histórico de placas, não será possível incluí-la. Se estiver ativa em outro bem, altere a placa e exclua o histórico para liberá-la. Se constar somente como histórico, exclua-o.*
+
+**Alteração de Placa** [Clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!procedimentos_alterar_placa.md)
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Alterar Placa
+\`\`\`
+
+**Exclusão do Histórico de Placa** [Clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/link)
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Exclusão do Histórico de Placa
+\`\`\`
+
+- **Data da aquisição:** poderá estar bloqueada com a data da sessão se usar Notas Pendentes ou aberta para digitação se o cadastro for manual.
+- **Descrição do bem:** descrição sintética do bem, limitada a 100 caracteres.
+- **Classificação:** digite o código da classificação analítica ou clique no link “Classificação”. Para mais informações, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_classificacao_dos_bens.md).
+- **Fornecedor:** digite o código do CGM ou clique em “Fornecedor” para usar filtros, como CNPJ. O fornecedor deve possuir CGM; para mais informações, [clique aqui](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_geral_do_municipio.md).
+- **Tipo de Aquisição:** forma de aquisição do bem, como compras, doação ou inventário. Para incluir um tipo, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_tipo_de_aquisicao.md).
+- **Departamento:** localização atual ou destino do bem. Caso não esteja cadastrado, efetue ou solicite a inclusão.
+
+\`\`\`
+DB:CONFIGURAÇÃO > Configuração > Cadastros > Cadastro de Departamentos > Inclusão
+\`\`\`
+
+- **Divisão:** após informar o departamento, escolha uma divisão disponível ou efetue sua inclusão.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Cadastro de Divisões > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image117.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image117.png)
+
+- **Convênio:** convênio referente ao bem. Para incluir, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_convenios.md).
+- **Código da situação:** informe o estado do bem ou pesquise clicando no link “Código da situação”. Para incluir, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_situacao_dos_bens.md).
+
+*Dados Financeiros*
+
+- **Valor de Aquisição:** pode estar preenchido se usar Notas Pendentes; no cadastro manual, informe o valor.
+- **Valor de Residual:** valor do ativo que sofrerá depreciação ao final da vida útil.
+- **Valor Depreciável:** custo de aquisição subtraído do valor residual.
+- **Valor Atual:** valor do bem no momento do cadastro.
+- **Tipo Depreciação:** digite o código ou clique no link “Tipo Depreciação” e selecione uma opção, como QUOTAS CONSTANTES, NÃO EXECUTA DEPRECIAÇÃO ou SOMA DOS DÍGITOS. Se a classificação tiver um tipo padrão, esta opção já retornará preenchida.
+- **Vida Útil:** informe a vida útil do bem. Se a classificação tiver vida útil padrão, esta opção já retornará preenchida.
+
+*Outros Dados*
+
+- **Medida:** medida referente ao bem. Para incluir, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_medidas.md).
+- **Modelo:** modelo referente ao bem. Para incluir, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_modelo.md).
+- **Marca:** marca referente ao bem. Para incluir, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_marca.md).
+
+*Observações*
+
+Descreva neste campo o bem que está sendo cadastrado.
+
+Para concluir o cadastro, clique em “Incluir”. Para importar informações de um bem já cadastrado, clique em “Importação” e aplique os filtros disponíveis.
+
+**[ABA Dados do Imóvel]**
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image118.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image118.png)
+
+Esta aba configura dados de bens imóveis, tangíveis e não suscetíveis de movimentação, como terrenos e edificações.
+
+- **Código do bem:** código sequencial atribuído após a inclusão na aba “Cadastro de bens”.
+- **Código do lote:** lote em que se encontra o bem imóvel. Para pesquisar, clique em “Código Lote”.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image119.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image119.png)
+
+- **Observações:** observações relativas ao bem imóvel.
+
+**[ABA Dados do Material]**
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image120.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image120.png)
+
+Esta aba configura dados de bens móveis tangíveis, suscetíveis de movimentação própria ou por força alheia.
+
+- **Código do bem:** código sequencial atribuído após a inclusão na aba “Cadastro de bens”.
+- **Nota fiscal:** número da nota fiscal do bem adquirido.
+- **Empenho do Sistema:** indica se o empenho que originou a aquisição é do e-cidade (Sim/Não).
+- **Seq. Empenho:** se Empenho do Sistema for Sim, será possível digitar o código sequencial ou pesquisar por Nome/Razão Social e CNPJ/CPF clicando em “Seq. Empenho”. Se não, somente será possível digitar o sequencial.
+- **Número do empenho:** conforme o Seq. Empenho digitado, o e-cidade fará a busca e exibição conforme Número Empenho/Ano.
+- **Ordem de compra:** número da ordem de compra.
+- **Garantia:** prazo de garantia do bem.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Bens > Individual > Alteração
+\`\`\`
+
+Permite alterar informações de um bem cadastrado individualmente. Valor de Aquisição, Valor de Residual, Tipo Depreciação e Vida Útil não poderão ser alterados caso o bem já tenha sofrido depreciação. Apesar de o campo Placa estar aberto, não será possível alterá-lo; se necessário, utilize Alteração de Placa.
+
+***NOTA:** As alterações realizadas nesta rotina geram registros no histórico de movimentação, que pode ser consultado na Consulta do Bem.*
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Consultas > Bens
+\`\`\`
+
+Também é possível emitir relatório referente ao histórico do bem:
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Relatórios > Ficha de bens > Histórico dos bens
+\`\`\`
+`,
+  "Bens - Cadastro Patrimônio - Página 2": `
+# Global
+
+### Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Bens > Global > Inclusão
+\`\`\`
+
+Ao acessar a rotina, o e-cidade abrirá uma janela “Notas Pendentes” caso haja integração e a devida parametrização. Ela listará notas pendentes de cadastro, originadas a partir de uma entrada da Ordem de Compra no módulo Material cujo empenho vinculado possui natureza material permanente. Portanto, somente será possível efetivar a liquidação do empenho após o cadastro dos respectivos bens vinculados às notas fiscais.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image125.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image125.png)
+
+Há duas formas de cadastrar um bem:
+
+- **(1) MANUAL:** para cadastrar bens por lote de forma manual, feche a tela “Notas Pendentes” e prossiga com o cadastro.
+- **(2) NOTAS PENDENTES:** efetue dois cliques sobre a linha do bem que deseja cadastrar.
+
+Ao usar Notas Pendentes, informações como quantidade, data de aquisição, descrição do bem, fornecedor e valor de aquisição já estarão preenchidas.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image124.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image124.png)
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image46.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image46.png)
+
+*Dados Lote*
+
+- **Lote:** código sequencial atribuído automaticamente ao lote após a inclusão do bem.
+- **Quantidade:** quantidade de bens a serem cadastrados de forma global.
+- **Descrição:** descrição do lote definido para cadastro de múltiplos bens.
+
+*Informações do Bem*
+
+- **Foto:** clique no ícone para buscar um arquivo local, selecionar a imagem e visualizar uma prévia. Para removê-la, clique em “Remover”.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image116.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image116.png)
+
+- **Código do bem:** código sequencial atribuído automaticamente após a inclusão.
+- **Placa:** estará habilitada para digitação caso a configuração seja “SEQUENCIAL DIGITADO”; se estiver como “SEQUENCIAL AUTOMÁTICO”, sugerirá a próxima placa após a última inclusão. As placas serão atribuídas em sequência conforme a quantidade de bens.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Parâmetros > Parâmetros de placa
+\`\`\`
+
+***NOTA:** Se a configuração for SEQUENCIAL DIGITADO e a placa informada ou alguma das subsequentes estiver em uso por outro bem ou constar no histórico de placas, não será possível incluí-la. Se estiver ativa em outro bem, será necessário alterar a placa e excluir o histórico para liberá-la. Se constar somente como histórico, será necessário excluí-lo.*
+
+**Alteração de Placa** [Clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!procedimentos_alterar_placa.md)
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Alterar Placa
+\`\`\`
+
+**Exclusão do Histórico de Placa** [Clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/link)
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Procedimentos > Exclusão do Histórico de Placa
+\`\`\`
+
+- **Data da aquisição:** poderá estar bloqueada com a data da sessão se usar Notas Pendentes ou aberta para digitação se o cadastro for manual.
+- **Descrição do bem:** descrição sintética do bem, limitada a 100 caracteres.
+- **Classificação:** digite o código da classificação analítica ou clique no link “Classificação”. Para mais informações sobre inclusão ou manutenção, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_classificacao_dos_bens.md).
+- **Fornecedor:** digite o código do CGM ou clique em “Fornecedor” para aplicar filtros, como busca por CNPJ. O fornecedor deve possuir Cadastro Geral do Município (CGM); para mais informações, [clique aqui](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_geral_do_municipio.md).
+- **Descrição da Aquisição:** forma de aquisição do bem, como compras, doação ou inventário. Para incluir um tipo de aquisição, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_tipo_de_aquisicao.md).
+- **Departamento:** localização atual ou destino do bem. Caso não esteja cadastrado, efetue ou solicite a inclusão.
+
+\`\`\`
+DB:CONFIGURAÇÃO > Configuração > Cadastros > Cadastro de Departamentos > Inclusão
+\`\`\`
+
+- **Divisão:** após informar o departamento, escolha uma divisão disponível ou efetue sua inclusão.
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Cadastro de Divisões > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image117.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image117.png)
+
+- **Convênio:** convênio referente ao bem. Para incluir, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_convenios.md).
+- **Código da situação:** informe o estado do bem ou pesquise clicando no link “Código da situação”. Para incluir, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_situacao_dos_bens.md).
+
+*Dados Financeiros*
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image126.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image126.png)
+
+- **Valor de Aquisição:** poderá estar previamente preenchido se usar Notas Pendentes; no cadastro manual, informe o valor de aquisição.
+- **Valor de Residual:** valor do ativo que sofrerá depreciação ao final da vida útil.
+- **Valor Depreciável:** custo de aquisição subtraído do valor residual.
+- **Valor Atual:** valor do bem no momento em que está sendo cadastrado.
+- **Tipo Depreciação:** digite o código ou clique no link “Tipo Depreciação” e selecione uma opção, como QUOTAS CONSTANTES, NÃO EXECUTA DEPRECIAÇÃO ou SOMA DOS DÍGITOS. Se a classificação tiver um tipo padrão, esta opção já retornará preenchida.
+- **Vida Útil:** informe a vida útil do bem. Se a classificação tiver vida útil padrão, esta opção já retornará preenchida.
+
+*Outros Dados*
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image127.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image127.png)
+
+- **Medida:** medida referente ao bem. Para incluir, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_medidas.md).
+- **Modelo:** modelo referente ao bem. Para incluir, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_modelo.md).
+- **Marca:** marca referente ao bem. Para incluir, [clique aqui](https://e-cidade.wiki.br/patrimonial/patrimonio/#!cadastros_marca.md).
+
+*Dados do Imóvel*
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image128.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image128.png)
+
+- **Código do lote:** indica o lote no qual se encontra o bem imóvel. Caso desconheça o código, clique em “Código Lote” para aplicar filtros adicionais.
+- **Observações:** campo livre para informações adicionais referentes aos imóveis cadastrados.
+
+*Dados do Material*
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image129.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image129.png)
+
+- **Nota fiscal:** número da nota fiscal do bem adquirido.
+- **Empenho do Sistema:** indica se o empenho que originou a aquisição é do e-cidade (Sim/Não).
+- **Seq. Empenho:** se Empenho do Sistema for Sim, será possível digitar o código sequencial ou pesquisar por Nome/Razão Social e CNPJ/CPF clicando em “Seq. Empenho”. Se não, somente será possível digitar o sequencial.
+- **Ordem de compra:** número da ordem de compra.
+- **Garantia:** prazo de garantia do bem.
+
+*Observações*
+
+Descreva neste campo o bem que está sendo cadastrado.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image130.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image130.png)
+
+Para concluir o cadastro, clique no botão “Incluir”. Para realizar uma pesquisa rápida de outros lotes cadastrados, clique em “Pesquisar”.
+
+### Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Bens > Global > Alteração
+\`\`\`
+
+Rotina que permite alterar algumas informações referentes aos bens cadastrados de forma global.
+`,
+  "Bens - Cadastro Patrimônio - Página 3": `
+# Unificar / Desmembrar Notas
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Bens > Individual > Unificar / Desmembrar Notas
+\`\`\`
+
+Esta rotina permite unificar duas ou mais notas fiscais em um único bem no patrimônio. Ao acessar a rotina, serão listados bens com notas pendentes.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image121.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image121.png)
+
+Basta selecionar os registros de entrada das notas fiscais que deseja unificar e clicar em “Confirmar”.
+
+Após, o e-cidade retornará informações referentes à Inclusão de Bens. A maioria dos campos equivale à inclusão individual de bens, exceto pelos campos em **Dados das Notas**:
+
+![Dados das Notas](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image122.png)
+
+- **Nota(s):** notas selecionadas na tela “Notas Pendentes” que serão unificadas.
+- **Valor Total:** soma dos valores das notas fiscais selecionadas.
+- **Quantidade:** quantidade de bens a incluir.
+- **Valor Residual (%):** percentual do valor residual do bem após sua vida útil; o valor equivalente aparece ao lado.
+
+Ao final, o usuário poderá localizar e selecionar outras notas clicando em “Pesquisar Notas” ou efetivar o lançamento à lista clicando em “Lançar”.
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image123.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image123.png)
+
+Para remover um bem da lista, clique no botão “Remover” na coluna “Ações”. Para concluir o cadastro, clique em “Salvar”.
+`,
+  "Tipo de Guarda - Cadastro Patrimônio": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Tipo de Guarda > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image37.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image37.png)
+
+- **Descrição do tipo de guarda:** descrição/espécie de guarda que deseja incluir.
+
+Para concluir a inclusão, clique em “Incluir”. Para consultar os tipos de guarda já cadastrados, clique em “Pesquisar”.
+
+## Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Tipo de Guarda > Alteração
+\`\`\`
+
+Permite alterar a descrição definida para o Tipo de Guarda.
+
+## Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Tipo de Guarda > Exclusão
+\`\`\`
+
+Permite excluir o Tipo de Guarda desde que não esteja sendo utilizado em nenhum Termo de Guarda.
+`,
+  "Cadastro de Divisões - Cadastro Patrimônio": `
+## Inclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Cadastro de Divisões > Inclusão
+\`\`\`
+
+[![](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image5.png)](https://e-cidade.wiki.br/patrimonial/patrimonio/files/patrimonio_tecnico/image5.png)
+
+- **Código da divisão:** código sequencial gerado automaticamente após a inclusão.
+- **Descrição da divisão:** nome da divisão do departamento que está sendo incluída.
+- **Departamento:** código do departamento ao qual a divisão pertence. Para filtros adicionais, clique em “Depart”.
+- **Ativa:** por padrão é “Sim”; se definida como “Não”, a divisão não será listada ao selecionar o departamento durante a inclusão de um bem.
+- **Responsável:** nome do responsável pela divisão, que deverá possuir Cadastro Geral do Município (CGM). Para mais informações, [clique aqui](https://e-cidade.wiki.br/patrimonial/protocolo/#!cadastros_geral_do_municipio.md).
+
+Para concluir, clique em “Incluir”. Para pesquisar as divisões cadastradas no e-cidade, clique em “Pesquisar”.
+
+## Alteração
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Cadastro de Divisões > Alteração
+\`\`\`
+
+Permite alterar a descrição da divisão e outras informações.
+
+## Exclusão
+
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Cadastro de Divisões > Exclusão
+\`\`\`
+
+Permite excluir a divisão desde que não esteja sendo utilizada em nenhum bem.
+`,
+  "Tipo de Depreciação - Cadastro Patrimônio": `
+\`\`\`
+DB:PATRIMONIAL > Patrimônio > Cadastros > Tipo de Depreciação
+\`\`\`
+
+O tipo de depreciação define o método aplicado ao bem patrimonial. As modalidades citadas na documentação de cadastro de bens são:
+
+- **Quotas constantes**
+- **Não executa depreciação**
+- **Soma dos dígitos**
+
+O tipo de depreciação pode ser associado à classificação dos bens e, durante o cadastro do bem, a opção padrão da classificação poderá ser preenchida automaticamente.
 `,
 };

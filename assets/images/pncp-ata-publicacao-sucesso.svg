@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="530" height="96" viewBox="0 0 530 96">
+  <rect width="530" height="96" fill="#fff"/>
+  <rect x="10" y="10" width="510" height="94" rx="5" fill="#f8f8f8" stroke="#555" stroke-width="1.5"/>
+  <rect x="11" y="11" width="508" height="61" fill="#fff"/>
+  <text x="25" y="37" font-family="Arial,sans-serif" font-size="13" fill="#111">Ata de Registro de Preço publicada com sucesso.</text>
+  <text x="25" y="54" font-family="Arial,sans-serif" font-size="13" fill="#00e" text-decoration="underline">Clique aqui para acessar.</text>
+  <path d="M11 72h508" stroke="#ddd"/>
+  <rect x="470" y="74" width="42" height="27" rx="4" fill="#4c84ad" stroke="#356486"/>
+  <text x="480" y="92" font-family="Arial,sans-serif" font-size="13" fill="#fff">OK</text>
+</svg>

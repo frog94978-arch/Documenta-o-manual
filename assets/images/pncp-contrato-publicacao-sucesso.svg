@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="568" height="144" viewBox="0 0 568 144">
+  <rect width="568" height="144" fill="#fff"/>
+  <rect x="8" y="8" width="552" height="136" rx="5" fill="#f8f8f8" stroke="#555" stroke-width="1.5"/>
+  <rect x="9" y="9" width="550" height="94" fill="#fff"/>
+  <text x="23" y="36" font-family="Arial,sans-serif" font-size="14" fill="#111">Publicação de Contrato efetuada com sucesso no PNCP!</text>
+  <text x="23" y="54" font-family="Arial,sans-serif" font-size="14" fill="#00e" text-decoration="underline">Clique aqui para acessar</text>
+  <text x="23" y="84" font-family="Arial,sans-serif" font-size="14" fill="#111">Um evento automático foi criado para esta ação.</text>
+  <path d="M9 103h550" stroke="#ddd"/>
+  <rect x="507" y="108" width="47" height="30" rx="5" fill="#4c84ad" stroke="#356486"/>
+  <text x="522" y="128" font-family="Arial,sans-serif" font-size="14" fill="#fff">OK</text>
+</svg>

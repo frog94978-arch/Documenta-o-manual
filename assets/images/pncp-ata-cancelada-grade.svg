@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="446" height="62" viewBox="0 0 446 62">
+  <rect width="446" height="62" fill="#dedcdb"/>
+  <rect x="7" y="8" width="429" height="49" fill="#dedcdb" stroke="#bbb"/>
+  <rect x="8" y="9" width="427" height="22" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="68" y="24">Cancelado</text><text x="235" y="24">Data Cancelamento</text><text x="400" y="24">Ações</text>
+  </g>
+  <path d="M130 9v48M343 9v48M8 44h427" stroke="#d2d2d2" fill="none"/>
+  <rect x="8" y="31" width="427" height="13" fill="#fff"/><rect x="8" y="44" width="427" height="13" fill="#fff"/>
+  <g font-family="Arial,sans-serif" font-size="10" fill="#111" text-anchor="middle"><text x="68" y="41">Não</text><text x="235" y="41">-</text><text x="68" y="54">Sim</text><text x="235" y="54">01/03/2023</text></g>
+  <g fill="#1684c7" stroke="#1684c7" stroke-width="1.3"><path d="M375 37h9v2h-9zm-1 3 5 4 5-4" fill="none"/><path d="M397 36h8v2h-8zm1 3h6v5h-6z"/><path d="M375 50h9v2h-9zm-1 3 5 4 5-4" fill="none"/><path d="M397 49h8v2h-8zm1 3h6v5h-6z"/></g>
+</svg>

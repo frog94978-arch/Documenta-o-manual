@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1044" height="407" viewBox="0 0 1044 407">
+  <rect width="1044" height="407" fill="#dedcdb"/>
+  <rect x="212" y="21" width="606" height="272" fill="#dedcdb" stroke="#bbb"/>
+  <text x="220" y="26" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">Termo de Contrato</text>
+  <g font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">
+    <text x="220" y="49">Órgão:</text><text x="220" y="76" fill="#00e" text-decoration="underline">Contrato:</text><text x="220" y="99">Tipo Termo de Contrato:</text>
+    <text x="220" y="121">Nº Termo de Contrato:</text><text x="220" y="143">Objeto do Termo de Contrato:</text><text x="220" y="166">Data Assinatura Termo:</text>
+    <text x="220" y="188">Qualificação Acréscimo/Supressão:</text><text x="220" y="211">Qualificação Vigência:</text><text x="220" y="233">Qualificação Fornecedor:</text>
+    <text x="220" y="255">Qualificação Reajuste:</text><text x="220" y="277">Qualificação Informativo:</text>
+  </g>
+  <g fill="#deb986" stroke="#b99865">
+    <rect x="425" y="38" width="383" height="17"/><rect x="425" y="64" width="126" height="17"/><rect x="555" y="64" width="82" height="17"/>
+  </g>
+  <g fill="#fff" stroke="#888">
+    <rect x="425" y="87" width="383" height="18" rx="4"/><rect x="425" y="110" width="383" height="18"/><rect x="425" y="132" width="383" height="18"/><rect x="425" y="155" width="80" height="18"/>
+    <rect x="425" y="178" width="383" height="18" rx="4"/><rect x="425" y="201" width="383" height="18" rx="4"/><rect x="425" y="223" width="383" height="18" rx="4"/><rect x="425" y="245" width="383" height="18" rx="4"/><rect x="425" y="267" width="383" height="18" rx="4"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="11" fill="#111">
+    <text x="429" y="51">MUNICIPIO ECIDADE</text><text x="429" y="76"> </text>
+    <text x="429" y="101">Selecione</text><path d="m799 94 5 5 5-5" fill="none" stroke="#333"/>
+    <text x="429" y="192">Não</text><path d="m799 185 5 5 5-5" fill="none" stroke="#333"/>
+    <text x="429" y="215">Não</text><path d="m799 208 5 5 5-5" fill="none" stroke="#333"/>
+    <text x="429" y="237">Não</text><path d="m799 230 5 5 5-5" fill="none" stroke="#333"/>
+    <text x="429" y="259">Não</text><path d="m799 252 5 5 5-5" fill="none" stroke="#333"/>
+    <text x="429" y="281">Não</text><path d="m799 274 5 5 5-5" fill="none" stroke="#333"/>
+    <text x="429" y="169" fill="#777">__/__/____</text>
+  </g>
+  <rect x="507" y="155" width="14" height="18" fill="#fafafa" stroke="#888"/><text x="511" y="168" font-family="Arial,sans-serif" font-size="10" fill="#111">D</text>
+  <rect x="466" y="298" width="98" height="23" rx="5" fill="#fafafa" stroke="#999"/>
+  <text x="474" y="314" font-family="Arial,sans-serif" font-size="11" fill="#111">▣ Enviar Dados</text>
+  <text x="0" y="337" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#111">Termos</text>
+  <rect x="0" y="345" width="1036" height="61" fill="#dedcdb" stroke="#bbb"/>
+  <rect x="0" y="346" width="1035" height="24" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="39" y="362">Número</text><text x="106" y="362">Tipo</text><text x="170" y="362">Objeto</text><text x="262" y="362">Assinatura</text><text x="426" y="362">Acréscimo/Supressão</text><text x="580" y="362">Vigência</text><text x="684" y="362">Fornecedor</text><text x="790" y="362">Reajuste</text><text x="894" y="362">Informativo</text><text x="993" y="362">Ações</text>
+  </g>
+  <g stroke="#d5d5d5" fill="none"><path d="M80 346v60M132 346v60M207 346v60M318 346v60M534 346v60M625 346v60M745 346v60M837 346v60M955 346v60"/></g>
+  <rect x="0" y="370" width="1035" height="35" fill="#fff" stroke="#ddd"/>
+  <text x="517" y="392" font-family="Arial,sans-serif" font-size="11" fill="#111" text-anchor="middle">Nenhum registro encontrado</text>
+</svg>

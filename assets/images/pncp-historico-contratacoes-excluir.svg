@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1290" height="170" viewBox="0 0 1290 170">
+  <rect width="1290" height="170" fill="#dfdddd"/>
+  <text x="42" y="27" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#111">Histórico de Contratações</text>
+  <rect x="42" y="28" width="1186" height="132" fill="none" stroke="#aaa"/>
+  <rect x="44" y="43" width="1174" height="25" fill="#315d7b"/>
+  <g font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="80" y="60">Licitação</text><text x="161" y="60">Numeração</text><text x="267" y="60">Ano Contratação</text><text x="456" y="60">Descrição da Modalidade</text><text x="630" y="60">Código PNCP</text><text x="861" y="60">Unidade Compradora</text><text x="1101" y="60">Data Publicação</text><text x="1189" y="60">Ações</text>
+  </g>
+  <g fill="#fff" stroke="#d2d2d2">
+    <rect x="44" y="68" width="1174" height="34"/><rect x="44" y="102" width="1174" height="34"/><rect x="44" y="136" width="1174" height="24"/>
+    <path d="M116 43v117M204 43v117M330 43v117M579 43v117M684 43v117M1041 43v117M1163 43v117" fill="none"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="12" fill="#111" text-anchor="middle">
+    <text x="80" y="89">6014</text><text x="161" y="89">43</text><text x="267" y="89">2023</text><text x="456" y="89">DISPENSA ELETRÔNICA</text><text x="630" y="89">20</text><text x="861" y="89">Núcleo de Licitações e Compras</text><text x="1101" y="89">05/10/2023</text>
+    <text x="80" y="123">5841</text><text x="161" y="123">31</text><text x="267" y="123">2023</text><text x="456" y="123">DISPENSA DE LICITAÇÃO</text><text x="630" y="123">11</text><text x="861" y="123">Núcleo de Licitações e Compras</text><text x="1101" y="123">11/07/2023</text>
+    <text x="80" y="153">5775</text><text x="161" y="153">23</text><text x="267" y="153">2023</text><text x="456" y="153">DISPENSA DE LICITAÇÃO</text><text x="630" y="153">9</text><text x="861" y="153">Sec Municipal de Meio Ambiente e Sustentabilidade</text><text x="1101" y="153">27/06/2023</text>
+  </g>
+  <g fill="#2383c7" stroke="#176ca9" stroke-width="1">
+    <path d="M1186 82h10v3h-10zm2 4h6v10h-6zm-1-6h8v2h-8z"/><path d="M1186 116h10v3h-10zm2 4h6v10h-6zm-1-6h8v2h-8z"/><path d="M1186 145h10v3h-10zm2 4h6v8h-6zm-1-6h8v2h-8z"/>
+  </g>
+</svg>
