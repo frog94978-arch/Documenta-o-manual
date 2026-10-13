@@ -32,8 +32,8 @@ const Index = () => {
         </div>
 
         {/* Horizontal Category Navigation */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8 sm:mb-12">
-          {categories.map((category) => (
+        <div className="mx-auto mb-8 grid max-w-3xl grid-cols-1 gap-4 sm:mb-12 sm:grid-cols-3">
+          {categories.filter((category) => category.id !== "introducao").map((category) => (
             <Link
               key={category.id}
               to={

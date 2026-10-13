@@ -47,6 +47,14 @@ const terms: Term[] = [
     definition: "Procedimento administrativo obrigatório para que a administração pública contrate bens e serviços, garantindo a isonomia e a melhor proposta.",
   },
   {
+    title: "LDO",
+    definition: "Lei de Diretrizes Orçamentárias - define as metas e prioridades da administração pública para o exercício seguinte e orienta a elaboração da Lei Orçamentária Anual (LOA), em alinhamento com o Plano Plurianual (PPA).",
+  },
+  {
+    title: "LOA",
+    definition: "Lei Orçamentária Anual - estima as receitas e fixa as despesas do governo para o exercício financeiro, conforme as diretrizes da LDO e os objetivos do PPA.",
+  },
+  {
     title: "Orçamento",
     definition: "Planejamento que prevê as receitas e fixa as despesas, verificando a disponibilidade de recursos antes de iniciar uma compra.",
   },
@@ -61,6 +69,10 @@ const terms: Term[] = [
   {
     title: "Processo de compras",
     definition: "Conjunto de etapas administrativas que visam a aquisição de bens ou a contratação de serviços por um órgão público.",
+  },
+  {
+    title: "PPA",
+    definition: "Plano Plurianual - instrumento de planejamento governamental que estabelece diretrizes, objetivos e metas da administração pública para um período de quatro anos.",
   },
 ].sort((a, b) => a.title.localeCompare(b.title));
 

@@ -1716,7 +1716,7 @@ const PatrimonialTabs = ({
           onClick={handleBackClick}
           variant="outline"
           size="sm"
-          className="mb-4"
+          className="mb-4 dark:bg-black dark:text-white dark:hover:bg-black/90 dark:hover:text-white"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Voltar para Módulos
