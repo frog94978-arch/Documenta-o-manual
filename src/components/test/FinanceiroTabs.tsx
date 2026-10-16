@@ -1055,6 +1055,43 @@ Através dos botões de consulta do quadro “Consulta Acordos” é possível v
 `,
 };
 
+const empenhoRelatoriosContent: Record<string, string> = {
+  Documentos: `
+# Emissão da Nota de Empenho
+
+~~~
+MÓDULO > EMPENHO > RELATÓRIOS > DOCUMENTOS > EMITE EMPENHOS.
+~~~
+
+Este documento reemite qualquer nota de empenho realizada ao longo do ano.
+`,
+};
+
+const empenhoRelatoriosMovimentacaoPages: string[] = [
+  `
+# Relatório de Movimentação de empenhos
+
+~~~
+MÓDULO > EMPENHO > RELATÓRIOS > RELATÓRIOS DE MOVIMENTAÇÃO > EMPENHO.
+~~~
+
+Este relatório traz toda a movimentação dos empenhos no período desejado, com várias possibilidades de filtro, como credor, evento, tipo de compra, material/serviço, característica peculiar, além de toda a funcional programática da dotação.
+
+[![](https://e-cidade.wiki.br/financeiro/empenho/files/RelatoriosEmpenho1.png)](https://e-cidade.wiki.br/financeiro/empenho/files/RelatoriosEmpenho1.png)
+`,
+  `
+# Relatório de Restos a pagar
+
+~~~
+EMPENHO > RELATÓRIOS > RELATÓRIOS DE MOVIMENTAÇÃO > EXECUÇÃO DE RESTOS A PAGAR.
+~~~
+
+Este relatório traz toda a movimentação dos restos a pagar no período desejado, com várias possibilidades de filtro, como exercício e tipo de restos, entre outros.
+
+[![](https://e-cidade.wiki.br/financeiro/empenho/files/RelatoriosEmpenho2.png)](https://e-cidade.wiki.br/financeiro/empenho/files/RelatoriosEmpenho2.png)
+`,
+];
+
 const empenhoCadastroContent: Record<string, string> = {
   "Retenções": `
 # Cadastro de Retenções
@@ -1219,6 +1256,19 @@ São disponibilizados empenhos com saldo liquidado a pagar. Pesquise pelo númer
 
 ![Estorno de liquidação de empenho](https://e-cidade.wiki.br/financeiro/empenho/files/ProcedimentosEstornoLiquidacao.gif)
 `,
+  `
+# NOTA DE LIQUIDAÇÃO - DESCONTO
+
+~~~
+EMPENHO > PROCEDIMENTOS > MANUTENÇÃO DO EMPENHO > NOTA DE LIQUIDAÇÃO–DESCONTO
+~~~
+
+Este menu permite registrar um desconto concedido pelo fornecedor à instituição. **Atenção: este processo é irreversível.** Ao registrar o desconto, o sistema anula automaticamente o valor correspondente da liquidação e do empenho. Portanto, se o valor anulado precisar ser utilizado novamente, não use esta rotina para anular a liquidação e o empenho: o desconto também será estornado do empenho.
+
+Na rotina, dê um duplo clique na ordem de pagamento que receberá o desconto. Na nova janela, informe o valor no campo **Desconto**. Feche a janela e clique em **Confirmar**. O sistema gera, então, lançamentos concomitantes de estorno do empenho e da liquidação.
+
+[![](https://e-cidade.wiki.br/financeiro/empenho/files/ProcedimentosNotadeDesconto.gif)](https://e-cidade.wiki.br/financeiro/empenho/files/ProcedimentosNotadeDesconto.gif)
+`,
 ];
 
 interface FinanceiroTabsProps {
@@ -1242,6 +1292,7 @@ const FinanceiroTabs = ({
   const [orcamentoPpaPage, setOrcamentoPpaPage] = useState(1);
   const [orcamentoSuplementacoesPage, setOrcamentoSuplementacoesPage] = useState(1);
   const [empenhoManutencaoPage, setEmpenhoManutencaoPage] = useState(1);
+  const [empenhoRelatoriosMovimentacaoPage, setEmpenhoRelatoriosMovimentacaoPage] = useState(1);
 
   useEffect(() => {
     if (
@@ -1260,6 +1311,16 @@ const FinanceiroTabs = ({
       selectedFinalSection !== "Manutenção de Empenho"
     ) {
       setEmpenhoManutencaoPage(1);
+    }
+  }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
+
+  useEffect(() => {
+    if (
+      selectedSubmodule !== "Empenho" ||
+      selectedCategory !== "relatorio" ||
+      selectedFinalSection !== "Relatórios de Movimentação"
+    ) {
+      setEmpenhoRelatoriosMovimentacaoPage(1);
     }
   }, [selectedSubmodule, selectedCategory, selectedFinalSection]);
 
@@ -1373,6 +1434,10 @@ const FinanceiroTabs = ({
                     ? orcamentoPpaPages[orcamentoPpaPage - 1]
                 : selectedSubmodule === "Empenho" && selectedCategory === "consulta"
                   ? empenhoConsultaContent[selectedFinalSection]
+                  : selectedSubmodule === "Empenho" && selectedCategory === "relatorio" && selectedFinalSection === "Documentos"
+                    ? empenhoRelatoriosContent[selectedFinalSection]
+                    : selectedSubmodule === "Empenho" && selectedCategory === "relatorio" && selectedFinalSection === "Relatórios de Movimentação"
+                      ? empenhoRelatoriosMovimentacaoPages[empenhoRelatoriosMovimentacaoPage - 1]
                   : selectedSubmodule === "Empenho" && selectedCategory === "procedimentos" && selectedFinalSection === "Autorização de Empenho"
                     ? empenhoProcedimentosContent[selectedFinalSection]
                     : selectedSubmodule === "Empenho" && selectedCategory === "procedimentos" && selectedFinalSection === "Manutenção de Empenho"
@@ -1542,6 +1607,31 @@ const FinanceiroTabs = ({
                       aria-current={empenhoManutencaoPage === page ? "page" : undefined}
                       aria-label={`Página ${page}`}
                       onClick={() => setEmpenhoManutencaoPage(page)}
+                    >
+                      {page}
+                    </Button>
+                  );
+                })}
+              </nav>
+            ) : null}
+            {selectedSubmodule === "Empenho" &&
+            selectedCategory === "relatorio" &&
+            selectedFinalSection === "Relatórios de Movimentação" ? (
+              <nav
+                aria-label="Páginas dos Relatórios de Movimentação de Empenho"
+                className="mt-8 flex flex-wrap items-center justify-center gap-2"
+              >
+                {empenhoRelatoriosMovimentacaoPages.map((_, index) => {
+                  const page = index + 1;
+                  return (
+                    <Button
+                      key={page}
+                      size="sm"
+                      className="min-w-9 px-2 dark:border-border dark:bg-background dark:text-foreground dark:hover:bg-muted dark:hover:text-foreground"
+                      variant={empenhoRelatoriosMovimentacaoPage === page ? "default" : "outline"}
+                      aria-current={empenhoRelatoriosMovimentacaoPage === page ? "page" : undefined}
+                      aria-label={`Página ${page}`}
+                      onClick={() => setEmpenhoRelatoriosMovimentacaoPage(page)}
                     >
                       {page}
                     </Button>
