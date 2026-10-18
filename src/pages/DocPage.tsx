@@ -76,7 +76,10 @@ const DocPage = () => {
       }
       
       // If we are navigating within the current page (e.g., changing tabs/submodules)
-      const newSubmodule = pathParts[3] || null;
+      const newSubmoduleId = pathParts[3] || null;
+      const newSubmodule = newSubmoduleId
+        ? getSubmoduleById(newSubmoduleId)?.title ?? null
+        : null;
       const newCategory = pathParts[4] || null;
       const newFinalSection = pathParts[5] || null;
 

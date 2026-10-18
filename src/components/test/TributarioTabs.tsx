@@ -6,22 +6,31 @@ import MarkdownContent from "@/components/test/MarkdownContent";
 import { arrecadacaoCadastroContent } from "@/data/tributario-arrecadacao-cadastro-content";
 import { arrecadacaoProcedimentosContent } from "@/data/tributario-arrecadacao-procedimentos-content";
 import { tributarioCadastroContent } from "@/data/tributario-cadastro-content";
+import { cadastroProcedimentosContent } from "@/data/tributario-cadastro-procedimentos-content";
 import { cemiterioCadastroContent } from "@/data/tributario-cemiterio-cadastro-content";
 import { cemiterioProcedimentosContent } from "@/data/tributario-cemiterio-procedimentos-content";
 import { contribuicaoCadastroContent } from "@/data/tributario-contribuicao-cadastro-content";
+import { contribuicaoProcedimentosContent } from "@/data/tributario-contribuicao-procedimentos-content";
 import { diversosCadastroContent } from "@/data/tributario-diversos-cadastro-content";
+import { diversosProcedimentosContent } from "@/data/tributario-diversos-procedimentos-content";
 import { dividaAtivaCadastroContent } from "@/data/tributario-divida-ativa-cadastro-content";
+import { dividaAtivaProcedimentosContent } from "@/data/tributario-divida-ativa-procedimentos-content";
 import { fiscalCadastroContent } from "@/data/tributario-fiscal-cadastro-content";
+import { fiscalProcedimentosContent } from "@/data/tributario-fiscal-procedimentos-content";
 import { inflatoresCadastroContent } from "@/data/tributario-inflatores-cadastro-content";
 import { inflatoresProcedimentosContent } from "@/data/tributario-inflatores-procedimentos-content";
 import { itbiCadastroContent } from "@/data/tributario-itbi-cadastro-content";
 import { itbiProcedimentosContent } from "@/data/tributario-itbi-procedimentos-content";
 import { juridicoCadastroContent } from "@/data/tributario-juridico-cadastro-content";
+import { juridicoProcedimentosContent } from "@/data/tributario-juridico-procedimentos-content";
 import { issqnCadastroContent } from "@/data/tributario-issqn-cadastro-content";
+import { issqnProcedimentosContent } from "@/data/tributario-issqn-procedimentos-content";
 import { meioAmbienteCadastroContent } from "@/data/tributario-meio-ambiente-cadastro-content";
 import { meioAmbienteProcedimentosContent } from "@/data/tributario-meio-ambiente-procedimentos-content";
 import { notificacoesCadastroContent } from "@/data/tributario-notificacoes-cadastro-content";
+import { notificacoesProcedimentosContent } from "@/data/tributario-notificacoes-procedimentos-content";
 import { projetosCadastroContent } from "@/data/tributario-projetos-cadastro-content";
+import { projetosProcedimentosContent } from "@/data/tributario-projetos-procedimentos-content";
 import { aguaProcedimentosContent } from "@/data/tributario-agua-procedimentos-content";
 
 interface TributarioTabsProps {
@@ -1260,6 +1269,12 @@ DB:TRIBUTÁRIO > Água > Consultas > Consulta de Imóveis/Terrenos
                 </p>
               </article>
             ) : selectedSubmodule === "Cadastro" &&
+              selectedCategory === "procedimentos" &&
+              cadastroProcedimentosContent[selectedFinalSection] ? (
+              <article className="prose prose-slate prose-lg max-w-none">
+                <MarkdownContent content={cadastroProcedimentosContent[selectedFinalSection]} />
+              </article>
+            ) : selectedSubmodule === "Cadastro" &&
               selectedCategory === "cadastro" &&
               tributarioCadastroContent[selectedFinalSection] ? (
               <article className="prose prose-slate prose-lg max-w-none">
@@ -1296,10 +1311,22 @@ DB:TRIBUTÁRIO > Água > Consultas > Consulta de Imóveis/Terrenos
                 <MarkdownContent content={contribuicaoCadastroContent[selectedFinalSection]} />
               </article>
             ) : selectedSubmodule === "Contribuição" &&
+              selectedCategory === "procedimentos" &&
+              contribuicaoProcedimentosContent[selectedFinalSection] ? (
+              <article className="prose prose-slate prose-lg max-w-none">
+                <MarkdownContent content={contribuicaoProcedimentosContent[selectedFinalSection]} />
+              </article>
+            ) : selectedSubmodule === "Contribuição" &&
               selectedCategory === "consulta" &&
               contribuicaoConsultaContent[selectedFinalSection] ? (
               <article className="prose prose-slate prose-lg max-w-none">
                 <MarkdownContent content={contribuicaoConsultaContent[selectedFinalSection]} />
+              </article>
+            ) : selectedSubmodule === "Diversos" &&
+              selectedCategory === "procedimentos" &&
+              diversosProcedimentosContent[selectedFinalSection] ? (
+              <article className="prose prose-slate prose-lg max-w-none">
+                <MarkdownContent content={diversosProcedimentosContent[selectedFinalSection]} />
               </article>
             ) : selectedSubmodule === "Diversos" &&
               selectedCategory === "cadastro" &&
@@ -1320,6 +1347,12 @@ DB:TRIBUTÁRIO > Água > Consultas > Consulta de Imóveis/Terrenos
                 <MarkdownContent content={dividaAtivaCadastroContent[selectedFinalSection]} />
               </article>
             ) : selectedSubmodule === "Dívida Ativa" &&
+              selectedCategory === "procedimentos" &&
+              dividaAtivaProcedimentosContent[selectedFinalSection] ? (
+              <article className="prose prose-slate prose-lg max-w-none">
+                <MarkdownContent content={dividaAtivaProcedimentosContent[selectedFinalSection]} />
+              </article>
+            ) : selectedSubmodule === "Dívida Ativa" &&
               selectedCategory === "consulta" &&
               dividaAtivaConsultaContent[selectedFinalSection] ? (
               <article className="prose prose-slate prose-lg max-w-none">
@@ -1330,6 +1363,12 @@ DB:TRIBUTÁRIO > Água > Consultas > Consulta de Imóveis/Terrenos
               fiscalCadastroContent[selectedFinalSection] ? (
               <article className="prose prose-slate prose-lg max-w-none">
                 <MarkdownContent content={fiscalCadastroContent[selectedFinalSection]} />
+              </article>
+            ) : selectedSubmodule === "Fiscal" &&
+              selectedCategory === "procedimentos" &&
+              fiscalProcedimentosContent[selectedFinalSection] ? (
+              <article className="prose prose-slate prose-lg max-w-none">
+                <MarkdownContent content={fiscalProcedimentosContent[selectedFinalSection]} />
               </article>
             ) : selectedSubmodule === "Fiscal" &&
               selectedCategory === "consulta" &&
@@ -1362,6 +1401,12 @@ DB:TRIBUTÁRIO > Água > Consultas > Consulta de Imóveis/Terrenos
                 <MarkdownContent content={issqnCadastroContent[selectedFinalSection]} />
               </article>
             ) : selectedSubmodule === "ISSQN" &&
+              selectedCategory === "procedimentos" &&
+              issqnProcedimentosContent[selectedFinalSection] ? (
+              <article className="prose prose-slate prose-lg max-w-none">
+                <MarkdownContent content={issqnProcedimentosContent[selectedFinalSection]} />
+              </article>
+            ) : selectedSubmodule === "ISSQN" &&
               selectedCategory === "consulta" &&
               issqnConsultaContent[selectedFinalSection] ? (
               <article className="prose prose-slate prose-lg max-w-none">
@@ -1392,6 +1437,12 @@ DB:TRIBUTÁRIO > Água > Consultas > Consulta de Imóveis/Terrenos
                 <MarkdownContent content={juridicoCadastroContent[selectedFinalSection]} />
               </article>
             ) : selectedSubmodule === "Jurídico" &&
+              selectedCategory === "procedimentos" &&
+              juridicoProcedimentosContent[selectedFinalSection] ? (
+              <article className="prose prose-slate prose-lg max-w-none">
+                <MarkdownContent content={juridicoProcedimentosContent[selectedFinalSection]} />
+              </article>
+            ) : selectedSubmodule === "Jurídico" &&
               selectedCategory === "consulta" &&
               juridicoConsultaContent[selectedFinalSection] ? (
               <article className="prose prose-slate prose-lg max-w-none">
@@ -1404,10 +1455,22 @@ DB:TRIBUTÁRIO > Água > Consultas > Consulta de Imóveis/Terrenos
                 <MarkdownContent content={projetosCadastroContent[selectedFinalSection]} />
               </article>
             ) : selectedSubmodule === "Projetos" &&
+              selectedCategory === "procedimentos" &&
+              projetosProcedimentosContent[selectedFinalSection] ? (
+              <article className="prose prose-slate prose-lg max-w-none">
+                <MarkdownContent content={projetosProcedimentosContent[selectedFinalSection]} />
+              </article>
+            ) : selectedSubmodule === "Projetos" &&
               selectedCategory === "consulta" &&
               projetosConsultaContent[selectedFinalSection] ? (
               <article className="prose prose-slate prose-lg max-w-none">
                 <MarkdownContent content={projetosConsultaContent[selectedFinalSection]} />
+              </article>
+            ) : selectedSubmodule === "Notificações" &&
+              selectedCategory === "procedimentos" &&
+              notificacoesProcedimentosContent[selectedFinalSection] ? (
+              <article className="prose prose-slate prose-lg max-w-none">
+                <MarkdownContent content={notificacoesProcedimentosContent[selectedFinalSection]} />
               </article>
             ) : selectedSubmodule === "Notificações" &&
               selectedCategory === "cadastro" &&

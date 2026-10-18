@@ -35,12 +35,24 @@ const terms: Term[] = [
     definition: "Contratação direta sem licitação, em casos previstos em lei, como para compras de pequeno valor ou em situações de emergência.",
   },
   {
+    title: "Dotação Orçamentária",
+    definition: "Crédito previsto no orçamento público para custear determinada despesa, identificado por sua classificação orçamentária e limitado ao saldo autorizado.",
+  },
+  {
+    title: "Dívida Ativa",
+    definition: "Crédito devido ao município, vencido e não pago, formalmente inscrito para permitir sua cobrança administrativa ou judicial, conforme a legislação.",
+  },
+  {
     title: "Empenho",
     definition: "Reserva de uma parte do orçamento para garantir o pagamento de um compromisso assumido pela administração pública.",
   },
   {
     title: "Homologação",
     definition: "Ato pelo qual a autoridade superior confirma o resultado da licitação, validando todas as etapas do procedimento.",
+  },
+  {
+    title: "ITBI",
+    definition: "Imposto sobre a Transmissão de Bens Imóveis, tributo municipal incidente, em regra, sobre a transmissão onerosa entre pessoas vivas de imóveis ou de direitos sobre imóveis.",
   },
   {
     title: "Licitação",
@@ -61,6 +73,10 @@ const terms: Term[] = [
   {
     title: "Ordem de Compra",
     definition: "Documento oficial enviado ao fornecedor autorizando a entrega do material ou a prestação do serviço solicitado.",
+  },
+  {
+    title: "Numpre",
+    definition: "Número de arrecadação que identifica um débito no sistema tributário. As parcelas desse débito são individualizadas pelo número da parcela (Numpar).",
   },
   {
     title: "PNCP",

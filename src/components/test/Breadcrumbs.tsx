@@ -77,7 +77,7 @@ const Breadcrumbs = ({ categoryId, pageId, pageTitle, submoduleTitle, categoryTi
     <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
       {breadcrumbSegments.map((segment, index) => (
         <span key={index} className="flex items-center">
-          {segment.isClickable ? (
+          {segment.isClickable && index < breadcrumbSegments.length - 1 ? (
             <button
               onClick={() => onNavigate(segment.path)}
               className="flex items-center hover:text-foreground transition-colors cursor-pointer"
@@ -85,7 +85,10 @@ const Breadcrumbs = ({ categoryId, pageId, pageTitle, submoduleTitle, categoryTi
               {index === 0 ? <Home className="h-4 w-4" /> : segment.label}
             </button>
           ) : (
-            <span className="flex items-center text-muted-foreground">
+            <span
+              className="flex items-center text-muted-foreground"
+              aria-current={index === breadcrumbSegments.length - 1 ? "page" : undefined}
+            >
               {segment.label}
             </span>
           )}
