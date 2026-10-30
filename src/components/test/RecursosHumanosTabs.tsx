@@ -2,6 +2,8 @@ import { useState } from "react";
 import { getSubmoduleById } from "@/data/submodules";
 import { FileText, Hourglass, Users, Briefcase, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/test/ui/button";
+import MarkdownContent from "@/components/test/MarkdownContent";
+import { pessoalTabelaPages } from "@/data/recursos-humanos-pessoal-tabelas";
 
 interface RecursosHumanosTabsProps {
   selectedSubmodule: string | null;
@@ -35,6 +37,16 @@ const RecursosHumanosTabs = ({
     { value: "relatorio", label: "Relatório" },
     { value: "procedimentos", label: "Procedimentos" },
   ];
+  const selectedSubmoduleId =
+    submodules.find(
+      (submodule) =>
+        submodule.id === selectedSubmodule ||
+        submodule.name === selectedSubmodule
+    )?.id ?? selectedSubmodule;
+  const isPessoalTabelaPage =
+    selectedSubmoduleId === "pessoal" &&
+    selectedCategory === "cadastro" &&
+    pessoalTabelaPages.some((page) => page.title === selectedFinalSection);
 
   const handleSubmoduleClick = (submoduleId: string) => {
     setSelectedSubmodule(submoduleId);
@@ -49,8 +61,11 @@ const RecursosHumanosTabs = ({
 
   const handleBackClick = () => {
     if (selectedFinalSection) {
-      // NEW: If a final section is selected, go back to category options
-      setSelectedFinalSection(null);
+      setSelectedFinalSection(
+        isPessoalTabelaPage
+          ? "Tabelas"
+          : null
+      );
     } else if (selectedCategory) {
       setSelectedCategory(null);
     } else {
@@ -64,7 +79,12 @@ const RecursosHumanosTabs = ({
     onSelectFinalSection: (section: string) => void
   ) => {
     // ADDED onSelectFinalSection
-    const submoduleData = getSubmoduleById(submoduleId);
+    const normalizedSubmoduleId =
+      submodules.find(
+        (submodule) =>
+          submodule.id === submoduleId || submodule.name === submoduleId
+      )?.id ?? submoduleId;
+    const submoduleData = getSubmoduleById(normalizedSubmoduleId);
     if (!submoduleData) return <p>Submódulo não encontrado.</p>;
 
     const categoryOptions =
@@ -90,7 +110,43 @@ const RecursosHumanosTabs = ({
   if (selectedSubmodule) {
     if (selectedCategory) {
       if (selectedFinalSection) {
-        // NEW: If a final section is selected
+        const tabelaPage = pessoalTabelaPages.find(
+          (page) => page.title === selectedFinalSection
+        );
+
+        if (
+          selectedSubmoduleId === "pessoal" &&
+          selectedCategory === "cadastro" &&
+          selectedFinalSection === "Tabelas"
+        ) {
+          return (
+            <div>
+              <Button
+                onClick={handleBackClick}
+                variant="outline"
+                size="sm"
+                className="mb-4 bg-card"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Voltar para Cadastro
+              </Button>
+              <h2 className="text-2xl font-bold mb-6">Tabelas</h2>
+              <hr className="mb-8 border-t border-border" />
+              <nav className="flex flex-col items-center gap-2 p-4 bg-muted mb-8 rounded-lg">
+                {pessoalTabelaPages.map((page, index) => (
+                  <button
+                    key={`${page.title}-${index}`}
+                    className="w-full text-lg font-bold py-2 px-4 rounded-md text-center bg-card hover:bg-muted-foreground/10 transition-colors"
+                    onClick={() => setSelectedFinalSection(page.title)}
+                  >
+                    {page.title}
+                  </button>
+                ))}
+              </nav>
+            </div>
+          );
+        }
+
         return (
           <div>
             <Button
@@ -101,13 +157,22 @@ const RecursosHumanosTabs = ({
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Voltar para{" "}
-              {selectedCategory.charAt(0).toUpperCase() +
-                selectedCategory.slice(1)}
+              {tabelaPage
+                ? "Tabelas"
+                : selectedCategory.charAt(0).toUpperCase() +
+                  selectedCategory.slice(1)}
             </Button>
-            <h2 className="text-2xl font-bold mb-6">{selectedFinalSection}</h2>
-            <hr className="mb-8 border-t border-border" />
-            {/* Placeholder for content of the selected final section */}
-            <p>Conteúdo detalhado para: {selectedFinalSection}</p>
+            {tabelaPage ? (
+              <MarkdownContent content={tabelaPage.content} />
+            ) : (
+              <>
+                <h2 className="text-2xl font-bold mb-6">
+                  {selectedFinalSection}
+                </h2>
+                <hr className="mb-8 border-t border-border" />
+                <p>Conteúdo detalhado para: {selectedFinalSection}</p>
+              </>
+            )}
           </div>
         );
       }
@@ -129,7 +194,7 @@ const RecursosHumanosTabs = ({
           </h2>
           <hr className="mb-8 border-t border-border" />
           {renderFinalContent(
-            selectedSubmodule,
+            selectedSubmoduleId ?? selectedSubmodule,
             selectedCategory,
             setSelectedFinalSection
           )}{" "}

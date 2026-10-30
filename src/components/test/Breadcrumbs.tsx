@@ -1,5 +1,6 @@
 import { ChevronRight, Home } from "lucide-react";
 import { getCategoryById } from "@/data/documentation";
+import { getSubmoduleById } from "@/data/submodules";
 
 interface BreadcrumbsProps {
   categoryId: string;
@@ -44,8 +45,9 @@ const Breadcrumbs = ({ categoryId, pageId, pageTitle, submoduleTitle, categoryTi
   // 5. Deeper Submodule/Category - NOW clickable
   if (submoduleTitle) {
     const finalPageId = pageId || pageTitle.toLowerCase().replace(/\s/g, "-");
+    const submodule = getSubmoduleById(submoduleTitle);
     breadcrumbSegments.push({ 
-        label: submoduleTitle.charAt(0).toUpperCase() + submoduleTitle.slice(1), 
+        label: submodule?.title ?? submoduleTitle.charAt(0).toUpperCase() + submoduleTitle.slice(1),
         path: `/docs/${categoryId}/${finalPageId}/${submoduleTitle.toLowerCase()}`,
         isClickable: true 
     });

@@ -25,7 +25,9 @@ const DocPage = () => {
     const searchParams = new URLSearchParams(location.search);
     const requestedSubmodule = searchParams.get("submodule");
     const submodule = requestedSubmodule ? getSubmoduleById(requestedSubmodule) : undefined;
-    setSelectedSubmodule(submodule?.title ?? null);
+    setSelectedSubmodule(
+      submodule ? (submodule.module === "educacao" ? submodule.id : submodule.title) : null,
+    );
     setSelectedCategory(searchParams.get("category"));
     setSelectedFinalSection(searchParams.get("section"));
   }, [category, page, location.search]);
@@ -77,8 +79,11 @@ const DocPage = () => {
       
       // If we are navigating within the current page (e.g., changing tabs/submodules)
       const newSubmoduleId = pathParts[3] || null;
-      const newSubmodule = newSubmoduleId
-        ? getSubmoduleById(newSubmoduleId)?.title ?? null
+      const submodule = newSubmoduleId ? getSubmoduleById(newSubmoduleId) : undefined;
+      const newSubmodule = submodule
+        ? submodule.module === "educacao"
+          ? submodule.id
+          : submodule.title
         : null;
       const newCategory = pathParts[4] || null;
       const newFinalSection = pathParts[5] || null;
