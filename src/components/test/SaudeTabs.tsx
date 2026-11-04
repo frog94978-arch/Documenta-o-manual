@@ -12,6 +12,10 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { Button } from "@/components/test/ui/button";
+import MarkdownContent from "@/components/test/MarkdownContent";
+import { saudeAgendamentoCadastroContent } from "@/data/saude-agendamento-cadastro-content";
+import { saudeAgendamentoConsultaContent } from "@/data/saude-agendamento-consulta-content";
+import { saudeAgendamentoProcedimentosContent } from "@/data/saude-agendamento-procedimentos-content";
 
 interface SaudeTabsProps {
   selectedSubmodule: string | null;
@@ -49,6 +53,16 @@ const SaudeTabs = ({
     { value: "relatorio", label: "Relatório" },
     { value: "procedimentos", label: "Procedimentos" },
   ];
+
+  const detailedContent =
+    selectedSubmodule === "Agendamento" && selectedCategory === "cadastro"
+      ? saudeAgendamentoCadastroContent[selectedFinalSection ?? ""]
+      : selectedSubmodule === "Agendamento" && selectedCategory === "consulta"
+        ? saudeAgendamentoConsultaContent[selectedFinalSection ?? ""]
+        : selectedSubmodule === "Agendamento" &&
+            selectedCategory === "procedimentos"
+          ? saudeAgendamentoProcedimentosContent[selectedFinalSection ?? ""]
+        : undefined;
 
   const handleSubmoduleClick = (submodule: string) => {
     setSelectedSubmodule(submodule);
@@ -115,8 +129,13 @@ const SaudeTabs = ({
             </Button>
             <h2 className="text-2xl font-bold mb-6">{selectedFinalSection}</h2>
             <hr className="mb-8 border-t border-border" />
-            {/* Placeholder for content of the selected final section */}
-            <p>Conteúdo detalhado para: {selectedFinalSection}</p>
+            {detailedContent ? (
+              <div className="prose prose-slate dark:prose-invert max-w-none">
+                <MarkdownContent content={detailedContent} />
+              </div>
+            ) : (
+              <p>Conteúdo detalhado para: {selectedFinalSection}</p>
+            )}
           </div>
         );
       }
