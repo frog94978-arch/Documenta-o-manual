@@ -2,6 +2,8 @@ import { useState } from "react";
 import { getSubmoduleById } from "@/data/submodules";
 import { Button } from "@/components/test/ui/button";
 import { ArrowLeft, Settings } from "lucide-react";
+import MarkdownContent from "@/components/test/MarkdownContent";
+import { configuracaoCadastroContent } from "@/data/configuracao-cadastro-content";
 
 interface ConfiguracoesTabsProps {
   selectedSubmodule: string | null;
@@ -25,6 +27,11 @@ const ConfiguracoesTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCa
     { value: "procedimentos", label: "Procedimentos" }
   ];
 
+  const detailedContent =
+    selectedCategory === "cadastro"
+      ? configuracaoCadastroContent[selectedFinalSection ?? ""]
+      : undefined;
+
   const handleSubmoduleClick = (submodule: string) => {
     setSelectedSubmodule(submodule);
     setSelectedCategory(null); // Reset category when changing submodule
@@ -41,8 +48,8 @@ const ConfiguracoesTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCa
     }
   };
 
-  const renderFinalContent = (submoduleId: string, categoryId: string, onSelectFinalSection: (section: string) => void) => { // ADDED onSelectFinalSection
-    const submoduleData = getSubmoduleById(submoduleId.toLowerCase());
+  const renderFinalContent = (categoryId: string, onSelectFinalSection: (section: string) => void) => { // ADDED onSelectFinalSection
+    const submoduleData = getSubmoduleById("configuracoes");
     if (!submoduleData) return <p>Submódulo não encontrado.</p>;
     
     const categoryOptions = submoduleData.options[categoryId as keyof typeof submoduleData.options];
@@ -79,8 +86,13 @@ const ConfiguracoesTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCa
             </Button>
             <h2 className="text-2xl font-bold mb-6">{selectedFinalSection}</h2>
             <hr className="mb-8 border-t border-border" />
-            {/* Placeholder for content of the selected final section */}
-            <p>Conteúdo detalhado para: {selectedFinalSection}</p>
+            {detailedContent ? (
+              <div className="prose prose-slate dark:prose-invert max-w-none">
+                <MarkdownContent content={detailedContent} />
+              </div>
+            ) : (
+              <p>Conteúdo detalhado para: {selectedFinalSection}</p>
+            )}
           </div>
         );
       }
@@ -98,7 +110,7 @@ const ConfiguracoesTabs = ({ selectedSubmodule, setSelectedSubmodule, selectedCa
           </Button>
           <h2 className="text-2xl font-bold mb-6">{selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}</h2>
           <hr className="mb-8 border-t border-border" />
-          {renderFinalContent(selectedSubmodule, selectedCategory, setSelectedFinalSection)} {/* Pass setter */}
+          {renderFinalContent(selectedCategory, setSelectedFinalSection)} {/* Pass setter */}
         </div>
       );
     }

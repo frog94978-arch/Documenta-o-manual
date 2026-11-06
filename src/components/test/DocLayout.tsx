@@ -15,8 +15,11 @@ const DocLayout = () => {
   const [showSearchResults, setShowSearchResults] = useState(false);
   const isSubmodulePage = location.pathname.startsWith("/modulos/");
   const isPncpPage = location.pathname.startsWith("/pncp");
+  const currentArea = location.pathname.match(/^\/docs\/modulos\/([^/]+)/)?.[1];
 
-  const searchResults = searchQuery.trim() ? combinedSearch(searchQuery) : [];
+  const searchResults = searchQuery.trim()
+    ? combinedSearch(searchQuery, currentArea)
+    : [];
 
   return (
     <SidebarProvider defaultOpen={false}>

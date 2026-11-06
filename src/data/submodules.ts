@@ -372,33 +372,60 @@ export const submodules: Submodule[] = [
     title: "Configurações",
     module: "patrimonial",
     options: {
-      cadastro: [],
-      consulta: [],
+      cadastro: [
+        "Itens de Menu",
+        "Acesso ao Sistema",
+        "Departamentos",
+        "Estrutura de Contas",
+        "Controle de Versões",
+        "Tipos de Documentos",
+        "Bancos",
+        "Tipos de Instituições",
+        "Instituições",
+        "Formatação",
+        "Cadastro de Usuários Internos",
+        "Cadastro de Usuários Externos",
+        "Cadastro de Usuários Perfil",
+        "Cadastro dos Bancos",
+        "Cadastro das Agências"
+      ],
+      consulta: [
+        "Usuários On-Line",
+        "Acount de Dados do Sistema (Logs)",
+        "Permissão por Item de Menu"
+      ],
       relatorio: [
-        "Solicitações",
-        "Ordens de Compra",
-        "Consulta Fornecedor",
-        "Consulta Item",
-        "Saldo da Despesa",
-        "Consulta Empenho",
-        "CGM",
-        "Cotações de Preços",
-        "Abertura Registro de Preço",
-        "Consulta Processo de Compras",
-        "CGM (novo)"
+        "Relatório de Usuários",
+        "Relatório de Departamento e Usuário",
+        "Relatório de Departamento por Órgão",
+        "Menus do Sistema",
+        "Últimos Acessos por usuários"
       ],
       procedimentos: [
-        "Solicitações",
-        "Ordens de Compra",
-        "Consulta Fornecedor",
-        "Consulta Item",
-        "Saldo da Despesa",
-        "Consulta Empenho",
-        "CGM",
-        "Cotações de Preços",
-        "Abertura Registro de Preço",
-        "Consulta Processo de Compras",
-        "CGM (novo)"
+        "Manutenção de Documentos/Template",
+        "Manutenção de Template Padrão",
+        "Organizar Menus (Inclusão)",
+        "Organiza Menus (Exclusão)",
+        "Reorganiza Menus (ordenar)",
+        "Libera Módulos por Usuário",
+        "Libera Permissões de Menu",
+        "Libera Permissões de Menu por Perfil",
+        "Libera Permissões de Empenho",
+        "Duplica Permissões de Menu",
+        "Alterar Senha",
+        "Retorna data do Sistema",
+        "Departamentos por Usuário",
+        "Configuração de Replicação",
+        "Manutenção de Documentos/Parágrafos",
+        "Manutenção de Layouts",
+        "Manutenção de Documentos Padrões",
+        "Permite ao Usuário Alterar Base de Dados",
+        "Status do Sistema",
+        "Ativar e Desativar Trace Log",
+        "Troca data de Lançamento dos Empenhos",
+        "Virada Anual",
+        "Configuração Inicial",
+        "Registros Inconsistentes"
       ]
     }
   },
@@ -2128,17 +2155,6 @@ export const submodules: Submodule[] = [
     }
   },
   {
-    id: "saude",
-    title: "Saúde",
-    module: "patrimonial",
-    options: {
-      cadastro: [],
-      consulta: [],
-      relatorio: [],
-      procedimentos: []
-    }
-  },
-  {
     id: "nota-fiscal",
     title: "Nota Fiscal",
     module: "patrimonial",
@@ -2184,7 +2200,7 @@ export const submodules: Submodule[] = [
   },
   {
     id: "protocolo-eletronico",
-    title: "Protocolo Eletrônico",
+    title: "SDI",
     module: "patrimonial",
     options: {
       cadastro: [],

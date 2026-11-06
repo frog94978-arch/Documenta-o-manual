@@ -125,7 +125,7 @@ const buildSearchIndex = (): SearchResult[] => {
 
 let cachedIndex: SearchResult[] | undefined;
 
-export function combinedSearch(query: string): SearchResult[] {
+export function combinedSearch(query: string, areaId?: string): SearchResult[] {
   const normalizedQuery = normalize(query).trim();
   if (!normalizedQuery) return [];
 
@@ -134,6 +134,14 @@ export function combinedSearch(query: string): SearchResult[] {
 
   return cachedIndex
     .filter((result) => {
+      if (
+        areaId &&
+        result.url !== `/docs/modulos/${areaId}` &&
+        !result.url.startsWith(`/docs/modulos/${areaId}?`)
+      ) {
+        return false;
+      }
+
       const searchableText = normalize(`${result.title} ${result.description} ${result.module ?? ""}`);
       return terms.every((term) => searchableText.includes(term));
     })

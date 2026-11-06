@@ -70,18 +70,20 @@ const GuiaInicioPage = () => {
         <h1 className="text-4xl font-bold text-center mb-12 text-foreground">
           Guia de Início
         </h1>
-        <div className="flex flex-wrap justify-center gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
           {items.map((item) => (
             <Link
               key={item.id}
               to={item.link}
-              className="border border-border rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-card text-card-foreground hover:bg-muted w-40 h-40"
+              className="text-left transition-all hover:scale-[1.02] focus:outline-none"
             >
-              <div className="p-6 flex flex-col items-center justify-center min-h-[160px] gap-3">
-                <div className="text-primary">{renderIcon(item.icon)}</div>
-                <h3 className="text-sm font-bold text-center">
-                  {item.id === "padrao-emails" ? "Padrão\nde e-mails" : item.title}
-                </h3>
+              <div className="rounded-lg text-card-foreground h-full border border-border transition-all duration-300 cursor-pointer bg-card hover:bg-muted shadow-sm hover:shadow-lg">
+                <div className="p-8 flex flex-col items-center justify-center min-h-[180px] gap-4">
+                  <div className="text-primary">{renderIcon(item.icon)}</div>
+                  <h3 className="text-xl font-bold text-center">
+                    {item.id === "padrao-emails" ? "Padrão\nde e-mails" : item.title}
+                  </h3>
+                </div>
               </div>
             </Link>
           ))}

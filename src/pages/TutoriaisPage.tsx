@@ -4,7 +4,6 @@ import Breadcrumbs from "@/components/test/Breadcrumbs";
 
 const tutorials = [
   { id: "fluxo", title: "Fluxo do Sistema", icon: "Route" },
-  { id: "erros", title: "Erros Frequentes", icon: "AlertCircle" },
 ];
 
 const TutoriaisPage = () => {
@@ -33,7 +32,7 @@ const TutoriaisPage = () => {
           {tutorials.map((tutorial) => (
             <Link
               key={tutorial.id}
-              to={tutorial.id === "fluxo" ? "/docs/tutoriais/fluxo-sistema" : "/docs/tutoriais/erros-frequentes"}
+              to="/docs/tutoriais/fluxo-sistema"
               className="flex flex-col items-center justify-center p-6 border border-border rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 bg-card text-card-foreground hover:bg-muted w-48 h-48 text-center"
             >
               <div className="text-primary mb-4">{renderIcon(tutorial.icon)}</div>

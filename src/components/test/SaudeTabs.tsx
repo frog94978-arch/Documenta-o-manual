@@ -16,6 +16,12 @@ import MarkdownContent from "@/components/test/MarkdownContent";
 import { saudeAgendamentoCadastroContent } from "@/data/saude-agendamento-cadastro-content";
 import { saudeAgendamentoConsultaContent } from "@/data/saude-agendamento-consulta-content";
 import { saudeAgendamentoProcedimentosContent } from "@/data/saude-agendamento-procedimentos-content";
+import { saudeAmbulatorialConsultaContent } from "@/data/saude-ambulatorial-consulta-content";
+import { saudeAmbulatorialCadastroContent } from "@/data/saude-ambulatorial-cadastro-content";
+import { saudeAmbulatorialProcedimentosContent } from "@/data/saude-ambulatorial-procedimentos-content";
+import { saudeFarmaciaConsultaContent } from "@/data/saude-farmacia-consulta-content";
+import { saudeFarmaciaCadastroContent } from "@/data/saude-farmacia-cadastro-content";
+import { saudeFarmaciaProcedimentosContent } from "@/data/saude-farmacia-procedimentos-content";
 
 interface SaudeTabsProps {
   selectedSubmodule: string | null;
@@ -62,7 +68,29 @@ const SaudeTabs = ({
         : selectedSubmodule === "Agendamento" &&
             selectedCategory === "procedimentos"
           ? saudeAgendamentoProcedimentosContent[selectedFinalSection ?? ""]
-        : undefined;
+            : selectedSubmodule === "Ambulatorial" &&
+                selectedCategory === "consulta"
+              ? saudeAmbulatorialConsultaContent[selectedFinalSection ?? ""]
+              : selectedSubmodule === "Ambulatorial" &&
+                  selectedCategory === "cadastro"
+                ? saudeAmbulatorialCadastroContent[selectedFinalSection ?? ""]
+                : selectedSubmodule === "Ambulatorial" &&
+                    selectedCategory === "procedimentos"
+                  ? saudeAmbulatorialProcedimentosContent[
+                      selectedFinalSection ?? ""
+                    ]
+                  : selectedSubmodule === "Farmácia" &&
+                      selectedCategory === "consulta"
+                    ? saudeFarmaciaConsultaContent[selectedFinalSection ?? ""]
+                    : selectedSubmodule === "Farmácia" &&
+                        selectedCategory === "cadastro"
+                      ? saudeFarmaciaCadastroContent[selectedFinalSection ?? ""]
+                      : selectedSubmodule === "Farmácia" &&
+                          selectedCategory === "procedimentos"
+                        ? saudeFarmaciaProcedimentosContent[
+                            selectedFinalSection ?? ""
+                          ]
+          : undefined;
 
   const handleSubmoduleClick = (submodule: string) => {
     setSelectedSubmodule(submodule);

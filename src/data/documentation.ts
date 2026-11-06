@@ -1118,7 +1118,7 @@ Disponível em:
   },
   {
     id: "protocolo-eletronico",
-    title: "Protocolo Eletrônico",
+    title: "SDI",
     category: "modulos",
     order: 12,
     content: `Sistema de gestão documental e processos eletrônicos.

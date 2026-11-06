@@ -14,7 +14,7 @@ const areas = [
   { id: "transparencia", title: "Transparência", icon: "Eye" },
   { id: "servicos-online", title: "Serviços On-line", icon: "Globe" },
   { id: "bi-elastic", title: "BI - Elastic", icon: "AreaChart" },
-  { id: "protocolo-eletronico", title: "Protocolo Eletrônico", icon: "Book" },
+  { id: "protocolo-eletronico", title: "SDI", icon: "Book" },
 ];
 
 const AreasPage = () => {
